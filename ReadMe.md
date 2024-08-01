@@ -1,4 +1,4 @@
-# schmitzai
+# schmitz.ai
 Repo for custom content on schmitz.ai
 
 This project is a placeholder for a React-based portfolio website for Dan Schmitz, a product designer/prototyper with extensive experience in UX design and technology commercialization.
