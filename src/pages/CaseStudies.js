@@ -25,10 +25,12 @@ const CaseStudyTitle = styled.h2`
 `;
 
 const caseStudies = [
-  { id: 1, title: "Magic Leap", image: "/images/magic-leap-thumbnail.jpg" },
-  { id: 2, title: "Meta", image: "/images/meta-thumbnail.jpg" },
-  { id: 3, title: "Another Meta Project", image: "/images/another-meta-thumbnail.jpg" },
-  { id: 4, title: "Intel", image: "/images/intel-thumbnail.jpg" },
+  { id: 1, title: "Magic Leap", image: "/images/magic-leap-thumbnail.gif" },
+  { id: 2, title: "Apple", image: "/images/apple-thumbnail.jpg" },
+  { id: 3, title: "Petal", image: "/images/petal-ssvep-thumbnail.jpg" },
+  { id: 4, title: "Petal", image: "/images/petal-metrics-thumbnail.gif" },
+  { id: 5, title: "Petal", image: "/images/petal-brow-click-thumbnail.gif" },
+  { id: 6, title: "IronNet Cybersecurity", image: "/images/ironnet-thumbnail.gif" }
 ];
 
 const CaseStudies = () => {
