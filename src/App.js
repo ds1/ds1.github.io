@@ -4,8 +4,6 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './styles/global';
 import theme from './styles/theme';
 import Layout from './components/Layout';
-
-// Import all pages
 import CaseStudies from './pages/CaseStudies';
 import CaseStudyDetail from './pages/CaseStudyDetail';
 import Resume from './pages/Resume';
