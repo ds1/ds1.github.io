@@ -27,23 +27,43 @@ const SectionTitle = styled.h2`
   margin-bottom: 1rem;
 `;
 
+const caseStudyData = {
+  1: {
+    title: "Magic Leap",
+    images: [
+      "/images/magic-leap-detail1.jpg",
+      "/images/magic-leap-detail2.jpg",
+      "/images/magic-leap-detail3.jpg",
+    ],
+    overview: "",
+    designObjectives: ["Objective 1", "Objective 2"],
+    // other details...
+  },
+  2: {
+    title: "Meta",
+    images: [
+      "/images/magic-leap-detail1.jpg",
+      "/images/magic-leap-detail2.jpg",
+      "/images/magic-leap-detail3.jpg",
+    ],
+    overview: "",
+    designObjectives: ["Objective 1", "Objective 2"],
+    // other details...
+  },
+  // more case studies...
+};
+
 const CaseStudyDetail = () => {
   const { id } = useParams();
-
+  const caseStudy = caseStudyData[id];
   // Fetch case study data based on id
   // This is a placeholder, replace with actual data fetching logic
-  const caseStudy = {
-    title: "Magic Leap",
-    image: "/path-to-magic-leap-image.jpg",
-    overview: "Overview content...",
-    designObjectives: ["Objective 1", "Objective 2"],
-    // Add more sections as needed
-  };
-
   return (
     <CaseStudyWrapper>
       <CaseStudyTitle>{caseStudy.title}</CaseStudyTitle>
-      <CaseStudyImage src={caseStudy.image} alt={caseStudy.title} />
+       {caseStudy.images.map((image, index) => (
+        <CaseStudyImage key={index} src={image} alt={`${caseStudy.title} - Image ${index + 1}`} />
+      ))}
       
       <CaseStudySection>
         <SectionTitle>Overview</SectionTitle>
