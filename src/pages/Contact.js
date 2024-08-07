@@ -41,24 +41,18 @@ const Contact = () => {
       <ContactInfo>
         <ContactMethod>
           <ContactLabel>Email:</ContactLabel>
-          <ContactLink href="mailto:dan.schmitz@example.com">dan.schmitz@example.com</ContactLink>
+          <ContactLink href="mailto:dan@schmitz.ai">dan@schmitz.ai</ContactLink>
         </ContactMethod>
         <ContactMethod>
           <ContactLabel>LinkedIn:</ContactLabel>
-          <ContactLink href="https://www.linkedin.com/in/danschmitz" target="_blank" rel="noopener noreferrer">
-            linkedin.com/in/danschmitz
+          <ContactLink href="https://www.linkedin.com/in/schmitzdan" target="_blank" rel="noopener noreferrer">
+            linkedin.com/in/schmitzdan
           </ContactLink>
         </ContactMethod>
-        <ContactMethod>
-          <ContactLabel>Twitter:</ContactLabel>
-          <ContactLink href="https://twitter.com/danschmitzux" target="_blank" rel="noopener noreferrer">
-            @danschmitzux
-          </ContactLink>
-        </ContactMethod>
-      </ContactInfo>
+        </ContactInfo>
       <p>
-        I'm always excited to discuss new projects, collaborations, or just chat about the future of technology and design. 
-        Feel free to reach out through any of the channels above, and I'll get back to you as soon as possible.
+        I'm open to discussing new projects or the futures of any topic. 
+        Feel free to reach out through any of the channels above and I'll get back to you as soon as possible.
       </p>
     </ContactWrapper>
   );
