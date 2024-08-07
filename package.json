@@ -17,9 +17,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && mv build docs",
-    "predeploy": "npm run build && echo \"schmitz.ai\" > docs/CNAME",
+    "build": "react-scripts build && shx mv build docs",
     "postbuild": "node scripts/postbuild.js",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "shx": "^0.3.4"
   }
 }
