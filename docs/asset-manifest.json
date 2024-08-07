@@ -1,15 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.2a47688f.js",
+    "main.js": "/static/js/main.85767d31.js",
     "static/js/453.d5c4626d.chunk.js": "/static/js/453.d5c4626d.chunk.js",
+    "static/media/magic-leap-thumbnail.gif": "/static/media/magic-leap-thumbnail.95ef1520708235a8cee5.gif",
+    "static/media/petal-metrics-thumbnail.gif": "/static/media/petal-metrics-thumbnail.1c2737daef8c52a18e08.gif",
+    "static/media/petal-brow-click-thumbnail.gif": "/static/media/petal-brow-click-thumbnail.0a82b2a400d8d7a89c64.gif",
+    "static/media/apple-thumbnail.jpg": "/static/media/apple-thumbnail.bd3ca23da417abe2a296.jpg",
+    "static/media/ironnet-thumbnail.gif": "/static/media/ironnet-thumbnail.0584678cbe41d94cac35.gif",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.2a47688f.js.map": "/static/js/main.2a47688f.js.map",
+    "main.85767d31.js.map": "/static/js/main.85767d31.js.map",
     "453.d5c4626d.chunk.js.map": "/static/js/453.d5c4626d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.2a47688f.js"
+    "static/js/main.85767d31.js"
   ]
 }
