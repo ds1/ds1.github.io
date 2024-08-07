@@ -52,46 +52,8 @@ const DownloadButton = styled.a`
 const Resume = () => {
   return (
     <ResumeWrapper>
-      <h1>Dan Schmitz - Interaction Designer</h1>
+      <h1>Dan Schmitz</h1>
       <p>Email: dan@schmitz.ai | Website: https://danschmitz.work | Location: Boulder, Colorado</p>
-      
-      <ResumeSection>
-        <SectionTitle>Summary</SectionTitle>
-        <p>Interaction Designer with 11 years of experience in UX/UI design and technology commercialization. Seeking an Interaction Designer role to leverage expertise in user-centered design, AI integration, and team leadership.</p>
-      </ResumeSection>
-
-      <ResumeSection>
-        <SectionTitle>Experience</SectionTitle>
-        
-        <JobTitle>Product Design Lead</JobTitle>
-        <Company>Apple</Company>
-        <DateRange>06/2022 - 08/2024 | Remote (Boulder, Colorado)</DateRange>
-        <List>
-          <li>Executed product design functions on a tactical and strategic level for a business-critical admin web application used globally</li>
-          <li>Measurably improved usability and utility through research-driven user experience design</li>
-          <li>Streamlined design operations and established sustainable governance systems</li>
-        </List>
-
-        {/* Add more job experiences here */}
-      </ResumeSection>
-
-      <ResumeSection>
-        <SectionTitle>Education</SectionTitle>
-        <JobTitle>Master of Science in Technology Commercialization</JobTitle>
-        <Company>McCombs School of Business at University of Texas, Austin, Texas</Company>
-        <DateRange>06/2021 - 06/2022</DateRange>
-        <List>
-          <li>4.0 GPA and Valedictorian</li>
-          <li>Gained practical experience in new venture development, product management, technology transfer and commercialization</li>
-        </List>
-      </ResumeSection>
-
-      <ResumeSection>
-        <SectionTitle>Skills</SectionTitle>
-        <p><strong>Hard skills:</strong> Design artifact production, Mockups, Specifications, Wireframing, Interaction design, Visual design, Flow mapping, User journeys, User research, Prototype development</p>
-        <p><strong>Soft skills:</strong> Written and oral communication, Strategic thinking, Problem-solving, Active listening, Empathy, Adaptability, Creative thinking, Teamwork, Leadership</p>
-        <p><strong>Tools:</strong> Figma, Sketch, Adobe Creative Suite, JIRA, Python, Unity, Git, React</p>
-      </ResumeSection>
 
       <DownloadButton href="/DanSchmitzResume.pdf" download>Download Full Resume (PDF)</DownloadButton>
     </ResumeWrapper>
