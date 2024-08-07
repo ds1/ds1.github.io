@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
+    "gh-pages": "^6.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.25.1",
@@ -16,11 +17,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "add-domain": "echo schmitz.ai > build/CNAME",
+    "build": "react-scripts build && mv build docs",
+    "predeploy": "npm run build && echo \"schmitz.ai\" > docs/CNAME",
     "postbuild": "node scripts/postbuild.js",
-    "predeploy": "npm run build",
-    "deploy": "npm run add-domain && gh-pages -d build",
+    "deploy": "gh-pages -d docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
