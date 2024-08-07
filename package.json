@@ -17,9 +17,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "add-domain": "echo 'schmitz.ai' > build/CNAME",
     "postbuild": "node scripts/postbuild.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run add-domain && gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
