@@ -5,6 +5,8 @@ const buildPath = path.join(__dirname, '..', 'build');
 const docsPath = path.join(__dirname, '..', 'docs');
 
 console.log('Checking if build directory exists...');
+console.log('Build path:', buildPath);
+
 if (!fs.existsSync(buildPath)) {
     console.error('Build directory does not exist. Make sure the build process completed successfully.');
     process.exit(1);
