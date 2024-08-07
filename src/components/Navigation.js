@@ -7,7 +7,6 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
-  background-color: ${({ theme }) => theme.colors.surface};
 `;
 
 const Logo = styled(NavLink)`
