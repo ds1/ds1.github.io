@@ -53,6 +53,7 @@ const CaseStudies = () => {
   return (
     <>
       <h1>Case Studies</h1>
+      <p>This is an experimental website I am developing using AI. This is not my current UX portfolio website. To see the latest, visit <a href>https://danschmitz.work</a></p>
       <CaseStudyGrid>
         {caseStudies.map((study) => (
           <CaseStudyCard key={study.id} to={`/case-study/${study.id}`}>
