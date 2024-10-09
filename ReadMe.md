@@ -24,5 +24,5 @@ This website showcases Dan Schmitz's professional experience, skills, and projec
 `git add .`
 `git commit -m "message"`
 `git push origin main`
-`npm run build` ### (might be optional, need to double check build scripts)
+`npm run build` ### (might be optional; need to double check build scripts to see if this includes running predeploy script)
 `npm run deploy`
