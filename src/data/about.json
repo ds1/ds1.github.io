@@ -1,0 +1,40 @@
+{
+  "headline": "Hi, I'm Dan Schmitz",
+  "introduction": "A foresight professional with 11 years of experience in UX/UI design and technology commercialization",
+  "profileImage": "../src/images/dan-eldorado.jpg",
+  "facts": [
+    "I co-created this portfolio site with an ai agent",
+    "11 years of professional product design experience",
+    "Master's in Technology Commercialization from McCombs (Valedictorian)",
+    "AI-Neurotechnology startup founder",
+    "Amateur paleontologist",
+    "Grandmaster of RISK: Global Domination"
+  ],
+  "content": [
+    {
+      "type": "p",
+      "content": "Hi, I'm Dan Schmitz",
+      "key": "headline"
+    },
+    {
+      "type": "p",
+      "content": "A foresight professional with 11 years of experience in UX/UI design and technology commercialization",
+      "key": "introduction"
+    },
+    {
+      "type": "p",
+      "content": "../src/images/dan-eldorado.jpg",
+      "key": "profileImage"
+    },
+    {
+      "type": "p",
+      "content": "I co-created this portfolio site with an ai agent;11 years of professional product design experience;Master's in Technology Commercialization from McCombs (Valedictorian);AI-Neurotechnology startup founder;Amateur paleontologist;Grandmaster of RISK: Global Domination",
+      "key": "facts"
+    },
+    {
+      "type": "p",
+      "content": "#h1#About Me\\n#p#I'm a foresight professional with 11 years of experience in experience design, strategy, and technology commercialization. Seeking a professional strategic foresight role to leverage expertise in innovation design, strategy, and team leadership.\\n#h2#Professional Journey\\n#p#Aiming to drive organizational innovation with a blend of strategic thinking and technical skills, backed by a Master's in Technology Commercialization (valedictorian) and a proven track record of transforming concepts into successful, market-validated products.\\n#h2#Current Focus\\n#p#Committed to applying academic excellence and industry experience to bring diverse, future-relevant inputs, forecasts, and possible alternative futures to strategy discussions, decision-making and planning.",
+      "key": "content"
+    }
+  ]
+}

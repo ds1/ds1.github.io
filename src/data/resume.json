@@ -1,0 +1,22 @@
+{
+  "title": "Dan Schmitz",
+  "introduction": "Strategic Foresight Consultant & User Experience Designer",
+  "downloadLink": "/DanSchmitzResume.pdf",
+  "content": [
+    {
+      "type": "p",
+      "content": "Strategic Foresight Consultant & User Experience Designer",
+      "key": "introduction"
+    },
+    {
+      "type": "p",
+      "content": "/DanSchmitzResume.pdf",
+      "key": "downloadLink"
+    },
+    {
+      "type": "p",
+      "content": "#h2#Professional Experience\\n#h3#Apple\\n#p#Product Design Lead | 06/2022 - 08/2024\\n#list#Executed product design functions on a tactical and strategic level;Facilitated cross-functional workshops;Measurably improved usability and utility;Streamlined design operations\\n#h3#Petal\\n#p#Founder and CEO | 10/2016 - 09/2023\\n#list#Bootstrapped a profitable AI neurotechnology startup;Developed novel systems for brainwave analysis;Built and led diverse technical teams;Established strong IP portfolio\\n#h2#Education\\n#h3#McCombs School of Business\\n#p#Master of Science in Technology Commercialization | 2022\\n#list#4.0 GPA and Valedictorian;No. 3 master's program in U.S. for entrepreneurship\\n#h2#Skills\\n#list#Design Systems;Workshop Facilitation;User Research;Prototype Development;Business Strategy;Operations;Spatial Computing;Requirements Gathering;Prompt Engineering;Workflow Automation",
+      "key": "content"
+    }
+  ]
+}

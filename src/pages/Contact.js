@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import RichText from '../components/RichText';
+import contactData from '../data/contact.json';
 
 const ContactWrapper = styled.div`
   max-width: 600px;
@@ -7,9 +9,11 @@ const ContactWrapper = styled.div`
   padding: 2rem 0;
 `;
 
-const Heading = styled.h1`
-  font-size: 2rem;
-  margin-bottom: 1rem;
+const Introduction = styled.p`
+  font-size: 1.25rem;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  margin-bottom: 2rem;
+  line-height: 1.5;
 `;
 
 const ContactInfo = styled.div`
@@ -23,37 +27,64 @@ const ContactMethod = styled.div`
 const ContactLabel = styled.h2`
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 const ContactLink = styled.a`
-  color: #007bff;
+  color: ${({ theme }) => theme.colors.primary};
   text-decoration: none;
+  transition: color 0.2s ease;
 
   &:hover {
     text-decoration: underline;
+    color: ${({ theme }) => theme.colors.secondary};
   }
 `;
 
 const Contact = () => {
   return (
     <ContactWrapper>
-      <Heading>Get in Touch</Heading>
+      <h1>{contactData.title}</h1>
+      
+      <Introduction>{contactData.introduction}</Introduction>
+      
       <ContactInfo>
         <ContactMethod>
           <ContactLabel>Email:</ContactLabel>
-          <ContactLink href="mailto:dan@schmitz.ai">dan@schmitz.ai</ContactLink>
-        </ContactMethod>
-        <ContactMethod>
-          <ContactLabel>LinkedIn:</ContactLabel>
-          <ContactLink href="https://www.linkedin.com/in/schmitzdan" target="_blank" rel="noopener noreferrer">
-            linkedin.com/in/schmitzdan
+          <ContactLink 
+            href={`mailto:${contactData.email}`}
+            aria-label="Send email to Dan"
+          >
+            {contactData.email}
           </ContactLink>
         </ContactMethod>
-        </ContactInfo>
-      <p>
-        I'm open to discussing new projects or the futures of any topic. 
-        Feel free to reach out through any of the channels above and I'll get back to you as soon as possible.
-      </p>
+        
+        <ContactMethod>
+          <ContactLabel>LinkedIn:</ContactLabel>
+          <ContactLink 
+            href={contactData.linkedin}
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Visit LinkedIn profile"
+          >
+            LinkedIn Profile
+          </ContactLink>
+        </ContactMethod>
+
+        <ContactMethod>
+          <ContactLabel>GitHub:</ContactLabel>
+          <ContactLink 
+            href={contactData.github}
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Visit GitHub profile"
+          >
+            GitHub Profile
+          </ContactLink>
+        </ContactMethod>
+      </ContactInfo>
+
+      <RichText content={contactData.content} />
     </ContactWrapper>
   );
 };

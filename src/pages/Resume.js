@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import RichText from '../components/RichText';
+import resumeData from '../data/resume.json';
 
 const ResumeWrapper = styled.div`
   max-width: 800px;
@@ -7,32 +9,11 @@ const ResumeWrapper = styled.div`
   padding: 2rem 0;
 `;
 
-const ResumeSection = styled.section`
-  margin-bottom: 2rem;
-`;
-
-const SectionTitle = styled.h2`
-  border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-`;
-
-const JobTitle = styled.h3`
-  margin-bottom: 0.5rem;
-`;
-
-const Company = styled.h4`
-  margin-bottom: 0.5rem;
-  font-weight: normal;
-`;
-
-const DateRange = styled.p`
-  margin-bottom: 0.5rem;
+const Introduction = styled.p`
+  font-size: 1.25rem;
   color: ${({ theme }) => theme.colors.textSecondary};
-`;
-
-const List = styled.ul`
-  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
 `;
 
 const DownloadButton = styled.a`
@@ -42,7 +23,8 @@ const DownloadButton = styled.a`
   padding: 0.5rem 1rem;
   text-decoration: none;
   border-radius: 4px;
-  margin-top: 1rem;
+  margin: 2rem 0;
+  transition: background-color 0.2s ease;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.secondary};
@@ -52,10 +34,27 @@ const DownloadButton = styled.a`
 const Resume = () => {
   return (
     <ResumeWrapper>
-      <h1>Dan Schmitz</h1>
-      <p>Email: dan@schmitz.ai | Website: https://danschmitz.work | Location: Boulder, Colorado</p>
+      <h1>{resumeData.title}</h1>
+      
+      <Introduction>{resumeData.introduction}</Introduction>
+      
+      <DownloadButton 
+        href={resumeData.downloadLink} 
+        download
+        aria-label="Download Resume PDF"
+      >
+        Download Resume (PDF)
+      </DownloadButton>
+      
+      <RichText content={resumeData.content} />
 
-      <DownloadButton href="/DanSchmitzResume.pdf" download>Download Full Resume (PDF)</DownloadButton>
+      <DownloadButton 
+        href={resumeData.downloadLink} 
+        download
+        aria-label="Download Resume PDF"
+      >
+        Download Resume (PDF)
+      </DownloadButton>
     </ResumeWrapper>
   );
 };

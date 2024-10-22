@@ -1,0 +1,34 @@
+{
+  "caseStudies": [
+    {
+      "id": 1,
+      "title": "Apple: Product Design Lead",
+      "description": "Executed product design functions on a tactical and strategic level for a business-critical admin web application used globally",
+      "thumbnail": "../src/images/apple-thumbnail.jpg"
+    },
+    {
+      "id": 2,
+      "title": "IronNet: UX Design Manager",
+      "description": "Pioneered design standards and systems as the cloud-engineering team's first design hire",
+      "thumbnail": "../src/images/ironnet-thumbnail.gif"
+    },
+    {
+      "id": 3,
+      "title": "Magic Leap: Interaction Design",
+      "description": "Defined operating system-level interaction paradigms for spatial computing on Magic Leap 1",
+      "thumbnail": "../src/images/magic-leap-thumbnail.gif"
+    },
+    {
+      "id": 4,
+      "title": "Petal: Brow Click Interface",
+      "description": "Designed novel brain-computer interface systems and methods for brainwave data analysis",
+      "thumbnail": "../src/images/petal-brow-click-thumbnail.gif"
+    },
+    {
+      "id": 5,
+      "title": "Petal: Metrics Dashboard",
+      "description": "Created data visualization systems for neurotechnology research and development",
+      "thumbnail": "../src/images/petal-metrics-thumbnail.gif"
+    }
+  ]
+}
