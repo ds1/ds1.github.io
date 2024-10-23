@@ -57,79 +57,23 @@ content/
 `npm run build  # includes predeploy scripts`
 `npm run deploy`
 
-## Project Structure
+## Directory Structure
 
 project-root/
-├── content/                     # Content management
-│   ├── about.csv               # About page content
+├── content/                     # CSV content files
 │   ├── caseStudies.csv         # Homepage case study cards
-│   ├── caseStudyDetails.csv    # Individual case study content
-│   ├── contact.csv             # Contact page content
-│   └── resume.csv              # Resume page content
-├── docs/                       # GitHub Pages deployment folder
-│   ├── CNAME
-│   ├── DanSchmitzResume.pdf
-│   ├── asset-manifest.json
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
-│   ├── manifest.json
-│   ├── robots.txt
-│   ├── images/
-│   └── static/
-│       ├── css/
-│       ├── js/
-│       └── media/
-├── public/                     # Static public assets
-│   ├── CNAME
-│   ├── DanSchmitzResume.pdf
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
-│   ├── manifest.json
-│   ├── robots.txt
-│   └── images/
-├── scripts/                    # Build and conversion scripts
-│   └── convertContent.js       # CSV to JSON converter
-└── src/                        # Source code
-    ├── components/             # Reusable React components
-    │   ├── Layout.js
-    │   ├── Navigation.js
-    │   └── RichText.js
-    ├── data/                   # Generated JSON content
-    │   ├── about.json
-    │   ├── caseStudies.json
-    │   ├── caseStudyDetails.json
-    │   ├── contact.json
-    │   └── resume.json
-    ├── images/                 # Image assets
-    │   ├── apple-thumbnail.jpg
-    │   ├── dan-eldorado.jpg
-    │   ├── ironnet-thumbnail.gif
-    │   ├── magic-leap-thumbnail.gif
-    │   ├── petal-brow-click-thumbnail.gif
-    │   └── petal-metrics-thumbnail.gif
-    ├── pages/                  # Page components
-    │   ├── About.js
-    │   ├── CaseStudies.js
-    │   ├── CaseStudyDetail.js
-    │   ├── Contact.js
-    │   └── Resume.js
-    ├── styles/                 # Global styling
-    │   ├── global.js
-    │   └── theme.js
-    ├── utils/                  # Utility functions
-    │   └── api.js
-    ├── App.css
-    ├── App.js
-    ├── App.test.js
-    ├── index.css
-    ├── index.js
-    ├── logo.svg
-    ├── reportWebVitals.js
-    └── setupTests.js
+│   └── caseStudyDetails.csv    # Detailed case study content
+├── src/
+│   ├── images/                 # Source images
+│   ├── data/                   # Generated JSON (don't edit directly)
+│   └── utils/
+│       └── imageImports.js     # Generated image imports (don't edit directly)
+└── scripts/
+├── convertContent.js       # CSV to JSON converter
+├── generateImageImports.js # Image import generator
+├── copyImages.js          # Image file manager
+└── testImageSystem.js     # System verification
+
 ## Website Sections
 - Global navigation: Case Studies, Resume, About, Contact
 - Case Studies (homepage) - Portfolio showcases

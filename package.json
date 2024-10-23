@@ -23,7 +23,9 @@
     "deploy": "gh-pages -d docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "convert-content": "node scripts/convertContent.js"  
+    "copy-images": "node scripts/copyImages.js",
+    "test-images": "node scripts/testImageSystem.js",
+    "convert-content": "node scripts/convertContent.js && node scripts/generateImageImports.js"  
   },
   "eslintConfig": {
     "extends": [

@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Apple: Product Design Lead",
       "subtitle": "Global Admin Application Redesign",
-      "thumbnail": "../src/images/apple-thumbnail.jpg",
+      "thumbnail": "/images/apple-thumbnail.jpg",
       "duration": "06/2022 - 08/2024",
       "role": "Product Design Lead",
       "company": "Apple",
@@ -58,14 +58,14 @@
       ],
       "images": [
         {
-          "src": "../src/images/apple-thumbnail.jpg",
+          "src": "/images/apple-thumbnail.jpg",
           "alt": "Screenshot of admin interface",
           "caption": "Redesigned workflow reduced steps by 60%"
         },
         {
-          "src": "../src/images/apple-thumbnail.jpg",
-          "alt": "Interface comparison",
-          "caption": "New interface unified disparate systems"
+          "src": "/images/apple-thumbnail.jpg",
+          "alt": "New interface design",
+          "caption": "Unified system with consistent patterns"
         }
       ]
     },
@@ -73,7 +73,7 @@
       "id": 2,
       "title": "IronNet: UX Design Manager",
       "subtitle": "Enterprise Security Platform",
-      "thumbnail": "../src/images/ironnet-thumbnail.gif",
+      "thumbnail": "/images/ironnet-thumbnail.gif",
       "duration": "01/2021 - 05/2022",
       "role": "UX Design Manager",
       "company": "IronNet",
@@ -125,12 +125,12 @@
       ],
       "images": [
         {
-          "src": "../src/images/ironnet-thumbnail.gif",
+          "src": "/images/ironnet-thumbnail.gif",
           "alt": "Design system overview",
           "caption": "Comprehensive component library"
         },
         {
-          "src": "../src/images/ironnet-thumbnail.gif",
+          "src": "/images/ironnet-thumbnail.gif",
           "alt": "Interface improvements",
           "caption": "Before and after comparison"
         }
@@ -140,7 +140,7 @@
       "id": 3,
       "title": "Magic Leap: Interaction Design",
       "subtitle": "Spatial Computing Innovation",
-      "thumbnail": "../src/images/magic-leap-thumbnail.gif",
+      "thumbnail": "/images/magic-leap-thumbnail.gif",
       "duration": "07/2019 - 09/2019",
       "role": "Interaction Design Contractor",
       "company": "Magic Leap",
@@ -192,12 +192,12 @@
       ],
       "images": [
         {
-          "src": "../src/images/magic-leap-thumbnail.gif",
+          "src": "/images/magic-leap-thumbnail.gif",
           "alt": "Spatial interface",
           "caption": "New interaction paradigms"
         },
         {
-          "src": "../src/images/magic-leap-thumbnail.gif",
+          "src": "/images/magic-leap-thumbnail.gif",
           "alt": "Gesture controls",
           "caption": "Hand-gesture interface prototype"
         }
@@ -207,7 +207,7 @@
       "id": 4,
       "title": "Petal: Brow Click Interface",
       "subtitle": "Brain-Computer Interface Innovation",
-      "thumbnail": "../src/images/petal-brow-click-thumbnail.gif",
+      "thumbnail": "/images/petal-brow-click-thumbnail.gif",
       "duration": "10/2016 - 09/2023",
       "role": "Founder and CEO",
       "company": "Petal",
@@ -259,12 +259,12 @@
       ],
       "images": [
         {
-          "src": "../src/images/petal-brow-click-thumbnail.gif",
+          "src": "/images/petal-brow-click-thumbnail.gif",
           "alt": "Interface demonstration",
           "caption": "Novel brain-computer interface"
         },
         {
-          "src": "../src/images/petal-brow-click-thumbnail.gif",
+          "src": "/images/petal-brow-click-thumbnail.gif",
           "alt": "Research application",
           "caption": "Data analysis visualization"
         }
@@ -274,7 +274,7 @@
       "id": 5,
       "title": "Petal: Metrics Dashboard",
       "subtitle": "Advanced Data Visualization",
-      "thumbnail": "../src/images/petal-metrics-thumbnail.gif",
+      "thumbnail": "/images/petal-metrics-thumbnail.gif",
       "duration": "10/2016 - 09/2023",
       "role": "Founder and CEO",
       "company": "Petal",
@@ -326,12 +326,12 @@
       ],
       "images": [
         {
-          "src": "../src/images/petal-metrics-thumbnail.gif",
+          "src": "/images/petal-metrics-thumbnail.gif",
           "alt": "Dashboard overview",
           "caption": "Comprehensive metrics visualization"
         },
         {
-          "src": "../src/images/petal-metrics-thumbnail.gif",
+          "src": "/images/petal-metrics-thumbnail.gif",
           "alt": "Analysis tools",
           "caption": "Real-time data analysis interface"
         }

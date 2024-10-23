@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import RichText from '../components/RichText';
 import aboutData from '../data/about.json';
-
-// Direct image import
-import danEldorado from '../images/dan-eldorado.jpg';
+import { imageMap } from '../utils/imageImports';
 
 const AboutWrapper = styled.div`
   max-width: 800px;
@@ -47,23 +45,46 @@ const FactItem = styled.li`
 `;
 
 const About = () => {
+  // Verify data loaded
+  if (!aboutData) {
+    console.warn('About data not found');
+    return <AboutWrapper>Loading...</AboutWrapper>;
+  }
+
+  // Check for required image
+  const profileImageSrc = imageMap[aboutData.profileImage];
+  if (!profileImageSrc) {
+    console.warn(`Profile image not found: ${aboutData.profileImage}`);
+  }
+
   return (
     <AboutWrapper>
       <h1>{aboutData.headline}</h1>
       <Introduction>{aboutData.introduction}</Introduction>
-      <ProfileImage 
-        src={danEldorado}  // Use imported image directly
-        alt="Dan Schmitz"
-      />
       
+      {profileImageSrc && (
+        <ProfileImage 
+          src={profileImageSrc}
+          alt="Dan Schmitz Profile"
+          onError={(e) => {
+            console.warn(`Failed to load profile image: ${aboutData.profileImage}`);
+            e.target.style.display = 'none';
+          }}
+        />
+      )}
+
       <RichText content={aboutData.content} />
       
-      <h2>Quick Facts</h2>
-      <FactsList>
-        {aboutData.facts.map((fact, index) => (
-          <FactItem key={index}>{fact}</FactItem>
-        ))}
-      </FactsList>
+      {aboutData.facts && aboutData.facts.length > 0 && (
+        <>
+          <h2>Quick Facts</h2>
+          <FactsList>
+            {aboutData.facts.map((fact, index) => (
+              <FactItem key={index}>{fact}</FactItem>
+            ))}
+          </FactsList>
+        </>
+      )}
     </AboutWrapper>
   );
 };

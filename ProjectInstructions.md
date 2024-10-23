@@ -35,79 +35,174 @@ In your first reply of this chat, suggest what to build, based on your comprehen
 
 # Content Management System
 
-## Directory Structure
+## Content & Image Management Workflow
+
+### Directory Structure
 
 project-root/
-├── content/                     # Content management
-│   ├── about.csv               # About page content
+├── content/                    # CSV content files
 │   ├── caseStudies.csv         # Homepage case study cards
-│   ├── caseStudyDetails.csv    # Individual case study content
-│   ├── contact.csv             # Contact page content
-│   └── resume.csv              # Resume page content
-├── docs/                       # GitHub Pages deployment folder
-│   ├── CNAME
-│   ├── DanSchmitzResume.pdf
-│   ├── asset-manifest.json
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
-│   ├── manifest.json
-│   ├── robots.txt
-│   ├── images/
-│   └── static/
-│       ├── css/
-│       ├── js/
-│       └── media/
-├── public/                     # Static public assets
-│   ├── CNAME
-│   ├── DanSchmitzResume.pdf
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
-│   ├── manifest.json
-│   ├── robots.txt
-│   └── images/
-├── scripts/                    # Build and conversion scripts
-│   └── convertContent.js       # CSV to JSON converter
-└── src/                        # Source code
-    ├── components/             # Reusable React components
-    │   ├── Layout.js
-    │   ├── Navigation.js
-    │   └── RichText.js
-    ├── data/                   # Generated JSON content
-    │   ├── about.json
-    │   ├── caseStudies.json
-    │   ├── caseStudyDetails.json
-    │   ├── contact.json
-    │   └── resume.json
-    ├── images/                 # Image assets
-    │   ├── apple-thumbnail.jpg
-    │   ├── dan-eldorado.jpg
-    │   ├── ironnet-thumbnail.gif
-    │   ├── magic-leap-thumbnail.gif
-    │   ├── petal-brow-click-thumbnail.gif
-    │   └── petal-metrics-thumbnail.gif
-    ├── pages/                  # Page components
-    │   ├── About.js
-    │   ├── CaseStudies.js
-    │   ├── CaseStudyDetail.js
-    │   ├── Contact.js
-    │   └── Resume.js
-    ├── styles/                 # Global styling
-    │   ├── global.js
-    │   └── theme.js
-    ├── utils/                  # Utility functions
-    │   └── api.js
-    ├── App.css
-    ├── App.js
-    ├── App.test.js
-    ├── index.css
-    ├── index.js
-    ├── logo.svg
-    ├── reportWebVitals.js
-    └── setupTests.js
+│   └── caseStudyDetails.csv    # Detailed case study content
+├── src/
+│   ├── images/                 # Source images
+│   ├── data/                   # Generated JSON (don't edit directly)
+│   └── utils/
+│       └── imageImports.js     # Generated image imports (don't edit directly)
+└── scripts/
+├── convertContent.js       # CSV to JSON converter
+├── generateImageImports.js # Image import generator
+├── copyImages.js          # Image file manager
+└── testImageSystem.js     # System verification
+
+### Working with Content and Images
+
+1. **Initial Setup**
+```bash```
+// Install required dependency
+`npm install csvtojson --save-dev`
+
+# Create necessary directories
+`mkdir content`
+`mkdir src/images`
+
+2. Adding/Updating Images
+ - Place new images in src/images/
+ - Image filenames should be kebab-case (e.g., case-study-diagram.jpg)
+ - Supported formats: jpg, gif, png
+
+// Copy images from public to src/images
+`npm run copy-images`
+
+3. Managing Content
+Edit CSV files in the content/ directory using spreadsheet software
+Reference images using path format: /images/filename.jpg
+CSV Files:
+
+caseStudies.csv: Homepage grid content
+caseStudyDetails.csv: Individual case study pages
+
+4. Content Structure
+
+CaseStudies.csv columns:
+`id,title,description,thumbnail`
+
+CaseStudyDetails.csv columns:
+`id,title,subtitle,thumbnail,duration,role,company,
+overview_h1,challenge_h2,challenge_body,
+responsibilities_h2,responsibilities_list,
+impact_h2,impact_list,
+image1_url,image1_alt,image1_caption,
+image2_url,image2_alt,image2_caption`
+
+5. Testing Changes
+// Verify directory structure and image references
+`npm run test-images`
+
+This checks:
+
+ - Required directories exist
+ - CSV files are present
+ - Image references are valid
+ - Images exist in correct location
+
+6. Converting Content
+
+// Convert CSVs to JSON and generate image imports
+`npm run convert-content`
+
+This:
+
+ - Runs image system test
+ - Converts CSV to JSON
+ - Generates image import mappings
+ - Creates required directories if missing
+
+7. Troubleshooting
+
+ - Check console output for warnings/errors
+ - Verify image paths in CSV match filenames exactly (case-sensitive)
+ - Ensure images exist in src/images/
+ - Use forward slashes (/) in paths
+ - Run `npm run test-images` to identify issues
+
+## Common Tasks
+
+1. Adding a New Case Study
+
+ - Add row to `caseStudies.csv` for homepage card
+ - Add row to `caseStudyDetails.csv` for detail page
+ - Add images to `src/images/`
+ - Run conversion process
+`npm run copy-images`
+`npm run convert-content`
+
+2. Updating Images
+
+ - Place new images in `src/images/`
+ - Update image references in CSV files
+ - Run conversion process
+`npm run convert-content`
+
+3. Modifying Content
+
+ - Edit CSV files directly or with spreadsheet software
+ - Run conversion without copying images
+`npm run convert-content`
+
+## Important Notes
+
+Never edit JSON files in src/data/ directly
+Never edit imageImports.js directly
+Always use forward slashes in image paths
+Keep image references consistent between CSVs
+Run tests before committing changes
+Backup CSV files before major changes
+
+## Script Descriptions
+
+convertContent.js: Transforms CSV files into JSON for React components
+generateImageImports.js: Creates image import mappings for components
+copyImages.js: Manages image file locations
+testImageSystem.js: Verifies system integrity
+
+## Best Practices
+
+1. Image Management
+
+ - Use descriptive filenames
+ - Maintain consistent naming conventions
+ - Optimize images for web before adding
+ - Verify images in test environment
+
+2. Content Updates
+
+ - Keep CSV backups
+ - Test after major changes
+ - Verify all image references
+ - Maintain consistent formatting
+
+3. Version Control
+
+ - Commit both CSV and generated files
+ - Include clear commit messages
+ - Regular backups of content directory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## CSV File Specifications
 
@@ -122,7 +217,7 @@ project-root/
 
 3. `about.csv`
 
-`headline,introduction,profileImage,facts,content`
+`headline,introduction,profileImage,facts,content_h1,overview_body,journey_h2,journey_body,focus_h2,focus_body`
 
 4. `resume.csv`
 
@@ -229,7 +324,6 @@ const MyComponent = () => (
  - Test changes locally
  - Commit both CSV and JSON files
 
-
 2. Code Updates:
 
  - Modify React components
@@ -244,28 +338,6 @@ const MyComponent = () => (
 `git push origin main`
 `npm run build`
 `npm run deploy`
-
-## Best Practices
-
-1. Content Management:
- - Maintain CSV formatting consistency
- - Keep lists concise
- - Use clear, descriptive image names
- - Follow column naming conventions
-
-
-2. Development:
- - Use semantic HTML
- - Maintain consistent styling through theme
- - Test across different screen sizes
- - Follow accessibility guidelines
- - Document code changes
-
-
-3. Version Control:
- - Include both CSV and generated JSON
- - Clear commit messages
- - Regular backups of content
 
 
 ## Troubleshooting

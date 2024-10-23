@@ -74,11 +74,14 @@ async function convertContent() {
 
     // Convert about page
     const aboutData = await csv().fromFile(path.join(__dirname, '../content/about.csv'));
-    const processedAbout = {
-      ...aboutData[0],
-      facts: aboutData[0].facts.split(';').map(fact => fact.trim()),
-      content: structureContent(aboutData[0])
-    };
+    const processedAbout = aboutData.map(item => ({
+      id: parseInt(item.id),
+      headline: item.headline,
+      introduction: item.introduction,
+      profileImage: item.profileImage,
+      facts: item.facts.split(';').map(fact => fact.trim()),
+      content: structureContent(item)
+    }))[0]; // Take first item since we only have one about page
     
     // Convert resume page
     const resumeData = await csv().fromFile(path.join(__dirname, '../content/resume.csv'));

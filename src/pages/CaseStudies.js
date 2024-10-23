@@ -2,22 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import caseStudiesData from '../data/caseStudies.json';
-
-// Import all images
-import appleThumbnail from '../images/apple-thumbnail.jpg';
-import ironnetThumbnail from '../images/ironnet-thumbnail.gif';
-import magicLeapThumbnail from '../images/magic-leap-thumbnail.gif';
-import petalBrowClickThumbnail from '../images/petal-brow-click-thumbnail.gif';
-import petalMetricsThumbnail from '../images/petal-metrics-thumbnail.gif';
-
-// Image mapping object
-const imageMap = {
-  '../src/images/apple-thumbnail.jpg': appleThumbnail,
-  '../src/images/ironnet-thumbnail.gif': ironnetThumbnail,
-  '../src/images/magic-leap-thumbnail.gif': magicLeapThumbnail,
-  '../src/images/petal-brow-click-thumbnail.gif': petalBrowClickThumbnail,
-  '../src/images/petal-metrics-thumbnail.gif': petalMetricsThumbnail
-};
+import { imageMap } from '../utils/imageImports';
 
 const CaseStudyGrid = styled.div`
   display: grid;
@@ -61,22 +46,47 @@ const CaseStudyDescription = styled.p`
 `;
 
 const CaseStudies = () => {
-    console.log('Apple Thumbnail Path:', caseStudiesData.appleThumbnail); // Debug log
-    console.log('Image Map:', imageMap); // Debug log
+  // Verify data loaded
+  if (!caseStudiesData || !caseStudiesData.caseStudies) {
+    console.warn('Case studies data not found');
+    return (
+      <>
+        <h1>Case Studies</h1>
+        <p>Loading...</p>
+      </>
+    );
+  }
+
   return (
     <>
       <h1>Case Studies</h1>
       <p>This is an experimental website I am developing using AI. This is not my current UX portfolio website. To see the latest, visit <a href="https://danschmitz.work" target="_blank" rel="noopener noreferrer">danschmitz.work</a></p>
       <CaseStudyGrid>
-        {caseStudiesData.caseStudies.map((study) => (
-          <CaseStudyCard key={study.id} to={`/case-study/${study.id}`}>
-            <CaseStudyImage src={study.thumbnail} alt={study.title} />
-            <CardContent>
-              <CaseStudyTitle>{study.title}</CaseStudyTitle>
-              <CaseStudyDescription>{study.description}</CaseStudyDescription>
-            </CardContent>
-          </CaseStudyCard>
-        ))}
+        {caseStudiesData.caseStudies.map((study) => {
+          const imageSrc = imageMap[study.thumbnail];
+          if (!imageSrc) {
+            console.warn(`Image not found for case study: ${study.title}`, study.thumbnail);
+          }
+
+          return (
+            <CaseStudyCard key={study.id} to={`/case-study/${study.id}`}>
+              {imageSrc && (
+                <CaseStudyImage 
+                  src={imageSrc} 
+                  alt={study.title}
+                  onError={(e) => {
+                    console.warn(`Failed to load image for case study: ${study.title}`);
+                    e.target.style.display = 'none';
+                  }}
+                />
+              )}
+              <CardContent>
+                <CaseStudyTitle>{study.title}</CaseStudyTitle>
+                <CaseStudyDescription>{study.description}</CaseStudyDescription>
+              </CardContent>
+            </CaseStudyCard>
+          );
+        })}
       </CaseStudyGrid>
     </>
   );
