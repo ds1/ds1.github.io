@@ -82,4 +82,4 @@ project-root/
 - About - Personal introduction
 - Contact - Professional contact information
 
-For detailed documentation on content management, rich text formatting, and development guidelines, see the Project Instructions in the repository.
+For detailed documentation on content management, rich text formatting, and development guidelines, see ProjectInstructions.md in the repository.
