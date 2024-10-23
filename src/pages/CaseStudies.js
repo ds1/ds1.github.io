@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import caseStudiesData from '../data/caseStudies.json';
 import { imageMap } from '../utils/imageImports';
 
+console.log('imageMap contents:', imageMap);
+
 const CaseStudyGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -46,28 +48,28 @@ const CaseStudyDescription = styled.p`
 `;
 
 const CaseStudies = () => {
-  // Verify data loaded
-  if (!caseStudiesData || !caseStudiesData.caseStudies) {
-    console.warn('Case studies data not found');
-    return (
-      <>
-        <h1>Case Studies</h1>
-        <p>Loading...</p>
-      </>
-    );
-  }
+
+  console.log('Available image mappings:', Object.keys(imageMap));
+
+  const getImageSrc = (path) => {
+    // Convert /images/ path to /src/images/
+    const srcPath = path.replace('/images/', '/src/images/');
+    const imageSrc = imageMap[srcPath];
+    if (!imageSrc) {
+      console.warn(`Image not found in imageMap. Looking for: ${srcPath}`);
+      console.log('Available paths:', Object.keys(imageMap));
+    }
+    return imageSrc;
+  };
 
   return (
     <>
       <h1>Case Studies</h1>
-      <p>This is an experimental website I am developing using AI. This is not my current UX portfolio website. To see the latest, visit <a href="https://danschmitz.work" target="_blank" rel="noopener noreferrer">danschmitz.work</a></p>
+      <p>This is an experimental website I am developing using AI...</p>
       <CaseStudyGrid>
         {caseStudiesData.caseStudies.map((study) => {
-          const imageSrc = imageMap[study.thumbnail];
-          if (!imageSrc) {
-            console.warn(`Image not found for case study: ${study.title}`, study.thumbnail);
-          }
-
+          const imageSrc = getImageSrc(study.thumbnail);
+          
           return (
             <CaseStudyCard key={study.id} to={`/case-study/${study.id}`}>
               {imageSrc && (
@@ -75,7 +77,7 @@ const CaseStudies = () => {
                   src={imageSrc} 
                   alt={study.title}
                   onError={(e) => {
-                    console.warn(`Failed to load image for case study: ${study.title}`);
+                    console.warn(`Failed to load image for case study: ${study.title}`, study.thumbnail);
                     e.target.style.display = 'none';
                   }}
                 />

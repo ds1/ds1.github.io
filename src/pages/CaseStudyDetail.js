@@ -5,17 +5,6 @@ import RichText from '../components/RichText';
 import caseStudyDetailsData from '../data/caseStudyDetails.json';
 import { imageMap } from '../utils/imageImports';
 
-// Helper function to safely get image from map
-const getImage = (path) => {
-  if (!path) return null;
-  const image = imageMap[path];
-  if (!image) {
-    console.warn(`Image not found for path: ${path}`);
-    return null;
-  }
-  return image;
-};
-
 const Wrapper = styled.div`
   max-width: 800px;
   margin: 0 auto;
@@ -78,22 +67,36 @@ const Caption = styled.figcaption`
   margin-top: 0.5rem;
 `;
 
+// Debug what paths are available in imageMap
+console.log('imageMap contents:', imageMap);
+
+const getImage = (path) => {
+  if (!path) return null;
+  
+  // Convert /images/ path to /src/images/
+  const srcPath = path.replace('/images/', '/src/images/');
+  const image = imageMap[srcPath];
+  
+  if (!image) {
+    console.warn(`Image not found in imageMap. Looking for: ${srcPath}`);
+    console.log('Available paths:', Object.keys(imageMap));
+  }
+  return image;
+};
+
 const CaseStudyDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-
-  // Debug log for all case study details
+  
   console.log('All Case Study Details:', caseStudyDetailsData);
-
+  
   const caseStudy = caseStudyDetailsData.caseStudyDetails.find(
     study => study.id === parseInt(id)
   );
 
-  // Debug log for found case study
   console.log('Selected Case Study:', caseStudy);
 
   if (!caseStudy) {
-    console.log('No case study found for id:', id);
     return (
       <Wrapper>
         <BackButton onClick={() => navigate('/')}>← Back to Case Studies</BackButton>
@@ -102,15 +105,14 @@ const CaseStudyDetail = () => {
     );
   }
 
-  // Debug logs for image paths
   console.log('Thumbnail path:', caseStudy.thumbnail);
-  console.log('Mapped thumbnail:', imageMap[caseStudy.thumbnail]);
-  
-  if (caseStudy.images?.length > 0) {
+  console.log('Mapped thumbnail:', getImage(caseStudy.thumbnail));
+
+  if (caseStudy.images?.length) {
     console.log('Detail images:', caseStudy.images);
     caseStudy.images.forEach((image, index) => {
       console.log(`Image ${index + 1} path:`, image.src);
-      console.log(`Image ${index + 1} mapped:`, imageMap[image.src]);
+      console.log(`Image ${index + 1} mapped:`, getImage(image.src));
     });
   }
 
@@ -124,42 +126,33 @@ const CaseStudyDetail = () => {
         <Metadata>
           {caseStudy.duration} • {caseStudy.role} • {caseStudy.company}
         </Metadata>
-        {getImage(caseStudy.thumbnail) && (
-          <Image 
-            src={getImage(caseStudy.thumbnail)} 
-            alt={caseStudy.title}
-            onError={(e) => {
-              console.warn(`Failed to load image: ${caseStudy.thumbnail}`);
-              e.target.style.display = 'none'; // Hide broken image
-              // Or set a placeholder: e.target.src = placeholderImage;
-            }}
-          />
-        )}
+        <Image 
+          src={getImage(caseStudy.thumbnail)} 
+          alt={caseStudy.title}
+          onError={(e) => {
+            console.warn(`Failed to load thumbnail: ${caseStudy.thumbnail}`);
+            e.target.style.display = 'none';
+          }}
+        />
       </Header>
 
       <RichText content={caseStudy.content} />
       
       {caseStudy.images?.length > 0 && (
         <ImageGrid>
-          {caseStudy.images.map((image, index) => {
-            const imageSrc = getImage(image.src);
-            if (!imageSrc) return null; // Skip if image not found
-
-            return (
-              <Figure key={index}>
-                <Image 
-                  src={imageSrc} 
-                  alt={image.alt}
-                  onError={(e) => {
-                    console.warn(`Failed to load image: ${image.src}`);
-                    e.target.style.display = 'none'; // Hide broken image
-                    // Or set a placeholder: e.target.src = placeholderImage;
-                  }}
-                />
-                <Caption>{image.caption}</Caption>
-              </Figure>
-            );
-          })}
+          {caseStudy.images.map((image, index) => (
+            <Figure key={index}>
+              <Image 
+                src={getImage(image.src)} 
+                alt={image.alt}
+                onError={(e) => {
+                  console.warn(`Failed to load detail image: ${image.src}`);
+                  e.target.style.display = 'none';
+                }}
+              />
+              <Caption>{image.caption}</Caption>
+            </Figure>
+          ))}
         </ImageGrid>
       )}
     </Wrapper>
