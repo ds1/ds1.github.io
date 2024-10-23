@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Apple: Product Design Lead",
       "subtitle": "Global Admin Application Redesign",
-      "thumbnail": "/images/apple-thumbnail.jpg",
+      "thumbnail": "src/images/apple-thumbnail.jpg",
       "duration": "06/2022 - 08/2024",
       "role": "Product Design Lead",
       "company": "Apple",
