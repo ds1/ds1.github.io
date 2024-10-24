@@ -5,6 +5,7 @@ import RichText from '../components/RichText';
 import caseStudyDetailsData from '../data/caseStudyDetails.json';
 import { imageMap } from '../utils/imageImports';
 
+// Styled Components
 const Wrapper = styled.div`
  max-width: 800px;
  margin: 0 auto;
@@ -98,6 +99,7 @@ const PlaceholderBox = styled.div`
  color: ${({ theme }) => theme.colors.textSecondary};
 `;
 
+// Image Component
 const ImageWithFallback = ({ src, alt, ...props }) => {
  const [hasError, setHasError] = useState(false);
 
@@ -121,26 +123,34 @@ const ImageWithFallback = ({ src, alt, ...props }) => {
  );
 };
 
-// Helper function to get image from imageMap
+// Helper Functions
 const getImage = (path) => {
  if (!path) return null;
- const image = imageMap[path];
+ const srcPath = path.replace('/images/', '/src/images/');
+ const image = imageMap[srcPath];
  if (!image) {
-   console.warn(`Image not found in imageMap: ${path}`);
-   return null;
+   console.warn(`Image not found in imageMap: ${path} (looked for ${srcPath})`);
  }
  return image;
 };
 
-// Helper to identify and structure content based on field patterns
 const structureContent = (caseStudy) => {
-  console.log('Starting structureContent with:', caseStudy);
+ console.log('1. Starting structureContent with:', caseStudy);
  const content = [];
  const images = [];
  
  Object.entries(caseStudy).forEach(([key, value]) => {
+   console.log('2. Processing key:', key, 'with value:', 
+     typeof value === 'string' 
+       ? value.substring(0, 100) + '...'
+       : Array.isArray(value)
+         ? '[Array]: ' + value.length + ' items'
+         : typeof value
+   );
+   
    // Skip id and base metadata fields
    if (['id', 'title', 'subtitle', 'duration', 'role'].includes(key)) {
+     console.log('3. Skipping metadata field:', key);
      return;
    }
 
@@ -159,8 +169,9 @@ const structureContent = (caseStudy) => {
      return;
    }
 
-   // Handle content fields based on suffix
+   // Handle content fields based on suffix pattern
    if (key.endsWith('_h1')) {
+     console.log('4a. Adding h1:', key);
      content.push({
        type: 'h1',
        content: value,
@@ -168,6 +179,7 @@ const structureContent = (caseStudy) => {
        order: Object.keys(caseStudy).indexOf(key)
      });
    } else if (key.endsWith('_h2')) {
+     console.log('4b. Adding h2:', key);
      content.push({
        type: 'h2',
        content: value,
@@ -175,6 +187,7 @@ const structureContent = (caseStudy) => {
        order: Object.keys(caseStudy).indexOf(key)
      });
    } else if (key.endsWith('_list')) {
+     console.log('4c. Adding list:', key);
      content.push({
        type: 'list',
        content: value.split(';').map(item => item.trim()),
@@ -182,6 +195,7 @@ const structureContent = (caseStudy) => {
        order: Object.keys(caseStudy).indexOf(key)
      });
    } else if (key.endsWith('_body')) {
+     console.log('4d. Adding body:', key);
      content.push({
        type: 'body',
        content: value,
@@ -191,108 +205,99 @@ const structureContent = (caseStudy) => {
    }
  });
 
-  console.log('Final structured content:', {content, images});
- // Sort content by original order in CSV
+ console.log('5. Final content array:', content);
+ const sortedContent = content.sort((a, b) => a.order - b.order);
+ console.log('6. Sorted content:', sortedContent);
+
  return {
-   content: content.sort((a, b) => a.order - b.order),
-   images: images.filter(img => img.url) // Only include images with URLs
+   content: sortedContent,
+   images: images.map(img => ({
+     url: img.url,
+     alt: img.alt || '',
+     caption: img.caption || ''
+   })).filter(img => img.url)
  };
 };
 
+// Main Component
 const CaseStudyDetail = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
+ const { id } = useParams();
+ const navigate = useNavigate();
 
-  
-  
-  const caseStudy = caseStudyDetailsData.caseStudyDetails.find(
-    study => study.id === parseInt(id)
-  );
+ console.log('Case Study Details Data:', caseStudyDetailsData);
+ 
+ const caseStudy = caseStudyDetailsData.caseStudyDetails.find(
+   study => study.id === parseInt(id)
+ );
 
-  // Add debug logging
-  console.log('Image paths in imageMap:', Object.keys(imageMap));
-  console.log('Looking for thumbnail:', caseStudy?.thumbnail);
-  console.log('Full case study:', caseStudy);
-  console.log('Case Study Details Data:', caseStudyDetailsData); // Debug log
+ console.log('Found case study:', caseStudy);
 
-  if (!caseStudy) {
-    return (
-      <Wrapper>
-        <BackButton onClick={() => navigate('/')}>← Back to Case Studies</BackButton>
-        <Title>Case study not found</Title>
-      </Wrapper>
-    );
-  }
+ if (!caseStudy) {
+   return (
+     <Wrapper>
+       <BackButton onClick={() => navigate('/')}>← Back to Case Studies</BackButton>
+       <Title>Case study not found</Title>
+     </Wrapper>
+   );
+ }
 
-  console.log('Selected Case Study:', caseStudy); // Debug log
-  
-  const { content, images } = structureContent(caseStudy);
-  
-  console.log('Structured Content:', content); // Debug log
-  console.log('Structured Images:', images); // Debug log
+ const { content, images } = structureContent(caseStudy);
+ 
+ console.log('Structured content:', content);
+ console.log('Structured images:', images);
 
-  return (
-    <Wrapper>
-      <BackButton onClick={() => navigate('/')}>← Back to Case Studies</BackButton>
-      
-      <Header>
-        <Title>{caseStudy.title}</Title>
-        <Subtitle>{caseStudy.subtitle}</Subtitle>
-        <Metadata>
-          {caseStudy.duration} • {caseStudy.role}
-        </Metadata>
-        <ImageWithFallback 
-          src={getImage(caseStudy.thumbnail)}
-          alt={caseStudy.title}
-        />
-      </Header>
+ return (
+   <Wrapper>
+     <BackButton onClick={() => navigate('/')}>← Back to Case Studies</BackButton>
+     
+     <Header>
+       <Title>{caseStudy.title}</Title>
+       <Subtitle>{caseStudy.subtitle}</Subtitle>
+       <Metadata>
+         {caseStudy.duration} • {caseStudy.role}
+       </Metadata>
+       <ImageWithFallback 
+         src={getImage(caseStudy.thumbnail)}
+         alt={caseStudy.title}
+       />
+     </Header>
 
-      {/* Debug render */}
-      <pre style={{color: 'white'}}>
-        {JSON.stringify(content, null, 2)}
-      </pre>
-
-      {/* Modified content rendering */}
-      {content && content.map((block, index) => {
-        console.log('Rendering block:', block); // Debug log
-        
-        switch(block.type) {
-          case 'h1':
-            return <Heading1 key={index}>{block.content}</Heading1>;
-          case 'h2':
-            return <Heading2 key={index}>{block.content}</Heading2>;
-          case 'list':
-            return (
-              <ul key={index}>
-                {block.content.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            );
-          case 'body':
-            return <p key={index}>{block.content}</p>;
-          default:
-            console.log('Unknown block type:', block.type);
-            return null;
-        }
-      })}
-      
-      {/* Render images */}
-      {images && images.length > 0 && (
-        <div>
-          {images.map((image, index) => (
-            <Figure key={index}>
-              <ImageWithFallback 
-                src={getImage(image.url)}
-                alt={image.alt || ''}
-              />
-              {image.caption && <Caption>{image.caption}</Caption>}
-            </Figure>
-          ))}
-        </div>
-      )}
-    </Wrapper>
-  );
+     {content.map((block, index) => {
+       console.log('7. Rendering block:', block);
+       switch(block.type) {
+         case 'h1':
+           console.log('8a. Rendering h1');
+           return <Heading1 key={index}>{block.content}</Heading1>;
+         case 'h2':
+           console.log('8b. Rendering h2');
+           return <Heading2 key={index}>{block.content}</Heading2>;
+         case 'list':
+           console.log('8c. Rendering list');
+           return <RichText key={index} content={[block]} />;
+         case 'body':
+           console.log('8d. Rendering body');
+           return <RichText key={index} content={block.content} />;
+         default:
+           console.log('8e. Unknown block type:', block.type);
+           return null;
+       }
+     })}
+     
+     {images.length > 0 && (
+       <div>
+         {images.map((image, index) => (
+           <Figure key={index}>
+             <ImageWithFallback 
+               src={getImage(image.url)}
+               alt={image.alt}
+             />
+             {image.caption && <Caption>{image.caption}</Caption>}
+           </Figure>
+         ))}
+       </div>
+     )}
+   </Wrapper>
+ );
 };
 
 export default CaseStudyDetail;
