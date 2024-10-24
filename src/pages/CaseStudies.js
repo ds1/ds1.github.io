@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import caseStudiesData from '../data/caseStudies.json';
 import { imageMap } from '../utils/imageImports';
 
+console.log('Working image paths:', caseStudiesData.caseStudies.map(study => study.thumbnail));
 console.log('imageMap contents:', imageMap);
 
 const CaseStudyGrid = styled.div`

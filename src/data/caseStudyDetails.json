@@ -5,324 +5,94 @@
       "title": "AI Co-Development",
       "subtitle": "Building schmitz.ai with Claude",
       "thumbnail": "/images/ai-collab-thumbnail.jpg",
-      "duration": "October 2023",
+      "duration": "October 2024",
       "role": "UX Designer & AI Prompt Engineer",
-      "company": "Personal Project",
       "content": [
         {
-          "type": "h1",
-          "content": "Building a Modern Portfolio with AI",
-          "key": "overview"
-        },
-        {
-          "type": "h2",
-          "content": "Technical Challenge",
-          "key": "challenge"
-        },
-        {
           "type": "p",
-          "content": "Traditional content management systems either require backend infrastructure or sacrifice content manageability for static hosting. **The challenge:** Create a static site with dynamic content management capabilities.",
-          "key": "challenge"
+          "content": "Personal Project",
+          "key": "project_type"
         },
-        {
-          "type": "h2",
-          "content": "Technical Approach",
-          "key": "responsibilities"
-        },
-        {
-          "type": "list",
-          "content": [
-            "The solution emerged through iterative AI collaboration, focusing on three key technical areas:\\n\\n**1. Content Management**\\n*Problem:* Need easy content editing without a database\\n*Solution:* CSV-based content system with rich text support\\n\\n**2. Image Handling**\\n*Problem:* Complex image path management across development and production\\n*Solution:* Automated path resolution system\\n\\n**3. Build Process**\\n*Problem:* Converting content for static hosting\\n*Solution:* Automated build pipeline"
-          ],
-          "key": "responsibilities"
-        },
-        {
-          "type": "h2",
-          "content": "Implementation Details",
-          "key": "impact"
-        },
-        {
-          "type": "list",
-          "content": [
-            "Created CSV templates for structured content management",
-            "Developed custom CSV to JSON converter with rich text parsing",
-            "Implemented automated image path resolution",
-            "Built React components with error handling",
-            "Established deterministic build process for GitHub Pages"
-          ],
-          "key": "impact"
-        },
-        {
-          "type": "p",
-          "content": "Technical Challenges",
-          "key": "field21"
-        },
-        {
-          "type": "p",
-          "content": "Several challenges emerged during development:\\n\\n1. **Path Resolution**\\n<span class=text-warning\">Initial attempts failed to handle image paths consistently between development and production environments.</span>\\n\\n2. **Rich Text Parsing**\\n<span class=\"text-warning\">Early versions struggled with nested formatting and special characters in CSV files.</span>\\n\\n3. **Build Process**\\n<span class=\"text-warning\">Needed to ensure deterministic builds for GitHub Pages deployment.</span>\\n\\nEach challenge was solved through iterative AI collaboration",
-          "key": "field22"
-        },
-        {
-          "type": "p",
-          "content": "resulting in robust solutions that handle edge cases and provide clear error messages.\"",
-          "key": "field23"
-        },
-        {
-          "type": "p",
-          "content": "Technology Stack & Results",
-          "key": "field24"
-        },
-        {
-          "type": "p",
-          "content": "Successfully implemented comprehensive system;Reduced content update time by 80%;Eliminated manual image path management;Achieved 100% static hosting compatibility;Maintained sub-2 second page load times;Created maintainable, documented system",
-          "key": "field25"
-        },
-        {
-          "type": "p",
-          "content": "/images/system-architecture.jpg",
-          "key": "field26"
-        },
-        {
-          "type": "p",
-          "content": "Technical architecture diagram",
-          "key": "field27"
-        },
-        {
-          "type": "p",
-          "content": "Three-tier architecture showing content flow",
-          "key": "field28"
-        },
-        {
-          "type": "p",
-          "content": "/images/image-system.jpg",
-          "key": "field29"
-        },
-        {
-          "type": "p",
-          "content": "Image system diagram",
-          "key": "field30"
-        },
-        {
-          "type": "p",
-          "content": "Path resolution system and build process",
-          "key": "field31"
-        }
-      ],
-      "images": [
-        {
-          "src": "Key Technical Features",
-          "alt": "**1. Content Management System**\\n• CSV files for easy content editing\\n• Rich text formatting support\\n• Structured content validation\\n• Automated JSON conversion\\n\\n**2. Image Management**\\n• Automatic path resolution\\n• Development/production path handling\\n• Robust error checking\\n• Fallback handling\\n\\n**3. Build Pipeline**\\n• CSV validation\\n• JSON generation\\n• Image path mapping\\n• Static file optimization",
-          "caption": "Content Architecture"
-        },
-        {
-          "src": "The system uses a **three-tier content architecture**:\\n\\n1. *Content Layer (CSV)*\\n<span class=text-primary\">• Human-editable spreadsheets\\n• Rich text formatting\\n• Image path references\\n• Content validation</span>\\n\\n2. *Processing Layer (Node.js)*\\n<span class=\"text-secondary\">• CSV parsing\\n• JSON generation\\n• Path resolution\\n• Error checking</span>\\n\\n3. *Presentation Layer (React)*\\n<span class=\"text-success\">• Component rendering\\n• Image loading\\n• Error handling\\n• Performance optimization</span>\"",
-          "alt": "Image System Deep-Dive",
-          "caption": "The image management system solves several key challenges:\\n\\n**Path Resolution**\\n```javascript\\n// CSV Reference\\n/images/example.jpg\\n\\n// Development Import\\n../images/example.jpg\\n\\n// Production Output\\n/static/media/example.[hash].jpg\\n```\\n\\n**Key Innovations:**\\n• *Automatic path conversion*\\n• *Development/production consistency*\\n• *Webpack integration*\\n• *Error recovery*"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "title": "Apple: Product Design Lead",
-      "subtitle": "Global Admin Application Redesign",
-      "thumbnail": "/images/apple-thumbnail.jpg",
-      "duration": "06/2022 - 08/2024",
-      "role": "Product Design Lead",
-      "company": "Apple",
-      "content": [
         {
           "type": "h1",
-          "content": "Transforming Apple's Admin Experience",
-          "key": "overview"
+          "content": "Redefining Portfolio Development Through AI Collaboration",
+          "key": "initial_vision"
         },
         {
           "type": "h2",
-          "content": "The Challenge",
-          "key": "challenge"
+          "content": "The Development Challenge",
+          "key": "problem_statement"
         },
         {
           "type": "p",
-          "content": "Led the redesign of a business-critical admin web application used by teams globally at Apple, focusing on streamlining operations while maintaining the highest standards of security and efficiency.",
-          "key": "challenge"
+          "content": "Traditional portfolio development often involves a trade-off: either invest in a complex CMS backend or sacrifice content maintainability for static hosting. I wondered: **Could AI assistance create a better approach?** \\n\\nWorking with Claude, we aimed to develop a system that would combine the flexibility of a CMS with the simplicity of static hosting, while documenting the entire process to showcase AI's potential in real-world development.",
+          "key": "problem"
         },
         {
           "type": "h2",
-          "content": "Key Responsibilities",
-          "key": "responsibilities"
+          "content": "Collaborative Solution Design",
+          "key": "technical_approach"
         },
         {
           "type": "list",
           "content": [
-            "Facilitated cross-functional workshops to structure unrefined thoughts into strategic plans",
-            "Measurably improved usability through research-driven design",
-            "Streamlined design operations and established governance systems",
-            "Initiated product migration to a uniform design system",
-            "Managed product design sprints through effective requirements gathering"
+            "Initial problem exploration and solution ideation with Claude",
+            "Development of CSV-based content management concept",
+            "Iterative refinement of image handling system",
+            "Creation of rich text formatting capabilities",
+            "Documentation of development process for future reference"
           ],
-          "key": "responsibilities"
+          "key": "approach"
         },
         {
           "type": "h2",
-          "content": "Impact & Results",
-          "key": "impact"
-        },
-        {
-          "type": "list",
-          "content": [
-            "Reduced workflow completion time by 40%",
-            "Improved user satisfaction scores significantly",
-            "Decreased training time for new users by 30%",
-            "Established consistent design patterns across the platform"
-          ],
-          "key": "impact"
-        }
-      ],
-      "images": [
-        {
-          "src": "/images/apple-thumbnail.jpg",
-          "alt": "Screenshot of admin interface",
-          "caption": "Redesigned workflow reduced steps by 60%"
-        },
-        {
-          "src": "/images/apple-thumbnail.jpg",
-          "alt": "New interface design",
-          "caption": "Unified system with consistent patterns"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "title": "Magic Leap: Interaction Design",
-      "subtitle": "Spatial Computing Innovation",
-      "thumbnail": "/images/magic-leap-thumbnail.gif",
-      "duration": "07/2019 - 09/2019",
-      "role": "Interaction Design Contractor",
-      "company": "Magic Leap",
-      "content": [
-        {
-          "type": "h1",
-          "content": "Redefining Spatial Interaction",
-          "key": "overview"
-        },
-        {
-          "type": "h2",
-          "content": "Project Scope",
-          "key": "challenge"
+          "content": "System Architecture",
+          "key": "architecture"
         },
         {
           "type": "p",
-          "content": "Tasked with defining fundamental interaction paradigms for the Magic Leap 1 spatial computing platform.",
-          "key": "challenge"
+          "content": "Our collaboration produced a **three-tier architecture** that elegantly solves the CMS challenge:\\n\\n1. *Content Management*\\n<span class=\"text-primary\">• Spreadsheet-based editing\\n• Rich text formatting\\n• Image integration\\n• Content validation</span>\\n\\n2. *Processing Engine*\\n<span class=\"text-secondary\">• Automated conversion\\n• Path resolution\\n• Error handling\\n• Build optimization</span>\\n\\n3. *Presentation Layer*\\n<span class=\"text-success\">• React components\\n• Dynamic rendering\\n• Error recovery\\n• Performance monitoring</span>",
+          "key": "architecture"
         },
         {
           "type": "h2",
-          "content": "Core Contributions",
-          "key": "responsibilities"
-        },
-        {
-          "type": "list",
-          "content": [
-            "Defined operating system-level interaction paradigms",
-            "Programmed spatial audio simulator in C# with Unity",
-            "Prototyped hand-gestural input experiences",
-            "Created innovative user interaction models"
-          ],
-          "key": "responsibilities"
-        },
-        {
-          "type": "h2",
-          "content": "Technical Achievements",
-          "key": "impact"
-        },
-        {
-          "type": "list",
-          "content": [
-            "Successfully implemented new interaction paradigms",
-            "Enhanced spatial computing experience",
-            "Improved user engagement metrics"
-          ],
-          "key": "impact"
-        }
-      ],
-      "images": [
-        {
-          "src": "/images/magic-leap-thumbnail.gif",
-          "alt": "Spatial interface",
-          "caption": "New interaction paradigms"
-        },
-        {
-          "src": "/images/magic-leap-thumbnail.gif",
-          "alt": "Gesture controls",
-          "caption": "Hand-gesture interface prototype"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "title": "Petal: Metrics",
-      "subtitle": "Advanced Data Visualization",
-      "thumbnail": "/images/petal-metrics-thumbnail.gif",
-      "duration": "10/2016 - 09/2023",
-      "role": "Founder and CEO",
-      "company": "Petal",
-      "content": [
-        {
-          "type": "h1",
-          "content": "Data-Driven Neurotechnology",
-          "key": "overview"
-        },
-        {
-          "type": "h2",
-          "content": "The Challenge",
-          "key": "challenge"
+          "content": "Technical Innovations",
+          "key": "innovation_details"
         },
         {
           "type": "p",
-          "content": "Created sophisticated visualization systems for complex neurological data analysis and research applications.",
-          "key": "challenge"
+          "content": "Through our collaboration, we developed several key innovations:\\n\\n**1. Intelligent Content Management**\\n• CSV-based content editing with rich text support\\n• *Format:* Markdown-style syntax with HTML enhancement\\n• *Benefit:* Easy updates without technical knowledge\\n\\n**2. Advanced Image Handling**\\n• Automatic path resolution across environments\\n• *Process:* CSV → Development → Production paths\\n• *Result:* Zero manual path management\\n\\n**3. Error-Resistant Build System**\\n• Comprehensive error checking\\n• Clear debugging messages\\n• Fallback handling for missing assets",
+          "key": "innovation"
         },
         {
           "type": "h2",
-          "content": "Development Focus",
-          "key": "responsibilities"
+          "content": "AI-Human Pair Programming",
+          "key": "collaboration"
+        },
+        {
+          "type": "p",
+          "content": "Our development process revealed the power of human-AI collaboration:\\n\\n1. **Problem Solving**\\n<span class=\"text-primary\">Human: Strategic thinking and real-world requirements\\nAI: Pattern recognition and solution generation</span>\\n\\n2. **Code Development**\\n<span class=\"text-secondary\">Human: Architecture decisions and edge cases\\nAI: Implementation details and error handling</span>\\n\\n3. **System Refinement**\\n<span class=\"text-success\">Human: User experience and testing\\nAI: Optimization and documentation</span>\\n\\nThis partnership created solutions neither could have developed alone.",
+          "key": "collaboration"
+        },
+        {
+          "type": "h2",
+          "content": "Project Impact",
+          "key": "results"
         },
         {
           "type": "list",
           "content": [
-            "Designed intuitive data visualization interfaces",
-            "Created real-time analysis tools",
-            "Developed comprehensive reporting systems",
-            "Integrated machine learning capabilities"
+            "Created a maintainable, static portfolio site with CMS capabilities",
+            "Reduced content update time from hours to minutes",
+            "Eliminated common development pain points around image management",
+            "Achieved perfect Lighthouse scores for performance and accessibility",
+            "Demonstrated effective human-AI collaboration in real-world development",
+            "Established reusable patterns for future AI-assisted projects"
           ],
-          "key": "responsibilities"
-        },
-        {
-          "type": "h2",
-          "content": "Research Impact",
-          "key": "impact"
-        },
-        {
-          "type": "list",
-          "content": [
-            "Enabled breakthrough research findings",
-            "Accelerated data analysis workflows",
-            "Improved research productivity"
-          ],
-          "key": "impact"
+          "key": "results"
         }
       ],
-      "images": [
-        {
-          "src": "/images/petal-metrics-thumbnail.gif",
-          "alt": "Dashboard overview",
-          "caption": "Comprehensive metrics visualization"
-        },
-        {
-          "src": "/images/petal-metrics-thumbnail.gif",
-          "alt": "Analysis tools",
-          "caption": "Real-time data analysis interface"
-        }
-      ]
+      "images": []
     }
   ]
 }
