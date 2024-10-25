@@ -20,14 +20,14 @@ The website uses a CSV-based content management system that enables easy content
 `npm install`
 
 2. Edit content in the CSV files:
-
+```txt
 content/
   ├── about.csv          # About page content
   ├── caseStudies.csv    # Homepage case study cards
   ├── caseStudyDetails.csv # Detailed case study pages
   ├── contact.csv        # Contact page content
   └── resume.csv         # Resume page content
-
+```
 3. Convert content to JSON:
 
 `npm run convert-content`
@@ -58,7 +58,7 @@ content/
 `npm run deploy`
 
 ## Directory Structure
-
+```txt
 project-root/
 ├── content/                     # CSV content files
 │   ├── caseStudies.csv         # Homepage case study cards
@@ -73,7 +73,7 @@ project-root/
 ├── generateImageImports.js # Image import generator
 ├── copyImages.js          # Image file manager
 └── testImageSystem.js     # System verification
-
+```
 ## Website Sections
 - Global navigation: Case Studies, Resume, About, Contact
 - Case Studies (homepage) - Portfolio showcases
