@@ -23,11 +23,14 @@ project-root/
 │   ├── caseStudyDetails.csv      # Individual case study content
 │   ├── contact.csv               # Contact page content
 │   └── resume.csv                # Resume page content
+
 ├── docs/                         # GitHub Pages deployment folder
+
 ├── scripts/
 │   ├── convertContent.js         # CSV to JSON converter
 │   ├── generateImageImports.js   # Image import generator
 │   └── postbuild.js              # Build process script
+
 └── src/
 │   └── components/               # Reusable React components
 │   └── data/                     # Generated JSON files
