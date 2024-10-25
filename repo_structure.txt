@@ -109,6 +109,8 @@ ds1.github.io/
 │   │   ├── petal-brow-click-thumbnail.gif
 │   │   ├── petal-metrics-thumbnail.gif
 │   │   ├── placeholder.jpg
+│   │   ├── repo-structure-10-24-2024.jpg
+│   │   ├── repo-structure-brief-10-24-2024.jpg
 │   │   ├── system-architecture.jpg
 │   │   └── wendys-thumnail.jpg
 │   ├── pages/
