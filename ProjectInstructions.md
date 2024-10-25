@@ -17,24 +17,24 @@
 
 ## Directory Structure
 project-root/
-├── content/                     # CSV content files
-│   ├── about.csv               # About page content
-│   ├── caseStudies.csv         # Homepage case study cards
-│   ├── caseStudyDetails.csv    # Individual case study content
-│   ├── contact.csv             # Contact page content
-│   └── resume.csv              # Resume page content
-├── docs/                       # GitHub Pages deployment folder
+├── content/                      # CSV content files
+│   ├── about.csv                 # About page content
+│   ├── caseStudies.csv           # Homepage case study cards
+│   ├── caseStudyDetails.csv      # Individual case study content
+│   ├── contact.csv               # Contact page content
+│   └── resume.csv                # Resume page content
+├── docs/                         # GitHub Pages deployment folder
 ├── scripts/
-│   ├── convertContent.js       # CSV to JSON converter
-│   ├── generateImageImports.js # Image import generator
-│   └── postbuild.js           # Build process script
+│   ├── convertContent.js         # CSV to JSON converter
+│   ├── generateImageImports.js   # Image import generator
+│   └── postbuild.js              # Build process script
 └── src/
-├── components/             # Reusable React components
-├── data/                   # Generated JSON files
-├── images/                 # Image assets
-├── pages/                  # Page components
-├── styles/                 # Global styling
-└── utils/                  # Utility functions
+│   └── components/               # Reusable React components
+│   └── data/                     # Generated JSON files
+│   └── images/                   # Image assets
+│   └── pages/                    # Page components
+│   └── styles/                   # Global styling
+│   └── utils/                    # Utility functions
 
 ## Content Management System
 
@@ -220,9 +220,9 @@ Run conversion process
 
 2. Build Process:
 
-`npm run convert-content`  # Converts CSVs to JSON
-`npm run build`           # Builds for production
-`npm run deploy`          # Deploys to GitHub Pages
+`npm run convert-content`     # Converts CSVs to JSON
+`npm run build`               # Builds for production
+`npm run deploy`              # Deploys to GitHub Pages
 
 3. File Updates:
 
@@ -345,3 +345,56 @@ Clear npm cache
 Rebuild node_modules
 Verify script permissions
 Check build logs
+==========================================================
+# Claude Project Knowledge Prompt
+
+#### schmitzai
+Repo for custom content on schmitz.ai
+
+This project is a responsive, accessible React-based portfolio website for me, Dan Schmitz, a user experience designer, that demonstrates his excellence in interaction design, AI integration, and clean aesthetic. 
+
+### Project Overview 
+This website (Schmitz.ai) showcases Dan Schmitz's professional experience, skills, and projects.
+
+Hi, Claude. Your role, as an expert in programming and software development best practices, is to develop clean, readable (well-commented) code for the project. Retain context of the website as a comprehensive whole, ensuring that patterns used for one file should be used across the website where possible and it makes sense to do so.
+
+### Your Interaction with Dan
+You do not need to provide summary paragraphs or ask questions at the end of your responses. I want to use the majority of the allowed chat length space for providing updates to the code.
+
+When suggesting code updates, make it very obvious which lines were modified (i.e., adding a comment 'change this line'.
+
+Facilitate the process for me to make edits to the text content.
+
+Before engaging, review the project file contents added to the Project Knowledge contents so that you maintain your understanding of the project, its files, and considerations for the codebase as well as how you and I interact.
+
+ProjectInstructions.md is an important file to be aware of for project context.
+
+In your first reply of this chat, suggest what to build or where in the process to continue working, based on your comprehensive knowledge of the project and missing pieces.
+
+### Website Sections 
+Global navigation: Case Studies, Resume, About, Contact
+
+#### Case Studies (homepage) 
+A list of Case Studies that comprise a Title, Description, Thumbnail image (PNG, GIF). For each case study, the user has the ability to navigate to and from its Case Study Detail page.
+
+#### Case Study Detail 
+A page that presents the content of the case study.
+
+#### Resume
+A page that lets visitors view and download a PDF of Dan's resume.
+
+#### About - A page that highlights Dan's personality and summary informally.
+
+#### Contact - Provide links to Dan's LinkedIn profile page and list his email address.
+
+#### Development Notes
+I am developing on a Windows machine, using Powershell, Sublime Text, and git. 
+
+It should use modern frameworks including React. It should allow me to easily edit and replace all text and graphics. The website must be responsive, accessible, and follow SEO best practices.
+
+Use static files and not api calls to any server so that it can hosted via GitHub Pages.
+
+It uses scripts to build for GitHub Pages by using the /docs folder from the main branch.
+
+We've built a light and simple content management system so that I can edit text and image paths in a .csv or spreadsheet file, and then run a script (npm run convert-contact) to update the contents of the website files.
+==========================================================
