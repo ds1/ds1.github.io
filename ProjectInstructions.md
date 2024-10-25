@@ -54,7 +54,7 @@ id,title,description,thumbnail
 2. Case Study Details (content/caseStudyDetails.csv)
 
 ```csv
-id,title,subtitle,thumbnail,duration,role,company,overview_h1,challenge_h2,challenge_body,responsibilities_h2,responsibilities_list,impact_h2,impact_list,image1_url,image1_alt,image1_caption,image2_url,image2_alt,image2_caption
+id,title,subtitle,thumbnail,duration,role,project_type,initial_vision_h1,problem_statement_h2,problem_body,technical_approach_h2,approach_list,architecture_h2,architecture_body,innovation_details_h2,innovation_body,collaboration_h2,collaboration_body,results_h2,results_list,process_image_url,process_image_alt,process_image_caption,system_image_url,system_image_alt,system_image_caption
 ```
 
 ## Field Types and Formatting
