@@ -1,12 +1,20 @@
-Repository structure:
+Repository structure for: C:\Users\danma\Documents\GitHub\aiportfolio\ds1.github.io
+==================================================
 
 ds1.github.io/
 ├── .gitignore
+├── ProjectInstructions.md
 ├── ReadMe.md
 ├── package-lock.json
 ├── package.json
 ├── repo_structure.py
 └── repo_structure.txt
+├── content/
+│   ├── about.csv
+│   ├── caseStudies.csv
+│   ├── caseStudyDetails.csv
+│   ├── contact.csv
+│   └── resume.csv
 ├── docs/
 │   ├── CNAME
 │   ├── DanSchmitzResume.pdf
@@ -25,16 +33,17 @@ ds1.github.io/
 │   │   ├── js/
 │   │   │   ├── 453.d5c4626d.chunk.js
 │   │   │   ├── 453.d5c4626d.chunk.js.map
-│   │   │   ├── main.3effaf75.js
-│   │   │   ├── main.3effaf75.js.LICENSE.txt
-│   │   │   └── main.3effaf75.js.map
+│   │   │   ├── main.70d2c055.js
+│   │   │   ├── main.70d2c055.js.LICENSE.txt
+│   │   │   └── main.70d2c055.js.map
 │   │   ├── media/
+│   │   │   ├── ai-collab-thumbnail.e648a515598d1a96888e.jpg
 │   │   │   ├── apple-thumbnail.bd3ca23da417abe2a296.jpg
+│   │   │   ├── collaboration-flow.a1d352b9c16b2e2cd84e.jpg
 │   │   │   ├── dan-eldorado.f8c402fa3e4c7948aeb4.jpg
-│   │   │   ├── ironnet-thumbnail.0584678cbe41d94cac35.gif
 │   │   │   ├── magic-leap-thumbnail.95ef1520708235a8cee5.gif
-│   │   │   ├── petal-brow-click-thumbnail.0a82b2a400d8d7a89c64.gif
-│   │   │   └── petal-metrics-thumbnail.1c2737daef8c52a18e08.gif
+│   │   │   ├── petal-metrics-thumbnail.1c2737daef8c52a18e08.gif
+│   │   │   └── system-architecture.437ccd342433e2127be1.jpg
 ├── public/
 │   ├── CNAME
 │   ├── DanSchmitzResume.pdf
@@ -46,9 +55,10 @@ ds1.github.io/
 │   └── robots.txt
 │   ├── images/
 ├── scripts/
-│   └── postbuild.js
-│   └── convertContent.js
-│   └── generateImageImports
+│   ├── convertContent.js
+│   ├── copyImages.js
+│   ├── generateImageImports.js
+│   ├── postbuild.js
 │   └── testImageSystem.js
 ├── src/
 │   ├── App.css
@@ -61,42 +71,56 @@ ds1.github.io/
 │   └── setupTests.js
 │   ├── components/
 │   │   ├── Layout.js
-│   │   └── Navigation.js
+│   │   ├── Navigation.js
+│   │   └── RichText.js
+│   ├── data/
+│   │   ├── about.json
+│   │   ├── caseStudies.json
+│   │   ├── caseStudyDetails.json
+│   │   ├── contact.json
+│   │   └── resume.json
 │   ├── images/
+│   │   ├── ai-collab-desktop-screenshot.png
+│   │   ├── ai-collab-revising-approach-for-flexibility.jpg
+│   │   ├── ai-collab-system-content.jpg
+│   │   ├── ai-collab-system-images.jpg
+│   │   ├── ai-collab-system-json.jpg
+│   │   ├── ai-collab-system.jpg
+│   │   ├── ai-collab-thumbnail.jpg
+│   │   ├── ai-collab-troubleshooting-rich-text.jpg
+│   │   ├── ai-debug-browser-console.jpg
+│   │   ├── ai-debug-content-rendering-and-image-mapping-bad.jpg
+│   │   ├── ai-debug-content-rendering-and-image-mapping.jpg
+│   │   ├── ai-debug-solved-content-rendering-but-usage-limit-reached.jpg
+│   │   ├── ai-debug-time-limit.jpg
+│   │   ├── ai-debug-time-limit.png
+│   │   ├── ai-debug-usage-limit.jpg
 │   │   ├── apple-thumbnail.jpg
+│   │   ├── build-process-convert-content-1.jpg
+│   │   ├── build-process-convert-content-2.jpg
+│   │   ├── build-process-run-build.jpg
+│   │   ├── cms-workflow-spreadsheet-editor.jpg
+│   │   ├── collaboration-flow.jpg
 │   │   ├── dan-eldorado.jpg
+│   │   ├── identified-solution-after-message-limit-then-suggested-fix.png
 │   │   ├── ironnet-thumbnail.gif
 │   │   ├── magic-leap-thumbnail.gif
+│   │   ├── message-limit.png
 │   │   ├── petal-brow-click-thumbnail.gif
 │   │   ├── petal-metrics-thumbnail.gif
+│   │   ├── placeholder.jpg
+│   │   ├── system-architecture.jpg
 │   │   └── wendys-thumnail.jpg
-│   │   └── ai-collab-desktop-screenshot.png
-│   │   └── ai-collab-revising-approach-for-flexibility.jpg
-│   │   └── ai-collab-system.jpg
-│   │   └── ai-collab-system-content.jpg
-│   │   └── ai-collab-system-images.jpg
-│   │   └── ai-collab-system-json.jpg
-│   │   └── ai-collab-thumbnail.jpg
-│   │   └── ai-collab-troubleshooting-rich-text.jpg
-│   │   └── ai-debug-browser-console.jpg
-│   │   └── ai-debug-time-limit.jpg
-│   │   └── ai-debug-usage-limit.jpg
-│   │   └── build-process-convert-content-1.jpg
-│   │   └── build-process-convert-content-2.jpg
-│   │   └── build-process-run-build.jpg
-│   │   └── cms-workflow-spreadsheet-editor.jpg
-│   │   └── identified-solution-after-message-limit-then-suggested-fix.png
-│   │   └── placeholder.jpg
 │   ├── pages/
 │   │   ├── About.js
 │   │   ├── CaseStudies.js
 │   │   ├── CaseStudyDetail.js
+│   │   ├── CaseStudyDetail_pre_cms.js
 │   │   ├── Contact.js
 │   │   └── Resume.js
 │   ├── styles/
 │   │   ├── global.js
 │   │   └── theme.js
 │   ├── utils/
-│   │   └── api.js
+│   │   ├── api.js
 │   │   └── imageImports.js
-__________________________________
