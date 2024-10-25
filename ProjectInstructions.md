@@ -16,6 +16,7 @@
 - No server-side API calls
 
 ## Directory Structure
+```txt
 project-root/
 ├── content/                      # CSV content files
 │   ├── about.csv                 # About page content
@@ -38,7 +39,7 @@ project-root/
 │   └── pages/                    # Page components
 │   └── styles/                   # Global styling
 │   └── utils/                    # Utility functions
-
+```
 ## Content Management System
 
 ### CSV Structure
