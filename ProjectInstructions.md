@@ -17,6 +17,7 @@
 
 ## Directory Structure
 project-root/
+
 ├── content/                      # CSV content files
 │   ├── about.csv                 # About page content
 │   ├── caseStudies.csv           # Homepage case study cards
