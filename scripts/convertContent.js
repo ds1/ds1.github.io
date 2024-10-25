@@ -8,6 +8,7 @@ const getStyleFromColumnName = (columnName) => {
   if (columnName.endsWith('_h2')) return 'h2';
   if (columnName.endsWith('_h3')) return 'h3';
   if (columnName.endsWith('_list')) return 'list';
+  if (columnName.endsWith('_body')) return 'body';
   return 'p'; // default to paragraph
 };
 
@@ -16,8 +17,13 @@ const structureContent = (data) => {
   const content = [];
   
   Object.entries(data).forEach(([key, value]) => {
-    if (!value || key.includes('image') || ['id', 'title', 'subtitle', 'thumbnail', 'duration', 'role', 'company'].includes(key)) {
+    if (!value || ['id', 'title', 'subtitle', 'thumbnail', 'duration', 'role', 'company'].includes(key)) {
       return; // Skip non-content fields
+    }
+
+    // Skip image-related fields as they're handled separately
+    if (key.includes('_image_url') || key.includes('_image_alt') || key.includes('_image_caption')) {
+      return;
     }
 
     const style = getStyleFromColumnName(key);
@@ -49,15 +55,21 @@ async function convertContent() {
     const processedDetails = caseStudyDetails.map(study => {
       // Extract image data
       const images = [];
-      let i = 1;
-      while (study[`image${i}_url`]) {
-        images.push({
-          src: study[`image${i}_url`],
-          alt: study[`image${i}_alt`],
-          caption: study[`image${i}_caption`]
-        });
-        i++;
-      }
+      
+      // Find all image fields (_image_url pattern)
+      Object.entries(study).forEach(([key, value]) => {
+        if (key.includes('_image_url')) {
+          const baseKey = key.replace('_image_url', '');
+          images.push({
+            url: value,
+            alt: study[`${baseKey}_image_alt`] || '',
+            caption: study[`${baseKey}_image_caption`] || ''
+          });
+        }
+      });
+
+      console.log('Processing images for study:', study.title);
+      console.log('Found images:', images);
 
       return {
         id: parseInt(study.id),
@@ -66,9 +78,8 @@ async function convertContent() {
         thumbnail: study.thumbnail,
         duration: study.duration,
         role: study.role,
-        company: study.company,
         content: structureContent(study),
-        images
+        images: images
       };
     });
 
@@ -130,6 +141,14 @@ async function convertContent() {
     );
 
     console.log('All content converted successfully!');
+    
+    // Log the case study details for debugging
+    console.log('\nCase Study Details:');
+    processedDetails.forEach(study => {
+      console.log(`\nStudy: ${study.title}`);
+      console.log('Images:', study.images);
+    });
+
   } catch (error) {
     console.error('Error converting content:', error);
     process.exit(1);

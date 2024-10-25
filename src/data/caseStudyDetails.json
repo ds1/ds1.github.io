@@ -24,7 +24,7 @@
           "key": "problem_statement"
         },
         {
-          "type": "p",
+          "type": "body",
           "content": "Traditional portfolio development often involves a trade-off: either invest in a complex CMS backend or sacrifice content maintainability for static hosting. I wondered: **Could AI assistance create a better approach?** \\n\\nWorking with Claude, we aimed to develop a system that would combine the flexibility of a CMS with the simplicity of static hosting, while documenting the entire process to showcase AI's potential in real-world development.",
           "key": "problem"
         },
@@ -50,7 +50,7 @@
           "key": "architecture"
         },
         {
-          "type": "p",
+          "type": "body",
           "content": "Our collaboration produced a **three-tier architecture** that elegantly solves the CMS challenge:\\n\\n1. *Content Management*\\n<span class=\"text-primary\">• Spreadsheet-based editing\\n• Rich text formatting\\n• Image integration\\n• Content validation</span>\\n\\n2. *Processing Engine*\\n<span class=\"text-secondary\">• Automated conversion\\n• Path resolution\\n• Error handling\\n• Build optimization</span>\\n\\n3. *Presentation Layer*\\n<span class=\"text-success\">• React components\\n• Dynamic rendering\\n• Error recovery\\n• Performance monitoring</span>",
           "key": "architecture"
         },
@@ -60,7 +60,7 @@
           "key": "innovation_details"
         },
         {
-          "type": "p",
+          "type": "body",
           "content": "Through our collaboration, we developed several key innovations:\\n\\n**1. Intelligent Content Management**\\n• CSV-based content editing with rich text support\\n• *Format:* Markdown-style syntax with HTML enhancement\\n• *Benefit:* Easy updates without technical knowledge\\n\\n**2. Advanced Image Handling**\\n• Automatic path resolution across environments\\n• *Process:* CSV → Development → Production paths\\n• *Result:* Zero manual path management\\n\\n**3. Error-Resistant Build System**\\n• Comprehensive error checking\\n• Clear debugging messages\\n• Fallback handling for missing assets",
           "key": "innovation"
         },
@@ -70,7 +70,7 @@
           "key": "collaboration"
         },
         {
-          "type": "p",
+          "type": "body",
           "content": "Our development process revealed the power of human-AI collaboration:\\n\\n1. **Problem Solving**\\n<span class=\"text-primary\">Human: Strategic thinking and real-world requirements\\nAI: Pattern recognition and solution generation</span>\\n\\n2. **Code Development**\\n<span class=\"text-secondary\">Human: Architecture decisions and edge cases\\nAI: Implementation details and error handling</span>\\n\\n3. **System Refinement**\\n<span class=\"text-success\">Human: User experience and testing\\nAI: Optimization and documentation</span>\\n\\nThis partnership created solutions neither could have developed alone.",
           "key": "collaboration"
         },
@@ -92,7 +92,18 @@
           "key": "results"
         }
       ],
-      "images": []
+      "images": [
+        {
+          "url": "/images/collaboration-flow.jpg",
+          "alt": "AI-Human collaboration diagram",
+          "caption": "Visualization of the iterative development process between human and AI"
+        },
+        {
+          "url": "/images/system-architecture.jpg",
+          "alt": "System architecture diagram",
+          "caption": "Three-tier architecture showing the complete system flow"
+        }
+      ]
     }
   ]
 }

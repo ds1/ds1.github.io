@@ -125,98 +125,103 @@ const ImageWithFallback = ({ src, alt, ...props }) => {
 
 // Helper Functions
 const getImage = (path) => {
- if (!path) return null;
- const srcPath = path.replace('/images/', '/src/images/');
- const image = imageMap[srcPath];
+ if (!path) {
+   console.log('No image path provided');
+   return null;
+ }
+ const image = imageMap[path];
+ console.log('Getting image:', {
+   path: path,
+   found: !!image,
+   availablePaths: Object.keys(imageMap)
+ });
  if (!image) {
-   console.warn(`Image not found in imageMap: ${path} (looked for ${srcPath})`);
+   console.warn(`Image not found in imageMap: ${path}`);
  }
  return image;
 };
 
 const structureContent = (caseStudy) => {
- console.log('1. Starting structureContent with:', caseStudy);
- const content = [];
- const images = [];
- 
- Object.entries(caseStudy).forEach(([key, value]) => {
-   console.log('2. Processing key:', key, 'with value:', 
-     typeof value === 'string' 
-       ? value.substring(0, 100) + '...'
-       : Array.isArray(value)
-         ? '[Array]: ' + value.length + ' items'
-         : typeof value
-   );
-   
-   // Skip id and base metadata fields
-   if (['id', 'title', 'subtitle', 'duration', 'role'].includes(key)) {
-     console.log('3. Skipping metadata field:', key);
-     return;
-   }
+  console.log('1. Starting structureContent with:', caseStudy);
+  const content = [];
+  let images = [];
+  
+  // First handle the pre-structured content array
+  if (Array.isArray(caseStudy.content)) {
+    console.log('1b. Content is an array with length:', caseStudy.content.length);
+    
+    caseStudy.content.forEach((item, index) => {
+      console.log(`1c. Processing content item ${index}:`, item);
+      
+      if (item.type && item.content) {
+        content.push({
+          type: item.type,
+          content: item.content,
+          key: item.key || `content-${index}`,
+          order: index
+        });
+      }
+    });
+  }
+  
+  // Then handle images array if it exists
+  if (Array.isArray(caseStudy.images)) {
+    console.log('2a. Processing images array:', caseStudy.images);
+    images = caseStudy.images.map(img => ({
+      url: img.url,
+      alt: img.alt || '',
+      caption: img.caption || ''
+    }));
+  }
+  
+  // Process remaining fields
+  Object.entries(caseStudy).forEach(([key, value]) => {
+    console.log('2. Processing key:', key, 'with value:', 
+      typeof value === 'string' 
+        ? value.substring(0, 100) + '...'
+        : Array.isArray(value)
+          ? '[Array]: ' + value.length + ' items'
+          : typeof value
+    );
+    
+    // Skip id and base metadata fields
+    if (['id', 'title', 'subtitle', 'duration', 'role', 'content'].includes(key)) {
+      console.log('3. Skipping metadata field:', key);
+      return;
+    }
 
-   // Handle image fields
-   if (key.includes('_image_url') || key.includes('_image_alt') || key.includes('_image_caption')) {
-     const baseName = key.split('_image_')[0];
-     const type = key.split('_image_')[1];
-     
-     let imageEntry = images.find(img => img.baseName === baseName);
-     if (!imageEntry) {
-       imageEntry = { baseName };
-       images.push(imageEntry);
-     }
-     
-     imageEntry[type] = value;
-     return;
-   }
+    // Skip image-related fields as they're handled separately
+    if (key === 'images' || key.includes('_image_url') || key.includes('_image_alt') || key.includes('_image_caption')) {
+      return;
+    }
 
-   // Handle content fields based on suffix pattern
-   if (key.endsWith('_h1')) {
-     console.log('4a. Adding h1:', key);
-     content.push({
-       type: 'h1',
-       content: value,
-       key: key.replace('_h1', ''),
-       order: Object.keys(caseStudy).indexOf(key)
-     });
-   } else if (key.endsWith('_h2')) {
-     console.log('4b. Adding h2:', key);
-     content.push({
-       type: 'h2',
-       content: value,
-       key: key.replace('_h2', ''),
-       order: Object.keys(caseStudy).indexOf(key)
-     });
-   } else if (key.endsWith('_list')) {
-     console.log('4c. Adding list:', key);
-     content.push({
-       type: 'list',
-       content: value.split(';').map(item => item.trim()),
-       key: key.replace('_list', ''),
-       order: Object.keys(caseStudy).indexOf(key)
-     });
-   } else if (key.endsWith('_body')) {
-     console.log('4d. Adding body:', key);
-     content.push({
-       type: 'body',
-       content: value,
-       key: key.replace('_body', ''),
-       order: Object.keys(caseStudy).indexOf(key)
-     });
-   }
- });
+    // Handle content fields based on suffix pattern
+    const suffixMatch = key.match(/(.+)_(h[12]|list|body)$/);
+    if (suffixMatch) {
+      console.log('4. Processing content field:', key, 'with suffix:', suffixMatch[2]);
+      const [, baseName, type] = suffixMatch;
+      
+      const contentItem = {
+        type: type,
+        content: type === 'list' ? value.split(';').map(item => item.trim()) : value,
+        key: baseName,
+        order: Object.keys(caseStudy).indexOf(key)
+      };
+      console.log('4a. Created content item:', contentItem);
+      content.push(contentItem);
+    }
+  });
 
- console.log('5. Final content array:', content);
- const sortedContent = content.sort((a, b) => a.order - b.order);
- console.log('6. Sorted content:', sortedContent);
+  console.log('5a. Images array before filtering:', images);
+  console.log('5b. Final content array:', content);
 
- return {
-   content: sortedContent,
-   images: images.map(img => ({
-     url: img.url,
-     alt: img.alt || '',
-     caption: img.caption || ''
-   })).filter(img => img.url)
- };
+  const sortedContent = content.sort((a, b) => a.order - b.order);
+  console.log('6. Sorted content:', sortedContent);
+
+  return {
+    content: sortedContent,
+    images: images
+  };
 };
 
 // Main Component
@@ -243,8 +248,7 @@ const CaseStudyDetail = () => {
 
  const { content, images } = structureContent(caseStudy);
  
- console.log('Structured content:', content);
- console.log('Structured images:', images);
+ console.log('Content to render:', content);
 
  return (
    <Wrapper>
@@ -277,6 +281,9 @@ const CaseStudyDetail = () => {
          case 'body':
            console.log('8d. Rendering body');
            return <RichText key={index} content={block.content} />;
+         case 'p':
+           console.log('8f. Rendering paragraph');
+           return <RichText key={index} content={block.content} />;
          default:
            console.log('8e. Unknown block type:', block.type);
            return null;
@@ -285,15 +292,18 @@ const CaseStudyDetail = () => {
      
      {images.length > 0 && (
        <div>
-         {images.map((image, index) => (
-           <Figure key={index}>
-             <ImageWithFallback 
-               src={getImage(image.url)}
-               alt={image.alt}
-             />
-             {image.caption && <Caption>{image.caption}</Caption>}
-           </Figure>
-         ))}
+         {images.map((image, index) => {
+           console.log('Rendering image:', image);
+           return (
+             <Figure key={index}>
+               <ImageWithFallback 
+                 src={getImage(image.url)}
+                 alt={image.alt}
+               />
+               {image.caption && <Caption>{image.caption}</Caption>}
+             </Figure>
+           );
+         })}
        </div>
      )}
    </Wrapper>
