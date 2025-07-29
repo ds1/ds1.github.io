@@ -48,13 +48,6 @@ const Resume = () => {
       
       <RichText content={resumeData.content} />
 
-      <DownloadButton 
-        href={resumeData.downloadLink} 
-        download
-        aria-label="Download Resume PDF"
-      >
-        Download Resume (PDF)
-      </DownloadButton>
     </ResumeWrapper>
   );
 };
