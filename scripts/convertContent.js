@@ -12,6 +12,12 @@ const getStyleFromColumnName = (columnName) => {
   return 'p'; // default to paragraph
 };
 
+// Function to process tags
+const processTags = (tagString) => {
+  if (!tagString) return [];
+  return tagString.split(';').map(tag => tag.trim()).filter(tag => tag);
+};
+
 // Helper to structure content based on column naming
 const structureContent = (data) => {
   const content = [];
@@ -79,7 +85,19 @@ async function convertContent() {
         duration: study.duration,
         role: study.role,
         content: structureContent(study),
-        images: images
+        images: images,
+        tags: {
+              tools: processTags(study.tools),
+              aiTools: processTags(study.ai_tools),
+              devTools: processTags(study.dev_tools),
+              skills: processTags(study.skills),
+              roles: processTags(study.roles),
+              artifactTypes: processTags(study.artifact_types),
+              fidelity: processTags(study.fidelity),
+              aiModels: processTags(study.ai_models),
+              designPrinciples: processTags(study.design_principles),
+              usabilityHeuristics: processTags(study.usability_heuristics)
+            }
       };
     });
 

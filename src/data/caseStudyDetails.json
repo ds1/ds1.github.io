@@ -103,7 +103,19 @@
           "alt": "System architecture diagram",
           "caption": "Three-tier architecture showing the complete system flow"
         }
-      ]
+      ],
+      "tags": {
+        "tools": [],
+        "aiTools": [],
+        "devTools": [],
+        "skills": [],
+        "roles": [],
+        "artifactTypes": [],
+        "fidelity": [],
+        "aiModels": [],
+        "designPrinciples": [],
+        "usabilityHeuristics": []
+      }
     }
   ]
 }

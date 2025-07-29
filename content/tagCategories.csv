@@ -1,0 +1,15 @@
+category,subcategory,tag,display_name,color
+tools,design_tools,figma,Figma,#A259FF
+tools,design_tools,sketch,Sketch,#F7B500
+tools,ai_tools,claude,Claude,#D97757
+tools,ai_tools,chatgpt,ChatGPT,#74AA9C
+tools,dev_tools,unity3d,Unity3D,#000000
+skills,,ux_design,UX Design,#4285F4
+skills,,prompt_engineering,Prompt Engineering,#34A853
+roles,,principal_lead,Principal / Lead Contributor,#EA4335
+roles,,design_manager,Design Manager,#FBBC04
+artifact_types,,sketch,Sketch,#9E9E9E
+artifact_types,,mockup,Mockup,#795548
+fidelity,,low,Low,#E0E0E0
+fidelity,,medium,Medium,#9E9E9E
+fidelity,,high,High,#424242

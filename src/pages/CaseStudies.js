@@ -1,28 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import caseStudiesData from '../data/caseStudies.json';
+import caseStudyDetailsData from '../data/caseStudyDetails.json';
 import { imageMap } from '../utils/imageImports';
+import CaseStudyFilters from '../components/CaseStudyFilters';
 
-console.log('Working image paths:', caseStudiesData.caseStudies.map(study => study.thumbnail));
-console.log('imageMap contents:', imageMap);
-
-const PageTitle = styled.h1`
-  margin-bottom: 1rem;
-  
-  @media (max-width: 768px) {
-    font-size: 1.75rem; // Smaller on mobile
-    margin-bottom: 0.75rem;
-  }
+const PageHeader = styled.div`
+  margin-bottom: 2rem;
 `;
 
-const IntroText = styled.p`
-  margin-bottom: 2rem;
+const Title = styled.h1`
+  margin-bottom: 0.5rem;
+`;
+
+const Subtitle = styled.p`
   color: ${({ theme }) => theme.colors.textSecondary};
-  
-  @media (max-width: 768px) {
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+  line-height: 1.6;
+`;
+
+const ExternalLink = styled.a`
+  color: ${({ theme }) => theme.colors.primary};
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
   }
 `;
 
@@ -30,15 +31,7 @@ const CaseStudyGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
-  
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr; // Single column on mobile
-    gap: 1.5rem;
-  }
-  
-  @media (max-width: 480px) {
-    gap: 1.25rem;
-  }
+  margin-bottom: 2rem;
 `;
 
 const CaseStudyCard = styled(Link)`
@@ -48,24 +41,10 @@ const CaseStudyCard = styled(Link)`
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  // Add touch feedback for mobile
-  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  @media (max-width: 768px) {
-    &:hover {
-      transform: none; // Disable hover transform on mobile
-    }
-    
-    &:active {
-      transform: scale(0.98); // Touch feedback
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    }
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
 `;
 
@@ -73,92 +52,133 @@ const CaseStudyImage = styled.img`
   width: 100%;
   height: 200px;
   object-fit: cover;
-  
-  @media (max-width: 768px) {
-    height: 180px; // Slightly shorter on mobile
-  }
-  
-  @media (max-width: 480px) {
-    height: 160px; // Even shorter on very small screens
-  }
 `;
 
-const CardContent = styled.div`
+const CaseStudyContent = styled.div`
   padding: 1.5rem;
-  
-  @media (max-width: 768px) {
-    padding: 1.25rem;
-  }
-  
-  @media (max-width: 480px) {
-    padding: 1rem;
-  }
 `;
 
 const CaseStudyTitle = styled.h2`
+  margin: 0 0 0.5rem 0;
   font-size: 1.25rem;
-  margin-bottom: 0.5rem;
   color: ${({ theme }) => theme.colors.text};
-  
-  @media (max-width: 768px) {
-    font-size: 1.125rem; // Slightly smaller on mobile
-  }
 `;
 
 const CaseStudyDescription = styled.p`
+  margin: 0 0 1rem 0;
   color: ${({ theme }) => theme.colors.textSecondary};
-  font-size: 0.875rem;
   line-height: 1.5;
-  
-  @media (max-width: 768px) {
-    font-size: 0.875rem; // Keep same size but could adjust if needed
-    line-height: 1.6; // Slightly more line height for readability
-  }
 `;
 
+const TagContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-top: 0.75rem;
+`;
+
+const TagBadge = styled.span`
+  padding: 0.25rem 0.5rem;
+  background-color: ${({ theme }) => theme.colors.primary + '20'};
+  color: ${({ theme }) => theme.colors.primary};
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+`;
+
+const NoResults = styled.div`
+  text-align: center;
+  padding: 3rem;
+  color: ${({ theme }) => theme.colors.textSecondary};
+`;
+
+const getImage = (path) => {
+  if (!path) return null;
+  return imageMap[path] || null;
+};
+
 const CaseStudies = () => {
+  const [filteredStudies, setFilteredStudies] = useState(caseStudiesData.caseStudies);
 
-  console.log('Available image mappings:', Object.keys(imageMap));
+  // Merge case study data with details (including tags)
+  const enrichedCaseStudies = caseStudiesData.caseStudies.map(study => {
+    const details = caseStudyDetailsData.caseStudyDetails.find(d => d.id === study.id);
+    return {
+      ...study,
+      tags: details?.tags || {}
+    };
+  });
 
-  const getImageSrc = (path) => {
-    // Convert /images/ path to /src/images/
-    const srcPath = path.replace('/images/', '/src/images/');
-    const imageSrc = imageMap[srcPath];
-    if (!imageSrc) {
-      console.warn(`Image not found in imageMap. Looking for: ${srcPath}`);
-      console.log('Available paths:', Object.keys(imageMap));
+  // Get preview tags for each study (limit to 3-4 most important)
+  const getPreviewTags = (tags) => {
+    const previewTags = [];
+    
+    // Priority order: roles, skills, tools
+    if (tags.roles && tags.roles.length > 0) {
+      previewTags.push(...tags.roles.slice(0, 1));
     }
-    return imageSrc;
+    if (tags.skills && tags.skills.length > 0) {
+      previewTags.push(...tags.skills.slice(0, 2));
+    }
+    if (tags.tools && tags.tools.length > 0) {
+      previewTags.push(...tags.tools.slice(0, 1));
+    }
+    
+    return previewTags.slice(0, 4);
   };
 
   return (
     <>
-      <PageTitle>Case Studies</PageTitle>
-      <IntroText>This is an experimental website I am developing using AI...</IntroText>
-      <CaseStudyGrid>
-        {caseStudiesData.caseStudies.map((study) => {
-          const imageSrc = getImageSrc(study.thumbnail);
-          
-          return (
-            <CaseStudyCard key={study.id} to={`/case-study/${study.id}`}>
-              {imageSrc && (
+      <PageHeader>
+        <Title>Case Studies</Title>
+        <Subtitle>
+          This is an experimental website I am developing using AI. This is not my current UX portfolio website. 
+          To see the latest, visit <ExternalLink href="https://danschmitz.work" target="_blank" rel="noopener noreferrer">https://danschmitz.work</ExternalLink>
+        </Subtitle>
+      </PageHeader>
+
+      <CaseStudyFilters 
+        caseStudies={enrichedCaseStudies}
+        onFilter={setFilteredStudies}
+      />
+
+      {filteredStudies.length > 0 ? (
+        <CaseStudyGrid>
+          {filteredStudies.map((study) => {
+            const enrichedStudy = enrichedCaseStudies.find(s => s.id === study.id);
+            const previewTags = enrichedStudy ? getPreviewTags(enrichedStudy.tags) : [];
+            
+            return (
+              <CaseStudyCard key={study.id} to={`/case-study/${study.id}`}>
                 <CaseStudyImage 
-                  src={imageSrc} 
+                  src={getImage(study.thumbnail)} 
                   alt={study.title}
                   onError={(e) => {
-                    console.warn(`Failed to load image for case study: ${study.title}`, study.thumbnail);
+                    console.warn(`Failed to load image: ${study.thumbnail}`);
                     e.target.style.display = 'none';
                   }}
                 />
-              )}
-              <CardContent>
-                <CaseStudyTitle>{study.title}</CaseStudyTitle>
-                <CaseStudyDescription>{study.description}</CaseStudyDescription>
-              </CardContent>
-            </CaseStudyCard>
-          );
-        })}
-      </CaseStudyGrid>
+                <CaseStudyContent>
+                  <CaseStudyTitle>{study.title}</CaseStudyTitle>
+                  <CaseStudyDescription>{study.description}</CaseStudyDescription>
+                  {previewTags.length > 0 && (
+                    <TagContainer>
+                      {previewTags.map((tag, index) => (
+                        <TagBadge key={index}>{tag}</TagBadge>
+                      ))}
+                    </TagContainer>
+                  )}
+                </CaseStudyContent>
+              </CaseStudyCard>
+            );
+          })}
+        </CaseStudyGrid>
+      ) : (
+        <NoResults>
+          <h3>No case studies match your filters</h3>
+          <p>Try adjusting your search criteria or clearing filters</p>
+        </NoResults>
+      )}
     </>
   );
 };
