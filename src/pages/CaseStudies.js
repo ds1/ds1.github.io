@@ -102,11 +102,12 @@ const getImage = (path) => {
 const CaseStudies = () => {
   const [filteredStudies, setFilteredStudies] = useState(caseStudiesData.caseStudies);
 
-  // Merge case study data with details (including tags)
+  // Merge case study data with details (including tags and full content)
   const enrichedCaseStudies = caseStudiesData.caseStudies.map(study => {
     const details = caseStudyDetailsData.caseStudyDetails.find(d => d.id === study.id);
     return {
       ...study,
+      ...details,
       tags: details?.tags || {}
     };
   });
