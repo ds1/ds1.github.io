@@ -13,12 +13,23 @@ const Paragraph = styled.p`
   margin-bottom: 1rem;
   line-height: 1.6;
   white-space: pre-wrap;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 0.875rem;
+    line-height: 1.7; // Slightly more line height for mobile readability
+    font-size: 0.95rem;
+  }
 `;
 
 const List = styled.ul`
   margin-bottom: 1rem;
   padding-left: 1.5rem;
   list-style-type: disc;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 0.875rem;
+    padding-left: 1.25rem;
+  }
 `;
 
 const NumberedList = styled.ol`
@@ -34,11 +45,27 @@ const NumberedList = styled.ol`
   & > li::marker {
     content: counter(list) ". ";
   }
+  
+  @media (max-width: 768px) {
+    margin-bottom: 0.875rem;
+    padding-left: 1.25rem;
+  }
 `;
 
 const ListItem = styled.li`
   margin-bottom: 0.5rem;
   line-height: 1.6;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 0.625rem;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+  
+  /* Handle nested content with proper spacing */
+  strong, em {
+    line-height: inherit;
+  }
 `;
 
 const processInlineFormatting = (text) => {

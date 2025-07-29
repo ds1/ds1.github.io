@@ -1,4 +1,4 @@
-Repository structure for: C:\Users\danma\Documents\GitHub\aiportfolio\ds1.github.io
+Repository structure for: C:\Users\danma\Documents\GitHub\schmitzai\ds1.github.io
 ==================================================
 
 ds1.github.io/
@@ -25,7 +25,6 @@ ds1.github.io/
 │   ├── logo512.png
 │   ├── manifest.json
 │   └── robots.txt
-│   ├── images/
 │   ├── static/
 │   │   ├── css/
 │   │   │   ├── main.e6c13ad2.css
@@ -53,7 +52,6 @@ ds1.github.io/
 │   ├── logo512.png
 │   ├── manifest.json
 │   └── robots.txt
-│   ├── images/
 ├── scripts/
 │   ├── convertContent.js
 │   ├── copyImages.js
