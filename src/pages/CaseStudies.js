@@ -5,6 +5,7 @@ import caseStudiesData from '../data/caseStudies.json';
 import caseStudyDetailsData from '../data/caseStudyDetails.json';
 import { imageMap } from '../utils/imageImports';
 import CaseStudyFilters from '../components/CaseStudyFilters';
+import { tagCategoryColors, getTagColor } from '../utils/tagConfig';
 
 const PageHeader = styled.div`
   margin-bottom: 2rem;
@@ -79,8 +80,9 @@ const TagContainer = styled.div`
 
 const TagBadge = styled.span`
   padding: 0.25rem 0.5rem;
-  background-color: ${({ theme }) => theme.colors.primary + '20'};
-  color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ $category }) => getTagColor($category, 0.15)};
+  color: ${({ $category }) => tagCategoryColors[$category]};
+  border: 1px solid ${({ $category }) => getTagColor($category, 0.3)};
   border-radius: 12px;
   font-size: 0.75rem;
   font-weight: 500;
@@ -113,15 +115,15 @@ const CaseStudies = () => {
   const getPreviewTags = (tags) => {
     const previewTags = [];
     
-    // Priority order: roles, skills, tools
+    // Priority order: roles, skills, design tools
     if (tags.roles && tags.roles.length > 0) {
-      previewTags.push(...tags.roles.slice(0, 1));
+      previewTags.push(...tags.roles.slice(0, 1).map(tag => ({ tag, category: 'roles' })));
     }
     if (tags.skills && tags.skills.length > 0) {
-      previewTags.push(...tags.skills.slice(0, 2));
+      previewTags.push(...tags.skills.slice(0, 2).map(tag => ({ tag, category: 'skills' })));
     }
-    if (tags.tools && tags.tools.length > 0) {
-      previewTags.push(...tags.tools.slice(0, 1));
+    if (tags.designTools && tags.designTools.length > 0) {
+      previewTags.push(...tags.designTools.slice(0, 1).map(tag => ({ tag, category: 'designTools' })));
     }
     
     return previewTags.slice(0, 4);
@@ -163,8 +165,10 @@ const CaseStudies = () => {
                   <CaseStudyDescription>{study.description}</CaseStudyDescription>
                   {previewTags.length > 0 && (
                     <TagContainer>
-                      {previewTags.map((tag, index) => (
-                        <TagBadge key={index}>{tag}</TagBadge>
+                      {previewTags.map((tagInfo, index) => (
+                        <TagBadge key={index} $category={tagInfo.category}>
+                          {tagInfo.tag}
+                        </TagBadge>
                       ))}
                     </TagContainer>
                   )}

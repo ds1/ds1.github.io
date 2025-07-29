@@ -5,7 +5,7 @@
       "title": "AI Co-Development",
       "subtitle": "Building schmitz.ai with Claude",
       "thumbnail": "/images/ai-collab-thumbnail.jpg",
-      "duration": "October 2024",
+      "duration": "10/2024",
       "role": "UX Designer & AI Prompt Engineer",
       "content": [
         {
@@ -15,103 +15,580 @@
         },
         {
           "type": "h1",
-          "content": "Redefining Portfolio Development Through AI Collaboration",
+          "content": "Building a Modern Portfolio with AI",
           "key": "initial_vision"
         },
         {
           "type": "h2",
-          "content": "The Development Challenge",
+          "content": "Technical Challenge",
           "key": "problem_statement"
         },
         {
           "type": "body",
-          "content": "Traditional portfolio development often involves a trade-off: either invest in a complex CMS backend or sacrifice content maintainability for static hosting. I wondered: **Could AI assistance create a better approach?** \\n\\nWorking with Claude, we aimed to develop a system that would combine the flexibility of a CMS with the simplicity of static hosting, while documenting the entire process to showcase AI's potential in real-world development.",
+          "content": "Traditional content management systems either require backend infrastructure or sacrifice content manageability for static hosting. **The challenge:** Create a static site with dynamic content management capabilities.",
           "key": "problem"
         },
         {
           "type": "h2",
-          "content": "Collaborative Solution Design",
+          "content": "Technical Approach",
           "key": "technical_approach"
         },
         {
           "type": "list",
           "content": [
-            "Initial problem exploration and solution ideation with Claude",
-            "Development of CSV-based content management concept",
-            "Iterative refinement of image handling system",
-            "Creation of rich text formatting capabilities",
-            "Documentation of development process for future reference"
+            "The solution emerged through iterative AI collaboration, focusing on three key technical areas:\\n\\n**1. Content Management**\\n*Problem:* Need easy content editing without a database\\n*Solution:* CSV-based content system with rich text support\\n\\n**2. Image Handling**\\n*Problem:* Complex image path management across development and production\\n*Solution:* Automated path resolution system\\n\\n**3. Build Process**\\n*Problem:* Converting content for static hosting\\n*Solution:* Automated build pipeline"
           ],
           "key": "approach"
         },
         {
           "type": "h2",
-          "content": "System Architecture",
+          "content": "Implementation Details",
           "key": "architecture"
         },
         {
           "type": "body",
-          "content": "Our collaboration produced a **three-tier architecture** that elegantly solves the CMS challenge:\\n\\n1. *Content Management*\\n<span class=\"text-primary\">• Spreadsheet-based editing\\n• Rich text formatting\\n• Image integration\\n• Content validation</span>\\n\\n2. *Processing Engine*\\n<span class=\"text-secondary\">• Automated conversion\\n• Path resolution\\n• Error handling\\n• Build optimization</span>\\n\\n3. *Presentation Layer*\\n<span class=\"text-success\">• React components\\n• Dynamic rendering\\n• Error recovery\\n• Performance monitoring</span>",
+          "content": "Created CSV templates for structured content management;Developed custom CSV to JSON converter with rich text parsing;Implemented automated image path resolution;Built React components with error handling;Established deterministic build process for GitHub Pages",
           "key": "architecture"
         },
         {
           "type": "h2",
-          "content": "Technical Innovations",
+          "content": "Key Technical Features",
           "key": "innovation_details"
         },
         {
           "type": "body",
-          "content": "Through our collaboration, we developed several key innovations:\\n\\n**1. Intelligent Content Management**\\n• CSV-based content editing with rich text support\\n• *Format:* Markdown-style syntax with HTML enhancement\\n• *Benefit:* Easy updates without technical knowledge\\n\\n**2. Advanced Image Handling**\\n• Automatic path resolution across environments\\n• *Process:* CSV → Development → Production paths\\n• *Result:* Zero manual path management\\n\\n**3. Error-Resistant Build System**\\n• Comprehensive error checking\\n• Clear debugging messages\\n• Fallback handling for missing assets",
+          "content": "**1. Content Management System**\\n• CSV files for easy content editing\\n• Rich text formatting support\\n• Structured content validation\\n• Automated JSON conversion\\n\\n**2. Image Management**\\n• Automatic path resolution\\n• Development/production path handling\\n• Robust error checking\\n• Fallback handling\\n\\n**3. Build Pipeline**\\n• CSV validation\\n• JSON generation\\n• Image path mapping\\n• Static file optimization",
           "key": "innovation"
         },
         {
           "type": "h2",
-          "content": "AI-Human Pair Programming",
+          "content": "Content Architecture",
           "key": "collaboration"
         },
         {
           "type": "body",
-          "content": "Our development process revealed the power of human-AI collaboration:\\n\\n1. **Problem Solving**\\n<span class=\"text-primary\">Human: Strategic thinking and real-world requirements\\nAI: Pattern recognition and solution generation</span>\\n\\n2. **Code Development**\\n<span class=\"text-secondary\">Human: Architecture decisions and edge cases\\nAI: Implementation details and error handling</span>\\n\\n3. **System Refinement**\\n<span class=\"text-success\">Human: User experience and testing\\nAI: Optimization and documentation</span>\\n\\nThis partnership created solutions neither could have developed alone.",
+          "content": "The system uses a **three-tier content architecture**:\\n\\n1. *Content Layer (CSV)*\\n<span class=text-primary\">• Human-editable spreadsheets\\n• Rich text formatting\\n• Image path references\\n• Content validation</span>\\n\\n2. *Processing Layer (Node.js)*\\n<span class=\"text-secondary\">• CSV parsing\\n• JSON generation\\n• Path resolution\\n• Error checking</span>\\n\\n3. *Presentation Layer (React)*\\n<span class=\"text-success\">• Component rendering\\n• Image loading\\n• Error handling\\n• Performance optimization</span>\"",
           "key": "collaboration"
         },
         {
           "type": "h2",
-          "content": "Project Impact",
+          "content": "Image System Deep-Dive",
           "key": "results"
         },
         {
           "type": "list",
           "content": [
-            "Created a maintainable, static portfolio site with CMS capabilities",
-            "Reduced content update time from hours to minutes",
-            "Eliminated common development pain points around image management",
-            "Achieved perfect Lighthouse scores for performance and accessibility",
-            "Demonstrated effective human-AI collaboration in real-world development",
-            "Established reusable patterns for future AI-assisted projects"
+            "The image management system solves several key challenges:\\n\\n**Path Resolution**\\n```javascript\\n// CSV Reference\\n/images/example.jpg\\n\\n// Development Import\\n../images/example.jpg\\n\\n// Production Output\\n/static/media/example.[hash].jpg\\n```\\n\\n**Key Innovations:**\\n• *Automatic path conversion*\\n• *Development/production consistency*\\n• *Webpack integration*\\n• *Error recovery*"
           ],
           "key": "results"
+        },
+        {
+          "type": "p",
+          "content": "Figma",
+          "key": "design_tools"
+        },
+        {
+          "type": "p",
+          "content": "Claude",
+          "key": "ai_tools"
+        },
+        {
+          "type": "p",
+          "content": "GitHub;Claude;Supabase;Vercel",
+          "key": "dev_tools"
+        },
+        {
+          "type": "p",
+          "content": "Prompt Engineering;QA",
+          "key": "skills"
+        },
+        {
+          "type": "p",
+          "content": "Principal / Lead Contributor",
+          "key": "roles"
+        },
+        {
+          "type": "p",
+          "content": "Prompt;Coded Application;",
+          "key": "artifact_types"
+        },
+        {
+          "type": "p",
+          "content": "Claude 4 Opus",
+          "key": "ai_models"
         }
       ],
       "images": [
         {
-          "url": "/images/collaboration-flow.jpg",
-          "alt": "AI-Human collaboration diagram",
-          "caption": "Visualization of the iterative development process between human and AI"
+          "url": "Technical Challenges",
+          "alt": "Several challenges emerged during development:\\n\\n1. **Path Resolution**\\n<span class=text-warning\">Initial attempts failed to handle image paths consistently between development and production environments.</span>\\n\\n2. **Rich Text Parsing**\\n<span class=\"text-warning\">Early versions struggled with nested formatting and special characters in CSV files.</span>\\n\\n3. **Build Process**\\n<span class=\"text-warning\">Needed to ensure deterministic builds for GitHub Pages deployment.</span>\\n\\nEach challenge was solved through iterative AI collaboration - resulting in robust solutions that handle edge cases and provide clear error messages.\"",
+          "caption": ""
         },
         {
           "url": "/images/system-architecture.jpg",
-          "alt": "System architecture diagram",
-          "caption": "Three-tier architecture showing the complete system flow"
+          "alt": "Technical architecture diagram",
+          "caption": "Three-tier architecture showing content flow"
         }
       ],
       "tags": {
-        "tools": [],
+        "designTools": [
+          "Figma"
+        ],
+        "aiTools": [
+          "Claude"
+        ],
+        "devTools": [
+          "GitHub",
+          "Claude",
+          "Supabase",
+          "Vercel"
+        ],
+        "skills": [
+          "Prompt Engineering",
+          "QA"
+        ],
+        "roles": [
+          "Principal / Lead Contributor"
+        ],
+        "artifactTypes": [
+          "Prompt",
+          "Coded Application"
+        ],
+        "fidelity": [],
+        "aiModels": [
+          "Claude 4 Opus"
+        ],
+        "designPrinciples": [],
+        "usabilityHeuristics": []
+      }
+    },
+    {
+      "id": 2,
+      "title": "Apple: Product Design Lead",
+      "subtitle": "Global Admin Application Redesign",
+      "thumbnail": "/images/apple-thumbnail.jpg",
+      "duration": "06/2022 - 08/2024",
+      "role": "Product Design Lead",
+      "content": [
+        {
+          "type": "p",
+          "content": "Apple",
+          "key": "project_type"
+        },
+        {
+          "type": "h1",
+          "content": "Transforming Apple's Admin Experience",
+          "key": "initial_vision"
+        },
+        {
+          "type": "h2",
+          "content": "The Challenge",
+          "key": "problem_statement"
+        },
+        {
+          "type": "body",
+          "content": "Led the redesign of a business-critical admin web application used by teams globally at Apple, focusing on streamlining operations while maintaining the highest standards of security and efficiency.",
+          "key": "problem"
+        },
+        {
+          "type": "h2",
+          "content": "Key Responsibilities",
+          "key": "technical_approach"
+        },
+        {
+          "type": "list",
+          "content": [
+            "Facilitated cross-functional workshops to structure unrefined thoughts into strategic plans",
+            "Measurably improved usability through research-driven design",
+            "Streamlined design operations and established governance systems",
+            "Initiated product migration to a uniform design system",
+            "Managed product design sprints through effective requirements gathering"
+          ],
+          "key": "approach"
+        },
+        {
+          "type": "h2",
+          "content": "Impact & Results",
+          "key": "architecture"
+        },
+        {
+          "type": "body",
+          "content": "Reduced workflow completion time by 40%;Improved user satisfaction scores significantly;Decreased training time for new users by 30%;Established consistent design patterns across the platform",
+          "key": "architecture"
+        },
+        {
+          "type": "h2",
+          "content": "/images/apple-thumbnail.jpg",
+          "key": "innovation_details"
+        },
+        {
+          "type": "body",
+          "content": "Screenshot of admin interface",
+          "key": "innovation"
+        },
+        {
+          "type": "h2",
+          "content": "Redesigned workflow reduced steps by 60%",
+          "key": "collaboration"
+        },
+        {
+          "type": "body",
+          "content": "/images/apple-thumbnail.jpg",
+          "key": "collaboration"
+        },
+        {
+          "type": "h2",
+          "content": "New interface design",
+          "key": "results"
+        },
+        {
+          "type": "list",
+          "content": [
+            "Unified system with consistent patterns"
+          ],
+          "key": "results"
+        },
+        {
+          "type": "p",
+          "content": "Sketch;Figma",
+          "key": "design_tools"
+        },
+        {
+          "type": "p",
+          "content": "Principal / Lead Contributor",
+          "key": "roles"
+        },
+        {
+          "type": "p",
+          "content": "Mockup;Design System;Interactive Prototype",
+          "key": "artifact_types"
+        },
+        {
+          "type": "p",
+          "content": "Medium;High",
+          "key": "fidelity"
+        }
+      ],
+      "images": [
+        {
+          "url": "",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "",
+          "alt": "",
+          "caption": ""
+        }
+      ],
+      "tags": {
+        "designTools": [
+          "Sketch",
+          "Figma"
+        ],
         "aiTools": [],
         "devTools": [],
         "skills": [],
-        "roles": [],
-        "artifactTypes": [],
-        "fidelity": [],
+        "roles": [
+          "Principal / Lead Contributor"
+        ],
+        "artifactTypes": [
+          "Mockup",
+          "Design System",
+          "Interactive Prototype"
+        ],
+        "fidelity": [
+          "Medium",
+          "High"
+        ],
+        "aiModels": [],
+        "designPrinciples": [],
+        "usabilityHeuristics": []
+      }
+    },
+    {
+      "id": 3,
+      "title": "Magic Leap: Interaction Design",
+      "subtitle": "Spatial Computing Innovation",
+      "thumbnail": "/images/magic-leap-thumbnail.gif",
+      "duration": "07/2019 - 09/2019",
+      "role": "Interaction Design Contractor",
+      "content": [
+        {
+          "type": "p",
+          "content": "Magic Leap",
+          "key": "project_type"
+        },
+        {
+          "type": "h1",
+          "content": "Redefining Spatial Interaction",
+          "key": "initial_vision"
+        },
+        {
+          "type": "h2",
+          "content": "Project Scope",
+          "key": "problem_statement"
+        },
+        {
+          "type": "body",
+          "content": "Tasked with defining fundamental interaction paradigms for the Magic Leap 1 spatial computing platform.",
+          "key": "problem"
+        },
+        {
+          "type": "h2",
+          "content": "Core Contributions",
+          "key": "technical_approach"
+        },
+        {
+          "type": "list",
+          "content": [
+            "Defined operating system-level interaction paradigms",
+            "Programmed spatial audio simulator in C# with Unity",
+            "Prototyped hand-gestural input experiences",
+            "Created innovative user interaction models"
+          ],
+          "key": "approach"
+        },
+        {
+          "type": "h2",
+          "content": "Technical Achievements",
+          "key": "architecture"
+        },
+        {
+          "type": "body",
+          "content": "Successfully implemented new interaction paradigms;Enhanced spatial computing experience;Improved user engagement metrics",
+          "key": "architecture"
+        },
+        {
+          "type": "h2",
+          "content": "/images/magic-leap-thumbnail.gif",
+          "key": "innovation_details"
+        },
+        {
+          "type": "body",
+          "content": "Spatial interface",
+          "key": "innovation"
+        },
+        {
+          "type": "h2",
+          "content": "New interaction paradigms",
+          "key": "collaboration"
+        },
+        {
+          "type": "body",
+          "content": "/images/magic-leap-thumbnail.gif",
+          "key": "collaboration"
+        },
+        {
+          "type": "h2",
+          "content": "Gesture controls",
+          "key": "results"
+        },
+        {
+          "type": "list",
+          "content": [
+            "Hand-gesture interface prototype"
+          ],
+          "key": "results"
+        },
+        {
+          "type": "p",
+          "content": "Unity3D",
+          "key": "dev_tools"
+        },
+        {
+          "type": "p",
+          "content": "Principal / Lead Contributor",
+          "key": "roles"
+        },
+        {
+          "type": "p",
+          "content": "Coded Application;Interactive Prototype;Sitemap",
+          "key": "artifact_types"
+        },
+        {
+          "type": "p",
+          "content": "High",
+          "key": "fidelity"
+        }
+      ],
+      "images": [
+        {
+          "url": "",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "",
+          "alt": "",
+          "caption": ""
+        }
+      ],
+      "tags": {
+        "designTools": [],
+        "aiTools": [],
+        "devTools": [
+          "Unity3D"
+        ],
+        "skills": [],
+        "roles": [
+          "Principal / Lead Contributor"
+        ],
+        "artifactTypes": [
+          "Coded Application",
+          "Interactive Prototype",
+          "Sitemap"
+        ],
+        "fidelity": [
+          "High"
+        ],
+        "aiModels": [],
+        "designPrinciples": [],
+        "usabilityHeuristics": []
+      }
+    },
+    {
+      "id": 4,
+      "title": "Petal: Metrics",
+      "subtitle": "Advanced Data Visualization",
+      "thumbnail": "/images/petal-metrics-thumbnail.gif",
+      "duration": "10/2016 - 09/2023",
+      "role": "Founder and CEO",
+      "content": [
+        {
+          "type": "p",
+          "content": "Petal",
+          "key": "project_type"
+        },
+        {
+          "type": "h1",
+          "content": "Data-Driven Neurotechnology",
+          "key": "initial_vision"
+        },
+        {
+          "type": "h2",
+          "content": "The Challenge",
+          "key": "problem_statement"
+        },
+        {
+          "type": "body",
+          "content": "Created sophisticated visualization systems for complex neurological data analysis and research applications.",
+          "key": "problem"
+        },
+        {
+          "type": "h2",
+          "content": "Development Focus",
+          "key": "technical_approach"
+        },
+        {
+          "type": "list",
+          "content": [
+            "Designed intuitive data visualization interfaces",
+            "Created real-time analysis tools",
+            "Developed comprehensive reporting systems",
+            "Integrated machine learning capabilities"
+          ],
+          "key": "approach"
+        },
+        {
+          "type": "h2",
+          "content": "Research Impact",
+          "key": "architecture"
+        },
+        {
+          "type": "body",
+          "content": "Enabled breakthrough research findings;Accelerated data analysis workflows;Improved research productivity",
+          "key": "architecture"
+        },
+        {
+          "type": "h2",
+          "content": "/images/petal-metrics-thumbnail.gif",
+          "key": "innovation_details"
+        },
+        {
+          "type": "body",
+          "content": "Dashboard overview",
+          "key": "innovation"
+        },
+        {
+          "type": "h2",
+          "content": "Comprehensive metrics visualization",
+          "key": "collaboration"
+        },
+        {
+          "type": "body",
+          "content": "/images/petal-metrics-thumbnail.gif",
+          "key": "collaboration"
+        },
+        {
+          "type": "h2",
+          "content": "Analysis tools",
+          "key": "results"
+        },
+        {
+          "type": "list",
+          "content": [
+            "Real-time data analysis interface"
+          ],
+          "key": "results"
+        },
+        {
+          "type": "p",
+          "content": "Figma;Adobe XD;Miro",
+          "key": "design_tools"
+        },
+        {
+          "type": "p",
+          "content": "Product Manager;Principal / Lead Contributor",
+          "key": "roles"
+        },
+        {
+          "type": "p",
+          "content": "Static Wireframe;Interactive Prototype;Coded Application;Design System",
+          "key": "artifact_types"
+        },
+        {
+          "type": "p",
+          "content": "Low;Medium;High",
+          "key": "fidelity"
+        }
+      ],
+      "images": [
+        {
+          "url": "",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "",
+          "alt": "",
+          "caption": ""
+        }
+      ],
+      "tags": {
+        "designTools": [
+          "Figma",
+          "Adobe XD",
+          "Miro"
+        ],
+        "aiTools": [],
+        "devTools": [],
+        "skills": [],
+        "roles": [
+          "Product Manager",
+          "Principal / Lead Contributor"
+        ],
+        "artifactTypes": [
+          "Static Wireframe",
+          "Interactive Prototype",
+          "Coded Application",
+          "Design System"
+        ],
+        "fidelity": [
+          "Low",
+          "Medium",
+          "High"
+        ],
         "aiModels": [],
         "designPrinciples": [],
         "usabilityHeuristics": []

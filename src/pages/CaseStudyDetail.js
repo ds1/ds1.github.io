@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import caseStudyDetailsData from '../data/caseStudyDetails.json';
 import { imageMap } from '../utils/imageImports';
 import RichText from '../components/RichText';
+import { tagCategoryColors, tagCategoryNames, getTagColor } from '../utils/tagConfig';
 
 const CaseStudyWrapper = styled.div`
   max-width: 800px;
@@ -134,13 +135,28 @@ const TagCategory = styled.div`
 
 const TagCategoryTitle = styled.span`
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.textSecondary};
+  color: ${({ theme, $category }) => tagCategoryColors[$category] || theme.colors.textSecondary};
   margin-right: 0.75rem;
   text-transform: capitalize;
 `;
 
 const TagList = styled.span`
   color: ${({ theme }) => theme.colors.text};
+`;
+
+const TagItem = styled.span`
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  margin: 0 0.25rem;
+  background-color: ${({ $category }) => getTagColor($category, 0.1)};
+  color: ${({ $category }) => tagCategoryColors[$category]};
+  border: 1px solid ${({ $category }) => getTagColor($category, 0.3)};
+  border-radius: 12px;
+  font-size: 0.875rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
 `;
 
 const ImageSection = styled.section`
@@ -169,21 +185,6 @@ const ImageCaption = styled.p`
 const getImage = (path) => {
   if (!path) return null;
   return imageMap[path] || null;
-};
-
-// Helper function to format category names
-const formatCategoryName = (category) => {
-  // Handle special cases
-  const categoryNames = {
-    'aiTools': 'AI Tools',
-    'devTools': 'Development Tools',
-    'artifactTypes': 'Artifact Types',
-    'aiModels': 'AI Models',
-    'designPrinciples': 'Design Principles',
-    'usabilityHeuristics': 'Usability Heuristics'
-  };
-  
-  return categoryNames[category] || category.replace(/([A-Z])/g, ' $1').trim();
 };
 
 const CaseStudyDetail = () => {
@@ -252,10 +253,16 @@ const CaseStudyDetail = () => {
           {Object.entries(study.tags).map(([category, tags]) => 
             tags.length > 0 && (
               <TagCategory key={category}>
-                <TagCategoryTitle>
-                  {formatCategoryName(category)}:
+                <TagCategoryTitle $category={category}>
+                  {tagCategoryNames[category] || category.replace(/([A-Z])/g, ' $1').trim()}:
                 </TagCategoryTitle>
-                <TagList>{tags.join(', ')}</TagList>
+                <TagList>
+                  {tags.map((tag, index) => (
+                    <TagItem key={index} $category={category}>
+                      {tag}
+                    </TagItem>
+                  ))}
+                </TagList>
               </TagCategory>
             )
           )}

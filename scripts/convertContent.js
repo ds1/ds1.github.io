@@ -87,17 +87,17 @@ async function convertContent() {
         content: structureContent(study),
         images: images,
         tags: {
-              tools: processTags(study.tools),
-              aiTools: processTags(study.ai_tools),
-              devTools: processTags(study.dev_tools),
-              skills: processTags(study.skills),
-              roles: processTags(study.roles),
-              artifactTypes: processTags(study.artifact_types),
-              fidelity: processTags(study.fidelity),
-              aiModels: processTags(study.ai_models),
-              designPrinciples: processTags(study.design_principles),
-              usabilityHeuristics: processTags(study.usability_heuristics)
-            }
+          designTools: processTags(study.design_tools),  // changed from tools
+          aiTools: processTags(study.ai_tools),
+          devTools: processTags(study.dev_tools),
+          skills: processTags(study.skills),
+          roles: processTags(study.roles),
+          artifactTypes: processTags(study.artifact_types),
+          fidelity: processTags(study.fidelity),
+          aiModels: processTags(study.ai_models),
+          designPrinciples: processTags(study.design_principles),
+          usabilityHeuristics: processTags(study.usability_heuristics)
+        }
       };
     });
 

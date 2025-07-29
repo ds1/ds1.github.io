@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { tagCategoryColors, tagCategoryNames, getTagColor } from '../utils/tagConfig';
 
 const FilterContainer = styled.div`
   margin-bottom: 2rem;
@@ -35,7 +36,7 @@ const FilterSection = styled.div`
 const FilterTitle = styled.h3`
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
+  color: ${({ theme, $category }) => tagCategoryColors[$category] || theme.colors.textSecondary};
   text-transform: uppercase;
   letter-spacing: 0.05em;
 `;
@@ -48,17 +49,21 @@ const TagGroup = styled.div`
 
 const Tag = styled.button`
   padding: 0.375rem 0.75rem;
-  border: 1px solid ${({ theme, $active }) => $active ? theme.colors.primary : theme.colors.textSecondary};
-  background-color: ${({ theme, $active }) => $active ? theme.colors.primary : 'transparent'};
-  color: ${({ theme, $active }) => $active ? theme.colors.background : theme.colors.text};
+  border: 1px solid ${({ $category, $active }) => 
+    $active ? tagCategoryColors[$category] : getTagColor($category, 0.5)};
+  background-color: ${({ $category, $active }) => 
+    $active ? tagCategoryColors[$category] : getTagColor($category, 0.1)};
+  color: ${({ theme, $category, $active }) => 
+    $active ? theme.colors.background : theme.colors.text};
   border-radius: 20px;
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.2s ease;
 
   &:hover {
-    border-color: ${({ theme }) => theme.colors.primary};
-    background-color: ${({ theme, $active }) => $active ? theme.colors.secondary : theme.colors.primary + '20'};
+    border-color: ${({ $category }) => tagCategoryColors[$category]};
+    background-color: ${({ $category, $active }) => 
+      $active ? tagCategoryColors[$category] : getTagColor($category, 0.2)};
   }
 `;
 
@@ -92,7 +97,9 @@ const ResultCount = styled.p`
 const CaseStudyFilters = ({ caseStudies, tagCategories, onFilter }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTags, setSelectedTags] = useState({
-    tools: [],
+    designTools: [],
+    aiTools: [],
+    devTools: [],
     skills: [],
     roles: [],
     artifactTypes: [],
@@ -103,7 +110,9 @@ const CaseStudyFilters = ({ caseStudies, tagCategories, onFilter }) => {
   // Get all unique tags from case studies
   const getAvailableTags = () => {
     const availableTags = {
-      tools: new Set(),
+      designTools: new Set(),
+      aiTools: new Set(),
+      devTools: new Set(),
       skills: new Set(),
       roles: new Set(),
       artifactTypes: new Set(),
@@ -143,7 +152,9 @@ const CaseStudyFilters = ({ caseStudies, tagCategories, onFilter }) => {
   const clearFilters = () => {
     setSearchTerm('');
     setSelectedTags({
-      tools: [],
+      designTools: [],
+      aiTools: [],
+      devTools: [],
       skills: [],
       roles: [],
       artifactTypes: [],
@@ -192,12 +203,15 @@ const CaseStudyFilters = ({ caseStudies, tagCategories, onFilter }) => {
       {Object.entries(availableTags).map(([category, tags]) => (
         tags.length > 0 && (
           <FilterSection key={category}>
-            <FilterTitle>{category.replace(/([A-Z])/g, ' $1').trim()}</FilterTitle>
+            <FilterTitle $category={category}>
+              {tagCategoryNames[category] || category.replace(/([A-Z])/g, ' $1').trim()}
+            </FilterTitle>
             <TagGroup>
               {tags.map(tag => (
                 <Tag
                   key={tag}
                   $active={selectedTags[category].includes(tag)}
+                  $category={category}
                   onClick={() => handleTagClick(category, tag)}
                 >
                   {tag}
