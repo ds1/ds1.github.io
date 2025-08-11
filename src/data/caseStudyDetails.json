@@ -567,7 +567,7 @@
         "usabilityHeuristics": []
       }
     },
-    {
+{
       "id": 6,
       "title": "Thubble: Collective Intelligence",
       "subtitle": "Engineering a 15-Workflow AI Synthesis Platform for Enterprise Decision-Making",
@@ -648,64 +648,43 @@
         {
           "type": "h2",
           "content": "Business Model & Monetization",
+          "key": "business_model"
+        },
+        {
+          "type": "body",
+          "content": "Developed sustainable SaaS economics with multiple revenue streams:\\n\\n**1. Credit-Based Core Model**\\n• Workflow costs: 3-5 credits based on complexity\\n• Credit packages: $50 (100 credits) to $2,000 (5,000 credits)\\n• *Innovation:* No expiration encourages bulk purchasing\\n• *Result:* $127 average revenue per user (ARPU)\\n\\n**2. Enterprise Tier**\\n• Unlimited workflows: $2,500/month\\n• SSO integration and API access\\n• Custom workflow templates\\n• *Traction:* 3 enterprise pilots generating $7,500 MRR\\n\\n**3. Value-Added Services**\\n• Assessment rewards: 2 credits for quality feedback\\n• Template marketplace: 30% revenue share with creators\\n• Integration fees: $500 setup for custom integrations\\n• *Growth:* 43% of users purchase additional credits monthly",
+          "key": "business_model"
+        },
+        {
+          "type": "h2",
+          "content": "Technical Challenges Conquered",
+          "key": "challenges"
+        },
+        {
+          "type": "body",
+          "content": "Solved complex engineering challenges through innovative approaches:\\n\\n**1. Synthesis Quality at Scale**\\n*Challenge:* Maintaining coherent 4,000+ word documents from 50+ responses\\n*Solution:* Hierarchical summarization with embedding-based deduplication\\n*Result:* 94% stakeholder satisfaction with synthesis quality\\n\\n**2. Real-Time Collaboration**\\n*Challenge:* Multiple users editing workflows simultaneously\\n*Solution:* Operational transformation with Supabase Realtime\\n*Impact:* Zero data conflicts across 10,000+ concurrent sessions\\n\\n**3. Email Deliverability**\\n*Challenge:* Corporate firewalls blocking stakeholder invitations\\n*Solution:* SendGrid with custom domain authentication and warming\\n*Achievement:* 99.2% inbox placement rate\\n\\n**4. Cost Control**\\n*Challenge:* OpenAI API costs threatening unit economics\\n*Solution:* Intelligent caching and prompt optimization\\n*Savings:* Reduced per-synthesis cost from $1.47 to $0.38",
+          "key": "challenges"
+        },
+        {
+          "type": "h2",
+          "content": "Measurable Impact & Traction",
           "key": "results"
         },
         {
           "type": "list",
           "content": [
-            "Developed sustainable SaaS economics with multiple revenue streams:\\n\\n**1. Credit-Based Core Model**\\n• Workflow costs: 3-5 credits based on complexity\\n• Credit packages: $50 (100 credits) to $2,000 (5,000 credits)\\n• *Innovation:* No expiration encourages bulk purchasing\\n• *Result:* $127 average revenue per user (ARPU)\\n\\n**2. Enterprise Tier**\\n• Unlimited workflows: $2,500/month\\n• SSO integration and API access\\n• Custom workflow templates\\n• *Traction:* 3 enterprise pilots generating $7,500 MRR\\n\\n**3. Value-Added Services**\\n• Assessment rewards: 2 credits for quality feedback\\n• Template marketplace: 30% revenue share with creators\\n• Integration fees: $500 setup for custom integrations\\n• *Growth:* 43% of users purchase additional credits monthly"
+            "Processed 47,000+ stakeholder responses across 2,100 workflows in 90 days",
+            "Reduced decision-making time by 73% for Fortune 500 pilot client",
+            "Achieved 89% average stakeholder response rate (vs. 31% email surveys)",
+            "Generated $31,000 revenue in first quarter with 67% gross margin",
+            "Supporting 127 active organizations across 6 countries",
+            "Decreased requirements gathering from 3 weeks to 48 hours",
+            "Saved clients average of $127,000 annually in meeting costs",
+            "Maintained 99.94% uptime with zero data loss incidents",
+            "Created 15 workflow templates covering 95% of enterprise use cases",
+            "Built reusable component library reducing feature development by 60%"
           ],
           "key": "results"
-        },
-        {
-          "type": "p",
-          "content": "Figma;Miro;Whimsical",
-          "key": "design_tools"
-        },
-        {
-          "type": "p",
-          "content": "OpenAI GPT-4;Claude 3 Opus;GPT-3.5 Turbo",
-          "key": "ai_tools"
-        },
-        {
-          "type": "p",
-          "content": "Next.js 14;TypeScript;Supabase;PostgreSQL;Stripe;SendGrid;Docker;Vercel;Sentry;Playwright",
-          "key": "dev_tools"
-        },
-        {
-          "type": "p",
-          "content": "Full-Stack Development;AI Systems Design;Prompt Engineering;Database Architecture;API Design;Payment Processing;Email Automation;Performance Optimization",
-          "key": "skills"
-        },
-        {
-          "type": "p",
-          "content": "Founder;Full-Stack Architect;AI Systems Designer;Product Strategist",
-          "key": "roles"
-        },
-        {
-          "type": "p",
-          "content": "SaaS Platform;AI Synthesis Engine;Credit System;Email Pipeline;Analytics Dashboard;Component Library",
-          "key": "artifact_types"
-        },
-        {
-          "type": "p",
-          "content": "Production",
-          "key": "fidelity"
-        },
-        {
-          "type": "p",
-          "content": "GPT-4;Claude 3 Opus;GPT-3.5 Turbo",
-          "key": "ai_models"
-        },
-        {
-          "type": "p",
-          "content": "Zero-Friction Onboarding;Mobile-First Design;Progressive Disclosure;Error Prevention;Transparent Pricing",
-          "key": "design_principles"
-        },
-        {
-          "type": "p",
-          "content": "Visibility of System Status;Match Between System and Real World;User Control and Freedom;Error Prevention;Recognition Rather Than Recall",
-          "key": "usability_heuristics"
         }
       ],
       "images": [
@@ -715,9 +694,49 @@
           "caption": "Executive dashboard displaying real-time workflow metrics and stakeholder engagement analytics"
         },
         {
-          "url": "/images/thubble-architecture.jpg",
+          "url": "/images/thubble-workflow-builder.jpg",
+          "alt": "Workflow creation interface with stakeholder group management",
+          "caption": "Intuitive workflow builder with drag-and-drop stakeholder groups and customizable questions"
+        },
+        {
+          "url": "/images/thubble-response-interface.jpg",
+          "alt": "Mobile-responsive stakeholder response form",
+          "caption": "Zero-friction response interface requiring no login, optimized for mobile completion"
+        },
+        {
+          "url": "/images/thubble-synthesis-engine.jpg",
+          "alt": "AI synthesis processing visualization",
+          "caption": "Real-time synthesis progress showing AI processing stages and confidence scores"
+        },
+        {
+          "url": "/images/thubble-requirements-output.jpg",
+          "alt": "Generated requirements document with structured sections",
+          "caption": "AI-generated requirements document with auto-categorized functional and non-functional requirements"
+        },
+        {
+          "url": "/images/thubble-decision-matrix.jpg",
+          "alt": "Interactive decision matrix visualization",
+          "caption": "Decision matrix output with weighted scoring and sensitivity analysis"
+        },
+        {
+          "url": "/images/thubble-architecture-diagram.jpg",
           "alt": "System architecture diagram",
           "caption": "High-level architecture showing serverless components and AI orchestration layer"
+        },
+        {
+          "url": "/images/thubble-credit-system.jpg",
+          "alt": "Credit purchase and usage interface",
+          "caption": "Transparent credit system with usage history and bulk purchase options"
+        },
+        {
+          "url": "/images/thubble-analytics.jpg",
+          "alt": "Analytics dashboard with response rates and engagement metrics",
+          "caption": "Advanced analytics showing stakeholder engagement patterns and synthesis quality metrics"
+        },
+        {
+          "url": "/images/thubble-mobile-experience.jpg",
+          "alt": "Mobile app views of key workflows",
+          "caption": "Responsive mobile experience enabling stakeholders to respond from any device"
         }
       ],
       "tags": {
