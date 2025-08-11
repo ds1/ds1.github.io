@@ -1,5 +1,5 @@
 // This file is auto-generated. Do not edit manually.
-// Generated 2025-08-11T05:54:25.335Z
+// Generated 2025-08-11T06:01:08.983Z
 
 import aicollabthumbnail from '../images/ai-collab-thumbnail.jpg';
 import applethumbnail from '../images/apple-thumbnail.jpg';
@@ -16,6 +16,16 @@ import picksithumbnail from '../images/picksi-thumbnail.jpg';
 import systemarchitecture from '../images/system-architecture.jpg';
 import agtregistryarchitecture from '../images/agt-registry-architecture.jpg';
 import agtregistrydiscovery from '../images/agt-registry-discovery.jpg';
+import thubbledashboard from '../images/thubble-dashboard.jpg';
+import thubbleworkflowbuilder from '../images/thubble-workflow-builder.jpg';
+import thubbleresponseinterface from '../images/thubble-response-interface.jpg';
+import thubblesynthesisengine from '../images/thubble-synthesis-engine.jpg';
+import thubblerequirementsoutput from '../images/thubble-requirements-output.jpg';
+import thubbledecisionmatrix from '../images/thubble-decision-matrix.jpg';
+import thubblearchitecturediagram from '../images/thubble-architecture-diagram.jpg';
+import thubblecreditsystem from '../images/thubble-credit-system.jpg';
+import thubbleanalytics from '../images/thubble-analytics.jpg';
+import thubblemobileexperience from '../images/thubble-mobile-experience.jpg';
 import youtubettsinterface from '../images/youtube-tts-interface.jpg';
 import youtubettsworkflow from '../images/youtube-tts-workflow.jpg';
 import agtecosystem from '../images/agt-ecosystem.jpg';
@@ -54,6 +64,16 @@ export const imageMap = {
   '/images/system-architecture.jpg': systemarchitecture,
   '/images/agt-registry-architecture.jpg': agtregistryarchitecture,
   '/images/agt-registry-discovery.jpg': agtregistrydiscovery,
+  '/images/thubble-dashboard.jpg': thubbledashboard,
+  '/images/thubble-workflow-builder.jpg': thubbleworkflowbuilder,
+  '/images/thubble-response-interface.jpg': thubbleresponseinterface,
+  '/images/thubble-synthesis-engine.jpg': thubblesynthesisengine,
+  '/images/thubble-requirements-output.jpg': thubblerequirementsoutput,
+  '/images/thubble-decision-matrix.jpg': thubbledecisionmatrix,
+  '/images/thubble-architecture-diagram.jpg': thubblearchitecturediagram,
+  '/images/thubble-credit-system.jpg': thubblecreditsystem,
+  '/images/thubble-analytics.jpg': thubbleanalytics,
+  '/images/thubble-mobile-experience.jpg': thubblemobileexperience,
   '/images/youtube-tts-interface.jpg': youtubettsinterface,
   '/images/youtube-tts-workflow.jpg': youtubettsworkflow,
   '/images/agt-ecosystem.jpg': agtecosystem,
