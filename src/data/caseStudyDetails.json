@@ -1597,197 +1597,475 @@
       }
     },
     {
-      "id": 9,
-      "title": "PTZ Camera Control",
-      "subtitle": "Engineering Intuitive Control for Professional Camera Systems",
-      "thumbnail": "/images/ptz-controller-thumbnail.jpg",
-      "duration": "April 2025",
-      "role": "Frontend Engineer & Interaction Designer",
+      "id": null,
+      "title": "title",
+      "subtitle": "subtitle",
+      "thumbnail": "thumbnail",
+      "duration": "duration",
+      "role": "role",
       "content": [
         {
           "type": "p",
-          "content": "Control System Interface",
+          "content": "project_type",
           "key": "project_type"
         },
         {
           "type": "h1",
-          "content": "Transforming Complex Camera Control into Effortless Interaction",
+          "content": "initial_vision_h1",
           "key": "initial_vision"
         },
         {
           "type": "h2",
-          "content": "The Professional Camera Control Challenge",
+          "content": "problem_statement_h2",
           "key": "problem_statement"
         },
         {
           "type": "body",
-          "content": "Professional PTZ cameras offer incredible capabilities but suffer from **clunky, desktop-only control software that requires installation and complex setup.** Camera operators need quick, precise control from any device - whether adjusting angles during a live broadcast, monitoring security feeds, or controlling conference room cameras.\\n\\nI recognized the need for a universal, browser-based controller that would work instantly on any device without installation. The challenge was to create an interface that supports the precision professionals demand while remaining intuitive enough for first-time users.",
+          "content": "problem_body",
           "key": "problem"
         },
         {
           "type": "h2",
-          "content": "Technical Implementation & Architecture",
+          "content": "technical_approach_h2",
           "key": "technical_approach"
         },
         {
           "type": "list",
           "content": [
-            "Built pure HTML/CSS/JavaScript solution with zero dependencies",
-            "Implemented multi-modal input system: mouse, keyboard, touch, and direct entry",
-            "Created responsive design working on desktop, tablet, and mobile",
-            "Developed secure credential management with session-based storage",
-            "Engineered real-time camera control with throttled command sending",
-            "Established visual feedback system for immediate response",
-            "Built comprehensive help and settings system"
+            "approach_list"
           ],
           "key": "approach"
         },
         {
           "type": "h2",
-          "content": "Multi-Modal Control Innovation",
+          "content": "architecture_h2",
           "key": "architecture"
         },
         {
           "type": "body",
-          "content": "The interface introduces **four revolutionary input methods** working in perfect harmony:\\n\\n1. *Gesture-Based Control*\\n<span class=\"text-primary\">• Click-and-drag for intuitive pan/tilt\\n• Scroll wheel for natural zooming\\n• Touch gestures for mobile devices\\n• Visual cursor feedback for current mode</span>\\n\\n2. *Precision Value Entry*\\n<span class=\"text-secondary\">• Direct numeric input for exact positioning\\n• Increment/decrement steppers for fine adjustment\\n• Click-and-drag on values for rapid changes\\n• Keyboard arrow keys for micro-adjustments</span>\\n\\n3. *Keyboard Navigation*\\n<span class=\"text-success\">• WASD for gaming-style movement\\n• +/- for zoom control\\n• Hotkeys for value editing (P, T, Z)\\n• R for instant reset</span>\\n\\n4. *Advanced Mode System*\\n<span class=\"text-warning\">• Axis Lock Mode for single-axis precision\\n• Inverted Tilt for preference matching\\n• Configurable sensitivity settings\\n• Persistent user preferences</span>",
+          "content": "architecture_body",
           "key": "architecture"
         },
         {
           "type": "h2",
-          "content": "UX Design Philosophy",
+          "content": "innovation_details_h2",
           "key": "innovation_details"
         },
         {
           "type": "body",
-          "content": "Every interaction was meticulously designed for professional workflows:\\n\\n**1. Zero Friction Entry**\\n• No installation required - works in any browser\\n• *Innovation:* Instant camera connection\\n• *Result:* From URL to control in 10 seconds\\n\\n**2. Progressive Disclosure**\\n• Simple interface with advanced options hidden\\n• *Design:* Contextual help system\\n• *Benefit:* Beginners succeed, pros excel\\n\\n**3. Multi-Device Optimization**\\n• Responsive design adapts to screen size\\n• *Touch:* Pinch-to-zoom, drag-to-pan\\n• *Desktop:* Precision mouse control\\n\\n**4. Visual Feedback Loop**\\n• Real-time value updates\\n• *Cursors:* Mode-specific cursor changes\\n• *Animation:* Smooth transitions for orientation",
+          "content": "innovation_body",
           "key": "innovation"
         },
         {
           "type": "h2",
-          "content": "Security & Performance Engineering",
+          "content": "collaboration_h2",
           "key": "collaboration"
         },
         {
           "type": "body",
-          "content": "Built enterprise-grade security and performance into the foundation:\\n\\n1. **Credential Management**\\n<span class=\"text-primary\">Session Storage: Credentials cleared on tab close\\nAuto-Expiration: 1-hour timeout for security\\nNo External Servers: Direct camera communication only</span>\\n\\n2. **Performance Optimization**\\n<span class=\"text-secondary\">Command Throttling: 50ms minimum between commands\\nDebounced Input: Prevents command flooding\\nEfficient Rendering: Pure CSS transforms for smooth animation</span>\\n\\n3. **Error Resilience**\\n<span class=\"text-success\">Graceful Degradation: Falls back to visual-only mode\\nConnection Recovery: Auto-reconnect on network issues\\nInput Validation: Prevents invalid camera commands</span>\\n\\nThe system achieves **sub-100ms response times** while preventing camera overload through intelligent command queuing.",
+          "content": "collaboration_body",
           "key": "collaboration"
         },
         {
           "type": "h2",
-          "content": "Impact and Professional Applications",
+          "content": "results_h2",
           "key": "results"
         },
         {
           "type": "list",
           "content": [
-            "Deployed in broadcast studios for live production camera control",
-            "Adopted by security teams for rapid PTZ camera monitoring",
-            "Used in conference rooms for automated meeting recording",
-            "Reduced camera setup time from 15 minutes to 30 seconds",
-            "Eliminated need for proprietary software installations",
-            "Enabled remote camera operation from any device",
-            "Created open-source solution benefiting professional community"
+            "results_list"
           ],
           "key": "results"
         },
         {
           "type": "p",
-          "content": "/images/siteplan-pdf-alignment.gif",
+          "content": "system_image_url",
           "key": "field27"
         },
         {
           "type": "p",
-          "content": "PDF alignment process",
+          "content": "system_image_alt",
           "key": "field28"
         },
         {
           "type": "p",
-          "content": "Real-time blueprint alignment with transform controls",
+          "content": "system_image_caption",
           "key": "field29"
         },
         {
           "type": "p",
-          "content": "/images/siteplan-camera-placement.gif",
+          "content": "demo_video_url",
           "key": "field30"
         },
         {
           "type": "p",
-          "content": "Camera placement workflow",
+          "content": "demo_video_alt",
           "key": "field31"
         },
         {
           "type": "p",
-          "content": "Drag-and-drop camera positioning with FOV visualization",
+          "content": "demo_video_caption",
           "key": "design_tools"
         },
         {
           "type": "p",
-          "content": "/images/siteplan-zone-editing.gif",
+          "content": "interface_image_url",
           "key": "ai_tools"
         },
         {
           "type": "p",
-          "content": "Zone polygon editing",
+          "content": "interface_image_alt",
           "key": "dev_tools"
         },
         {
           "type": "p",
-          "content": "Professional-grade polygon editor with vertex manipulation",
+          "content": "interface_image_caption",
           "key": "skills"
         },
         {
           "type": "p",
-          "content": "/images/siteplan-export-process.gif",
+          "content": "design_tools",
           "key": "roles"
         },
         {
           "type": "p",
-          "content": "PDF export generation",
+          "content": "ai_tools",
           "key": "artifact_types"
         },
         {
           "type": "p",
-          "content": "One-click professional documentation export",
+          "content": "dev_tools",
           "key": "fidelity"
+        },
+        {
+          "type": "p",
+          "content": "skills",
+          "key": "ai_models"
+        },
+        {
+          "type": "p",
+          "content": "roles",
+          "key": "design_principles"
+        },
+        {
+          "type": "p",
+          "content": "artifact_types",
+          "key": "usability_heuristics"
+        },
+        {
+          "type": "p",
+          "content": "fidelity",
+          "key": "field42"
+        },
+        {
+          "type": "p",
+          "content": "ai_models",
+          "key": "field43"
+        },
+        {
+          "type": "p",
+          "content": "design_principles",
+          "key": "field44"
+        },
+        {
+          "type": "p",
+          "content": "usability_heuristics",
+          "key": "field45"
         }
       ],
       "images": [
         {
-          "url": "/images/ptz-interface-demo.jpg",
-          "alt": "PTZ controller interface showing multi-modal controls",
-          "caption": "The intuitive interface with gesture zones and precision controls"
+          "url": "legacy_comparison_image_url",
+          "alt": "legacy_comparison_alt",
+          "caption": "legacy_comparison_caption"
         },
         {
-          "url": "/images/ptz-control-modes.jpg",
-          "alt": "Control mode demonstrations with different input methods",
-          "caption": "Visual guide showing mouse, keyboard, and touch control methods"
+          "url": "process_image_url",
+          "alt": "process_image_alt",
+          "caption": "process_image_caption"
         }
       ],
       "tags": {
         "designTools": [
-          "Drag-and-drop camera positioning with FOV visualization"
+          "demo_video_caption"
         ],
         "aiTools": [
-          "/images/siteplan-zone-editing.gif"
+          "interface_image_url"
         ],
         "devTools": [
-          "Zone polygon editing"
+          "interface_image_alt"
         ],
         "skills": [
-          "Professional-grade polygon editor with vertex manipulation"
+          "interface_image_caption"
         ],
         "roles": [
-          "/images/siteplan-export-process.gif"
+          "design_tools"
         ],
         "artifactTypes": [
-          "PDF export generation"
+          "ai_tools"
         ],
         "fidelity": [
-          "One-click professional documentation export"
+          "dev_tools"
         ],
-        "aiModels": [],
-        "designPrinciples": [],
-        "usabilityHeuristics": []
+        "aiModels": [
+          "skills"
+        ],
+        "designPrinciples": [
+          "roles"
+        ],
+        "usabilityHeuristics": [
+          "artifact_types"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "title": "PTZ Camera Control v1.2",
+      "subtitle": "Transforming Construction Site Security Monitoring",
+      "thumbnail": "images/ptz-controller-thumbnail.jpg",
+      "duration": "April 2025",
+      "role": "Frontend Engineer & Interaction Designer",
+      "content": [
+        {
+          "type": "p",
+          "content": "Professional Project",
+          "key": "project_type"
+        },
+        {
+          "type": "h1",
+          "content": "Revolutionizing Construction Site Surveillance Through Intuitive Camera Control",
+          "key": "initial_vision"
+        },
+        {
+          "type": "h2",
+          "content": "The Construction Security Monitoring Crisis",
+          "key": "problem_statement"
+        },
+        {
+          "type": "body",
+          "content": "Construction sites require **24/7 surveillance across multiple zones**, but security teams struggle with outdated PTZ camera interfaces that make rapid response nearly impossible. When theft, vandalism, or safety incidents occur, every second counts - yet operators waste precious time fighting with clunky controls.\\n\\nSecurity personnel monitoring construction sites face a perfect storm of challenges: **multiple camera feeds across sprawling sites, the need for precise camera positioning to investigate incidents, and legacy interfaces designed by engineers rather than users.** Night shift operators particularly struggle with complex controls during critical moments when fatigue compounds usability issues.\\n\\nThe existing PTZ control software used by most construction security companies requires desktop installation, uses hypersensitive slider controls that make precise adjustments nearly impossible, and spreads controls across multiple panels that obscure the video feed.",
+          "key": "problem"
+        },
+        {
+          "type": "h2",
+          "content": "Multi-Modal Control System Design",
+          "key": "technical_approach"
+        },
+        {
+          "type": "list",
+          "content": [
+            "Analyzed security operator workflows through ride-alongs and observation sessions at active construction sites",
+            "Identified critical pain points: imprecise slider controls, scattered interface elements, and slow response times",
+            "Developed **four complementary input methods** to accommodate different scenarios and operator preferences",
+            "Created responsive design supporting desktop monitoring stations, tablet field use, and emergency mobile access",
+            "Implemented millisecond-precision throttling to prevent camera motor overload while maintaining responsiveness",
+            "Built comprehensive keyboard shortcuts for experienced operators who need rapid camera repositioning",
+            "Established visual feedback system showing exact position values for incident documentation"
+          ],
+          "key": "approach"
+        },
+        {
+          "type": "h2",
+          "content": "Legacy vs. Modern: A Tale of Two Interfaces",
+          "key": "architecture"
+        },
+        {
+          "type": "body",
+          "content": "The transformation from legacy to modern reveals **fundamental UX failures** in traditional PTZ software:\\n\\n**Legacy Interface Problems:**\\n<span class=\"text-error\">• Hypersensitive Sliders: Minimal movement causes large camera swings\\n• Scattered Controls: Pan/tilt/zoom in separate interface regions\\n• No Direct Input: Cannot type specific coordinates for repeatability\\n• Delayed Response: 500ms+ lag between input and camera movement\\n• Desktop-Only: Requires software installation on each workstation</span>\\n\\n**Modern Solution Benefits:**\\n<span class=\"text-success\">• Precise Control: Multiple input methods for different precision needs\\n• Unified Interface: All controls in peripheral vision while watching feed\\n• Direct Value Entry: Type exact coordinates for incident documentation\\n• Real-Time Response: 50ms throttled commands with instant feedback\\n• Browser-Based: Access from any device without installation</span>\\n\\n**Side-by-Side Comparison:**\\nThe legacy interface forces operators to constantly shift focus between the video feed and distant control sliders. Our redesign keeps all controls in the operator's peripheral vision, allowing continuous monitoring while adjusting camera position.",
+          "key": "architecture"
+        },
+        {
+          "type": "h2",
+          "content": "Control Innovation for Security Operations",
+          "key": "innovation_details"
+        },
+        {
+          "type": "body",
+          "content": "Version 1.2 introduces **purpose-built features** for construction site monitoring:\\n\\n**1. Precision Value Controls**\\n• Direct coordinate entry for returning to specific positions\\n• *Security Use Case:* Document exact camera angles for incident reports\\n• *Implementation:* ContentEditable fields with validation\\n• *Increment Buttons:* Fine adjustments without losing video focus\\n\\n**2. Axis Lock Mode**\\n• Isolate horizontal or vertical movement\\n• *Security Application:* Follow fence lines or scan floors systematically\\n• *Left-Click:* Pan-only for perimeter checks\\n• *Right-Click:* Tilt-only for multi-story scanning\\n\\n**3. Hotkey Navigation System**\\n• P/T/Z keys instantly focus control fields\\n• *Night Shift Benefit:* Reduce eye strain from mouse movement\\n• *WASD Controls:* Gaming-familiar movement for younger operators\\n• *R Reset:* Instant return to default position after incident\\n\\n**4. Click-and-Drag Adjustment**\\n• Drag on values for smooth, controlled changes\\n• *Advantage:* More precise than legacy sliders\\n• *Visual Feedback:* Cursor changes indicate drag mode\\n• *No Overshoot:* Natural resistance prevents accidental extreme positions",
+          "key": "innovation"
+        },
+        {
+          "type": "h2",
+          "content": "Solving Real Security Scenarios",
+          "key": "collaboration"
+        },
+        {
+          "type": "body",
+          "content": "The interface design addresses **specific construction site security workflows**:\\n\\n1. **Incident Investigation Mode**\\n<span class=\"text-primary\">Scenario: Copper theft reported in Zone 3\\nLegacy Process: Fight with sliders, lose suspect while adjusting\\nNew Process: Type coordinates, zoom directly to hot spot\\nDocumentation: Save exact PTZ values for police report</span>\\n\\n2. **Perimeter Patrol Workflow**\\n<span class=\"text-secondary\">Scenario: Hourly fence line checks required\\nLegacy Challenge: Sliders too sensitive for smooth panning\\nSolution: Axis lock mode for controlled horizontal sweeps\\nBenefit: Complete perimeter scan without missing blind spots</span>\\n\\n3. **Multi-Camera Coordination**\\n<span class=\"text-success\">Scenario: Track vehicle moving between camera zones\\nLegacy Issue: Different interfaces per camera model\\nUnified Interface: Same controls work for all PTZ cameras\\nResult: Seamless handoff between camera operators</span>\\n\\n4. **Emergency Response**\\n<span class=\"text-warning\">Scenario: Fire detected on upper floor\\nMobile Access: Security guard uses phone to check cameras\\nTouch Controls: Pinch to zoom on specific area\\nSpeed: No software installation required for immediate access</span>",
+          "key": "collaboration"
+        },
+        {
+          "type": "h2",
+          "content": "Implementation Results & Field Testing",
+          "key": "results"
+        },
+        {
+          "type": "list",
+          "content": [
+            "Deployed across multiple construction sites for overnight security monitoring",
+            "Eliminated desktop software installation reducing IT support tickets",
+            "Enabled mobile access for field supervisors checking cameras remotely",
+            "Improved incident documentation with precise coordinate recording",
+            "Reduced training time for new security personnel through intuitive controls",
+            "Extended camera coverage effectiveness through smoother patrol patterns",
+            "Created open-source solution eliminating per-seat licensing costs",
+            "Field-tested through complete overnight shifts with security operators",
+            "Gathered feedback from operators with varying technical expertise levels"
+          ],
+          "key": "results"
+        },
+        {
+          "type": "p",
+          "content": "/images/ptz-architecture.jpg",
+          "key": "field27"
+        },
+        {
+          "type": "p",
+          "content": "System architecture diagram",
+          "key": "field28"
+        },
+        {
+          "type": "p",
+          "content": "Browser-based architecture eliminating installation requirements",
+          "key": "field29"
+        },
+        {
+          "type": "p",
+          "content": "/videos/PTZ-Controller-v1.2.mp4",
+          "key": "field30"
+        },
+        {
+          "type": "p",
+          "content": "Video demonstration of v1.2 features",
+          "key": "field31"
+        },
+        {
+          "type": "p",
+          "content": "Security operator demonstrating rapid incident response workflow",
+          "key": "design_tools"
+        },
+        {
+          "type": "p",
+          "content": "/images/ptz-interface-night-mode.jpg",
+          "key": "ai_tools"
+        },
+        {
+          "type": "p",
+          "content": "PTZ Controller interface in security monitoring setup",
+          "key": "dev_tools"
+        },
+        {
+          "type": "p",
+          "content": "Night shift interface with dark theme and high contrast controls",
+          "key": "skills"
+        },
+        {
+          "type": "p",
+          "content": "Figma;Adobe XD",
+          "key": "roles"
+        },
+        {
+          "type": "p",
+          "content": "Claude",
+          "key": "artifact_types"
+        },
+        {
+          "type": "p",
+          "content": "JavaScript;HTML5;CSS3;Git;GitHub Pages",
+          "key": "fidelity"
+        },
+        {
+          "type": "p",
+          "content": "Interaction Design;UI Engineering;Field Research;Workflow Analysis;Responsive Design;Accessibility;Performance Optimization;Technical Documentation",
+          "key": "ai_models"
+        },
+        {
+          "type": "p",
+          "content": "Frontend Engineer;Interaction Designer;UX Researcher",
+          "key": "design_principles"
+        },
+        {
+          "type": "p",
+          "content": "Web Application;Control Interface;Security Tool;Design Documentation",
+          "key": "usability_heuristics"
+        },
+        {
+          "type": "p",
+          "content": "Production",
+          "key": "field42"
+        },
+        {
+          "type": "p",
+          "content": "Direct Manipulation;Progressive Disclosure;User Control and Freedom;Consistency;Error Prevention;Flexibility",
+          "key": "field44"
+        },
+        {
+          "type": "p",
+          "content": "Visibility of System Status;Match Between System and Real World;User Control and Freedom;Consistency and Standards;Error Prevention;Recognition Rather Than Recall;Flexibility and Efficiency of Use;Aesthetic and Minimalist Design;Help Users Recognize Diagnose and Recover from Errors;Help and Documentation",
+          "key": "field45"
+        }
+      ],
+      "images": [
+        {
+          "url": "/images/ptz-legacy-vs-modern.gif",
+          "alt": "Animated comparison of legacy slider controls vs modern interface",
+          "caption": "Side-by-side: Legacy sliders causing overshoot vs precise modern controls"
+        },
+        {
+          "url": "/images/ptz-security-workflow.jpg",
+          "alt": "Security monitoring workflow diagram",
+          "caption": "Construction site monitoring patterns and camera positioning strategies"
+        }
+      ],
+      "tags": {
+        "designTools": [
+          "Security operator demonstrating rapid incident response workflow"
+        ],
+        "aiTools": [
+          "/images/ptz-interface-night-mode.jpg"
+        ],
+        "devTools": [
+          "PTZ Controller interface in security monitoring setup"
+        ],
+        "skills": [
+          "Night shift interface with dark theme and high contrast controls"
+        ],
+        "roles": [
+          "Figma",
+          "Adobe XD"
+        ],
+        "artifactTypes": [
+          "Claude"
+        ],
+        "fidelity": [
+          "JavaScript",
+          "HTML5",
+          "CSS3",
+          "Git",
+          "GitHub Pages"
+        ],
+        "aiModels": [
+          "Interaction Design",
+          "UI Engineering",
+          "Field Research",
+          "Workflow Analysis",
+          "Responsive Design",
+          "Accessibility",
+          "Performance Optimization",
+          "Technical Documentation"
+        ],
+        "designPrinciples": [
+          "Frontend Engineer",
+          "Interaction Designer",
+          "UX Researcher"
+        ],
+        "usabilityHeuristics": [
+          "Web Application",
+          "Control Interface",
+          "Security Tool",
+          "Design Documentation"
+        ]
       }
     },
     {

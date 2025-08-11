@@ -1,5 +1,5 @@
 // This file is auto-generated. Do not edit manually.
-// Generated 2025-08-11T06:01:08.983Z
+// Generated 2025-08-11T06:16:57.300Z
 
 import aicollabthumbnail from '../images/ai-collab-thumbnail.jpg';
 import applethumbnail from '../images/apple-thumbnail.jpg';
@@ -30,16 +30,17 @@ import youtubettsinterface from '../images/youtube-tts-interface.jpg';
 import youtubettsworkflow from '../images/youtube-tts-workflow.jpg';
 import agtecosystem from '../images/agt-ecosystem.jpg';
 import agtfinancialmodel from '../images/agt-financial-model.jpg';
-import ptzinterfacedemo from '../images/ptz-interface-demo.jpg';
-import ptzcontrolmodes from '../images/ptz-control-modes.jpg';
-import siteplanpdfalignment from '../images/siteplan-pdf-alignment.gif';
-import siteplancameraplacement from '../images/siteplan-camera-placement.gif';
-import siteplanzoneediting from '../images/siteplan-zone-editing.gif';
-import siteplanexportprocess from '../images/siteplan-export-process.gif';
+import ptzlegacyvsmodern from '../images/ptz-legacy-vs-modern.gif';
+import ptzsecurityworkflow from '../images/ptz-security-workflow.jpg';
+import ptzinterfacenightmode from '../images/ptz-interface-night-mode.jpg';
 import siteplanworkflow from '../images/siteplan-workflow.jpg';
 import siteplanarchitecture from '../images/siteplan-architecture.jpg';
 import siteplaneditor from '../images/siteplan-editor.jpg';
 import siteplanexport from '../images/siteplan-export.jpg';
+import siteplanpdfalignment from '../images/siteplan-pdf-alignment.gif';
+import siteplancameraplacement from '../images/siteplan-camera-placement.gif';
+import siteplanzoneediting from '../images/siteplan-zone-editing.gif';
+import siteplanexportprocess from '../images/siteplan-export-process.gif';
 import securitydashboardprocess from '../images/security-dashboard-process.jpg';
 import securitydashboardarchitecture from '../images/security-dashboard-architecture.jpg';
 import dsdevpreviewthumbnail from '../images/dsdev-preview-thumbnail.jpg';
@@ -78,16 +79,17 @@ export const imageMap = {
   '/images/youtube-tts-workflow.jpg': youtubettsworkflow,
   '/images/agt-ecosystem.jpg': agtecosystem,
   '/images/agt-financial-model.jpg': agtfinancialmodel,
-  '/images/ptz-interface-demo.jpg': ptzinterfacedemo,
-  '/images/ptz-control-modes.jpg': ptzcontrolmodes,
-  '/images/siteplan-pdf-alignment.gif': siteplanpdfalignment,
-  '/images/siteplan-camera-placement.gif': siteplancameraplacement,
-  '/images/siteplan-zone-editing.gif': siteplanzoneediting,
-  '/images/siteplan-export-process.gif': siteplanexportprocess,
+  '/images/ptz-legacy-vs-modern.gif': ptzlegacyvsmodern,
+  '/images/ptz-security-workflow.jpg': ptzsecurityworkflow,
+  '/images/ptz-interface-night-mode.jpg': ptzinterfacenightmode,
   '/images/siteplan-workflow.jpg': siteplanworkflow,
   '/images/siteplan-architecture.jpg': siteplanarchitecture,
   '/images/siteplan-editor.jpg': siteplaneditor,
   '/images/siteplan-export.jpg': siteplanexport,
+  '/images/siteplan-pdf-alignment.gif': siteplanpdfalignment,
+  '/images/siteplan-camera-placement.gif': siteplancameraplacement,
+  '/images/siteplan-zone-editing.gif': siteplanzoneediting,
+  '/images/siteplan-export-process.gif': siteplanexportprocess,
   '/images/security-dashboard-process.jpg': securitydashboardprocess,
   '/images/security-dashboard-architecture.jpg': securitydashboardarchitecture,
   '/images/dsdev-preview-thumbnail.jpg': dsdevpreviewthumbnail,
