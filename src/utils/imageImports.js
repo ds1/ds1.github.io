@@ -1,5 +1,5 @@
 // This file is auto-generated. Do not edit manually.
-// Generated 2025-08-11T06:16:57.300Z
+// Generated 2025-08-11T06:46:29.055Z
 
 import aicollabthumbnail from '../images/ai-collab-thumbnail.jpg';
 import applethumbnail from '../images/apple-thumbnail.jpg';
@@ -13,34 +13,19 @@ import ptzcontrollerthumbnail from '../images/ptz-controller-thumbnail.jpg';
 import siteplanthumbnail from '../images/siteplan-thumbnail.jpg';
 import securitydashboardthumbnail from '../images/security-dashboard-thumbnail.jpg';
 import picksithumbnail from '../images/picksi-thumbnail.jpg';
+import collaborationflow from '../images/collaboration-flow.jpg';
 import systemarchitecture from '../images/system-architecture.jpg';
 import agtregistryarchitecture from '../images/agt-registry-architecture.jpg';
 import agtregistrydiscovery from '../images/agt-registry-discovery.jpg';
 import thubbledashboard from '../images/thubble-dashboard.jpg';
-import thubbleworkflowbuilder from '../images/thubble-workflow-builder.jpg';
-import thubbleresponseinterface from '../images/thubble-response-interface.jpg';
-import thubblesynthesisengine from '../images/thubble-synthesis-engine.jpg';
-import thubblerequirementsoutput from '../images/thubble-requirements-output.jpg';
-import thubbledecisionmatrix from '../images/thubble-decision-matrix.jpg';
-import thubblearchitecturediagram from '../images/thubble-architecture-diagram.jpg';
-import thubblecreditsystem from '../images/thubble-credit-system.jpg';
-import thubbleanalytics from '../images/thubble-analytics.jpg';
-import thubblemobileexperience from '../images/thubble-mobile-experience.jpg';
 import youtubettsinterface from '../images/youtube-tts-interface.jpg';
 import youtubettsworkflow from '../images/youtube-tts-workflow.jpg';
 import agtecosystem from '../images/agt-ecosystem.jpg';
 import agtfinancialmodel from '../images/agt-financial-model.jpg';
 import ptzlegacyvsmodern from '../images/ptz-legacy-vs-modern.gif';
 import ptzsecurityworkflow from '../images/ptz-security-workflow.jpg';
-import ptzinterfacenightmode from '../images/ptz-interface-night-mode.jpg';
 import siteplanworkflow from '../images/siteplan-workflow.jpg';
 import siteplanarchitecture from '../images/siteplan-architecture.jpg';
-import siteplaneditor from '../images/siteplan-editor.jpg';
-import siteplanexport from '../images/siteplan-export.jpg';
-import siteplanpdfalignment from '../images/siteplan-pdf-alignment.gif';
-import siteplancameraplacement from '../images/siteplan-camera-placement.gif';
-import siteplanzoneediting from '../images/siteplan-zone-editing.gif';
-import siteplanexportprocess from '../images/siteplan-export-process.gif';
 import securitydashboardprocess from '../images/security-dashboard-process.jpg';
 import securitydashboardarchitecture from '../images/security-dashboard-architecture.jpg';
 import dsdevpreviewthumbnail from '../images/dsdev-preview-thumbnail.jpg';
@@ -62,34 +47,19 @@ export const imageMap = {
   '/images/siteplan-thumbnail.jpg': siteplanthumbnail,
   '/images/security-dashboard-thumbnail.jpg': securitydashboardthumbnail,
   '/images/picksi-thumbnail.jpg': picksithumbnail,
+  '/images/collaboration-flow.jpg': collaborationflow,
   '/images/system-architecture.jpg': systemarchitecture,
   '/images/agt-registry-architecture.jpg': agtregistryarchitecture,
   '/images/agt-registry-discovery.jpg': agtregistrydiscovery,
   '/images/thubble-dashboard.jpg': thubbledashboard,
-  '/images/thubble-workflow-builder.jpg': thubbleworkflowbuilder,
-  '/images/thubble-response-interface.jpg': thubbleresponseinterface,
-  '/images/thubble-synthesis-engine.jpg': thubblesynthesisengine,
-  '/images/thubble-requirements-output.jpg': thubblerequirementsoutput,
-  '/images/thubble-decision-matrix.jpg': thubbledecisionmatrix,
-  '/images/thubble-architecture-diagram.jpg': thubblearchitecturediagram,
-  '/images/thubble-credit-system.jpg': thubblecreditsystem,
-  '/images/thubble-analytics.jpg': thubbleanalytics,
-  '/images/thubble-mobile-experience.jpg': thubblemobileexperience,
   '/images/youtube-tts-interface.jpg': youtubettsinterface,
   '/images/youtube-tts-workflow.jpg': youtubettsworkflow,
   '/images/agt-ecosystem.jpg': agtecosystem,
   '/images/agt-financial-model.jpg': agtfinancialmodel,
   '/images/ptz-legacy-vs-modern.gif': ptzlegacyvsmodern,
   '/images/ptz-security-workflow.jpg': ptzsecurityworkflow,
-  '/images/ptz-interface-night-mode.jpg': ptzinterfacenightmode,
   '/images/siteplan-workflow.jpg': siteplanworkflow,
   '/images/siteplan-architecture.jpg': siteplanarchitecture,
-  '/images/siteplan-editor.jpg': siteplaneditor,
-  '/images/siteplan-export.jpg': siteplanexport,
-  '/images/siteplan-pdf-alignment.gif': siteplanpdfalignment,
-  '/images/siteplan-camera-placement.gif': siteplancameraplacement,
-  '/images/siteplan-zone-editing.gif': siteplanzoneediting,
-  '/images/siteplan-export-process.gif': siteplanexportprocess,
   '/images/security-dashboard-process.jpg': securitydashboardprocess,
   '/images/security-dashboard-architecture.jpg': securitydashboardarchitecture,
   '/images/dsdev-preview-thumbnail.jpg': dsdevpreviewthumbnail,

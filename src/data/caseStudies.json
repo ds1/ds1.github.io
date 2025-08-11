@@ -69,8 +69,8 @@
     {
       "id": 13,
       "title": "Pick.si Domain Directory",
-      "description": "Full-stack marketplace with custom WHOIS integration, automated Celery workflows, and Stripe payments",
-      "thumbnail": "/images/picksi-thumbnail.jpg"
+      "description": "Full-stack marketplace with custom WHOIS integration",
+      "thumbnail": "automated Celery workflows"
     }
   ]
 }

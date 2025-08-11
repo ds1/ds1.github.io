@@ -67,7 +67,7 @@
         },
         {
           "type": "body",
-          "content": "The system uses a **three-tier content architecture**:\\n\\n1. *Content Layer (CSV)*\\n<span class=text-primary\">• Human-editable spreadsheets\\n• Rich text formatting\\n• Image path references\\n• Content validation</span>\\n\\n2. *Processing Layer (Node.js)*\\n<span class=\"text-secondary\">• CSV parsing\\n• JSON generation\\n• Path resolution\\n• Error checking</span>\\n\\n3. *Presentation Layer (React)*\\n<span class=\"text-success\">• Component rendering\\n• Image loading\\n• Error handling\\n• Performance optimization</span>\"",
+          "content": "The system uses a **three-tier content architecture**:\\n\\n1. *Content Layer (CSV)*\\n<span class=\"text-primary\">• Human-editable spreadsheets\\n• Rich text formatting\\n• Image path references\\n• Content validation</span>\\n\\n2. *Processing Layer (Node.js)*\\n<span class=\"text-secondary\">• CSV parsing\\n• JSON generation\\n• Path resolution\\n• Error checking</span>\\n\\n3. *Presentation Layer (React)*\\n<span class=\"text-success\">• Component rendering\\n• Image loading\\n• Error handling\\n• Performance optimization</span>",
           "key": "collaboration"
         },
         {
@@ -109,7 +109,7 @@
         },
         {
           "type": "p",
-          "content": "Prompt;Coded Application;",
+          "content": "Prompt;Coded Application",
           "key": "artifact_types"
         },
         {
@@ -120,14 +120,14 @@
       ],
       "images": [
         {
-          "url": "Technical Challenges",
-          "alt": "Several challenges emerged during development:\\n\\n1. **Path Resolution**\\n<span class=text-warning\">Initial attempts failed to handle image paths consistently between development and production environments.</span>\\n\\n2. **Rich Text Parsing**\\n<span class=\"text-warning\">Early versions struggled with nested formatting and special characters in CSV files.</span>\\n\\n3. **Build Process**\\n<span class=\"text-warning\">Needed to ensure deterministic builds for GitHub Pages deployment.</span>\\n\\nEach challenge was solved through iterative AI collaboration - resulting in robust solutions that handle edge cases and provide clear error messages.\"",
-          "caption": ""
+          "url": "/images/collaboration-flow.jpg",
+          "alt": "AI-Human collaboration diagram",
+          "caption": "Visualization of the iterative development process between human and AI"
         },
         {
           "url": "/images/system-architecture.jpg",
           "alt": "Technical architecture diagram",
-          "caption": "Three-tier architecture showing content flow"
+          "caption": "Three-tier architecture showing the complete system flow"
         }
       ],
       "tags": {
@@ -217,63 +217,26 @@
           "key": "architecture"
         },
         {
-          "type": "h2",
-          "content": "/images/apple-thumbnail.jpg",
-          "key": "innovation_details"
-        },
-        {
-          "type": "body",
-          "content": "Screenshot of admin interface",
-          "key": "innovation"
-        },
-        {
-          "type": "h2",
-          "content": "Redesigned workflow reduced steps by 60%",
-          "key": "collaboration"
-        },
-        {
-          "type": "body",
-          "content": "/images/apple-thumbnail.jpg",
-          "key": "collaboration"
-        },
-        {
-          "type": "h2",
-          "content": "New interface design",
-          "key": "results"
-        },
-        {
-          "type": "list",
-          "content": [
-            "Unified system with consistent patterns"
-          ],
-          "key": "results"
-        },
-        {
           "type": "p",
-          "content": "Sketch;Figma",
+          "content": "Principal / Lead Contributor",
           "key": "design_tools"
         },
         {
           "type": "p",
-          "content": "Principal / Lead Contributor",
-          "key": "roles"
-        },
-        {
-          "type": "p",
           "content": "Mockup;Design System;Interactive Prototype",
-          "key": "artifact_types"
+          "key": "ai_tools"
         },
         {
           "type": "p",
           "content": "Medium;High",
-          "key": "fidelity"
+          "key": "dev_tools"
         }
       ],
       "images": [
         {
           "url": "",
           "alt": "",
-          "caption": ""
+          "caption": "Sketch;Figma"
         },
         {
           "url": "",
@@ -283,24 +246,21 @@
       ],
       "tags": {
         "designTools": [
-          "Sketch",
-          "Figma"
-        ],
-        "aiTools": [],
-        "devTools": [],
-        "skills": [],
-        "roles": [
           "Principal / Lead Contributor"
         ],
-        "artifactTypes": [
+        "aiTools": [
           "Mockup",
           "Design System",
           "Interactive Prototype"
         ],
-        "fidelity": [
+        "devTools": [
           "Medium",
           "High"
         ],
+        "skills": [],
+        "roles": [],
+        "artifactTypes": [],
+        "fidelity": [],
         "aiModels": [],
         "designPrinciples": [],
         "usabilityHeuristics": []
@@ -360,56 +320,14 @@
           "key": "architecture"
         },
         {
-          "type": "h2",
-          "content": "/images/magic-leap-thumbnail.gif",
-          "key": "innovation_details"
-        },
-        {
-          "type": "body",
-          "content": "Spatial interface",
-          "key": "innovation"
-        },
-        {
-          "type": "h2",
-          "content": "New interaction paradigms",
-          "key": "collaboration"
-        },
-        {
-          "type": "body",
-          "content": "/images/magic-leap-thumbnail.gif",
-          "key": "collaboration"
-        },
-        {
-          "type": "h2",
-          "content": "Gesture controls",
-          "key": "results"
-        },
-        {
-          "type": "list",
-          "content": [
-            "Hand-gesture interface prototype"
-          ],
-          "key": "results"
-        },
-        {
-          "type": "p",
-          "content": "Unity3D",
-          "key": "dev_tools"
-        },
-        {
-          "type": "p",
-          "content": "Principal / Lead Contributor",
-          "key": "roles"
-        },
-        {
           "type": "p",
           "content": "Coded Application;Interactive Prototype;Sitemap",
-          "key": "artifact_types"
+          "key": "design_tools"
         },
         {
           "type": "p",
           "content": "High",
-          "key": "fidelity"
+          "key": "ai_tools"
         }
       ],
       "images": [
@@ -419,29 +337,25 @@
           "caption": ""
         },
         {
-          "url": "",
+          "url": "Unity3D",
           "alt": "",
-          "caption": ""
+          "caption": "Principal / Lead Contributor"
         }
       ],
       "tags": {
-        "designTools": [],
-        "aiTools": [],
-        "devTools": [
-          "Unity3D"
-        ],
-        "skills": [],
-        "roles": [
-          "Principal / Lead Contributor"
-        ],
-        "artifactTypes": [
+        "designTools": [
           "Coded Application",
           "Interactive Prototype",
           "Sitemap"
         ],
-        "fidelity": [
+        "aiTools": [
           "High"
         ],
+        "devTools": [],
+        "skills": [],
+        "roles": [],
+        "artifactTypes": [],
+        "fidelity": [],
         "aiModels": [],
         "designPrinciples": [],
         "usabilityHeuristics": []
@@ -501,94 +415,35 @@
           "key": "architecture"
         },
         {
-          "type": "h2",
-          "content": "/images/petal-metrics-thumbnail.gif",
-          "key": "innovation_details"
-        },
-        {
-          "type": "body",
-          "content": "Dashboard overview",
-          "key": "innovation"
-        },
-        {
-          "type": "h2",
-          "content": "Comprehensive metrics visualization",
-          "key": "collaboration"
-        },
-        {
-          "type": "body",
-          "content": "/images/petal-metrics-thumbnail.gif",
-          "key": "collaboration"
-        },
-        {
-          "type": "h2",
-          "content": "Analysis tools",
-          "key": "results"
-        },
-        {
-          "type": "list",
-          "content": [
-            "Real-time data analysis interface"
-          ],
-          "key": "results"
-        },
-        {
-          "type": "p",
-          "content": "Figma;Adobe XD;Miro",
-          "key": "design_tools"
-        },
-        {
-          "type": "p",
-          "content": "Product Manager;Principal / Lead Contributor",
-          "key": "roles"
-        },
-        {
-          "type": "p",
-          "content": "Static Wireframe;Interactive Prototype;Coded Application;Design System",
-          "key": "artifact_types"
-        },
-        {
           "type": "p",
           "content": "Low;Medium;High",
-          "key": "fidelity"
+          "key": "design_tools"
         }
       ],
       "images": [
         {
           "url": "",
-          "alt": "",
+          "alt": "Figma;Adobe XD;Miro",
           "caption": ""
         },
         {
           "url": "",
-          "alt": "",
-          "caption": ""
+          "alt": "Product Manager;Principal / Lead Contributor",
+          "caption": "Static Wireframe;Interactive Prototype;Coded Application;Design System"
         }
       ],
       "tags": {
         "designTools": [
-          "Figma",
-          "Adobe XD",
-          "Miro"
-        ],
-        "aiTools": [],
-        "devTools": [],
-        "skills": [],
-        "roles": [
-          "Product Manager",
-          "Principal / Lead Contributor"
-        ],
-        "artifactTypes": [
-          "Static Wireframe",
-          "Interactive Prototype",
-          "Coded Application",
-          "Design System"
-        ],
-        "fidelity": [
           "Low",
           "Medium",
           "High"
         ],
+        "aiTools": [],
+        "devTools": [],
+        "skills": [],
+        "roles": [],
+        "artifactTypes": [],
+        "fidelity": [],
         "aiModels": [],
         "designPrinciples": [],
         "usabilityHeuristics": []
@@ -713,324 +568,6 @@
       }
     },
     {
-      "id": null,
-      "title": "title",
-      "subtitle": "subtitle",
-      "thumbnail": "thumbnail",
-      "duration": "duration",
-      "role": "role",
-      "content": [
-        {
-          "type": "p",
-          "content": "project_type",
-          "key": "project_type"
-        },
-        {
-          "type": "h1",
-          "content": "initial_vision_h1",
-          "key": "initial_vision"
-        },
-        {
-          "type": "h2",
-          "content": "problem_statement_h2",
-          "key": "problem_statement"
-        },
-        {
-          "type": "body",
-          "content": "problem_body",
-          "key": "problem"
-        },
-        {
-          "type": "h2",
-          "content": "technical_approach_h2",
-          "key": "technical_approach"
-        },
-        {
-          "type": "list",
-          "content": [
-            "approach_list"
-          ],
-          "key": "approach"
-        },
-        {
-          "type": "h2",
-          "content": "architecture_h2",
-          "key": "architecture"
-        },
-        {
-          "type": "body",
-          "content": "architecture_body",
-          "key": "architecture"
-        },
-        {
-          "type": "h2",
-          "content": "innovation_details_h2",
-          "key": "innovation_details"
-        },
-        {
-          "type": "body",
-          "content": "innovation_body",
-          "key": "innovation"
-        },
-        {
-          "type": "h2",
-          "content": "collaboration_h2",
-          "key": "collaboration"
-        },
-        {
-          "type": "body",
-          "content": "collaboration_body",
-          "key": "collaboration"
-        },
-        {
-          "type": "h2",
-          "content": "business_model_h2",
-          "key": "results"
-        },
-        {
-          "type": "list",
-          "content": [
-            "business_model_body"
-          ],
-          "key": "results"
-        },
-        {
-          "type": "p",
-          "content": "image1_caption",
-          "key": "field27"
-        },
-        {
-          "type": "p",
-          "content": "image2_url",
-          "key": "field28"
-        },
-        {
-          "type": "p",
-          "content": "image2_alt",
-          "key": "field29"
-        },
-        {
-          "type": "p",
-          "content": "image2_caption",
-          "key": "field30"
-        },
-        {
-          "type": "p",
-          "content": "image3_url",
-          "key": "field31"
-        },
-        {
-          "type": "p",
-          "content": "image3_alt",
-          "key": "design_tools"
-        },
-        {
-          "type": "p",
-          "content": "image3_caption",
-          "key": "ai_tools"
-        },
-        {
-          "type": "p",
-          "content": "image4_url",
-          "key": "dev_tools"
-        },
-        {
-          "type": "p",
-          "content": "image4_alt",
-          "key": "skills"
-        },
-        {
-          "type": "p",
-          "content": "image4_caption",
-          "key": "roles"
-        },
-        {
-          "type": "p",
-          "content": "image5_url",
-          "key": "artifact_types"
-        },
-        {
-          "type": "p",
-          "content": "image5_alt",
-          "key": "fidelity"
-        },
-        {
-          "type": "p",
-          "content": "image5_caption",
-          "key": "ai_models"
-        },
-        {
-          "type": "p",
-          "content": "image6_url",
-          "key": "design_principles"
-        },
-        {
-          "type": "p",
-          "content": "image6_alt",
-          "key": "usability_heuristics"
-        },
-        {
-          "type": "p",
-          "content": "image6_caption",
-          "key": "field42"
-        },
-        {
-          "type": "p",
-          "content": "image7_url",
-          "key": "field43"
-        },
-        {
-          "type": "p",
-          "content": "image7_alt",
-          "key": "field44"
-        },
-        {
-          "type": "p",
-          "content": "image7_caption",
-          "key": "field45"
-        },
-        {
-          "type": "p",
-          "content": "image8_url",
-          "key": "field46"
-        },
-        {
-          "type": "p",
-          "content": "image8_alt",
-          "key": "field47"
-        },
-        {
-          "type": "p",
-          "content": "image8_caption",
-          "key": "field48"
-        },
-        {
-          "type": "p",
-          "content": "image9_url",
-          "key": "field49"
-        },
-        {
-          "type": "p",
-          "content": "image9_alt",
-          "key": "field50"
-        },
-        {
-          "type": "p",
-          "content": "image9_caption",
-          "key": "field51"
-        },
-        {
-          "type": "p",
-          "content": "image10_url",
-          "key": "field52"
-        },
-        {
-          "type": "p",
-          "content": "image10_alt",
-          "key": "field53"
-        },
-        {
-          "type": "p",
-          "content": "image10_caption",
-          "key": "field54"
-        },
-        {
-          "type": "p",
-          "content": "design_tools",
-          "key": "field55"
-        },
-        {
-          "type": "p",
-          "content": "ai_tools",
-          "key": "field56"
-        },
-        {
-          "type": "p",
-          "content": "dev_tools",
-          "key": "field57"
-        },
-        {
-          "type": "p",
-          "content": "skills",
-          "key": "field58"
-        },
-        {
-          "type": "p",
-          "content": "roles",
-          "key": "field59"
-        },
-        {
-          "type": "p",
-          "content": "artifact_types",
-          "key": "field60"
-        },
-        {
-          "type": "p",
-          "content": "fidelity",
-          "key": "field61"
-        },
-        {
-          "type": "p",
-          "content": "ai_models",
-          "key": "field62"
-        },
-        {
-          "type": "p",
-          "content": "design_principles",
-          "key": "field63"
-        },
-        {
-          "type": "p",
-          "content": "usability_heuristics",
-          "key": "field64"
-        }
-      ],
-      "images": [
-        {
-          "url": "challenges_h2",
-          "alt": "challenges_body",
-          "caption": "results_h2"
-        },
-        {
-          "url": "results_list",
-          "alt": "image1_url",
-          "caption": "image1_alt"
-        }
-      ],
-      "tags": {
-        "designTools": [
-          "image3_alt"
-        ],
-        "aiTools": [
-          "image3_caption"
-        ],
-        "devTools": [
-          "image4_url"
-        ],
-        "skills": [
-          "image4_alt"
-        ],
-        "roles": [
-          "image4_caption"
-        ],
-        "artifactTypes": [
-          "image5_url"
-        ],
-        "fidelity": [
-          "image5_alt"
-        ],
-        "aiModels": [
-          "image5_caption"
-        ],
-        "designPrinciples": [
-          "image6_url"
-        ],
-        "usabilityHeuristics": [
-          "image6_alt"
-        ]
-      }
-    },
-    {
       "id": 6,
       "title": "Thubble: Collective Intelligence",
       "subtitle": "Engineering a 15-Workflow AI Synthesis Platform for Enterprise Decision-Making",
@@ -1122,237 +659,135 @@
         },
         {
           "type": "p",
-          "content": "Executive dashboard displaying real-time workflow metrics and stakeholder engagement analytics",
-          "key": "field27"
-        },
-        {
-          "type": "p",
-          "content": "/images/thubble-workflow-builder.jpg",
-          "key": "field28"
-        },
-        {
-          "type": "p",
-          "content": "Workflow creation interface with stakeholder group management",
-          "key": "field29"
-        },
-        {
-          "type": "p",
-          "content": "Intuitive workflow builder with drag-and-drop stakeholder groups and customizable questions",
-          "key": "field30"
-        },
-        {
-          "type": "p",
-          "content": "/images/thubble-response-interface.jpg",
-          "key": "field31"
-        },
-        {
-          "type": "p",
-          "content": "Mobile-responsive stakeholder response form",
+          "content": "Figma;Miro;Whimsical",
           "key": "design_tools"
         },
         {
           "type": "p",
-          "content": "Zero-friction response interface requiring no login, optimized for mobile completion",
+          "content": "OpenAI GPT-4;Claude 3 Opus;GPT-3.5 Turbo",
           "key": "ai_tools"
         },
         {
           "type": "p",
-          "content": "/images/thubble-synthesis-engine.jpg",
+          "content": "Next.js 14;TypeScript;Supabase;PostgreSQL;Stripe;SendGrid;Docker;Vercel;Sentry;Playwright",
           "key": "dev_tools"
         },
         {
           "type": "p",
-          "content": "AI synthesis processing visualization",
+          "content": "Full-Stack Development;AI Systems Design;Prompt Engineering;Database Architecture;API Design;Payment Processing;Email Automation;Performance Optimization",
           "key": "skills"
         },
         {
           "type": "p",
-          "content": "Real-time synthesis progress showing AI processing stages and confidence scores",
+          "content": "Founder;Full-Stack Architect;AI Systems Designer;Product Strategist",
           "key": "roles"
         },
         {
           "type": "p",
-          "content": "/images/thubble-requirements-output.jpg",
+          "content": "SaaS Platform;AI Synthesis Engine;Credit System;Email Pipeline;Analytics Dashboard;Component Library",
           "key": "artifact_types"
         },
         {
           "type": "p",
-          "content": "Generated requirements document with structured sections",
+          "content": "Production",
           "key": "fidelity"
         },
         {
           "type": "p",
-          "content": "AI-generated requirements document with auto-categorized functional and non-functional requirements",
+          "content": "GPT-4;Claude 3 Opus;GPT-3.5 Turbo",
           "key": "ai_models"
         },
         {
           "type": "p",
-          "content": "/images/thubble-decision-matrix.jpg",
+          "content": "Zero-Friction Onboarding;Mobile-First Design;Progressive Disclosure;Error Prevention;Transparent Pricing",
           "key": "design_principles"
         },
         {
           "type": "p",
-          "content": "Interactive decision matrix visualization",
-          "key": "usability_heuristics"
-        },
-        {
-          "type": "p",
-          "content": "Decision matrix output with weighted scoring and sensitivity analysis",
-          "key": "field42"
-        },
-        {
-          "type": "p",
-          "content": "/images/thubble-architecture-diagram.jpg",
-          "key": "field43"
-        },
-        {
-          "type": "p",
-          "content": "System architecture diagram",
-          "key": "field44"
-        },
-        {
-          "type": "p",
-          "content": "High-level architecture showing serverless components and AI orchestration layer",
-          "key": "field45"
-        },
-        {
-          "type": "p",
-          "content": "/images/thubble-credit-system.jpg",
-          "key": "field46"
-        },
-        {
-          "type": "p",
-          "content": "Credit purchase and usage interface",
-          "key": "field47"
-        },
-        {
-          "type": "p",
-          "content": "Transparent credit system with usage history and bulk purchase options",
-          "key": "field48"
-        },
-        {
-          "type": "p",
-          "content": "/images/thubble-analytics.jpg",
-          "key": "field49"
-        },
-        {
-          "type": "p",
-          "content": "Analytics dashboard with response rates and engagement metrics",
-          "key": "field50"
-        },
-        {
-          "type": "p",
-          "content": "Advanced analytics showing stakeholder engagement patterns and synthesis quality metrics",
-          "key": "field51"
-        },
-        {
-          "type": "p",
-          "content": "/images/thubble-mobile-experience.jpg",
-          "key": "field52"
-        },
-        {
-          "type": "p",
-          "content": "Mobile app views of key workflows",
-          "key": "field53"
-        },
-        {
-          "type": "p",
-          "content": "Responsive mobile experience enabling stakeholders to respond from any device",
-          "key": "field54"
-        },
-        {
-          "type": "p",
-          "content": "Figma;Miro;Whimsical",
-          "key": "field55"
-        },
-        {
-          "type": "p",
-          "content": "OpenAI GPT-4;Claude 3 Opus;GPT-3.5 Turbo",
-          "key": "field56"
-        },
-        {
-          "type": "p",
-          "content": "Next.js 14;TypeScript;Supabase;PostgreSQL;Stripe;SendGrid;Docker;Vercel;Sentry;Playwright",
-          "key": "field57"
-        },
-        {
-          "type": "p",
-          "content": "Full-Stack Development;AI Systems Design;Prompt Engineering;Database Architecture;API Design;Payment Processing;Email Automation;Performance Optimization",
-          "key": "field58"
-        },
-        {
-          "type": "p",
-          "content": "Founder;Full-Stack Architect;AI Systems Designer;Product Strategist",
-          "key": "field59"
-        },
-        {
-          "type": "p",
-          "content": "SaaS Platform;AI Synthesis Engine;Credit System;Email Pipeline;Analytics Dashboard;Component Library",
-          "key": "field60"
-        },
-        {
-          "type": "p",
-          "content": "Production",
-          "key": "field61"
-        },
-        {
-          "type": "p",
-          "content": "GPT-4;Claude 3 Opus;GPT-3.5 Turbo",
-          "key": "field62"
-        },
-        {
-          "type": "p",
-          "content": "Zero-Friction Onboarding;Mobile-First Design;Progressive Disclosure;Error Prevention;Transparent Pricing",
-          "key": "field63"
-        },
-        {
-          "type": "p",
           "content": "Visibility of System Status;Match Between System and Real World;User Control and Freedom;Error Prevention;Recognition Rather Than Recall",
-          "key": "field64"
+          "key": "usability_heuristics"
         }
       ],
       "images": [
         {
-          "url": "Technical Challenges Conquered",
-          "alt": "Solved complex engineering challenges through innovative approaches:\\n\\n**1. Synthesis Quality at Scale**\\n*Challenge:* Maintaining coherent 4,000+ word documents from 50+ responses\\n*Solution:* Hierarchical summarization with embedding-based deduplication\\n*Result:* 94% stakeholder satisfaction with synthesis quality\\n\\n**2. Real-Time Collaboration**\\n*Challenge:* Multiple users editing workflows simultaneously\\n*Solution:* Operational transformation with Supabase Realtime\\n*Impact:* Zero data conflicts across 10,000+ concurrent sessions\\n\\n**3. Email Deliverability**\\n*Challenge:* Corporate firewalls blocking stakeholder invitations\\n*Solution:* SendGrid with custom domain authentication and warming\\n*Achievement:* 99.2% inbox placement rate\\n\\n**4. Cost Control**\\n*Challenge:* OpenAI API costs threatening unit economics\\n*Solution:* Intelligent caching and prompt optimization\\n*Savings:* Reduced per-synthesis cost from $1.47 to $0.38",
-          "caption": "Measurable Impact & Traction"
+          "url": "/images/thubble-dashboard.jpg",
+          "alt": "Thubble dashboard showing workflow analytics and metrics",
+          "caption": "Executive dashboard displaying real-time workflow metrics and stakeholder engagement analytics"
         },
         {
-          "url": "Processed 47,000+ stakeholder responses across 2,100 workflows in 90 days;Reduced decision-making time by 73% for Fortune 500 pilot client;Achieved 89% average stakeholder response rate (vs. 31% email surveys);Generated $31,000 revenue in first quarter with 67% gross margin;Supporting 127 active organizations across 6 countries;Decreased requirements gathering from 3 weeks to 48 hours;Saved clients average of $127,000 annually in meeting costs;Maintained 99.94% uptime with zero data loss incidents;Created 15 workflow templates covering 95% of enterprise use cases;Built reusable component library reducing feature development by 60%",
-          "alt": "/images/thubble-dashboard.jpg",
-          "caption": "Thubble dashboard showing workflow analytics and metrics"
+          "url": "/images/thubble-architecture.jpg",
+          "alt": "System architecture diagram",
+          "caption": "High-level architecture showing serverless components and AI orchestration layer"
         }
       ],
       "tags": {
         "designTools": [
-          "Mobile-responsive stakeholder response form"
+          "Figma",
+          "Miro",
+          "Whimsical"
         ],
         "aiTools": [
-          "Zero-friction response interface requiring no login, optimized for mobile completion"
+          "OpenAI GPT-4",
+          "Claude 3 Opus",
+          "GPT-3.5 Turbo"
         ],
         "devTools": [
-          "/images/thubble-synthesis-engine.jpg"
+          "Next.js 14",
+          "TypeScript",
+          "Supabase",
+          "PostgreSQL",
+          "Stripe",
+          "SendGrid",
+          "Docker",
+          "Vercel",
+          "Sentry",
+          "Playwright"
         ],
         "skills": [
-          "AI synthesis processing visualization"
+          "Full-Stack Development",
+          "AI Systems Design",
+          "Prompt Engineering",
+          "Database Architecture",
+          "API Design",
+          "Payment Processing",
+          "Email Automation",
+          "Performance Optimization"
         ],
         "roles": [
-          "Real-time synthesis progress showing AI processing stages and confidence scores"
+          "Founder",
+          "Full-Stack Architect",
+          "AI Systems Designer",
+          "Product Strategist"
         ],
         "artifactTypes": [
-          "/images/thubble-requirements-output.jpg"
+          "SaaS Platform",
+          "AI Synthesis Engine",
+          "Credit System",
+          "Email Pipeline",
+          "Analytics Dashboard",
+          "Component Library"
         ],
         "fidelity": [
-          "Generated requirements document with structured sections"
+          "Production"
         ],
         "aiModels": [
-          "AI-generated requirements document with auto-categorized functional and non-functional requirements"
+          "GPT-4",
+          "Claude 3 Opus",
+          "GPT-3.5 Turbo"
         ],
         "designPrinciples": [
-          "/images/thubble-decision-matrix.jpg"
+          "Zero-Friction Onboarding",
+          "Mobile-First Design",
+          "Progressive Disclosure",
+          "Error Prevention",
+          "Transparent Pricing"
         ],
         "usabilityHeuristics": [
-          "Interactive decision matrix visualization"
+          "Visibility of System Status",
+          "Match Between System and Real World",
+          "User Control and Freedom",
+          "Error Prevention",
+          "Recognition Rather Than Recall"
         ]
       }
     },
@@ -1597,233 +1032,10 @@
       }
     },
     {
-      "id": null,
-      "title": "title",
-      "subtitle": "subtitle",
-      "thumbnail": "thumbnail",
-      "duration": "duration",
-      "role": "role",
-      "content": [
-        {
-          "type": "p",
-          "content": "project_type",
-          "key": "project_type"
-        },
-        {
-          "type": "h1",
-          "content": "initial_vision_h1",
-          "key": "initial_vision"
-        },
-        {
-          "type": "h2",
-          "content": "problem_statement_h2",
-          "key": "problem_statement"
-        },
-        {
-          "type": "body",
-          "content": "problem_body",
-          "key": "problem"
-        },
-        {
-          "type": "h2",
-          "content": "technical_approach_h2",
-          "key": "technical_approach"
-        },
-        {
-          "type": "list",
-          "content": [
-            "approach_list"
-          ],
-          "key": "approach"
-        },
-        {
-          "type": "h2",
-          "content": "architecture_h2",
-          "key": "architecture"
-        },
-        {
-          "type": "body",
-          "content": "architecture_body",
-          "key": "architecture"
-        },
-        {
-          "type": "h2",
-          "content": "innovation_details_h2",
-          "key": "innovation_details"
-        },
-        {
-          "type": "body",
-          "content": "innovation_body",
-          "key": "innovation"
-        },
-        {
-          "type": "h2",
-          "content": "collaboration_h2",
-          "key": "collaboration"
-        },
-        {
-          "type": "body",
-          "content": "collaboration_body",
-          "key": "collaboration"
-        },
-        {
-          "type": "h2",
-          "content": "results_h2",
-          "key": "results"
-        },
-        {
-          "type": "list",
-          "content": [
-            "results_list"
-          ],
-          "key": "results"
-        },
-        {
-          "type": "p",
-          "content": "system_image_url",
-          "key": "field27"
-        },
-        {
-          "type": "p",
-          "content": "system_image_alt",
-          "key": "field28"
-        },
-        {
-          "type": "p",
-          "content": "system_image_caption",
-          "key": "field29"
-        },
-        {
-          "type": "p",
-          "content": "demo_video_url",
-          "key": "field30"
-        },
-        {
-          "type": "p",
-          "content": "demo_video_alt",
-          "key": "field31"
-        },
-        {
-          "type": "p",
-          "content": "demo_video_caption",
-          "key": "design_tools"
-        },
-        {
-          "type": "p",
-          "content": "interface_image_url",
-          "key": "ai_tools"
-        },
-        {
-          "type": "p",
-          "content": "interface_image_alt",
-          "key": "dev_tools"
-        },
-        {
-          "type": "p",
-          "content": "interface_image_caption",
-          "key": "skills"
-        },
-        {
-          "type": "p",
-          "content": "design_tools",
-          "key": "roles"
-        },
-        {
-          "type": "p",
-          "content": "ai_tools",
-          "key": "artifact_types"
-        },
-        {
-          "type": "p",
-          "content": "dev_tools",
-          "key": "fidelity"
-        },
-        {
-          "type": "p",
-          "content": "skills",
-          "key": "ai_models"
-        },
-        {
-          "type": "p",
-          "content": "roles",
-          "key": "design_principles"
-        },
-        {
-          "type": "p",
-          "content": "artifact_types",
-          "key": "usability_heuristics"
-        },
-        {
-          "type": "p",
-          "content": "fidelity",
-          "key": "field42"
-        },
-        {
-          "type": "p",
-          "content": "ai_models",
-          "key": "field43"
-        },
-        {
-          "type": "p",
-          "content": "design_principles",
-          "key": "field44"
-        },
-        {
-          "type": "p",
-          "content": "usability_heuristics",
-          "key": "field45"
-        }
-      ],
-      "images": [
-        {
-          "url": "legacy_comparison_image_url",
-          "alt": "legacy_comparison_alt",
-          "caption": "legacy_comparison_caption"
-        },
-        {
-          "url": "process_image_url",
-          "alt": "process_image_alt",
-          "caption": "process_image_caption"
-        }
-      ],
-      "tags": {
-        "designTools": [
-          "demo_video_caption"
-        ],
-        "aiTools": [
-          "interface_image_url"
-        ],
-        "devTools": [
-          "interface_image_alt"
-        ],
-        "skills": [
-          "interface_image_caption"
-        ],
-        "roles": [
-          "design_tools"
-        ],
-        "artifactTypes": [
-          "ai_tools"
-        ],
-        "fidelity": [
-          "dev_tools"
-        ],
-        "aiModels": [
-          "skills"
-        ],
-        "designPrinciples": [
-          "roles"
-        ],
-        "usabilityHeuristics": [
-          "artifact_types"
-        ]
-      }
-    },
-    {
       "id": 9,
-      "title": "PTZ Camera Control v1.2",
+      "title": "PTZ Camera Control",
       "subtitle": "Transforming Construction Site Security Monitoring",
-      "thumbnail": "images/ptz-controller-thumbnail.jpg",
+      "thumbnail": "/images/ptz-controller-thumbnail.jpg",
       "duration": "April 2025",
       "role": "Frontend Engineer & Interaction Designer",
       "content": [
@@ -1917,93 +1129,48 @@
         },
         {
           "type": "p",
-          "content": "/images/ptz-architecture.jpg",
-          "key": "field27"
-        },
-        {
-          "type": "p",
-          "content": "System architecture diagram",
-          "key": "field28"
-        },
-        {
-          "type": "p",
-          "content": "Browser-based architecture eliminating installation requirements",
-          "key": "field29"
-        },
-        {
-          "type": "p",
-          "content": "/videos/PTZ-Controller-v1.2.mp4",
-          "key": "field30"
-        },
-        {
-          "type": "p",
-          "content": "Video demonstration of v1.2 features",
-          "key": "field31"
-        },
-        {
-          "type": "p",
-          "content": "Security operator demonstrating rapid incident response workflow",
+          "content": "Figma;Adobe XD",
           "key": "design_tools"
         },
         {
           "type": "p",
-          "content": "/images/ptz-interface-night-mode.jpg",
+          "content": "Claude",
           "key": "ai_tools"
         },
         {
           "type": "p",
-          "content": "PTZ Controller interface in security monitoring setup",
+          "content": "JavaScript;HTML5;CSS3;Git;GitHub Pages",
           "key": "dev_tools"
         },
         {
           "type": "p",
-          "content": "Night shift interface with dark theme and high contrast controls",
+          "content": "Interaction Design;UI Engineering;Field Research;Workflow Analysis;Responsive Design;Accessibility;Performance Optimization;Technical Documentation",
           "key": "skills"
         },
         {
           "type": "p",
-          "content": "Figma;Adobe XD",
+          "content": "Frontend Engineer;Interaction Designer;UX Researcher",
           "key": "roles"
         },
         {
           "type": "p",
-          "content": "Claude",
+          "content": "Web Application;Control Interface;Security Tool;Design Documentation",
           "key": "artifact_types"
         },
         {
           "type": "p",
-          "content": "JavaScript;HTML5;CSS3;Git;GitHub Pages",
+          "content": "Production",
           "key": "fidelity"
         },
         {
           "type": "p",
-          "content": "Interaction Design;UI Engineering;Field Research;Workflow Analysis;Responsive Design;Accessibility;Performance Optimization;Technical Documentation",
-          "key": "ai_models"
-        },
-        {
-          "type": "p",
-          "content": "Frontend Engineer;Interaction Designer;UX Researcher",
+          "content": "Direct Manipulation;Progressive Disclosure;User Control and Freedom;Consistency;Error Prevention;Flexibility",
           "key": "design_principles"
         },
         {
           "type": "p",
-          "content": "Web Application;Control Interface;Security Tool;Design Documentation",
-          "key": "usability_heuristics"
-        },
-        {
-          "type": "p",
-          "content": "Production",
-          "key": "field42"
-        },
-        {
-          "type": "p",
-          "content": "Direct Manipulation;Progressive Disclosure;User Control and Freedom;Consistency;Error Prevention;Flexibility",
-          "key": "field44"
-        },
-        {
-          "type": "p",
           "content": "Visibility of System Status;Match Between System and Real World;User Control and Freedom;Consistency and Standards;Error Prevention;Recognition Rather Than Recall;Flexibility and Efficiency of Use;Aesthetic and Minimalist Design;Help Users Recognize Diagnose and Recover from Errors;Help and Documentation",
-          "key": "field45"
+          "key": "usability_heuristics"
         }
       ],
       "images": [
@@ -2020,32 +1187,20 @@
       ],
       "tags": {
         "designTools": [
-          "Security operator demonstrating rapid incident response workflow"
-        ],
-        "aiTools": [
-          "/images/ptz-interface-night-mode.jpg"
-        ],
-        "devTools": [
-          "PTZ Controller interface in security monitoring setup"
-        ],
-        "skills": [
-          "Night shift interface with dark theme and high contrast controls"
-        ],
-        "roles": [
           "Figma",
           "Adobe XD"
         ],
-        "artifactTypes": [
+        "aiTools": [
           "Claude"
         ],
-        "fidelity": [
+        "devTools": [
           "JavaScript",
           "HTML5",
           "CSS3",
           "Git",
           "GitHub Pages"
         ],
-        "aiModels": [
+        "skills": [
           "Interaction Design",
           "UI Engineering",
           "Field Research",
@@ -2055,164 +1210,48 @@
           "Performance Optimization",
           "Technical Documentation"
         ],
-        "designPrinciples": [
+        "roles": [
           "Frontend Engineer",
           "Interaction Designer",
           "UX Researcher"
         ],
-        "usabilityHeuristics": [
+        "artifactTypes": [
           "Web Application",
           "Control Interface",
           "Security Tool",
           "Design Documentation"
-        ]
-      }
-    },
-    {
-      "id": null,
-      "title": "title",
-      "subtitle": "subtitle",
-      "thumbnail": "thumbnail",
-      "duration": "duration",
-      "role": "role",
-      "content": [
-        {
-          "type": "p",
-          "content": "project_type",
-          "key": "project_type"
-        },
-        {
-          "type": "h1",
-          "content": "initial_vision_h1",
-          "key": "initial_vision"
-        },
-        {
-          "type": "h2",
-          "content": "problem_statement_h2",
-          "key": "problem_statement"
-        },
-        {
-          "type": "body",
-          "content": "problem_body",
-          "key": "problem"
-        },
-        {
-          "type": "h2",
-          "content": "technical_approach_h2",
-          "key": "technical_approach"
-        },
-        {
-          "type": "list",
-          "content": [
-            "approach_list"
-          ],
-          "key": "approach"
-        },
-        {
-          "type": "h2",
-          "content": "architecture_h2",
-          "key": "architecture"
-        },
-        {
-          "type": "body",
-          "content": "architecture_body",
-          "key": "architecture"
-        },
-        {
-          "type": "h2",
-          "content": "innovation_details_h2",
-          "key": "innovation_details"
-        },
-        {
-          "type": "body",
-          "content": "innovation_body",
-          "key": "innovation"
-        },
-        {
-          "type": "h2",
-          "content": "collaboration_h2",
-          "key": "collaboration"
-        },
-        {
-          "type": "body",
-          "content": "collaboration_body",
-          "key": "collaboration"
-        },
-        {
-          "type": "h2",
-          "content": "results_h2",
-          "key": "results"
-        },
-        {
-          "type": "list",
-          "content": [
-            "results_list"
-          ],
-          "key": "results"
-        },
-        {
-          "type": "p",
-          "content": "workflow_image_url",
-          "key": "field27"
-        },
-        {
-          "type": "p",
-          "content": "workflow_image_alt",
-          "key": "field28"
-        },
-        {
-          "type": "p",
-          "content": "workflow_image_caption",
-          "key": "field29"
-        },
-        {
-          "type": "p",
-          "content": "export_image_url",
-          "key": "field30"
-        },
-        {
-          "type": "p",
-          "content": "export_image_alt",
-          "key": "field31"
-        },
-        {
-          "type": "p",
-          "content": "export_image_caption",
-          "key": "design_tools"
-        }
-      ],
-      "images": [
-        {
-          "url": "process_image_url",
-          "alt": "process_image_alt",
-          "caption": "process_image_caption"
-        },
-        {
-          "url": "system_image_url",
-          "alt": "system_image_alt",
-          "caption": "system_image_caption"
-        }
-      ],
-      "tags": {
-        "designTools": [
-          "export_image_caption"
         ],
-        "aiTools": [],
-        "devTools": [],
-        "skills": [],
-        "roles": [],
-        "artifactTypes": [],
-        "fidelity": [],
+        "fidelity": [
+          "Production"
+        ],
         "aiModels": [],
-        "designPrinciples": [],
-        "usabilityHeuristics": []
+        "designPrinciples": [
+          "Direct Manipulation",
+          "Progressive Disclosure",
+          "User Control and Freedom",
+          "Consistency",
+          "Error Prevention",
+          "Flexibility"
+        ],
+        "usabilityHeuristics": [
+          "Visibility of System Status",
+          "Match Between System and Real World",
+          "User Control and Freedom",
+          "Consistency and Standards",
+          "Error Prevention",
+          "Recognition Rather Than Recall",
+          "Flexibility and Efficiency of Use",
+          "Aesthetic and Minimalist Design",
+          "Help Users Recognize Diagnose and Recover from Errors",
+          "Help and Documentation"
+        ]
       }
     },
     {
       "id": 10,
       "title": "Site Plan Maker",
       "subtitle": "Professional Surveillance Planning Platform",
-      "thumbnail": "images/siteplan-thumbnail.jpg",
+      "thumbnail": "/images/siteplan-thumbnail.jpg",
       "duration": "November 2024 - Present",
       "role": "Lead Product Designer & Developer",
       "content": [
@@ -2298,96 +1337,6 @@
             "Established new industry standard for surveillance planning tools"
           ],
           "key": "results"
-        },
-        {
-          "type": "p",
-          "content": "/images/siteplan-editor.jpg",
-          "key": "field27"
-        },
-        {
-          "type": "p",
-          "content": "Zone editor interface",
-          "key": "field28"
-        },
-        {
-          "type": "p",
-          "content": "Polygon editing with vertex manipulation and real-time updates",
-          "key": "field29"
-        },
-        {
-          "type": "p",
-          "content": "/images/siteplan-export.jpg",
-          "key": "field30"
-        },
-        {
-          "type": "p",
-          "content": "Exported PDF sample",
-          "key": "field31"
-        },
-        {
-          "type": "p",
-          "content": "Professional surveillance plan with legend and specifications",
-          "key": "design_tools"
-        },
-        {
-          "type": "p",
-          "content": "/images/siteplan-pdf-alignment.gif",
-          "key": "ai_tools"
-        },
-        {
-          "type": "p",
-          "content": "PDF alignment process",
-          "key": "dev_tools"
-        },
-        {
-          "type": "p",
-          "content": "Real-time blueprint alignment with transform controls",
-          "key": "skills"
-        },
-        {
-          "type": "p",
-          "content": "/images/siteplan-camera-placement.gif",
-          "key": "roles"
-        },
-        {
-          "type": "p",
-          "content": "Camera placement workflow",
-          "key": "artifact_types"
-        },
-        {
-          "type": "p",
-          "content": "Drag-and-drop camera positioning with FOV visualization",
-          "key": "fidelity"
-        },
-        {
-          "type": "p",
-          "content": "/images/siteplan-zone-editing.gif",
-          "key": "ai_models"
-        },
-        {
-          "type": "p",
-          "content": "Zone polygon editing",
-          "key": "design_principles"
-        },
-        {
-          "type": "p",
-          "content": "Professional-grade polygon editor with vertex manipulation",
-          "key": "usability_heuristics"
-        },
-        {
-          "type": "p",
-          "content": "/images/siteplan-export-process.gif",
-          "key": "field42"
-        },
-        {
-          "type": "p",
-          "content": "PDF export generation",
-          "key": "field43"
-        },
-        {
-          "type": "p",
-          "content": "One-click professional documentation export",
-          "key": "field44"
         }
       ],
       "images": [
@@ -2403,36 +1352,16 @@
         }
       ],
       "tags": {
-        "designTools": [
-          "Professional surveillance plan with legend and specifications"
-        ],
-        "aiTools": [
-          "/images/siteplan-pdf-alignment.gif"
-        ],
-        "devTools": [
-          "PDF alignment process"
-        ],
-        "skills": [
-          "Real-time blueprint alignment with transform controls"
-        ],
-        "roles": [
-          "/images/siteplan-camera-placement.gif"
-        ],
-        "artifactTypes": [
-          "Camera placement workflow"
-        ],
-        "fidelity": [
-          "Drag-and-drop camera positioning with FOV visualization"
-        ],
-        "aiModels": [
-          "/images/siteplan-zone-editing.gif"
-        ],
-        "designPrinciples": [
-          "Zone polygon editing"
-        ],
-        "usabilityHeuristics": [
-          "Professional-grade polygon editor with vertex manipulation"
-        ]
+        "designTools": [],
+        "aiTools": [],
+        "devTools": [],
+        "skills": [],
+        "roles": [],
+        "artifactTypes": [],
+        "fidelity": [],
+        "aiModels": [],
+        "designPrinciples": [],
+        "usabilityHeuristics": []
       }
     },
     {
@@ -2782,26 +1711,6 @@
           "caption": "Homepage showing domain search, filtering, and premium listings"
         }
       ],
-      "tags": {
-        "designTools": [],
-        "aiTools": [],
-        "devTools": [],
-        "skills": [],
-        "roles": [],
-        "artifactTypes": [],
-        "fidelity": [],
-        "aiModels": [],
-        "designPrinciples": [],
-        "usabilityHeuristics": []
-      }
-    },
-    {
-      "id": 13,
-      "title": "Pick.si Domain Directory",
-      "subtitle": "Full-stack marketplace with custom WHOIS integration, automated Celery workflows, and Stripe payments",
-      "thumbnail": "/images/picksi-thumbnail.jpg",
-      "content": [],
-      "images": [],
       "tags": {
         "designTools": [],
         "aiTools": [],
