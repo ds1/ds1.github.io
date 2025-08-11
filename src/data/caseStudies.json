@@ -23,6 +23,54 @@
       "title": "Petal: Metrics",
       "description": "Created data visualization systems for neurotechnology research and development",
       "thumbnail": "/images/petal-metrics-thumbnail.gif"
+    },
+    {
+      "id": 5,
+      "title": "Web3 AI Registry",
+      "description": "Decentralized discovery platform for AI agents using custom MCP servers and .agt domains on Polygon blockchain",
+      "thumbnail": "/images/agt-registry-thumbnail.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Thubble: Collective Intelligence",
+      "description": "AI-powered platform for synthesizing stakeholder perspectives into actionable insights",
+      "thumbnail": "/images/thubble-thumbnail.jpg"
+    },
+    {
+      "id": 7,
+      "title": "YouTube Voice Studio",
+      "description": "Professional text-to-speech converter with Google Cloud integration and custom voice presets",
+      "thumbnail": "/images/youtube-tts-thumbnail.jpg"
+    },
+    {
+      "id": 8,
+      "title": ".agt: AI Agent Domains",
+      "description": "Web3 TLD registry for AI agents - pioneering the agentic web namespace",
+      "thumbnail": "/images/agt-domains-thumbnail.jpg"
+    },
+    {
+      "id": 9,
+      "title": "PTZ Camera Control",
+      "description": "Web-based interface for professional camera control with multi-modal input design",
+      "thumbnail": "/images/ptz-controller-thumbnail.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Site Plan Maker",
+      "description": "Professional surveillance planning platform with interactive mapping and PDF overlays",
+      "thumbnail": "/images/siteplan-thumbnail.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Security Dashboard",
+      "description": "Multi-site construction monitoring system with adaptive grid layouts and real-time camera management",
+      "thumbnail": "/images/security-dashboard-thumbnail.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Security Dashboard Preview Portal",
+      "description": "Feature branch deployment system enabling stakeholder review of in-progress development",
+      "thumbnail": "/images/dsdev-preview-thumbnail.jpg"
     }
   ]
 }
