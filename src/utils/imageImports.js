@@ -1,5 +1,5 @@
 // This file is auto-generated. Do not edit manually.
-// Generated 2025-08-11T04:16:04.938Z
+// Generated 2025-08-11T04:32:22.991Z
 
 import aicollabthumbnail from '../images/ai-collab-thumbnail.jpg';
 import applethumbnail from '../images/apple-thumbnail.jpg';
@@ -12,7 +12,7 @@ import agtdomainsthumbnail from '../images/agt-domains-thumbnail.jpg';
 import ptzcontrollerthumbnail from '../images/ptz-controller-thumbnail.jpg';
 import siteplanthumbnail from '../images/siteplan-thumbnail.jpg';
 import securitydashboardthumbnail from '../images/security-dashboard-thumbnail.jpg';
-import dsdevpreviewthumbnail from '../images/dsdev-preview-thumbnail.jpg';
+import picksithumbnail from '../images/picksi-thumbnail.jpg';
 import systemarchitecture from '../images/system-architecture.jpg';
 import agtregistryarchitecture from '../images/agt-registry-architecture.jpg';
 import agtregistrydiscovery from '../images/agt-registry-discovery.jpg';
@@ -28,8 +28,10 @@ import siteplaninterface from '../images/siteplan-interface.jpg';
 import siteplancollaboration from '../images/siteplan-collaboration.jpg';
 import securitydashboardprocess from '../images/security-dashboard-process.jpg';
 import securitydashboardarchitecture from '../images/security-dashboard-architecture.jpg';
+import dsdevpreviewthumbnail from '../images/dsdev-preview-thumbnail.jpg';
 import dsdevportalworkflow from '../images/dsdev-portal-workflow.jpg';
 import dsdevportalgrid from '../images/dsdev-portal-grid.jpg';
+import picksiarchitecture from '../images/picksi-architecture.jpg';
 import daneldorado from '../images/dan-eldorado.jpg';
 
 export const imageMap = {
@@ -44,7 +46,7 @@ export const imageMap = {
   '/images/ptz-controller-thumbnail.jpg': ptzcontrollerthumbnail,
   '/images/siteplan-thumbnail.jpg': siteplanthumbnail,
   '/images/security-dashboard-thumbnail.jpg': securitydashboardthumbnail,
-  '/images/dsdev-preview-thumbnail.jpg': dsdevpreviewthumbnail,
+  '/images/picksi-thumbnail.jpg': picksithumbnail,
   '/images/system-architecture.jpg': systemarchitecture,
   '/images/agt-registry-architecture.jpg': agtregistryarchitecture,
   '/images/agt-registry-discovery.jpg': agtregistrydiscovery,
@@ -60,7 +62,9 @@ export const imageMap = {
   '/images/siteplan-collaboration.jpg': siteplancollaboration,
   '/images/security-dashboard-process.jpg': securitydashboardprocess,
   '/images/security-dashboard-architecture.jpg': securitydashboardarchitecture,
+  '/images/dsdev-preview-thumbnail.jpg': dsdevpreviewthumbnail,
   '/images/dsdev-portal-workflow.jpg': dsdevportalworkflow,
   '/images/dsdev-portal-grid.jpg': dsdevportalgrid,
+  '/images/picksi-architecture.jpg': picksiarchitecture,
   '/images/dan-eldorado.jpg': daneldorado
 };

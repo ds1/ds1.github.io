@@ -67,10 +67,10 @@
       "thumbnail": "/images/security-dashboard-thumbnail.jpg"
     },
     {
-      "id": 12,
-      "title": "Security Dashboard Preview Portal",
-      "description": "Feature branch deployment system enabling stakeholder review of in-progress development",
-      "thumbnail": "/images/dsdev-preview-thumbnail.jpg"
+      "id": 13,
+      "title": "Pick.si Domain Directory",
+      "description": "Full-stack marketplace with custom WHOIS integration, automated Celery workflows, and Stripe payments",
+      "thumbnail": "/images/picksi-thumbnail.jpg"
     }
   ]
 }

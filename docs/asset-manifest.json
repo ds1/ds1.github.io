@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.b798c708.js",
+    "main.js": "/static/js/main.41a04ed4.js",
     "static/js/453.d5c4626d.chunk.js": "/static/js/453.d5c4626d.chunk.js",
     "static/media/magic-leap-thumbnail.gif": "/static/media/magic-leap-thumbnail.95ef1520708235a8cee5.gif",
     "static/media/petal-metrics-thumbnail.gif": "/static/media/petal-metrics-thumbnail.1c2737daef8c52a18e08.gif",
@@ -9,13 +9,37 @@
     "static/media/apple-thumbnail.jpg": "/static/media/apple-thumbnail.bd3ca23da417abe2a296.jpg",
     "static/media/system-architecture.jpg": "/static/media/system-architecture.437ccd342433e2127be1.jpg",
     "static/media/ai-collab-thumbnail.jpg": "/static/media/ai-collab-thumbnail.e648a515598d1a96888e.jpg",
+    "static/media/security-dashboard-thumbnail.jpg": "/static/media/security-dashboard-thumbnail.274efa5a33eca7326d42.jpg",
+    "static/media/dsdev-preview-thumbnail.jpg": "/static/media/dsdev-preview-thumbnail.a3a3f05da89a9bd9e4a2.jpg",
+    "static/media/agt-registry-thumbnail.jpg": "/static/media/agt-registry-thumbnail.f9f3b569928f175779aa.jpg",
+    "static/media/thubble-thumbnail.jpg": "/static/media/thubble-thumbnail.025063eef64c01438427.jpg",
+    "static/media/agt-ecosystem.jpg": "/static/media/agt-ecosystem.ece1ae12655e74e070fb.jpg",
+    "static/media/agt-financial-model.jpg": "/static/media/agt-financial-model.ece1ae12655e74e070fb.jpg",
+    "static/media/agt-registry-architecture.jpg": "/static/media/agt-registry-architecture.ece1ae12655e74e070fb.jpg",
+    "static/media/agt-registry-discovery.jpg": "/static/media/agt-registry-discovery.ece1ae12655e74e070fb.jpg",
+    "static/media/dsdev-portal-grid.jpg": "/static/media/dsdev-portal-grid.ece1ae12655e74e070fb.jpg",
+    "static/media/dsdev-portal-workflow.jpg": "/static/media/dsdev-portal-workflow.ece1ae12655e74e070fb.jpg",
+    "static/media/ptz-control-modes.jpg": "/static/media/ptz-control-modes.ece1ae12655e74e070fb.jpg",
+    "static/media/ptz-interface-demo.jpg": "/static/media/ptz-interface-demo.ece1ae12655e74e070fb.jpg",
+    "static/media/security-dashboard-architecture.jpg": "/static/media/security-dashboard-architecture.ece1ae12655e74e070fb.jpg",
+    "static/media/security-dashboard-process.jpg": "/static/media/security-dashboard-process.ece1ae12655e74e070fb.jpg",
+    "static/media/siteplan-collaboration.jpg": "/static/media/siteplan-collaboration.ece1ae12655e74e070fb.jpg",
+    "static/media/siteplan-interface.jpg": "/static/media/siteplan-interface.ece1ae12655e74e070fb.jpg",
+    "static/media/thubble-synthesis.jpg": "/static/media/thubble-synthesis.ece1ae12655e74e070fb.jpg",
+    "static/media/thubble-workflow.jpg": "/static/media/thubble-workflow.ece1ae12655e74e070fb.jpg",
+    "static/media/youtube-tts-interface.jpg": "/static/media/youtube-tts-interface.ece1ae12655e74e070fb.jpg",
+    "static/media/youtube-tts-workflow.jpg": "/static/media/youtube-tts-workflow.ece1ae12655e74e070fb.jpg",
+    "static/media/agt-domains-thumbnail.jpg": "/static/media/agt-domains-thumbnail.6550c4e58f4322fd8b2b.jpg",
+    "static/media/ptz-controller-thumbnail.jpg": "/static/media/ptz-controller-thumbnail.6550c4e58f4322fd8b2b.jpg",
+    "static/media/siteplan-thumbnail.jpg": "/static/media/siteplan-thumbnail.6550c4e58f4322fd8b2b.jpg",
+    "static/media/youtube-tts-thumbnail.jpg": "/static/media/youtube-tts-thumbnail.6550c4e58f4322fd8b2b.jpg",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.b798c708.js.map": "/static/js/main.b798c708.js.map",
+    "main.41a04ed4.js.map": "/static/js/main.41a04ed4.js.map",
     "453.d5c4626d.chunk.js.map": "/static/js/453.d5c4626d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.b798c708.js"
+    "static/js/main.41a04ed4.js"
   ]
 }
