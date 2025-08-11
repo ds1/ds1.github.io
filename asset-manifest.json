@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.41650bb4.js",
+    "main.js": "/static/js/main.1f25a137.js",
     "static/js/453.d5c4626d.chunk.js": "/static/js/453.d5c4626d.chunk.js",
     "static/media/magic-leap-thumbnail.gif": "/static/media/magic-leap-thumbnail.95ef1520708235a8cee5.gif",
     "static/media/petal-metrics-thumbnail.gif": "/static/media/petal-metrics-thumbnail.1c2737daef8c52a18e08.gif",
@@ -37,11 +37,11 @@
     "static/media/ptz-legacy-vs-modern.gif": "/static/media/ptz-legacy-vs-modern.7799c2a21668370e0fd2.gif",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.41650bb4.js.map": "/static/js/main.41650bb4.js.map",
+    "main.1f25a137.js.map": "/static/js/main.1f25a137.js.map",
     "453.d5c4626d.chunk.js.map": "/static/js/453.d5c4626d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.41650bb4.js"
+    "static/js/main.1f25a137.js"
   ]
 }
