@@ -3,10 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex" />
   <title>Content Manager</title>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    window.CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'ds1/ds1.github.io',
+          branch: 'main'
+        },
+        media_folder: 'src/images',
+        public_folder: '/images',
+        collections: [
+          {
+            name: 'case_studies',
+            label: 'Case Studies',
+            folder: 'content/cms/case-studies',
+            create: true,
+            fields: [
+              { label: 'Title', name: 'title', widget: 'string' },
+              { label: 'Description', name: 'description', widget: 'text' }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
