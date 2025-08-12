@@ -1,0 +1,118 @@
+backend:
+  name: github
+  repo: ds1/ds1.github.io # Your GitHub username/repo
+  branch: main # Branch to update
+  base_url: https://auth.schmitz.ai # We'll set this up in step 3
+  auth_endpoint: auth # Optional: for OAuth
+
+# Media files storage
+media_folder: "src/images"
+public_folder: "/images"
+
+# Content Collections
+collections:
+  # Case Studies List
+  - name: "case_studies"
+    label: "Case Studies"
+    folder: "content/cms/case-studies"
+    format: "json"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "title"
+    summary: "{{title}} - {{description}}"
+    fields:
+      - {label: "ID", name: "id", widget: "number"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
+      - {label: "Thumbnail", name: "thumbnail", widget: "image"}
+      - {label: "Duration", name: "duration", widget: "string"}
+      - {label: "Role", name: "role", widget: "string"}
+      - {label: "Project Type", name: "project_type", widget: "string"}
+      
+      # Content Sections
+      - {label: "Initial Vision", name: "initial_vision_h1", widget: "string"}
+      - {label: "Problem Statement Title", name: "problem_statement_h2", widget: "string"}
+      - {label: "Problem Body", name: "problem_body", widget: "markdown"}
+      - {label: "Technical Approach Title", name: "technical_approach_h2", widget: "string"}
+      - {label: "Approach List", name: "approach_list", widget: "text", hint: "Separate items with semicolons"}
+      - {label: "Architecture Title", name: "architecture_h2", widget: "string"}
+      - {label: "Architecture Body", name: "architecture_body", widget: "markdown"}
+      - {label: "Innovation Title", name: "innovation_details_h2", widget: "string"}
+      - {label: "Innovation Body", name: "innovation_body", widget: "markdown"}
+      - {label: "Collaboration Title", name: "collaboration_h2", widget: "string"}
+      - {label: "Collaboration Body", name: "collaboration_body", widget: "markdown"}
+      
+      # Optional sections (for cases like Thubble)
+      - {label: "Business Model Title", name: "business_model_h2", widget: "string", required: false}
+      - {label: "Business Model Body", name: "business_model_body", widget: "markdown", required: false}
+      - {label: "Challenges Title", name: "challenges_h2", widget: "string", required: false}
+      - {label: "Challenges Body", name: "challenges_body", widget: "markdown", required: false}
+      
+      - {label: "Results Title", name: "results_h2", widget: "string"}
+      - {label: "Results List", name: "results_list", widget: "text", hint: "Separate items with semicolons"}
+      
+      # Images
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Image", name: "url", widget: "image"}
+          - {label: "Alt Text", name: "alt", widget: "string"}
+          - {label: "Caption", name: "caption", widget: "string", required: false}
+      
+      # Tags
+      - label: "Tags"
+        name: "tags"
+        widget: "object"
+        fields:
+          - {label: "Design Tools", name: "design_tools", widget: "list", required: false}
+          - {label: "AI Tools", name: "ai_tools", widget: "list", required: false}
+          - {label: "Dev Tools", name: "dev_tools", widget: "list", required: false}
+          - {label: "Skills", name: "skills", widget: "list", required: false}
+          - {label: "Roles", name: "roles", widget: "list", required: false}
+          - {label: "Artifact Types", name: "artifact_types", widget: "list", required: false}
+          - {label: "Fidelity", name: "fidelity", widget: "list", required: false}
+          - {label: "AI Models", name: "ai_models", widget: "list", required: false}
+          - {label: "Design Principles", name: "design_principles", widget: "list", required: false}
+          - {label: "Usability Heuristics", name: "usability_heuristics", widget: "list", required: false}
+
+  # Other pages
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "about"
+        label: "About Page"
+        file: "content/cms/about.json"
+        fields:
+          - {label: "Headline", name: "headline", widget: "string"}
+          - {label: "Introduction", name: "introduction", widget: "text"}
+          - {label: "Profile Image", name: "profileImage", widget: "image"}
+          - {label: "Facts", name: "facts", widget: "list"}
+          - label: "Content Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Content", name: "content", widget: "markdown"}
+      
+      - name: "resume"
+        label: "Resume Page"
+        file: "content/cms/resume.json"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Introduction", name: "introduction", widget: "text"}
+          - {label: "Download Link", name: "downloadLink", widget: "string"}
+          - {label: "Content", name: "content", widget: "markdown"}
+      
+      - name: "contact"
+        label: "Contact Page"
+        file: "content/cms/contact.json"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Introduction", name: "introduction", widget: "text"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "LinkedIn", name: "linkedin", widget: "string"}
+          - {label: "GitHub", name: "github", widget: "string"}
+          - {label: "Message", name: "message", widget: "text"}

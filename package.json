@@ -25,7 +25,7 @@
     "eject": "react-scripts eject",
     "copy-images": "node scripts/copyImages.js",
     "test-images": "node scripts/testImageSystem.js",
-    "convert-content": "node scripts/convertContent.js && node scripts/generateImageImports.js"  
+    "convert-content": "node scripts/convertContent.js && node scripts/convertCMSContent.js && node scripts/generateImageImports.js"  
   },
   "eslintConfig": {
     "extends": [
