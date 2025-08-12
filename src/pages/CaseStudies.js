@@ -35,6 +35,7 @@ const CaseStudyGrid = styled.div`
   margin-bottom: 2rem;
 `;
 
+// ADD THIS - Define CaseStudyCard
 const CaseStudyCard = styled(Link)`
   text-decoration: none;
   color: inherit;
@@ -50,6 +51,12 @@ const CaseStudyCard = styled(Link)`
 `;
 
 const CaseStudyImage = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+`;
+
+const CaseStudyVideo = styled.video`
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -153,14 +160,26 @@ const CaseStudies = () => {
             
             return (
               <CaseStudyCard key={study.id} to={`/case-study/${study.id}`}>
-                <CaseStudyImage 
-                  src={getImage(study.thumbnail)} 
-                  alt={study.title}
-                  onError={(e) => {
-                    console.warn(`Failed to load image: ${study.thumbnail}`);
-                    e.target.style.display = 'none';
-                  }}
-                />
+                {/* ADD VIDEO SUPPORT HERE */}
+                {study.thumbnail_type === 'video' ? (
+                  <CaseStudyVideo 
+                    muted
+                    autoPlay
+                    loop
+                    playsInline
+                  >
+                    <source src={getImage(study.thumbnail)} />
+                  </CaseStudyVideo>
+                ) : (
+                  <CaseStudyImage 
+                    src={getImage(study.thumbnail)} 
+                    alt={study.title}
+                    onError={(e) => {
+                      console.warn(`Failed to load image: ${study.thumbnail}`);
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                )}
                 <CaseStudyContent>
                   <CaseStudyTitle>{study.title}</CaseStudyTitle>
                   <CaseStudyDescription>{study.description}</CaseStudyDescription>

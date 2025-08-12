@@ -3,10 +3,285 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex" />
   <title>Content Manager</title>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // Initialize CMS
+    window.CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'ds1/ds1.github.io',
+          branch: 'main'
+        },
+        media_folder: 'src/images',
+        public_folder: '/images',
+        collections: [
+          {
+            name: 'case_studies',
+            label: 'Case Studies',
+            folder: 'content/cms/case-studies',
+            format: 'json',
+            create: true,
+            slug: '{{slug}}',
+            identifier_field: 'title',
+            summary: '{{title}} - {{description}}',
+            fields: [
+              // Basic Info
+              { label: 'ID', name: 'id', widget: 'number' },
+              { label: 'Title', name: 'title', widget: 'string' },
+              { label: 'Description', name: 'description', widget: 'text' },
+              { label: 'Subtitle', name: 'subtitle', widget: 'string', required: false },
+              { 
+                label: 'Thumbnail', 
+                name: 'thumbnail', 
+                widget: 'file', 
+                hint: 'Supports images, animated GIFs, or videos' 
+              },
+              { label: 'Duration', name: 'duration', widget: 'string' },
+              { label: 'Role', name: 'role', widget: 'string' },
+              { label: 'Project Type', name: 'project_type', widget: 'string' },
+              
+              // Main Content Sections
+              { label: 'Initial Vision (H1)', name: 'initial_vision_h1', widget: 'string' },
+              { label: 'Problem Statement (H2)', name: 'problem_statement_h2', widget: 'string' },
+              { label: 'Problem Body', name: 'problem_body', widget: 'markdown' },
+              { label: 'Technical Approach (H2)', name: 'technical_approach_h2', widget: 'string' },
+              { label: 'Approach List', name: 'approach_list', widget: 'text', hint: 'Separate items with semicolons' },
+              { label: 'Architecture (H2)', name: 'architecture_h2', widget: 'string' },
+              { label: 'Architecture Body', name: 'architecture_body', widget: 'markdown' },
+              { label: 'Innovation Details (H2)', name: 'innovation_details_h2', widget: 'string' },
+              { label: 'Innovation Body', name: 'innovation_body', widget: 'markdown' },
+              { label: 'Collaboration (H2)', name: 'collaboration_h2', widget: 'string' },
+              { label: 'Collaboration Body', name: 'collaboration_body', widget: 'markdown' },
+              
+              // Optional Sections
+              { label: 'Business Model (H2)', name: 'business_model_h2', widget: 'string', required: false },
+              { label: 'Business Model Body', name: 'business_model_body', widget: 'markdown', required: false },
+              { label: 'Challenges (H2)', name: 'challenges_h2', widget: 'string', required: false },
+              { label: 'Challenges Body', name: 'challenges_body', widget: 'markdown', required: false },
+              
+              // Results
+              { label: 'Results (H2)', name: 'results_h2', widget: 'string' },
+              { label: 'Results List', name: 'results_list', widget: 'text', hint: 'Separate items with semicolons' },
+              
+              // Process Media
+              { 
+                label: 'Process Media Type', 
+                name: 'process_media_type', 
+                widget: 'select', 
+                options: ['image', 'gif', 'video'],
+                default: 'image',
+                required: false 
+              },
+              { label: 'Process Media File', name: 'process_media_url', widget: 'file', required: false },
+              { label: 'Process Media Alt', name: 'process_media_alt', widget: 'string', required: false },
+              { label: 'Process Media Caption', name: 'process_media_caption', widget: 'string', required: false },
+              
+              // System Media
+              { 
+                label: 'System Media Type', 
+                name: 'system_media_type', 
+                widget: 'select', 
+                options: ['image', 'gif', 'video'],
+                default: 'image',
+                required: false 
+              },
+              { label: 'System Media File', name: 'system_media_url', widget: 'file', required: false },
+              { label: 'System Media Alt', name: 'system_media_alt', widget: 'string', required: false },
+              { label: 'System Media Caption', name: 'system_media_caption', widget: 'string', required: false },
+              
+              // Media 1
+              { 
+                label: 'Media 1 Type', 
+                name: 'media1_type', 
+                widget: 'select', 
+                options: ['image', 'gif', 'video'],
+                default: 'image',
+                required: false 
+              },
+              { label: 'Media 1 File', name: 'media1_url', widget: 'file', required: false },
+              { label: 'Media 1 Alt', name: 'media1_alt', widget: 'string', required: false },
+              { label: 'Media 1 Caption', name: 'media1_caption', widget: 'string', required: false },
+              
+              // Media 2
+              { 
+                label: 'Media 2 Type', 
+                name: 'media2_type', 
+                widget: 'select', 
+                options: ['image', 'gif', 'video'],
+                default: 'image',
+                required: false 
+              },
+              { label: 'Media 2 File', name: 'media2_url', widget: 'file', required: false },
+              { label: 'Media 2 Alt', name: 'media2_alt', widget: 'string', required: false },
+              { label: 'Media 2 Caption', name: 'media2_caption', widget: 'string', required: false },
+              
+              // Media 3
+              { 
+                label: 'Media 3 Type', 
+                name: 'media3_type', 
+                widget: 'select', 
+                options: ['image', 'gif', 'video'],
+                default: 'image',
+                required: false 
+              },
+              { label: 'Media 3 File', name: 'media3_url', widget: 'file', required: false },
+              { label: 'Media 3 Alt', name: 'media3_alt', widget: 'string', required: false },
+              { label: 'Media 3 Caption', name: 'media3_caption', widget: 'string', required: false },
+              
+              // Media 4
+              { 
+                label: 'Media 4 Type', 
+                name: 'media4_type', 
+                widget: 'select', 
+                options: ['image', 'gif', 'video'],
+                default: 'image',
+                required: false 
+              },
+              { label: 'Media 4 File', name: 'media4_url', widget: 'file', required: false },
+              { label: 'Media 4 Alt', name: 'media4_alt', widget: 'string', required: false },
+              { label: 'Media 4 Caption', name: 'media4_caption', widget: 'string', required: false },
+              
+              // Media 5
+              { 
+                label: 'Media 5 Type', 
+                name: 'media5_type', 
+                widget: 'select', 
+                options: ['image', 'gif', 'video'],
+                default: 'image',
+                required: false 
+              },
+              { label: 'Media 5 File', name: 'media5_url', widget: 'file', required: false },
+              { label: 'Media 5 Alt', name: 'media5_alt', widget: 'string', required: false },
+              { label: 'Media 5 Caption', name: 'media5_caption', widget: 'string', required: false },
+              
+              // Media 6
+              { 
+                label: 'Media 6 Type', 
+                name: 'media6_type', 
+                widget: 'select', 
+                options: ['image', 'gif', 'video'],
+                default: 'image',
+                required: false 
+              },
+              { label: 'Media 6 File', name: 'media6_url', widget: 'file', required: false },
+              { label: 'Media 6 Alt', name: 'media6_alt', widget: 'string', required: false },
+              { label: 'Media 6 Caption', name: 'media6_caption', widget: 'string', required: false },
+              
+              // Media 7
+              { 
+                label: 'Media 7 Type', 
+                name: 'media7_type', 
+                widget: 'select', 
+                options: ['image', 'gif', 'video'],
+                default: 'image',
+                required: false 
+              },
+              { label: 'Media 7 File', name: 'media7_url', widget: 'file', required: false },
+              { label: 'Media 7 Alt', name: 'media7_alt', widget: 'string', required: false },
+              { label: 'Media 7 Caption', name: 'media7_caption', widget: 'string', required: false },
+              
+              // Media 8
+              { 
+                label: 'Media 8 Type', 
+                name: 'media8_type', 
+                widget: 'select', 
+                options: ['image', 'gif', 'video'],
+                default: 'image',
+                required: false 
+              },
+              { label: 'Media 8 File', name: 'media8_url', widget: 'file', required: false },
+              { label: 'Media 8 Alt', name: 'media8_alt', widget: 'string', required: false },
+              { label: 'Media 8 Caption', name: 'media8_caption', widget: 'string', required: false },
+              
+              // Media 9
+              { 
+                label: 'Media 9 Type', 
+                name: 'media9_type', 
+                widget: 'select', 
+                options: ['image', 'gif', 'video'],
+                default: 'image',
+                required: false 
+              },
+              { label: 'Media 9 File', name: 'media9_url', widget: 'file', required: false },
+              { label: 'Media 9 Alt', name: 'media9_alt', widget: 'string', required: false },
+              { label: 'Media 9 Caption', name: 'media9_caption', widget: 'string', required: false },
+              
+              // Media 10
+              { 
+                label: 'Media 10 Type', 
+                name: 'media10_type', 
+                widget: 'select', 
+                options: ['image', 'gif', 'video'],
+                default: 'image',
+                required: false 
+              },
+              { label: 'Media 10 File', name: 'media10_url', widget: 'file', required: false },
+              { label: 'Media 10 Alt', name: 'media10_alt', widget: 'string', required: false },
+              { label: 'Media 10 Caption', name: 'media10_caption', widget: 'string', required: false },
+              
+              // Tags
+              { label: 'Design Tools', name: 'design_tools', widget: 'text', required: false, hint: 'Separate with semicolons' },
+              { label: 'AI Tools', name: 'ai_tools', widget: 'text', required: false, hint: 'Separate with semicolons' },
+              { label: 'Dev Tools', name: 'dev_tools', widget: 'text', required: false, hint: 'Separate with semicolons' },
+              { label: 'Skills', name: 'skills', widget: 'text', required: false, hint: 'Separate with semicolons' },
+              { label: 'Roles', name: 'roles', widget: 'text', required: false, hint: 'Separate with semicolons' },
+              { label: 'Artifact Types', name: 'artifact_types', widget: 'text', required: false, hint: 'Separate with semicolons' },
+              { label: 'Fidelity', name: 'fidelity', widget: 'text', required: false, hint: 'Separate with semicolons' },
+              { label: 'AI Models', name: 'ai_models', widget: 'text', required: false, hint: 'Separate with semicolons' },
+              { label: 'Design Principles', name: 'design_principles', widget: 'text', required: false, hint: 'Separate with semicolons' },
+              { label: 'Usability Heuristics', name: 'usability_heuristics', widget: 'text', required: false, hint: 'Separate with semicolons' }
+            ]
+          },
+          
+          // Other pages collections
+          {
+            name: 'pages',
+            label: 'Pages',
+            files: [
+              {
+                name: 'about',
+                label: 'About Page',
+                file: 'content/cms/about.json',
+                fields: [
+                  { label: 'Headline', name: 'headline', widget: 'string' },
+                  { label: 'Introduction', name: 'introduction', widget: 'text' },
+                  { label: 'Profile Image', name: 'profileImage', widget: 'image' },
+                  { label: 'Facts', name: 'facts', widget: 'list' }
+                ]
+              },
+              {
+                name: 'resume',
+                label: 'Resume Page',
+                file: 'content/cms/resume.json',
+                fields: [
+                  { label: 'Title', name: 'title', widget: 'string' },
+                  { label: 'Introduction', name: 'introduction', widget: 'text' },
+                  { label: 'Download Link', name: 'downloadLink', widget: 'string' },
+                  { label: 'Content', name: 'content', widget: 'markdown' }
+                ]
+              },
+              {
+                name: 'contact',
+                label: 'Contact Page',
+                file: 'content/cms/contact.json',
+                fields: [
+                  { label: 'Title', name: 'title', widget: 'string' },
+                  { label: 'Introduction', name: 'introduction', widget: 'text' },
+                  { label: 'Email', name: 'email', widget: 'string' },
+                  { label: 'LinkedIn', name: 'linkedin', widget: 'string' },
+                  { label: 'GitHub', name: 'github', widget: 'string' },
+                  { label: 'Message', name: 'message', widget: 'text' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>

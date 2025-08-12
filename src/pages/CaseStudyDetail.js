@@ -5,6 +5,7 @@ import caseStudyDetailsData from '../data/caseStudyDetails.json';
 import { imageMap } from '../utils/imageImports';
 import RichText from '../components/RichText';
 import { tagCategoryColors, tagCategoryNames, getTagColor } from '../utils/tagConfig';
+import MediaDisplay from '../components/MediaDisplay';
 
 const CaseStudyWrapper = styled.div`
   max-width: 800px;
@@ -159,6 +160,7 @@ const TagItem = styled.span`
   }
 `;
 
+// ADD THIS - Define ImageSection
 const ImageSection = styled.section`
   margin: 3rem 0;
 `;
@@ -269,7 +271,26 @@ const CaseStudyDetail = () => {
         </TagSection>
       )}
 
-      {study.images && study.images.length > 0 && (
+      {/* REPLACE the old images section with this media section */}
+      {study.media && study.media.length > 0 ? (
+        <ImageSection>
+          {study.media.map((media, index) => {
+            if (!media.url) return null;
+            
+            return (
+              <ImageContainer key={index}>
+                <MediaDisplay 
+                  url={media.url}
+                  alt={media.alt}
+                  type={media.type}
+                  caption={media.caption}
+                />
+              </ImageContainer>
+            );
+          })}
+        </ImageSection>
+      ) : study.images && study.images.length > 0 && (
+        // Fallback for old image format
         <ImageSection>
           {study.images.map((image, index) => {
             const imageSrc = getImage(image.url);
