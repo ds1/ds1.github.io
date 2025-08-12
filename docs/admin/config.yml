@@ -1,9 +1,7 @@
 backend:
   name: github
-  repo: ds1/ds1.github.io # Your GitHub username/repo
-  branch: main # Branch to update
-  base_url: https://auth.schmitz.ai # We'll set this up in step 3
-  auth_endpoint: auth # Optional: for OAuth
+  repo: ds1/ds1.github.io
+  branch: main
 
 # Media files storage
 media_folder: "src/images"
