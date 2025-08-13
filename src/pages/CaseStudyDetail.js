@@ -145,9 +145,7 @@ const ImageSection = styled.section`
   margin: 3rem 0;
 `;
 
-const ImageContainer = styled.div`
-  margin-bottom: 2rem;
-`;
+// REMOVED: ImageContainer was defined but never used
 
 const StudyImage = styled.img`
   width: 100%;
@@ -208,7 +206,8 @@ const CaseStudyDetail = () => {
 
       <Content>
         {study.content && study.content.map((section, index) => {
-          const { type, content, key } = section;
+          // FIXED: Removed 'key' from destructuring since it's not used
+          const { type, content } = section;
           
           switch(type) {
             case 'h1':
