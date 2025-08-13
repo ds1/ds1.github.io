@@ -3,12 +3,8 @@ name: Build and Deploy
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'content/cms/**'  # Trigger when CMS content changes
-      - 'content/*.csv'   # Trigger when CSV content changes
-      - 'src/**'
-      - 'public/**'
-      - 'package.json'
+    # Triggers on any push to main branch
+    # Remove the 'paths' filter to build on ALL changes
 
 jobs:
   build-and-deploy:

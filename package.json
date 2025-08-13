@@ -16,16 +16,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "postbuild": "node scripts/postbuild.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d docs",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "copy-images": "node scripts/copyImages.js",
-    "test-images": "node scripts/testImageSystem.js",
-    "convert-content": "node scripts/convertContent.js && node scripts/convertCMSContent.js && node scripts/generateImageImports.js"  
+      "start": "react-scripts start",
+      "build": "npm run convert-content && react-scripts build",
+      "postbuild": "node scripts/postbuild.js",
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d docs",
+      "convert-content": "node scripts/convertContent.js && node scripts/convertCMSContent.js && node scripts/generateImageImports.js"
   },
   "eslintConfig": {
     "extends": [
