@@ -7,12 +7,9 @@ backend:
 media_folder: "src/images"
 public_folder: "/images"
 
-# Optional: Enable editorial workflow for drafts
-# publish_mode: editorial_workflow
-
 # Content Collections
 collections:
-  # Case Studies with Flexible Content Blocks
+  # Case Studies with Flexible Content
   - name: "case_studies"
     label: "Case Studies"
     folder: "content/cms/case-studies"
@@ -22,7 +19,7 @@ collections:
     identifier_field: "title"
     summary: "{{title}} - {{description}}"
     fields:
-      # Basic Metadata (all optional except ID and title)
+      # Basic Metadata
       - {label: "ID", name: "id", widget: "number", hint: "Unique identifier for ordering"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text", required: false, hint: "Short description for the card"}
@@ -36,117 +33,62 @@ collections:
           default: "image",
           required: false
         }
-      - {label: "Duration", name: "duration", widget: "string", required: false, hint: "e.g., '06/2022 - 08/2024' or 'July 2024'"}
+      - {label: "Duration", name: "duration", widget: "string", required: false}
       - {label: "Role", name: "role", widget: "string", required: false}
-      - {label: "Project Type", name: "project_type", widget: "string", required: false, hint: "e.g., 'Personal Project', 'Enterprise Tool'"}
+      - {label: "Project Type", name: "project_type", widget: "string", required: false}
       
-      # Flexible Content Blocks
+      # Flexible Content Sections - Using simple list of markdown blocks
       - label: "Content Sections"
-        name: "content_blocks"
+        name: "content_sections"
         widget: "list"
         required: false
-        types:
-          - label: "Heading 1 (H1)"
-            name: "h1"
-            widget: "object"
-            fields:
-              - {label: "Text", name: "text", widget: "string"}
-              
-          - label: "Heading 2 (H2)"
-            name: "h2"
-            widget: "object"
-            fields:
-              - {label: "Text", name: "text", widget: "string"}
-              
-          - label: "Heading 3 (H3)"
-            name: "h3"
-            widget: "object"
-            fields:
-              - {label: "Text", name: "text", widget: "string"}
-              
-          - label: "Paragraph"
-            name: "paragraph"
-            widget: "object"
-            fields:
-              - {label: "Text", name: "text", widget: "text"}
-              
-          - label: "Rich Text"
-            name: "body"
-            widget: "object"
-            fields:
-              - {label: "Content", name: "content", widget: "markdown", hint: "Supports **bold**, *italic*, line breaks, and color spans"}
-              
-          - label: "List"
-            name: "list"
-            widget: "object"
-            fields:
-              - {label: "Items", name: "items", widget: "list", hint: "Add list items one by one"}
-              
-          - label: "Image"
-            name: "image"
-            widget: "object"
-            fields:
-              - {label: "Image File", name: "url", widget: "image"}
-              - {label: "Alt Text", name: "alt", widget: "string", required: false}
-              - {label: "Caption", name: "caption", widget: "string", required: false}
-              
-          - label: "Video"
-            name: "video"
-            widget: "object"
-            fields:
-              - {label: "Video File", name: "url", widget: "file"}
-              - {label: "Alt Text", name: "alt", widget: "string", required: false}
-              - {label: "Caption", name: "caption", widget: "string", required: false}
-              
-          - label: "GIF"
-            name: "gif"
-            widget: "object"
-            fields:
-              - {label: "GIF File", name: "url", widget: "image"}
-              - {label: "Alt Text", name: "alt", widget: "string", required: false}
-              - {label: "Caption", name: "caption", widget: "string", required: false}
-              
-          - label: "Code Block"
-            name: "code"
-            widget: "object"
-            fields:
-              - {label: "Language", name: "language", widget: "string", default: "javascript"}
-              - {label: "Code", name: "code", widget: "code"}
-              
-          - label: "Quote"
-            name: "quote"
-            widget: "object"
-            fields:
-              - {label: "Quote Text", name: "text", widget: "text"}
-              - {label: "Author", name: "author", widget: "string", required: false}
-              
-          - label: "Divider"
-            name: "divider"
-            widget: "object"
-            fields:
-              - {label: "Style", name: "style", widget: "hidden", default: "---"}
+        fields:
+          - label: "Section Type"
+            name: "type"
+            widget: "select"
+            options: 
+              - { label: "Heading 1", value: "h1" }
+              - { label: "Heading 2", value: "h2" }
+              - { label: "Heading 3", value: "h3" }
+              - { label: "Paragraph", value: "paragraph" }
+              - { label: "Rich Text", value: "body" }
+              - { label: "List", value: "list" }
+              - { label: "Image", value: "image" }
+              - { label: "Video", value: "video" }
+              - { label: "Code", value: "code" }
+              - { label: "Quote", value: "quote" }
+          
+          - {label: "Content", name: "content", widget: "text", required: false, hint: "Main content for this section. For lists, use semicolons to separate items"}
+          - {label: "List Items (deprecated - use Content field)", name: "items", widget: "text", required: false, hint: "Legacy field - please use Content field above"}
+          - {label: "Image/Video URL", name: "media_url", widget: "image", required: false}
+          - {label: "Alt Text", name: "alt", widget: "string", required: false}
+          - {label: "Caption", name: "caption", widget: "string", required: false}
+          - {label: "Code Language", name: "language", widget: "string", required: false, default: "javascript"}
       
-      # Tags Section (all optional)
-      - label: "Tags"
-        name: "tags"
-        widget: "object"
-        collapsed: true
+      # Media Gallery (optional, simpler approach)
+      - label: "Media Gallery"
+        name: "media"
+        widget: "list"
         required: false
         fields:
-          - {label: "Design Tools", name: "design_tools", widget: "list", required: false, hint: "e.g., Figma, Sketch, Adobe XD"}
-          - {label: "AI Tools", name: "ai_tools", widget: "list", required: false, hint: "e.g., Claude, ChatGPT, Midjourney"}
-          - {label: "Dev Tools", name: "dev_tools", widget: "list", required: false, hint: "e.g., React, TypeScript, GitHub"}
-          - {label: "Skills", name: "skills", widget: "list", required: false, hint: "e.g., UX Research, Prototyping"}
-          - {label: "Roles", name: "roles", widget: "list", required: false, hint: "e.g., Lead Designer, Product Manager"}
-          - {label: "Artifact Types", name: "artifact_types", widget: "list", required: false}
-          - {label: "Fidelity", name: "fidelity", widget: "list", required: false, hint: "e.g., Low, Medium, High"}
-          - {label: "AI Models", name: "ai_models", widget: "list", required: false}
-          - {label: "Design Principles", name: "design_principles", widget: "list", required: false}
-          - {label: "Usability Heuristics", name: "usability_heuristics", widget: "list", required: false}
+          - {label: "Media Type", name: "type", widget: "select", options: ["image", "gif", "video"], default: "image"}
+          - {label: "File", name: "url", widget: "image"}
+          - {label: "Alt Text", name: "alt", widget: "string", required: false}
+          - {label: "Caption", name: "caption", widget: "string", required: false}
+      
+      # Tags Section (all optional)
+      - {label: "Design Tools", name: "design_tools", widget: "text", required: false, hint: "Semicolon-separated list"}
+      - {label: "AI Tools", name: "ai_tools", widget: "text", required: false, hint: "Semicolon-separated list"}
+      - {label: "Dev Tools", name: "dev_tools", widget: "text", required: false, hint: "Semicolon-separated list"}
+      - {label: "Skills", name: "skills", widget: "text", required: false, hint: "Semicolon-separated list"}
+      - {label: "Roles", name: "roles", widget: "text", required: false, hint: "Semicolon-separated list"}
+      - {label: "Artifact Types", name: "artifact_types", widget: "text", required: false, hint: "Semicolon-separated list"}
+      - {label: "Fidelity", name: "fidelity", widget: "text", required: false, hint: "Semicolon-separated list"}
+      - {label: "AI Models", name: "ai_models", widget: "text", required: false, hint: "Semicolon-separated list"}
 
-  # Other pages
-  - name: "pages"
-    label: "Pages"
+  # Static Pages
+  - name: "site_pages"
+    label: "Site Pages"
     files:
       - name: "about"
         label: "About Page"
@@ -156,12 +98,6 @@ collections:
           - {label: "Introduction", name: "introduction", widget: "text"}
           - {label: "Profile Image", name: "profileImage", widget: "image"}
           - {label: "Facts", name: "facts", widget: "list"}
-          - label: "Content Sections"
-            name: "sections"
-            widget: "list"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Content", name: "content", widget: "markdown"}
       
       - name: "resume"
         label: "Resume Page"
@@ -180,5 +116,5 @@ collections:
           - {label: "Introduction", name: "introduction", widget: "text"}
           - {label: "Email", name: "email", widget: "string"}
           - {label: "LinkedIn", name: "linkedin", widget: "string"}
-          - {label: "GitHub", name: "github", widget: "string"}
+          - {label: "GitHub", name: "github", widget: "string", required: false}
           - {label: "Message", name: "message", widget: "text"}
