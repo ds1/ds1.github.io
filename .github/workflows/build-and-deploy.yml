@@ -1,0 +1,49 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'content/cms/**'  # Trigger when CMS content changes
+      - 'content/*.csv'   # Trigger when CSV content changes
+      - 'src/**'
+      - 'public/**'
+      - 'package.json'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Convert content
+      run: |
+        npm run convert-content
+        echo "Content converted successfully"
+        
+    - name: Build project
+      run: |
+        npm run build
+        echo "Build completed"
+        
+    - name: Deploy to GitHub Pages
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'actions@github.com'
+        git add docs/
+        git add src/data/
+        git diff --staged --quiet || git commit -m "Auto-build from CMS changes"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
