@@ -4,73 +4,85 @@
       "id": 1,
       "title": "AI Co-Development",
       "description": "Exploring the future of human-AI collaborative development through the creation of schmitz.ai",
-      "thumbnail": "/images/ai-collab-thumbnail.jpg"
+      "thumbnail": "/images/ai-collab-thumbnail.jpg",
+      "thumbnail_type": "image"
     },
     {
       "id": 2,
       "title": "Apple: Product Design Lead",
       "description": "Executed product design functions on a tactical and strategic level for a business-critical admin web application used globally",
-      "thumbnail": "/images/apple-thumbnail.jpg"
+      "thumbnail": "/images/apple-thumbnail.jpg",
+      "thumbnail_type": "image"
     },
     {
       "id": 3,
       "title": "Magic Leap: Interaction Design",
       "description": "Defined operating system-level interaction paradigms for spatial computing on Magic Leap 1",
-      "thumbnail": "/images/magic-leap-thumbnail.gif"
+      "thumbnail": "/images/magic-leap-thumbnail.gif",
+      "thumbnail_type": "image"
     },
     {
       "id": 4,
       "title": "Petal: Metrics",
       "description": "Created data visualization systems for neurotechnology research and development",
-      "thumbnail": "/images/petal-metrics-thumbnail.gif"
+      "thumbnail": "/images/petal-metrics-thumbnail.gif",
+      "thumbnail_type": "image"
     },
     {
       "id": 5,
       "title": "Web3 AI Registry",
       "description": "Decentralized discovery platform for AI agents using custom MCP servers and .agt domains on Polygon blockchain",
-      "thumbnail": "/images/agt-registry-thumbnail.jpg"
+      "thumbnail": "/images/agt-registry-thumbnail.jpg",
+      "thumbnail_type": "image"
     },
     {
       "id": 6,
       "title": "Thubble: Collective Intelligence",
       "description": "Engineering a 15-Workflow AI Synthesis Platform for Enterprise Decision-Making and Product Development",
-      "thumbnail": "/images/thubble-thumbnail.jpg"
+      "thumbnail": "/images/thubble-thumbnail.jpg",
+      "thumbnail_type": "image"
     },
     {
       "id": 7,
       "title": "YouTube Voice Studio",
       "description": "Professional text-to-speech converter with Google Cloud integration and custom voice presets",
-      "thumbnail": "/images/youtube-tts-thumbnail.jpg"
+      "thumbnail": "/images/youtube-tts-thumbnail.jpg",
+      "thumbnail_type": "image"
     },
     {
       "id": 8,
       "title": ".agt: AI Agent Domains",
       "description": "Web3 TLD registry for AI agents - pioneering the agentic web namespace",
-      "thumbnail": "/images/agt-domains-thumbnail.jpg"
+      "thumbnail": "/images/agt-domains-thumbnail.jpg",
+      "thumbnail_type": "image"
     },
     {
       "id": 9,
       "title": "PTZ Camera Control",
       "description": "Reimagining construction site security monitoring with intuitive browser-based camera controls replacing clunky legacy interfaces",
-      "thumbnail": "/images/ptz-controller-thumbnail.jpg"
+      "thumbnail": "/images/ptz-controller-thumbnail.jpg",
+      "thumbnail_type": "image"
     },
     {
       "id": 10,
       "title": "Site Plan Maker",
       "description": "Professional surveillance planning platform with interactive mapping and PDF overlays",
-      "thumbnail": "/images/siteplan-thumbnail.jpg"
+      "thumbnail": "/images/siteplan-thumbnail.jpg",
+      "thumbnail_type": "image"
     },
     {
       "id": 11,
       "title": "Security Dashboard",
       "description": "Multi-site construction monitoring system with adaptive grid layouts and real-time camera management",
-      "thumbnail": "/images/security-dashboard-thumbnail.jpg"
+      "thumbnail": "/images/security-dashboard-thumbnail.jpg",
+      "thumbnail_type": "image"
     },
     {
       "id": 13,
       "title": "Pick.si Domain Directory",
       "description": "Full-stack marketplace with custom WHOIS integration",
-      "thumbnail": "automated Celery workflows"
+      "thumbnail": "/images/picksi-thumbnail.jpg",
+      "thumbnail_type": "image"
     }
   ]
 }

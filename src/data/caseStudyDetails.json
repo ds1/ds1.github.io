@@ -81,53 +81,20 @@
             "The image management system solves several key challenges:\\n\\n**Path Resolution**\\n```javascript\\n// CSV Reference\\n/images/example.jpg\\n\\n// Development Import\\n../images/example.jpg\\n\\n// Production Output\\n/static/media/example.[hash].jpg\\n```\\n\\n**Key Innovations:**\\n• *Automatic path conversion*\\n• *Development/production consistency*\\n• *Webpack integration*\\n• *Error recovery*"
           ],
           "key": "results"
-        },
-        {
-          "type": "p",
-          "content": "Figma",
-          "key": "design_tools"
-        },
-        {
-          "type": "p",
-          "content": "Claude",
-          "key": "ai_tools"
-        },
-        {
-          "type": "p",
-          "content": "GitHub;Claude;Supabase;Vercel",
-          "key": "dev_tools"
-        },
-        {
-          "type": "p",
-          "content": "Prompt Engineering;QA",
-          "key": "skills"
-        },
-        {
-          "type": "p",
-          "content": "Principal / Lead Contributor",
-          "key": "roles"
-        },
-        {
-          "type": "p",
-          "content": "Prompt;Coded Application",
-          "key": "artifact_types"
-        },
-        {
-          "type": "p",
-          "content": "Claude 4 Opus",
-          "key": "ai_models"
         }
       ],
-      "images": [
+      "media": [
         {
           "url": "/images/collaboration-flow.jpg",
           "alt": "AI-Human collaboration diagram",
-          "caption": "Visualization of the iterative development process between human and AI"
+          "caption": "Visualization of the iterative development process between human and AI",
+          "type": "image"
         },
         {
           "url": "/images/system-architecture.jpg",
           "alt": "Technical architecture diagram",
-          "caption": "Three-tier architecture showing the complete system flow"
+          "caption": "Three-tier architecture showing the complete system flow",
+          "type": "image"
         }
       ],
       "tags": {
@@ -215,35 +182,9 @@
           "type": "body",
           "content": "Reduced workflow completion time by 40%;Improved user satisfaction scores significantly;Decreased training time for new users by 30%;Established consistent design patterns across the platform",
           "key": "architecture"
-        },
-        {
-          "type": "p",
-          "content": "Principal / Lead Contributor",
-          "key": "design_tools"
-        },
-        {
-          "type": "p",
-          "content": "Mockup;Design System;Interactive Prototype",
-          "key": "ai_tools"
-        },
-        {
-          "type": "p",
-          "content": "Medium;High",
-          "key": "dev_tools"
         }
       ],
-      "images": [
-        {
-          "url": "",
-          "alt": "",
-          "caption": "Sketch;Figma"
-        },
-        {
-          "url": "",
-          "alt": "",
-          "caption": ""
-        }
-      ],
+      "media": [],
       "tags": {
         "designTools": [
           "Principal / Lead Contributor"
@@ -318,28 +259,13 @@
           "type": "body",
           "content": "Successfully implemented new interaction paradigms;Enhanced spatial computing experience;Improved user engagement metrics",
           "key": "architecture"
-        },
-        {
-          "type": "p",
-          "content": "Coded Application;Interactive Prototype;Sitemap",
-          "key": "design_tools"
-        },
-        {
-          "type": "p",
-          "content": "High",
-          "key": "ai_tools"
         }
       ],
-      "images": [
-        {
-          "url": "",
-          "alt": "",
-          "caption": ""
-        },
+      "media": [
         {
           "url": "Unity3D",
-          "alt": "",
-          "caption": "Principal / Lead Contributor"
+          "caption": "Principal / Lead Contributor",
+          "type": "image"
         }
       ],
       "tags": {
@@ -413,25 +339,9 @@
           "type": "body",
           "content": "Enabled breakthrough research findings;Accelerated data analysis workflows;Improved research productivity",
           "key": "architecture"
-        },
-        {
-          "type": "p",
-          "content": "Low;Medium;High",
-          "key": "design_tools"
         }
       ],
-      "images": [
-        {
-          "url": "",
-          "alt": "Figma;Adobe XD;Miro",
-          "caption": ""
-        },
-        {
-          "url": "",
-          "alt": "Product Manager;Principal / Lead Contributor",
-          "caption": "Static Wireframe;Interactive Prototype;Coded Application;Design System"
-        }
-      ],
+      "media": [],
       "tags": {
         "designTools": [
           "Low",
@@ -542,16 +452,18 @@
           "key": "results"
         }
       ],
-      "images": [
+      "media": [
         {
           "url": "/images/agt-registry-architecture.jpg",
           "alt": "System architecture showing smart contract, frontend, and MCP layers",
-          "caption": "Three-tier architecture of the decentralized registry system"
+          "caption": "Three-tier architecture of the decentralized registry system",
+          "type": "image"
         },
         {
           "url": "/images/agt-registry-discovery.jpg",
           "alt": "Discovery page showing registered agents with capabilities",
-          "caption": "Live discovery interface with search and filter functionality"
+          "caption": "Live discovery interface with search and filter functionality",
+          "type": "image"
         }
       ],
       "tags": {
@@ -656,68 +568,20 @@
             "Developed sustainable SaaS economics with multiple revenue streams:\\n\\n**1. Credit-Based Core Model**\\n• Workflow costs: 3-5 credits based on complexity\\n• Credit packages: $50 (100 credits) to $2,000 (5,000 credits)\\n• *Innovation:* No expiration encourages bulk purchasing\\n• *Result:* $127 average revenue per user (ARPU)\\n\\n**2. Enterprise Tier**\\n• Unlimited workflows: $2,500/month\\n• SSO integration and API access\\n• Custom workflow templates\\n• *Traction:* 3 enterprise pilots generating $7,500 MRR\\n\\n**3. Value-Added Services**\\n• Assessment rewards: 2 credits for quality feedback\\n• Template marketplace: 30% revenue share with creators\\n• Integration fees: $500 setup for custom integrations\\n• *Growth:* 43% of users purchase additional credits monthly"
           ],
           "key": "results"
-        },
-        {
-          "type": "p",
-          "content": "Figma;Miro;Whimsical",
-          "key": "design_tools"
-        },
-        {
-          "type": "p",
-          "content": "OpenAI GPT-4;Claude 3 Opus;GPT-3.5 Turbo",
-          "key": "ai_tools"
-        },
-        {
-          "type": "p",
-          "content": "Next.js 14;TypeScript;Supabase;PostgreSQL;Stripe;SendGrid;Docker;Vercel;Sentry;Playwright",
-          "key": "dev_tools"
-        },
-        {
-          "type": "p",
-          "content": "Full-Stack Development;AI Systems Design;Prompt Engineering;Database Architecture;API Design;Payment Processing;Email Automation;Performance Optimization",
-          "key": "skills"
-        },
-        {
-          "type": "p",
-          "content": "Founder;Full-Stack Architect;AI Systems Designer;Product Strategist",
-          "key": "roles"
-        },
-        {
-          "type": "p",
-          "content": "SaaS Platform;AI Synthesis Engine;Credit System;Email Pipeline;Analytics Dashboard;Component Library",
-          "key": "artifact_types"
-        },
-        {
-          "type": "p",
-          "content": "Production",
-          "key": "fidelity"
-        },
-        {
-          "type": "p",
-          "content": "GPT-4;Claude 3 Opus;GPT-3.5 Turbo",
-          "key": "ai_models"
-        },
-        {
-          "type": "p",
-          "content": "Zero-Friction Onboarding;Mobile-First Design;Progressive Disclosure;Error Prevention;Transparent Pricing",
-          "key": "design_principles"
-        },
-        {
-          "type": "p",
-          "content": "Visibility of System Status;Match Between System and Real World;User Control and Freedom;Error Prevention;Recognition Rather Than Recall",
-          "key": "usability_heuristics"
         }
       ],
-      "images": [
+      "media": [
         {
           "url": "/images/thubble-dashboard.jpg",
           "alt": "Thubble dashboard showing workflow analytics and metrics",
-          "caption": "Executive dashboard displaying real-time workflow metrics and stakeholder engagement analytics"
+          "caption": "Executive dashboard displaying real-time workflow metrics and stakeholder engagement analytics",
+          "type": "image"
         },
         {
           "url": "/images/thubble-architecture.jpg",
           "alt": "System architecture diagram",
-          "caption": "High-level architecture showing serverless components and AI orchestration layer"
+          "caption": "High-level architecture showing serverless components and AI orchestration layer",
+          "type": "image"
         }
       ],
       "tags": {
@@ -886,16 +750,18 @@
           "key": "results"
         }
       ],
-      "images": [
+      "media": [
         {
           "url": "/images/youtube-tts-interface.jpg",
           "alt": "GUI interface showing voice selection and parameter controls",
-          "caption": "Intuitive interface with custom voice presets and real-time testing"
+          "caption": "Intuitive interface with custom voice presets and real-time testing",
+          "type": "image"
         },
         {
           "url": "/images/youtube-tts-workflow.jpg",
           "alt": "Complete workflow from script to professional narration",
-          "caption": "End-to-end process transforming markdown scripts into broadcast-quality audio"
+          "caption": "End-to-end process transforming markdown scripts into broadcast-quality audio",
+          "type": "image"
         }
       ],
       "tags": {
@@ -1006,16 +872,18 @@
           "key": "results"
         }
       ],
-      "images": [
+      "media": [
         {
           "url": "/images/agt-ecosystem.jpg",
           "alt": "The .agt ecosystem showing agent discovery and communication",
-          "caption": "Visualization of how .agt domains enable the agentic web"
+          "caption": "Visualization of how .agt domains enable the agentic web",
+          "type": "image"
         },
         {
           "url": "/images/agt-financial-model.jpg",
           "alt": "Financial model showing ROI projections and decision gates",
-          "caption": "Strategic financial planning with multiple growth scenarios"
+          "caption": "Strategic financial planning with multiple growth scenarios",
+          "type": "image"
         }
       ],
       "tags": {
@@ -1126,63 +994,20 @@
             "Gathered feedback from operators with varying technical expertise levels"
           ],
           "key": "results"
-        },
-        {
-          "type": "p",
-          "content": "Figma;Adobe XD",
-          "key": "design_tools"
-        },
-        {
-          "type": "p",
-          "content": "Claude",
-          "key": "ai_tools"
-        },
-        {
-          "type": "p",
-          "content": "JavaScript;HTML5;CSS3;Git;GitHub Pages",
-          "key": "dev_tools"
-        },
-        {
-          "type": "p",
-          "content": "Interaction Design;UI Engineering;Field Research;Workflow Analysis;Responsive Design;Accessibility;Performance Optimization;Technical Documentation",
-          "key": "skills"
-        },
-        {
-          "type": "p",
-          "content": "Frontend Engineer;Interaction Designer;UX Researcher",
-          "key": "roles"
-        },
-        {
-          "type": "p",
-          "content": "Web Application;Control Interface;Security Tool;Design Documentation",
-          "key": "artifact_types"
-        },
-        {
-          "type": "p",
-          "content": "Production",
-          "key": "fidelity"
-        },
-        {
-          "type": "p",
-          "content": "Direct Manipulation;Progressive Disclosure;User Control and Freedom;Consistency;Error Prevention;Flexibility",
-          "key": "design_principles"
-        },
-        {
-          "type": "p",
-          "content": "Visibility of System Status;Match Between System and Real World;User Control and Freedom;Consistency and Standards;Error Prevention;Recognition Rather Than Recall;Flexibility and Efficiency of Use;Aesthetic and Minimalist Design;Help Users Recognize Diagnose and Recover from Errors;Help and Documentation",
-          "key": "usability_heuristics"
         }
       ],
-      "images": [
+      "media": [
         {
           "url": "/images/ptz-legacy-vs-modern.gif",
           "alt": "Animated comparison of legacy slider controls vs modern interface",
-          "caption": "Side-by-side: Legacy sliders causing overshoot vs precise modern controls"
+          "caption": "Side-by-side: Legacy sliders causing overshoot vs precise modern controls",
+          "type": "image"
         },
         {
           "url": "/images/ptz-security-workflow.jpg",
           "alt": "Security monitoring workflow diagram",
-          "caption": "Construction site monitoring patterns and camera positioning strategies"
+          "caption": "Construction site monitoring patterns and camera positioning strategies",
+          "type": "image"
         }
       ],
       "tags": {
@@ -1339,16 +1164,18 @@
           "key": "results"
         }
       ],
-      "images": [
+      "media": [
         {
           "url": "/images/siteplan-workflow.jpg",
           "alt": "Site planning workflow diagram",
-          "caption": "Step-by-step process from PDF upload to final export"
+          "caption": "Step-by-step process from PDF upload to final export",
+          "type": "image"
         },
         {
           "url": "/images/siteplan-architecture.jpg",
           "alt": "System architecture diagram",
-          "caption": "Three-tier architecture showing data flow and integrations"
+          "caption": "Three-tier architecture showing data flow and integrations",
+          "type": "image"
         }
       ],
       "tags": {
@@ -1458,16 +1285,18 @@
           "key": "results"
         }
       ],
-      "images": [
+      "media": [
         {
           "url": "/images/security-dashboard-process.jpg",
           "alt": "Security Dashboard design process",
-          "caption": "User journey mapping and interface evolution from wireframes to final design"
+          "caption": "User journey mapping and interface evolution from wireframes to final design",
+          "type": "image"
         },
         {
           "url": "/images/security-dashboard-architecture.jpg",
           "alt": "Dashboard architecture diagram",
-          "caption": "Technical architecture showing data flow and component relationships"
+          "caption": "Technical architecture showing data flow and component relationships",
+          "type": "image"
         }
       ],
       "tags": {
@@ -1699,16 +1528,18 @@
           "key": "results"
         }
       ],
-      "images": [
+      "media": [
         {
           "url": "/images/picksi-architecture.jpg",
           "alt": "Pick.si system architecture",
-          "caption": "Full-stack architecture showing Django backend, React frontend, and Celery automation"
+          "caption": "Full-stack architecture showing Django backend, React frontend, and Celery automation",
+          "type": "image"
         },
         {
           "url": "/images/picksi-interface.jpg",
           "alt": "Domain marketplace interface",
-          "caption": "Homepage showing domain search, filtering, and premium listings"
+          "caption": "Homepage showing domain search, filtering, and premium listings",
+          "type": "image"
         }
       ],
       "tags": {

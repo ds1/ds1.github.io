@@ -54,34 +54,18 @@ async function convertCMSContent() {
           });
         }
         
-        // Process flexible content blocks if they exist
-        if (content.content_blocks && Array.isArray(content.content_blocks)) {
-          content.content_blocks.forEach((block, index) => {
-            // Each block has a type and then content within it
-            const blockType = block.type || Object.keys(block)[0]; // Get the type
-            const blockData = block[blockType] || block; // Get the data
+        // Process flexible content sections if they exist
+        if (content.content_sections && Array.isArray(content.content_sections)) {
+          content.content_sections.forEach((section, index) => {
+            const sectionType = section.type;
             
-            switch(blockType) {
+            switch(sectionType) {
               case 'h1':
-                sections.push({
-                  type: 'h1',
-                  content: blockData.text || blockData.content || '',
-                  key: `section_${index}`
-                });
-                break;
-                
               case 'h2':
-                sections.push({
-                  type: 'h2',
-                  content: blockData.text || blockData.content || '',
-                  key: `section_${index}`
-                });
-                break;
-                
               case 'h3':
                 sections.push({
-                  type: 'h3',
-                  content: blockData.text || blockData.content || '',
+                  type: sectionType,
+                  content: section.content || '',
                   key: `section_${index}`
                 });
                 break;
@@ -89,7 +73,7 @@ async function convertCMSContent() {
               case 'paragraph':
                 sections.push({
                   type: 'p',
-                  content: blockData.text || blockData.content || '',
+                  content: section.content || '',
                   key: `section_${index}`
                 });
                 break;
@@ -97,35 +81,39 @@ async function convertCMSContent() {
               case 'body':
                 sections.push({
                   type: 'body',
-                  content: blockData.content || blockData.text || '',
+                  content: section.content || '',
                   key: `section_${index}`
                 });
                 break;
                 
               case 'list':
+                const items = section.items ? 
+                  section.items.split(';').map(item => item.trim()).filter(item => item) :
+                  [];
                 sections.push({
                   type: 'list',
-                  content: blockData.items || [],
+                  content: items,
                   key: `section_${index}`
                 });
                 break;
                 
               case 'image':
               case 'video':
-              case 'gif':
-                media.push({
-                  url: blockData.url || '',
-                  alt: blockData.alt || '',
-                  caption: blockData.caption || '',
-                  type: blockType
-                });
+                if (section.media_url) {
+                  media.push({
+                    url: section.media_url,
+                    alt: section.alt || '',
+                    caption: section.caption || '',
+                    type: sectionType
+                  });
+                }
                 break;
                 
               case 'code':
                 sections.push({
                   type: 'code',
-                  content: blockData.code || '',
-                  language: blockData.language || 'javascript',
+                  content: section.content || '',
+                  language: section.language || 'javascript',
                   key: `section_${index}`
                 });
                 break;
@@ -133,22 +121,29 @@ async function convertCMSContent() {
               case 'quote':
                 sections.push({
                   type: 'quote',
-                  content: blockData.text || '',
-                  author: blockData.author || '',
-                  key: `section_${index}`
-                });
-                break;
-                
-              case 'divider':
-                sections.push({
-                  type: 'divider',
-                  content: '---',
+                  content: section.content || '',
+                  author: section.author || '',
                   key: `section_${index}`
                 });
                 break;
             }
           });
-        } else {
+        }
+        
+        // Also process separate media gallery if it exists
+        if (content.media && Array.isArray(content.media)) {
+          content.media.forEach(item => {
+            media.push({
+              url: item.url || '',
+              alt: item.alt || '',
+              caption: item.caption || '',
+              type: item.type || 'image'
+            });
+          });
+        }
+        
+        // Check for old format fields
+        if (!content.content_sections) {
           // Fallback to old format if content_blocks doesn't exist
           // This handles the old predetermined field structure
           
@@ -200,38 +195,19 @@ async function convertCMSContent() {
           });
         }
         
-        // Process tags (works for both old and new format)
-        let tags = {};
-        
-        if (content.tags && typeof content.tags === 'object') {
-          // New format - tags are already structured
-          tags = {
-            designTools: content.tags.design_tools || [],
-            aiTools: content.tags.ai_tools || [],
-            devTools: content.tags.dev_tools || [],
-            skills: content.tags.skills || [],
-            roles: content.tags.roles || [],
-            artifactTypes: content.tags.artifact_types || [],
-            fidelity: content.tags.fidelity || [],
-            aiModels: content.tags.ai_models || [],
-            designPrinciples: content.tags.design_principles || [],
-            usabilityHeuristics: content.tags.usability_heuristics || []
-          };
-        } else {
-          // Old format - tags are semicolon-separated strings
-          tags = {
-            designTools: content.design_tools?.split(';').map(t => t.trim()).filter(t => t) || [],
-            aiTools: content.ai_tools?.split(';').map(t => t.trim()).filter(t => t) || [],
-            devTools: content.dev_tools?.split(';').map(t => t.trim()).filter(t => t) || [],
-            skills: content.skills?.split(';').map(t => t.trim()).filter(t => t) || [],
-            roles: content.roles?.split(';').map(t => t.trim()).filter(t => t) || [],
-            artifactTypes: content.artifact_types?.split(';').map(t => t.trim()).filter(t => t) || [],
-            fidelity: content.fidelity?.split(';').map(t => t.trim()).filter(t => t) || [],
-            aiModels: content.ai_models?.split(';').map(t => t.trim()).filter(t => t) || [],
-            designPrinciples: content.design_principles?.split(';').map(t => t.trim()).filter(t => t) || [],
-            usabilityHeuristics: content.usability_heuristics?.split(';').map(t => t.trim()).filter(t => t) || []
-          };
-        }
+        // Process tags - always as semicolon-separated strings in simplified CMS
+        const tags = {
+          designTools: content.design_tools?.split(';').map(t => t.trim()).filter(t => t) || [],
+          aiTools: content.ai_tools?.split(';').map(t => t.trim()).filter(t => t) || [],
+          devTools: content.dev_tools?.split(';').map(t => t.trim()).filter(t => t) || [],
+          skills: content.skills?.split(';').map(t => t.trim()).filter(t => t) || [],
+          roles: content.roles?.split(';').map(t => t.trim()).filter(t => t) || [],
+          artifactTypes: content.artifact_types?.split(';').map(t => t.trim()).filter(t => t) || [],
+          fidelity: content.fidelity?.split(';').map(t => t.trim()).filter(t => t) || [],
+          aiModels: content.ai_models?.split(';').map(t => t.trim()).filter(t => t) || [],
+          designPrinciples: content.design_principles?.split(';').map(t => t.trim()).filter(t => t) || [],
+          usabilityHeuristics: content.usability_heuristics?.split(';').map(t => t.trim()).filter(t => t) || []
+        };
         
         cmsCaseStudyDetails.push({
           id: content.id,
