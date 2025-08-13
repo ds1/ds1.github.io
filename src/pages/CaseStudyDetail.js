@@ -7,16 +7,27 @@ import RichText from '../components/RichText';
 import { tagCategoryColors, tagCategoryNames, getTagColor } from '../utils/tagConfig';
 import MediaDisplay from '../components/MediaDisplay';
 
+// Updated to use shared CSS class
 const CaseStudyWrapper = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 0;
+  
+  /* Override some shared styles if needed */
+  &.case-study-content {
+    padding: 2rem 1rem;
+    background-color: transparent; /* Since global has background */
+    
+    @media (min-width: 768px) {
+      padding: 2rem 0;
+    }
+  }
 `;
 
 const BackButton = styled.button`
   background: none;
   border: none;
-  color: ${({ theme }) => theme.colors.primary};
+  color: var(--color-primary, ${({ theme }) => theme.colors.primary});
   cursor: pointer;
   font-size: 1rem;
   margin-bottom: 2rem;
@@ -28,6 +39,7 @@ const BackButton = styled.button`
 
   &:hover {
     text-decoration: underline;
+    color: var(--color-secondary, ${({ theme }) => theme.colors.secondary});
   }
 `;
 
@@ -35,25 +47,25 @@ const Header = styled.header`
   margin-bottom: 3rem;
 `;
 
+// Updated to use CSS variables
 const Title = styled.h1`
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: ${({ theme }) => theme.colors.text};
+  color: var(--color-text, ${({ theme }) => theme.colors.text});
 `;
 
 const Subtitle = styled.h2`
   font-size: 1.5rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
+  color: var(--color-text-secondary, ${({ theme }) => theme.colors.textSecondary});
   margin-bottom: 1rem;
   font-weight: normal;
 `;
 
-const MetaInfo = styled.div`
-  display: flex;
-  gap: 2rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
-  font-size: 0.9rem;
-  margin-top: 1rem;
+// Updated to use shared class
+const MetaInfo = styled.div.attrs({
+  className: 'case-study-meta'
+})`
+  /* Styled-components styles will merge with CSS class styles */
 `;
 
 const MetaItem = styled.span`
@@ -65,7 +77,7 @@ const MetaItem = styled.span`
     content: '';
     width: 4px;
     height: 4px;
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: var(--color-primary, ${({ theme }) => theme.colors.primary});
     border-radius: 50%;
   }
 
@@ -77,56 +89,31 @@ const MetaItem = styled.span`
 const HeroImage = styled.img`
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: var(--radius-md, 8px);
   margin-bottom: 3rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 `;
 
+// Let shared CSS handle most styling
 const Content = styled.div`
   margin-bottom: 3rem;
 
-  h1 {
-    font-size: 2rem;
-    margin: 3rem 0 1.5rem 0;
-    color: ${({ theme }) => theme.colors.text};
-  }
-
-  h2 {
-    font-size: 1.5rem;
-    margin: 2.5rem 0 1rem 0;
-    color: ${({ theme }) => theme.colors.primary};
-  }
-
-  h3 {
-    font-size: 1.2rem;
-    margin: 2rem 0 0.75rem 0;
-    color: ${({ theme }) => theme.colors.text};
-  }
-
-  p {
-    margin-bottom: 1rem;
-    line-height: 1.8;
-  }
-
-  ul {
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-  }
-
-  li {
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
+  /* These will use shared CSS automatically */
+  h1, h2, h3, p, ul, li {
+    /* Styles come from shared-theme.css */
   }
 `;
 
-const TagSection = styled.div`
-  margin: 2rem 0;
-  padding: 1.5rem;
-  background-color: ${({ theme }) => theme.colors.surface};
-  border-radius: 8px;
+// Updated to use shared class and CSS variables
+const TagSection = styled.div.attrs({
+  className: 'case-study-tags'
+})`
+  /* Additional styled-components styles if needed */
 `;
 
-const TagCategory = styled.div`
+const TagCategory = styled.div.attrs({
+  className: 'tag-category'
+})`
   margin-bottom: 1rem;
   
   &:last-child {
@@ -136,31 +123,24 @@ const TagCategory = styled.div`
 
 const TagCategoryTitle = styled.span`
   font-weight: bold;
-  color: ${({ theme, $category }) => tagCategoryColors[$category] || theme.colors.textSecondary};
+  color: ${({ $category }) => tagCategoryColors[$category] || 'var(--color-text-secondary)'};
   margin-right: 0.75rem;
   text-transform: capitalize;
 `;
 
 const TagList = styled.span`
-  color: ${({ theme }) => theme.colors.text};
+  color: var(--color-text, ${({ theme }) => theme.colors.text});
 `;
 
-const TagItem = styled.span`
-  display: inline-block;
-  padding: 0.25rem 0.5rem;
-  margin: 0 0.25rem;
+const TagItem = styled.span.attrs({
+  className: 'tag-item'
+})`
+  /* Merge with shared CSS */
   background-color: ${({ $category }) => getTagColor($category, 0.1)};
   color: ${({ $category }) => tagCategoryColors[$category]};
   border: 1px solid ${({ $category }) => getTagColor($category, 0.3)};
-  border-radius: 12px;
-  font-size: 0.875rem;
-
-  &:first-child {
-    margin-left: 0;
-  }
 `;
 
-// ADD THIS - Define ImageSection
 const ImageSection = styled.section`
   margin: 3rem 0;
 `;
@@ -172,13 +152,13 @@ const ImageContainer = styled.div`
 const StudyImage = styled.img`
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: var(--radius-md, 8px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 `;
 
-const ImageCaption = styled.p`
+const ImageCaption = styled.figcaption`
   text-align: center;
-  color: ${({ theme }) => theme.colors.textSecondary};
+  color: var(--color-text-secondary, ${({ theme }) => theme.colors.textSecondary});
   font-size: 0.9rem;
   margin-top: 0.5rem;
   font-style: italic;
@@ -195,13 +175,13 @@ const CaseStudyDetail = () => {
   const study = caseStudyDetailsData.caseStudyDetails.find(s => s.id === parseInt(id));
 
   if (!study) {
-    return <CaseStudyWrapper>Case study not found</CaseStudyWrapper>;
+    return <CaseStudyWrapper className="case-study-content">Case study not found</CaseStudyWrapper>;
   }
 
   const heroImage = getImage(study.thumbnail);
 
   return (
-    <CaseStudyWrapper>
+    <CaseStudyWrapper className="case-study-content">
       <BackButton onClick={() => navigate('/')}>
         ← Back to Case Studies
       </BackButton>
@@ -243,6 +223,21 @@ const CaseStudyDetail = () => {
               return <RichText key={index} content={content} />;
             case 'list':
               return <RichText key={index} content={content} isListContent={true} />;
+            case 'code':
+              return (
+                <pre key={index}>
+                  <code className={section.language ? `language-${section.language}` : ''}>
+                    {content}
+                  </code>
+                </pre>
+              );
+            case 'quote':
+              return (
+                <blockquote key={index}>
+                  {content}
+                  {section.author && <cite>— {section.author}</cite>}
+                </blockquote>
+              );
             default:
               return null;
           }
@@ -271,21 +266,21 @@ const CaseStudyDetail = () => {
         </TagSection>
       )}
 
-      {/* REPLACE the old images section with this media section */}
+      {/* Media section with shared CSS support */}
       {study.media && study.media.length > 0 ? (
         <ImageSection>
           {study.media.map((media, index) => {
             if (!media.url) return null;
             
             return (
-              <ImageContainer key={index}>
+              <figure key={index}>
                 <MediaDisplay 
                   url={media.url}
                   alt={media.alt}
                   type={media.type}
                   caption={media.caption}
                 />
-              </ImageContainer>
+              </figure>
             );
           })}
         </ImageSection>
@@ -297,7 +292,7 @@ const CaseStudyDetail = () => {
             if (!imageSrc) return null;
             
             return (
-              <ImageContainer key={index}>
+              <figure key={index}>
                 <StudyImage
                   src={imageSrc}
                   alt={image.alt || `${study.title} image ${index + 1}`}
@@ -307,7 +302,7 @@ const CaseStudyDetail = () => {
                   }}
                 />
                 {image.caption && <ImageCaption>{image.caption}</ImageCaption>}
-              </ImageContainer>
+              </figure>
             );
           })}
         </ImageSection>

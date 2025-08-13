@@ -17,15 +17,14 @@ const Title = styled.h1`
 
 const Subtitle = styled.p`
   color: ${({ theme }) => theme.colors.textSecondary};
-  line-height: 1.6;
+  // Update to:
+  color: var(--color-text-secondary, ${({ theme }) => theme.colors.textSecondary});
 `;
 
 const ExternalLink = styled.a`
   color: ${({ theme }) => theme.colors.primary};
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
+  // Update to:
+  color: var(--color-primary, ${({ theme }) => theme.colors.primary});
 `;
 
 const CaseStudyGrid = styled.div`
@@ -35,11 +34,10 @@ const CaseStudyGrid = styled.div`
   margin-bottom: 2rem;
 `;
 
-// ADD THIS - Define CaseStudyCard
 const CaseStudyCard = styled(Link)`
   text-decoration: none;
-  color: inherit;
-  background-color: ${({ theme }) => theme.colors.surface};
+  color: var(--color-text, ${({ theme }) => theme.colors.text});
+  background-color: var(--color-surface, ${({ theme }) => theme.colors.surface});
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -67,15 +65,15 @@ const CaseStudyContent = styled.div`
 `;
 
 const CaseStudyTitle = styled.h2`
-  margin: 0 0 0.5rem 0;
-  font-size: 1.25rem;
   color: ${({ theme }) => theme.colors.text};
+  // Update to:
+  color: var(--color-text, ${({ theme }) => theme.colors.text});
 `;
 
 const CaseStudyDescription = styled.p`
-  margin: 0 0 1rem 0;
   color: ${({ theme }) => theme.colors.textSecondary};
-  line-height: 1.5;
+  // Update to:
+  color: var(--color-text-secondary, ${({ theme }) => theme.colors.textSecondary});
 `;
 
 const TagContainer = styled.div`
@@ -98,7 +96,7 @@ const TagBadge = styled.span`
 const NoResults = styled.div`
   text-align: center;
   padding: 3rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
+  color: var(--color-text-secondary, ${({ theme }) => theme.colors.textSecondary});
 `;
 
 const getImage = (path) => {

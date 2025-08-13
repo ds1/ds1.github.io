@@ -3,14 +3,12 @@ import styled from 'styled-components';
 import RichText from '../components/RichText';
 import resumeData from '../data/resume.json';
 
-const ResumeWrapper = styled.div`
+const ResumeWrapper = styled.div.attrs({
+  className: 'case-study-content'
+})`
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 0;
-  
-  @media (max-width: 768px) {
-    padding: 1rem 0;
-  }
 `;
 
 const PageTitle = styled.h1`
@@ -24,7 +22,7 @@ const PageTitle = styled.h1`
 
 const Introduction = styled.p`
   font-size: 1.25rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
+  color: var(--color-secondary, ${({ theme }) => theme.colors.secondary});
   margin-bottom: 2rem;
   line-height: 1.5;
   
@@ -41,7 +39,7 @@ const Introduction = styled.p`
 
 const DownloadButton = styled.a`
   display: inline-block;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: var(--color-primary, ${({ theme }) => theme.colors.primary});
   color: ${({ theme }) => theme.colors.background};
   padding: 0.75rem 1.5rem;
   text-decoration: none;
@@ -52,7 +50,7 @@ const DownloadButton = styled.a`
   text-align: center;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.secondary};
+    background-color: var(--color-secondary, ${({ theme }) => theme.colors.secondary});
     transform: translateY(-2px);
   }
   

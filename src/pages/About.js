@@ -4,14 +4,12 @@ import RichText from '../components/RichText';
 import aboutData from '../data/about.json';
 import { imageMap } from '../utils/imageImports';
 
-const AboutWrapper = styled.div`
+const AboutWrapper = styled.div.attrs({
+  className: 'case-study-content' // Reuse the same class
+})`
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 0;
-  
-  @media (max-width: 768px) {
-    padding: 1rem 0;
-  }
 `;
 
 const PageTitle = styled.h1`
@@ -47,7 +45,7 @@ const ProfileImage = styled.img`
 
 const Introduction = styled.p`
   font-size: 1.25rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
+  color: var(--color-secondary, ${({ theme }) => theme.colors.secondary});
   margin-bottom: 2rem;
   line-height: 1.5;
   
@@ -99,7 +97,7 @@ const FactItem = styled.li`
     content: "•";
     position: absolute;
     left: 0;
-    color: ${({ theme }) => theme.colors.primary};
+    color: var(--color-primary, ${({ theme }) => theme.colors.primary});
   }
   
   @media (max-width: 768px) {

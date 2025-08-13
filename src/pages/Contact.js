@@ -3,14 +3,12 @@ import styled from 'styled-components';
 import RichText from '../components/RichText';
 import contactData from '../data/contact.json';
 
-const ContactWrapper = styled.div`
-  max-width: 600px;
+const ContactWrapper = styled.div.attrs({
+  className: 'case-study-content'
+})`
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem 0;
-  
-  @media (max-width: 768px) {
-    padding: 1rem 0;
-  }
 `;
 
 const PageTitle = styled.h1`
@@ -24,7 +22,7 @@ const PageTitle = styled.h1`
 
 const Introduction = styled.p`
   font-size: 1.25rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
+  color: var(--color-secondary, ${({ theme }) => theme.colors.secondary});
   margin-bottom: 2rem;
   line-height: 1.5;
   
@@ -58,7 +56,7 @@ const ContactMethod = styled.div`
 const ContactLabel = styled.h2`
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: ${({ theme }) => theme.colors.text};
+  color: var(--color-text, ${({ theme }) => theme.colors.text});
   
   @media (max-width: 768px) {
     font-size: 1.125rem;
@@ -67,7 +65,7 @@ const ContactLabel = styled.h2`
 `;
 
 const ContactLink = styled.a`
-  color: ${({ theme }) => theme.colors.primary};
+  color: var(--color-primary, ${({ theme }) => theme.colors.primary});
   text-decoration: none;
   transition: color 0.2s ease;
   display: inline-block;
@@ -75,7 +73,7 @@ const ContactLink = styled.a`
 
   &:hover {
     text-decoration: underline;
-    color: ${({ theme }) => theme.colors.secondary};
+    color: var(--color-secondary, ${({ theme }) => theme.colors.secondary});
   }
   
   @media (max-width: 768px) {

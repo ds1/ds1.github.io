@@ -4,9 +4,170 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
+  
+  <!-- Load the shared theme CSS -->
+  <link rel="stylesheet" href="/shared-theme.css">
+  
+  <!-- React for custom preview components -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 </head>
 <body>
-  <!-- Include the script that builds the page and powers Decap CMS -->
+  <!-- Include Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
+  <!-- Custom Preview Template using shared CSS -->
+  <script>
+    // Wait for CMS to load
+    if (window.CMS) {
+      // Create custom preview for Case Studies
+      const CaseStudyPreview = window.createClass({
+        render: function() {
+          const entry = this.props.entry;
+          const data = entry.get('data').toJS();
+          
+          // Use shared CSS classes
+          return window.h('div', {
+            className: 'case-study-preview'
+          },
+            // Title
+            window.h('h1', {}, data.title),
+            
+            // Subtitle
+            data.subtitle && window.h('h2', {
+              style: { fontWeight: 'normal', fontSize: '1.5rem' }
+            }, data.subtitle),
+            
+            // Metadata
+            window.h('div', {
+              className: 'case-study-meta'
+            },
+              data.duration && window.h('span', {}, '📅 ' + data.duration),
+              data.role && window.h('span', {}, '👤 ' + data.role),
+              data.project_type && window.h('span', {}, '📁 ' + data.project_type)
+            ),
+            
+            // Thumbnail
+            data.thumbnail && window.h('img', {
+              src: data.thumbnail,
+              alt: data.title
+            }),
+            
+            // Content Sections
+            data.content_sections && window.h('div', {},
+              data.content_sections.map((section, index) => {
+                switch(section.type) {
+                  case 'h1':
+                    return window.h('h1', { key: index }, section.content);
+                    
+                  case 'h2':
+                    return window.h('h2', { key: index }, section.content);
+                    
+                  case 'h3':
+                    return window.h('h3', { key: index }, section.content);
+                    
+                  case 'paragraph':
+                    return window.h('p', { key: index }, section.content);
+                    
+                  case 'body':
+                    // Parse rich text with formatting
+                    return window.h('div', {
+                      key: index,
+                      dangerouslySetInnerHTML: {
+                        __html: parseRichText(section.content || '')
+                      }
+                    });
+                    
+                  case 'list':
+                    const items = section.items ? section.items.split(';') : [];
+                    return window.h('ul', { key: index },
+                      items.map((item, i) => 
+                        window.h('li', { key: i }, item.trim())
+                      )
+                    );
+                    
+                  case 'image':
+                  case 'video':
+                    if (!section.media_url) return null;
+                    return window.h('figure', { key: index },
+                      section.type === 'video' 
+                        ? window.h('video', {
+                            src: section.media_url,
+                            controls: true
+                          })
+                        : window.h('img', {
+                            src: section.media_url,
+                            alt: section.alt || ''
+                          }),
+                      section.caption && window.h('figcaption', {}, section.caption)
+                    );
+                    
+                  case 'code':
+                    return window.h('pre', { key: index },
+                      window.h('code', {}, section.content)
+                    );
+                    
+                  case 'quote':
+                    return window.h('blockquote', { key: index }, section.content);
+                    
+                  default:
+                    return null;
+                }
+              })
+            ),
+            
+            // Tags section
+            (data.design_tools || data.ai_tools || data.dev_tools || data.skills) && 
+            window.h('div', { className: 'case-study-tags' },
+              window.h('h3', {}, 'Project Details'),
+              
+              data.design_tools && window.h('div', { className: 'tag-category' },
+                window.h('strong', {}, 'Design Tools: '),
+                data.design_tools.split(';').map(tag => 
+                  window.h('span', { className: 'tag-item', key: tag }, tag.trim())
+                )
+              ),
+              
+              data.ai_tools && window.h('div', { className: 'tag-category' },
+                window.h('strong', {}, 'AI Tools: '),
+                data.ai_tools.split(';').map(tag => 
+                  window.h('span', { className: 'tag-item', key: tag }, tag.trim())
+                )
+              ),
+              
+              data.skills && window.h('div', { className: 'tag-category' },
+                window.h('strong', {}, 'Skills: '),
+                data.skills.split(';').map(tag => 
+                  window.h('span', { className: 'tag-item', key: tag }, tag.trim())
+                )
+              )
+            )
+          );
+        }
+      });
+      
+      // Helper function to parse rich text
+      function parseRichText(text) {
+        return text
+          // Bold italic
+          .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
+          // Bold
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          // Italic
+          .replace(/\*(.*?)\*/g, '<em>$1</em>')
+          // Color spans
+          .replace(/<span class="(.*?)">(.*?)<\/span>/g, '<span class="$1">$2</span>')
+          // Line breaks
+          .replace(/\\n\\n/g, '</p><p>')
+          .replace(/\\n/g, '<br>')
+          // Wrap in paragraph if not already
+          .replace(/^(?!<p>)/, '<p>')
+          .replace(/(?!<\/p>)$/, '</p>');
+      }
+      
+      // Register the preview template
+      window.CMS.registerPreviewTemplate('case_studies', CaseStudyPreview);
+    }
+  </script>
 </body>
 </html>
