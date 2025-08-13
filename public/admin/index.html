@@ -3,11 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../shared-theme.css">
+  <!-- CHANGE THIS LINE - remove the ../ -->
+  <link rel="stylesheet" href="/shared-theme.css">
   <title>Content Manager</title>
+  <style>
+    /* Add wrapper class for CMS preview */
+    .frame-content {
+      background-color: var(--color-background);
+    }
+    .frame-content > div {
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
-  <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // Initialize the CMS with preview styling
+    CMS.init();
+    
+    // Register preview template with shared styles
+    CMS.registerPreviewTemplate("case_studies", ({ entry, widgetFor }) => {
+      const data = entry.get('data').toJS();
+      
+      return h('div', { className: 'case-study-preview' },
+        h('h1', {}, data.title),
+        h('p', {}, data.subtitle),
+        h('div', {}, widgetFor('content_sections'))
+      );
+    });
+  </script>
 </body>
 </html>

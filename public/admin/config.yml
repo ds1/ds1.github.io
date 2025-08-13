@@ -58,8 +58,8 @@ collections:
               - { label: "Code", value: "code" }
               - { label: "Quote", value: "quote" }
           
-          - {label: "Content", name: "content", widget: "text", required: false, hint: "Main content for this section"}
-          - {label: "List Items (for lists)", name: "items", widget: "text", required: false, hint: "Semicolon-separated list items"}
+          - {label: "Content", name: "content", widget: "text", required: false, hint: "Main content for this section. For lists, use semicolons to separate items"}
+          - {label: "List Items (deprecated - use Content field)", name: "items", widget: "text", required: false, hint: "Legacy field - please use Content field above"}
           - {label: "Image/Video URL", name: "media_url", widget: "image", required: false}
           - {label: "Alt Text", name: "alt", widget: "string", required: false}
           - {label: "Caption", name: "caption", widget: "string", required: false}

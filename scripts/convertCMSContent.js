@@ -87,9 +87,19 @@ async function convertCMSContent() {
                 break;
                 
               case 'list':
-                const items = section.items ? 
-                  section.items.split(';').map(item => item.trim()).filter(item => item) :
-                  [];
+                // Check both 'items' field and 'content' field for list data
+                let items = [];
+                if (section.items) {
+                  // If items field exists, split by semicolon
+                  items = section.items.split(';').map(item => item.trim()).filter(item => item);
+                } else if (section.content) {
+                  // Fallback to content field (might be already formatted)
+                  if (typeof section.content === 'string') {
+                    items = section.content.split(';').map(item => item.trim()).filter(item => item);
+                  } else if (Array.isArray(section.content)) {
+                    items = section.content;
+                  }
+                }
                 sections.push({
                   type: 'list',
                   content: items,
