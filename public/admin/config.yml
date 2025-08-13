@@ -7,9 +7,12 @@ backend:
 media_folder: "src/images"
 public_folder: "/images"
 
+# Optional: Enable editorial workflow for drafts
+# publish_mode: editorial_workflow
+
 # Content Collections
 collections:
-  # Case Studies List
+  # Case Studies with Flexible Content Blocks
   - name: "case_studies"
     label: "Case Studies"
     folder: "content/cms/case-studies"
@@ -19,59 +22,124 @@ collections:
     identifier_field: "title"
     summary: "{{title}} - {{description}}"
     fields:
-      - {label: "ID", name: "id", widget: "number"}
+      # Basic Metadata (all optional except ID and title)
+      - {label: "ID", name: "id", widget: "number", hint: "Unique identifier for ordering"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Description", name: "description", widget: "text", required: false, hint: "Short description for the card"}
       - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
-      - {label: "Thumbnail", name: "thumbnail", widget: "image"}
-      - {label: "Duration", name: "duration", widget: "string"}
-      - {label: "Role", name: "role", widget: "string"}
-      - {label: "Project Type", name: "project_type", widget: "string"}
+      - {label: "Thumbnail", name: "thumbnail", widget: "image", required: false}
+      - {
+          label: "Thumbnail Type", 
+          name: "thumbnail_type", 
+          widget: "select", 
+          options: ["image", "gif", "video"],
+          default: "image",
+          required: false
+        }
+      - {label: "Duration", name: "duration", widget: "string", required: false, hint: "e.g., '06/2022 - 08/2024' or 'July 2024'"}
+      - {label: "Role", name: "role", widget: "string", required: false}
+      - {label: "Project Type", name: "project_type", widget: "string", required: false, hint: "e.g., 'Personal Project', 'Enterprise Tool'"}
       
-      # Content Sections
-      - {label: "Initial Vision", name: "initial_vision_h1", widget: "string"}
-      - {label: "Problem Statement Title", name: "problem_statement_h2", widget: "string"}
-      - {label: "Problem Body", name: "problem_body", widget: "markdown"}
-      - {label: "Technical Approach Title", name: "technical_approach_h2", widget: "string"}
-      - {label: "Approach List", name: "approach_list", widget: "text", hint: "Separate items with semicolons"}
-      - {label: "Architecture Title", name: "architecture_h2", widget: "string"}
-      - {label: "Architecture Body", name: "architecture_body", widget: "markdown"}
-      - {label: "Innovation Title", name: "innovation_details_h2", widget: "string"}
-      - {label: "Innovation Body", name: "innovation_body", widget: "markdown"}
-      - {label: "Collaboration Title", name: "collaboration_h2", widget: "string"}
-      - {label: "Collaboration Body", name: "collaboration_body", widget: "markdown"}
-      
-      # Optional sections (for cases like Thubble)
-      - {label: "Business Model Title", name: "business_model_h2", widget: "string", required: false}
-      - {label: "Business Model Body", name: "business_model_body", widget: "markdown", required: false}
-      - {label: "Challenges Title", name: "challenges_h2", widget: "string", required: false}
-      - {label: "Challenges Body", name: "challenges_body", widget: "markdown", required: false}
-      
-      - {label: "Results Title", name: "results_h2", widget: "string"}
-      - {label: "Results List", name: "results_list", widget: "text", hint: "Separate items with semicolons"}
-      
-      # Images
-      - label: "Images"
-        name: "images"
+      # Flexible Content Blocks
+      - label: "Content Sections"
+        name: "content_blocks"
         widget: "list"
         required: false
-        fields:
-          - {label: "Image", name: "url", widget: "image"}
-          - {label: "Alt Text", name: "alt", widget: "string"}
-          - {label: "Caption", name: "caption", widget: "string", required: false}
+        types:
+          - label: "Heading 1 (H1)"
+            name: "h1"
+            widget: "object"
+            fields:
+              - {label: "Text", name: "text", widget: "string"}
+              
+          - label: "Heading 2 (H2)"
+            name: "h2"
+            widget: "object"
+            fields:
+              - {label: "Text", name: "text", widget: "string"}
+              
+          - label: "Heading 3 (H3)"
+            name: "h3"
+            widget: "object"
+            fields:
+              - {label: "Text", name: "text", widget: "string"}
+              
+          - label: "Paragraph"
+            name: "paragraph"
+            widget: "object"
+            fields:
+              - {label: "Text", name: "text", widget: "text"}
+              
+          - label: "Rich Text"
+            name: "body"
+            widget: "object"
+            fields:
+              - {label: "Content", name: "content", widget: "markdown", hint: "Supports **bold**, *italic*, line breaks, and color spans"}
+              
+          - label: "List"
+            name: "list"
+            widget: "object"
+            fields:
+              - {label: "Items", name: "items", widget: "list", hint: "Add list items one by one"}
+              
+          - label: "Image"
+            name: "image"
+            widget: "object"
+            fields:
+              - {label: "Image File", name: "url", widget: "image"}
+              - {label: "Alt Text", name: "alt", widget: "string", required: false}
+              - {label: "Caption", name: "caption", widget: "string", required: false}
+              
+          - label: "Video"
+            name: "video"
+            widget: "object"
+            fields:
+              - {label: "Video File", name: "url", widget: "file"}
+              - {label: "Alt Text", name: "alt", widget: "string", required: false}
+              - {label: "Caption", name: "caption", widget: "string", required: false}
+              
+          - label: "GIF"
+            name: "gif"
+            widget: "object"
+            fields:
+              - {label: "GIF File", name: "url", widget: "image"}
+              - {label: "Alt Text", name: "alt", widget: "string", required: false}
+              - {label: "Caption", name: "caption", widget: "string", required: false}
+              
+          - label: "Code Block"
+            name: "code"
+            widget: "object"
+            fields:
+              - {label: "Language", name: "language", widget: "string", default: "javascript"}
+              - {label: "Code", name: "code", widget: "code"}
+              
+          - label: "Quote"
+            name: "quote"
+            widget: "object"
+            fields:
+              - {label: "Quote Text", name: "text", widget: "text"}
+              - {label: "Author", name: "author", widget: "string", required: false}
+              
+          - label: "Divider"
+            name: "divider"
+            widget: "object"
+            fields:
+              - {label: "Style", name: "style", widget: "hidden", default: "---"}
       
-      # Tags
+      # Tags Section (all optional)
       - label: "Tags"
         name: "tags"
         widget: "object"
+        collapsed: true
+        required: false
         fields:
-          - {label: "Design Tools", name: "design_tools", widget: "list", required: false}
-          - {label: "AI Tools", name: "ai_tools", widget: "list", required: false}
-          - {label: "Dev Tools", name: "dev_tools", widget: "list", required: false}
-          - {label: "Skills", name: "skills", widget: "list", required: false}
-          - {label: "Roles", name: "roles", widget: "list", required: false}
+          - {label: "Design Tools", name: "design_tools", widget: "list", required: false, hint: "e.g., Figma, Sketch, Adobe XD"}
+          - {label: "AI Tools", name: "ai_tools", widget: "list", required: false, hint: "e.g., Claude, ChatGPT, Midjourney"}
+          - {label: "Dev Tools", name: "dev_tools", widget: "list", required: false, hint: "e.g., React, TypeScript, GitHub"}
+          - {label: "Skills", name: "skills", widget: "list", required: false, hint: "e.g., UX Research, Prototyping"}
+          - {label: "Roles", name: "roles", widget: "list", required: false, hint: "e.g., Lead Designer, Product Manager"}
           - {label: "Artifact Types", name: "artifact_types", widget: "list", required: false}
-          - {label: "Fidelity", name: "fidelity", widget: "list", required: false}
+          - {label: "Fidelity", name: "fidelity", widget: "list", required: false, hint: "e.g., Low, Medium, High"}
           - {label: "AI Models", name: "ai_models", widget: "list", required: false}
           - {label: "Design Principles", name: "design_principles", widget: "list", required: false}
           - {label: "Usability Heuristics", name: "usability_heuristics", widget: "list", required: false}

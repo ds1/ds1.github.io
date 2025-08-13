@@ -36,30 +36,16 @@ async function convertCMSContent() {
         cmsCaseStudies.push({
           id: content.id,
           title: content.title,
-          description: content.description,
-          thumbnail: content.thumbnail,
+          description: content.description || '',
+          thumbnail: content.thumbnail || '',
           thumbnail_type: content.thumbnail_type || 'image'
         });
         
-        // Process media fields into array
+        // Process flexible content blocks
+        const sections = [];
         const media = [];
         
-        // Process all media fields
-        ['process', 'system', ...Array.from({length: 10}, (_, i) => `media${i+1}`)].forEach(prefix => {
-          if (content[`${prefix}_media_url`] || content[`${prefix}_url`]) {
-            media.push({
-              url: content[`${prefix}_media_url`] || content[`${prefix}_url`],
-              alt: content[`${prefix}_media_alt`] || content[`${prefix}_alt`],
-              caption: content[`${prefix}_media_caption`] || content[`${prefix}_caption`],
-              type: content[`${prefix}_media_type`] || content[`${prefix}_type`] || 'image'
-            });
-          }
-        });
-        
-        // Build content sections
-        const sections = [];
-        
-        // Add project type if exists
+        // Add project type if it exists
         if (content.project_type) {
           sections.push({
             type: 'p',
@@ -68,69 +54,192 @@ async function convertCMSContent() {
           });
         }
         
-        // Process h1, h2, body fields
-        const fieldOrder = [
-          'initial_vision_h1',
-          'problem_statement_h2',
-          'problem_body',
-          'technical_approach_h2',
-          'approach_list',
-          'architecture_h2',
-          'architecture_body',
-          'innovation_details_h2',
-          'innovation_body',
-          'collaboration_h2',
-          'collaboration_body',
-          'business_model_h2',
-          'business_model_body',
-          'challenges_h2',
-          'challenges_body',
-          'results_h2',
-          'results_list'
-        ];
-        
-        fieldOrder.forEach(fieldName => {
-          if (content[fieldName]) {
-            let type = 'p';
-            let processedContent = content[fieldName];
+        // Process flexible content blocks if they exist
+        if (content.content_blocks && Array.isArray(content.content_blocks)) {
+          content.content_blocks.forEach((block, index) => {
+            // Each block has a type and then content within it
+            const blockType = block.type || Object.keys(block)[0]; // Get the type
+            const blockData = block[blockType] || block; // Get the data
             
-            if (fieldName.endsWith('_h1')) type = 'h1';
-            else if (fieldName.endsWith('_h2')) type = 'h2';
-            else if (fieldName.endsWith('_body')) type = 'body';
-            else if (fieldName.endsWith('_list')) {
-              type = 'list';
-              processedContent = content[fieldName].split(';').map(item => item.trim());
+            switch(blockType) {
+              case 'h1':
+                sections.push({
+                  type: 'h1',
+                  content: blockData.text || blockData.content || '',
+                  key: `section_${index}`
+                });
+                break;
+                
+              case 'h2':
+                sections.push({
+                  type: 'h2',
+                  content: blockData.text || blockData.content || '',
+                  key: `section_${index}`
+                });
+                break;
+                
+              case 'h3':
+                sections.push({
+                  type: 'h3',
+                  content: blockData.text || blockData.content || '',
+                  key: `section_${index}`
+                });
+                break;
+                
+              case 'paragraph':
+                sections.push({
+                  type: 'p',
+                  content: blockData.text || blockData.content || '',
+                  key: `section_${index}`
+                });
+                break;
+                
+              case 'body':
+                sections.push({
+                  type: 'body',
+                  content: blockData.content || blockData.text || '',
+                  key: `section_${index}`
+                });
+                break;
+                
+              case 'list':
+                sections.push({
+                  type: 'list',
+                  content: blockData.items || [],
+                  key: `section_${index}`
+                });
+                break;
+                
+              case 'image':
+              case 'video':
+              case 'gif':
+                media.push({
+                  url: blockData.url || '',
+                  alt: blockData.alt || '',
+                  caption: blockData.caption || '',
+                  type: blockType
+                });
+                break;
+                
+              case 'code':
+                sections.push({
+                  type: 'code',
+                  content: blockData.code || '',
+                  language: blockData.language || 'javascript',
+                  key: `section_${index}`
+                });
+                break;
+                
+              case 'quote':
+                sections.push({
+                  type: 'quote',
+                  content: blockData.text || '',
+                  author: blockData.author || '',
+                  key: `section_${index}`
+                });
+                break;
+                
+              case 'divider':
+                sections.push({
+                  type: 'divider',
+                  content: '---',
+                  key: `section_${index}`
+                });
+                break;
             }
-            
-            sections.push({
-              type,
-              content: processedContent,
-              key: fieldName.replace(/_h[12]|_body|_list/, '')
-            });
-          }
-        });
+          });
+        } else {
+          // Fallback to old format if content_blocks doesn't exist
+          // This handles the old predetermined field structure
+          
+          // Process old-style h1, h2, body fields
+          const oldFields = [
+            { field: 'initial_vision_h1', type: 'h1', key: 'initial_vision' },
+            { field: 'problem_statement_h2', type: 'h2', key: 'problem_statement' },
+            { field: 'problem_body', type: 'body', key: 'problem' },
+            { field: 'technical_approach_h2', type: 'h2', key: 'technical_approach' },
+            { field: 'approach_list', type: 'list', key: 'approach' },
+            { field: 'architecture_h2', type: 'h2', key: 'architecture' },
+            { field: 'architecture_body', type: 'body', key: 'architecture' },
+            { field: 'innovation_details_h2', type: 'h2', key: 'innovation_details' },
+            { field: 'innovation_body', type: 'body', key: 'innovation' },
+            { field: 'collaboration_h2', type: 'h2', key: 'collaboration' },
+            { field: 'collaboration_body', type: 'body', key: 'collaboration' },
+            { field: 'business_model_h2', type: 'h2', key: 'business_model' },
+            { field: 'business_model_body', type: 'body', key: 'business_model' },
+            { field: 'challenges_h2', type: 'h2', key: 'challenges' },
+            { field: 'challenges_body', type: 'body', key: 'challenges' },
+            { field: 'results_h2', type: 'h2', key: 'results' },
+            { field: 'results_list', type: 'list', key: 'results' }
+          ];
+          
+          oldFields.forEach(({ field, type, key }) => {
+            if (content[field]) {
+              let processedContent = content[field];
+              if (type === 'list' && typeof processedContent === 'string') {
+                processedContent = processedContent.split(';').map(item => item.trim());
+              }
+              sections.push({
+                type,
+                content: processedContent,
+                key
+              });
+            }
+          });
+          
+          // Process old-style media fields
+          ['process', 'system', ...Array.from({length: 10}, (_, i) => `media${i+1}`)].forEach(prefix => {
+            if (content[`${prefix}_media_url`] || content[`${prefix}_url`]) {
+              media.push({
+                url: content[`${prefix}_media_url`] || content[`${prefix}_url`],
+                alt: content[`${prefix}_media_alt`] || content[`${prefix}_alt`],
+                caption: content[`${prefix}_media_caption`] || content[`${prefix}_caption`],
+                type: content[`${prefix}_media_type`] || content[`${prefix}_type`] || 'image'
+              });
+            }
+          });
+        }
         
-        // Process tags
-        const tags = {
-          designTools: content.design_tools?.split(';').map(t => t.trim()).filter(t => t) || [],
-          aiTools: content.ai_tools?.split(';').map(t => t.trim()).filter(t => t) || [],
-          devTools: content.dev_tools?.split(';').map(t => t.trim()).filter(t => t) || [],
-          skills: content.skills?.split(';').map(t => t.trim()).filter(t => t) || [],
-          roles: content.roles?.split(';').map(t => t.trim()).filter(t => t) || [],
-          artifactTypes: content.artifact_types?.split(';').map(t => t.trim()).filter(t => t) || [],
-          fidelity: content.fidelity?.split(';').map(t => t.trim()).filter(t => t) || [],
-          aiModels: content.ai_models?.split(';').map(t => t.trim()).filter(t => t) || [],
-          designPrinciples: content.design_principles?.split(';').map(t => t.trim()).filter(t => t) || [],
-          usabilityHeuristics: content.usability_heuristics?.split(';').map(t => t.trim()).filter(t => t) || []
-        };
+        // Process tags (works for both old and new format)
+        let tags = {};
+        
+        if (content.tags && typeof content.tags === 'object') {
+          // New format - tags are already structured
+          tags = {
+            designTools: content.tags.design_tools || [],
+            aiTools: content.tags.ai_tools || [],
+            devTools: content.tags.dev_tools || [],
+            skills: content.tags.skills || [],
+            roles: content.tags.roles || [],
+            artifactTypes: content.tags.artifact_types || [],
+            fidelity: content.tags.fidelity || [],
+            aiModels: content.tags.ai_models || [],
+            designPrinciples: content.tags.design_principles || [],
+            usabilityHeuristics: content.tags.usability_heuristics || []
+          };
+        } else {
+          // Old format - tags are semicolon-separated strings
+          tags = {
+            designTools: content.design_tools?.split(';').map(t => t.trim()).filter(t => t) || [],
+            aiTools: content.ai_tools?.split(';').map(t => t.trim()).filter(t => t) || [],
+            devTools: content.dev_tools?.split(';').map(t => t.trim()).filter(t => t) || [],
+            skills: content.skills?.split(';').map(t => t.trim()).filter(t => t) || [],
+            roles: content.roles?.split(';').map(t => t.trim()).filter(t => t) || [],
+            artifactTypes: content.artifact_types?.split(';').map(t => t.trim()).filter(t => t) || [],
+            fidelity: content.fidelity?.split(';').map(t => t.trim()).filter(t => t) || [],
+            aiModels: content.ai_models?.split(';').map(t => t.trim()).filter(t => t) || [],
+            designPrinciples: content.design_principles?.split(';').map(t => t.trim()).filter(t => t) || [],
+            usabilityHeuristics: content.usability_heuristics?.split(';').map(t => t.trim()).filter(t => t) || []
+          };
+        }
         
         cmsCaseStudyDetails.push({
           id: content.id,
           title: content.title,
-          subtitle: content.subtitle,
-          thumbnail: content.thumbnail,
-          duration: content.duration,
-          role: content.role,
+          subtitle: content.subtitle || '',
+          thumbnail: content.thumbnail || '',
+          duration: content.duration || '',
+          role: content.role || '',
           content: sections,
           media: media,
           tags: tags
