@@ -14,89 +14,22 @@
           "key": "project_type"
         },
         {
-          "type": "h1",
-          "content": "Building a Modern Portfolio with AI",
-          "key": "initial_vision"
+          "type": "p",
+          "content": "The paragraph contents",
+          "key": "section_0"
         },
         {
-          "type": "h2",
-          "content": "Technical Challenge",
-          "key": "problem_statement"
-        },
-        {
-          "type": "body",
-          "content": "Traditional content management systems either require backend infrastructure or sacrifice content manageability for static hosting. **The challenge:** Create a static site with dynamic content management capabilities.",
-          "key": "problem"
-        },
-        {
-          "type": "h2",
-          "content": "Technical Approach",
-          "key": "technical_approach"
-        },
-        {
-          "type": "list",
-          "content": [
-            "The solution emerged through iterative AI collaboration, focusing on three key technical areas:\\n\\n**1. Content Management**\\n*Problem:* Need easy content editing without a database\\n*Solution:* CSV-based content system with rich text support\\n\\n**2. Image Handling**\\n*Problem:* Complex image path management across development and production\\n*Solution:* Automated path resolution system\\n\\n**3. Build Process**\\n*Problem:* Converting content for static hosting\\n*Solution:* Automated build pipeline"
-          ],
-          "key": "approach"
-        },
-        {
-          "type": "h2",
-          "content": "Implementation Details",
-          "key": "architecture"
+          "type": "h3",
+          "content": "A heading 3",
+          "key": "section_1"
         },
         {
           "type": "body",
-          "content": "Created CSV templates for structured content management;Developed custom CSV to JSON converter with rich text parsing;Implemented automated image path resolution;Built React components with error handling;Established deterministic build process for GitHub Pages",
-          "key": "architecture"
-        },
-        {
-          "type": "h2",
-          "content": "Key Technical Features",
-          "key": "innovation_details"
-        },
-        {
-          "type": "body",
-          "content": "**1. Content Management System**\\n• CSV files for easy content editing\\n• Rich text formatting support\\n• Structured content validation\\n• Automated JSON conversion\\n\\n**2. Image Management**\\n• Automatic path resolution\\n• Development/production path handling\\n• Robust error checking\\n• Fallback handling\\n\\n**3. Build Pipeline**\\n• CSV validation\\n• JSON generation\\n• Image path mapping\\n• Static file optimization",
-          "key": "innovation"
-        },
-        {
-          "type": "h2",
-          "content": "Content Architecture",
-          "key": "collaboration"
-        },
-        {
-          "type": "body",
-          "content": "The system uses a **three-tier content architecture**:\\n\\n1. *Content Layer (CSV)*\\n<span class=\"text-primary\">• Human-editable spreadsheets\\n• Rich text formatting\\n• Image path references\\n• Content validation</span>\\n\\n2. *Processing Layer (Node.js)*\\n<span class=\"text-secondary\">• CSV parsing\\n• JSON generation\\n• Path resolution\\n• Error checking</span>\\n\\n3. *Presentation Layer (React)*\\n<span class=\"text-success\">• Component rendering\\n• Image loading\\n• Error handling\\n• Performance optimization</span>",
-          "key": "collaboration"
-        },
-        {
-          "type": "h2",
-          "content": "Image System Deep-Dive",
-          "key": "results"
-        },
-        {
-          "type": "list",
-          "content": [
-            "The image management system solves several key challenges:\\n\\n**Path Resolution**\\n```javascript\\n// CSV Reference\\n/images/example.jpg\\n\\n// Development Import\\n../images/example.jpg\\n\\n// Production Output\\n/static/media/example.[hash].jpg\\n```\\n\\n**Key Innovations:**\\n• *Automatic path conversion*\\n• *Development/production consistency*\\n• *Webpack integration*\\n• *Error recovery*"
-          ],
-          "key": "results"
+          "content": "The **rich** text isn't stylized. Actually none of the preview part of the CMS is.",
+          "key": "section_2"
         }
       ],
-      "media": [
-        {
-          "url": "/images/collaboration-flow.jpg",
-          "alt": "AI-Human collaboration diagram",
-          "caption": "Visualization of the iterative development process between human and AI",
-          "type": "image"
-        },
-        {
-          "url": "/images/system-architecture.jpg",
-          "alt": "Technical architecture diagram",
-          "caption": "Three-tier architecture showing the complete system flow",
-          "type": "image"
-        }
-      ],
+      "media": [],
       "tags": {
         "designTools": [
           "Figma"
