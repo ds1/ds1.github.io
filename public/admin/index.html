@@ -3,35 +3,104 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- CHANGE THIS LINE - remove the ../ -->
-  <link rel="stylesheet" href="/shared-theme.css">
   <title>Content Manager</title>
+  <!-- Link to shared theme CSS at root level -->
+  <link rel="stylesheet" href="/shared-theme.css">
   <style>
-    /* Add wrapper class for CMS preview */
-    .frame-content {
+    /* Override some CMS default styles to work with our theme */
+    body {
+      background-color: var(--color-background);
+      color: var(--color-text);
+      font-family: var(--font-body);
+    }
+    
+    /* Style the preview pane */
+    [class*="PreviewPaneFrame"] {
       background-color: var(--color-background);
     }
-    .frame-content > div {
-      padding: 20px;
+    
+    /* Apply case study preview styles to the preview content */
+    [class*="PreviewPaneContent"] {
+      padding: 2rem;
+      background-color: var(--color-background);
+      color: var(--color-text);
+    }
+    
+    /* Apply our theme to preview content */
+    [class*="PreviewPaneContent"] h1 {
+      color: var(--color-text);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    [class*="PreviewPaneContent"] h2 {
+      color: var(--color-primary);
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem 0;
+    }
+    
+    [class*="PreviewPaneContent"] h3 {
+      color: var(--color-text);
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.5rem 0;
+    }
+    
+    [class*="PreviewPaneContent"] p {
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    
+    [class*="PreviewPaneContent"] ul,
+    [class*="PreviewPaneContent"] ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+    
+    [class*="PreviewPaneContent"] li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+    
+    /* Fix the Contents/Media tabs positioning */
+    [class*="ControlPaneContainer"] {
+      position: relative !important;
+      z-index: 1;
+    }
+    
+    /* Ensure the editor pane doesn't overlap */
+    [class*="EditorContainer"] {
+      position: relative;
+      z-index: 0;
+    }
+    
+    /* Apply theme colors to CMS UI elements */
+    [class*="AppHeader"] {
+      background-color: var(--color-surface) !important;
+    }
+    
+    [class*="BackButton"],
+    [class*="BackArrow"] {
+      color: var(--color-primary) !important;
     }
   </style>
 </head>
 <body>
+  <!-- Include Decap CMS script -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    // Initialize the CMS with preview styling
-    CMS.init();
-    
-    // Register preview template with shared styles
-    CMS.registerPreviewTemplate("case_studies", ({ entry, widgetFor }) => {
-      const data = entry.get('data').toJS();
-      
-      return h('div', { className: 'case-study-preview' },
-        h('h1', {}, data.title),
-        h('p', {}, data.subtitle),
-        h('div', {}, widgetFor('content_sections'))
-      );
-    });
+    // Initialize CMS without custom preview templates
+    // The CSS styles above will handle the preview formatting
+    // Check if CMS is loaded (prevents errors in artifact preview)
+    if (typeof CMS !== 'undefined') {
+      CMS.init();
+    } else {
+      // Wait for CMS to load
+      window.addEventListener('load', function() {
+        if (typeof CMS !== 'undefined') {
+          CMS.init();
+        }
+      });
+    }
   </script>
 </body>
 </html>
