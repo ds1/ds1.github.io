@@ -3,16 +3,20 @@ import styled from 'styled-components';
 import RichText from '../components/RichText';
 import resumeData from '../data/resume.json';
 
-const ResumeWrapper = styled.div.attrs({
-  className: 'case-study-content'
-})`
+const ResumeWrapper = styled.div`
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
+  
+  @media (min-width: 768px) {
+    padding: 2rem 0;
+  }
 `;
 
 const PageTitle = styled.h1`
   margin-bottom: 1.5rem;
+  color: ${({ theme }) => theme.colors.text};
+  font-size: 2.5rem;
   
   @media (max-width: 768px) {
     font-size: 1.75rem;
@@ -22,7 +26,7 @@ const PageTitle = styled.h1`
 
 const Introduction = styled.p`
   font-size: 1.25rem;
-  color: var(--color-secondary, ${({ theme }) => theme.colors.secondary});
+  color: ${({ theme }) => theme.colors.secondary};
   margin-bottom: 2rem;
   line-height: 1.5;
   
@@ -39,7 +43,7 @@ const Introduction = styled.p`
 
 const DownloadButton = styled.a`
   display: inline-block;
-  background-color: var(--color-primary, ${({ theme }) => theme.colors.primary});
+  background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.background};
   padding: 0.75rem 1.5rem;
   text-decoration: none;
@@ -48,27 +52,28 @@ const DownloadButton = styled.a`
   transition: background-color 0.2s ease, transform 0.2s ease;
   font-weight: 500;
   text-align: center;
+  border: none;
+  cursor: pointer;
 
   &:hover {
-    background-color: var(--color-secondary, ${({ theme }) => theme.colors.secondary});
+    background-color: ${({ theme }) => theme.colors.secondary};
     transform: translateY(-2px);
   }
   
   @media (max-width: 768px) {
-    display: block; // Full width on mobile
+    display: block;
     width: 100%;
     padding: 1rem 1.5rem;
     margin: 1.5rem 0;
     font-size: 1rem;
-    min-height: auto; // Override global link min-height
     line-height: 1.6;
     
     &:hover {
-      transform: none; // Disable hover transform on mobile
+      transform: none;
     }
     
     &:active {
-      transform: scale(0.98); // Touch feedback
+      transform: scale(0.98);
       background-color: ${({ theme }) => theme.colors.secondary};
     }
   }
@@ -86,6 +91,8 @@ const ResumeContent = styled.div`
   h2 {
     margin-top: 2.5rem;
     margin-bottom: 1.25rem;
+    color: ${({ theme }) => theme.colors.primary};
+    font-size: 1.75rem;
     
     @media (max-width: 768px) {
       margin-top: 2rem;
@@ -97,7 +104,8 @@ const ResumeContent = styled.div`
   h3 {
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.text};
+    font-size: 1.25rem;
     
     @media (max-width: 768px) {
       margin-top: 1.25rem;
@@ -106,13 +114,26 @@ const ResumeContent = styled.div`
     }
   }
   
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: ${({ theme }) => theme.colors.text};
+  }
+  
   ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    
     @media (max-width: 768px) {
       padding-left: 1.25rem;
     }
   }
   
   li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: ${({ theme }) => theme.colors.text};
+    
     @media (max-width: 768px) {
       margin-bottom: 0.5rem;
       font-size: 0.95rem;

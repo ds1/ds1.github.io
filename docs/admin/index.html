@@ -7,15 +7,18 @@
   <title>Content Manager</title>
 </head>
 <body>
-  <!-- Include the script that builds the page and powers Decap CMS -->
+  <!-- Include Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.1.10/dist/decap-cms.js"></script>
   <script>
-    // Register the preview styles
+    // Register preview styles
     CMS.registerPreviewStyle("/admin/preview.css");
     
     // Helper function to render markdown content
     var renderMarkdown = function(content) {
       if (!content) return '';
+      
+      // Ensure content is a string
+      content = String(content);
       
       // Basic markdown to HTML conversion
       var html = content;
@@ -30,12 +33,12 @@
       html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
       html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
       
-      // Convert line breaks
-      html = html.replace(/\n\n/g, '</p><p>');
-      html = html.replace(/\n/g, '<br>');
+      // Convert line breaks  
+      html = html.replace(/\\n\\n/g, '</p><p>');
+      html = html.replace(/\\n/g, '<br>');
       
       // Wrap in paragraph tags if needed
-      if (!html.startsWith('<')) {
+      if (html && !html.startsWith('<')) {
         html = '<p>' + html + '</p>';
       }
       
@@ -49,7 +52,9 @@
     var renderList = function(content) {
       if (!content) return '';
       
-      // Check if it's semicolon-separated (old format)
+      content = String(content);
+      
+      // Check if it's semicolon-separated
       if (content.includes(';') && !content.includes('\n')) {
         var items = content.split(';').filter(function(item) { return item.trim(); });
         return '<ul>' + items.map(function(item) {
@@ -59,13 +64,10 @@
       
       // Otherwise treat as markdown list
       var html = content;
-      
-      // Convert markdown lists to HTML
       html = html.replace(/^\* (.+)$/gm, '<li>$1</li>');
       html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
       html = html.replace(/^\d+\. (.+)$/gm, '<li>$1</li>');
       
-      // Wrap list items in ul
       if (html.includes('<li>')) {
         html = '<ul>' + html + '</ul>';
       }
@@ -79,170 +81,103 @@
         var entry = this.props.entry;
         var sections = entry.getIn(['data', 'content_sections']);
         
-        return h('div', {},
-          // Title
-          h('h1', {}, entry.getIn(['data', 'title'])),
+        // Build array of child elements
+        var children = [];
+        
+        // Add title
+        var title = entry.getIn(['data', 'title']);
+        if (title) {
+          children.push(h('h1', {key: 'title'}, title));
+        }
+        
+        // Add subtitle
+        var subtitle = entry.getIn(['data', 'subtitle']);
+        if (subtitle) {
+          children.push(h('p', {
+            key: 'subtitle',
+            style: 'font-size: 1.25rem; color: #8be9fd;'
+          }, subtitle));
+        }
+        
+        // Add metadata
+        var duration = entry.getIn(['data', 'duration']);
+        var role = entry.getIn(['data', 'role']); 
+        var projectType = entry.getIn(['data', 'project_type']);
+        
+        if (duration || role || projectType) {
+          var metaChildren = [];
+          if (duration) metaChildren.push(h('span', {key: 'meta-duration'}, duration));
+          if (role) metaChildren.push(h('span', {key: 'meta-role'}, role));
+          if (projectType) metaChildren.push(h('span', {key: 'meta-type'}, projectType));
           
-          // Subtitle
-          entry.getIn(['data', 'subtitle']) && h('p', {style: 'font-size: 1.25rem; color: #8be9fd;'}, 
-            entry.getIn(['data', 'subtitle'])
-          ),
+          children.push(h('div', {
+            key: 'metadata',
+            className: 'case-study-meta'
+          }, metaChildren));
+        }
+        
+        // Process content sections
+        if (sections && sections.size > 0) {
+          var sectionElements = [];
           
-          // Metadata
-          h('div', {className: 'case-study-meta'},
-            entry.getIn(['data', 'duration']) && h('span', {}, entry.getIn(['data', 'duration'])),
-            entry.getIn(['data', 'role']) && h('span', {}, entry.getIn(['data', 'role'])),
-            entry.getIn(['data', 'project_type']) && h('span', {}, entry.getIn(['data', 'project_type']))
-          ),
+          // Convert Immutable List to regular array for safer iteration
+          var sectionsArray = sections.toJS ? sections.toJS() : sections;
           
-          // Render flexible content sections
-          sections && sections.map(function(section, index) {
-            var type = section.get('type');
-            var content = section.get('content');
-            
-            if (!content) return null;
-            
-            switch(type) {
-              case 'h1':
-                return h('h1', {key: index}, content);
+          if (Array.isArray(sectionsArray)) {
+            sectionsArray.forEach(function(section, index) {
+              if (!section || !section.content) return;
               
-              case 'h2':
-                return h('h2', {key: index}, content);
+              var key = 'section-' + index;
+              var type = section.type;
+              var content = section.content;
               
-              case 'h3':
-                return h('h3', {key: index}, content);
-              
-              case 'body':
-                return h('div', {
-                  key: index,
-                  dangerouslySetInnerHTML: {__html: renderMarkdown(content)}
-                });
-              
-              case 'list':
-                return h('div', {
-                  key: index,
-                  dangerouslySetInnerHTML: {__html: renderList(content)}
-                });
-              
-              case 'quote':
-                return h('blockquote', {key: index}, content);
-              
-              case 'code':
-                return h('pre', {key: index},
-                  h('code', {}, content)
-                );
-              
-              default:
-                return h('p', {key: index}, content);
-            }
-          }).toArray(),
+              switch(type) {
+                case 'h1':
+                  sectionElements.push(h('h1', {key: key}, content));
+                  break;
+                case 'h2':
+                  sectionElements.push(h('h2', {key: key}, content));
+                  break;
+                case 'h3':
+                  sectionElements.push(h('h3', {key: key}, content));
+                  break;
+                case 'body':
+                  sectionElements.push(h('div', {
+                    key: key,
+                    dangerouslySetInnerHTML: {__html: renderMarkdown(content)}
+                  }));
+                  break;
+                case 'list':
+                  sectionElements.push(h('div', {
+                    key: key,
+                    dangerouslySetInnerHTML: {__html: renderList(content)}
+                  }));
+                  break;
+                case 'quote':
+                  sectionElements.push(h('blockquote', {key: key}, content));
+                  break;
+                case 'code':
+                  sectionElements.push(h('pre', {key: key}, 
+                    h('code', {}, content)
+                  ));
+                  break;
+                default:
+                  sectionElements.push(h('p', {key: key}, content));
+              }
+            });
+          }
           
-          // Tags section
-          (entry.getIn(['data', 'design_tools']) || entry.getIn(['data', 'ai_tools'])) && h('div', {className: 'case-study-tags'},
-            h('h3', {}, 'Project Details'),
-            entry.getIn(['data', 'design_tools']) && h('div', {},
-              h('strong', {}, 'Design Tools: '),
-              h('span', {}, entry.getIn(['data', 'design_tools']))
-            ),
-            entry.getIn(['data', 'ai_tools']) && h('div', {},
-              h('strong', {}, 'AI Tools: '),
-              h('span', {}, entry.getIn(['data', 'ai_tools']))
-            ),
-            entry.getIn(['data', 'dev_tools']) && h('div', {},
-              h('strong', {}, 'Dev Tools: '),
-              h('span', {}, entry.getIn(['data', 'dev_tools']))
-            ),
-            entry.getIn(['data', 'skills']) && h('div', {},
-              h('strong', {}, 'Skills: '),
-              h('span', {}, entry.getIn(['data', 'skills']))
-            )
-          )
-        );
+          // Add all section elements to children
+          children = children.concat(sectionElements);
+        }
+        
+        // Return single root div with all children
+        return h('div', {className: 'frame-content'}, children);
       }
     });
     
     // Register the preview template
     CMS.registerPreviewTemplate("case_studies", CaseStudyPreview);
-    
-    // About page preview with flexible content
-    var AboutPreview = createClass({
-      render: function() {
-        var entry = this.props.entry;
-        var sections = entry.getIn(['data', 'content_sections']);
-        
-        return h('div', {},
-          h('h1', {}, entry.getIn(['data', 'headline'])),
-          h('p', {style: 'font-size: 1.25rem; color: #8be9fd;'}, entry.getIn(['data', 'introduction'])),
-          
-          // Render flexible content sections
-          sections && sections.map(function(section, index) {
-            var type = section.get('type');
-            var content = section.get('content');
-            
-            switch(type) {
-              case 'h1':
-                return h('h1', {key: index}, content);
-              case 'h2':
-                return h('h2', {key: index}, content);
-              case 'h3':
-                return h('h3', {key: index}, content);
-              case 'body':
-                return h('div', {key: index, dangerouslySetInnerHTML: {__html: renderMarkdown(content)}});
-              case 'list':
-                return h('div', {key: index, dangerouslySetInnerHTML: {__html: renderList(content)}});
-              default:
-                return h('p', {key: index}, content);
-            }
-          }).toArray(),
-          
-          entry.getIn(['data', 'facts']) && h('div', {},
-            h('h2', {}, 'Quick Facts'),
-            h('ul', {}, 
-              entry.getIn(['data', 'facts']).map(function(fact, i) {
-                return h('li', {key: i}, fact);
-              })
-            )
-          )
-        );
-      }
-    });
-    CMS.registerPreviewTemplate("about", AboutPreview);
-    
-    var ContactPreview = createClass({
-      render: function() {
-        var entry = this.props.entry;
-        return h('div', {},
-          h('h1', {}, entry.getIn(['data', 'title'])),
-          h('p', {style: 'font-size: 1.25rem; color: #8be9fd;'}, entry.getIn(['data', 'introduction'])),
-          h('div', {},
-            h('h2', {}, 'Email'),
-            h('p', {}, entry.getIn(['data', 'email']))
-          ),
-          h('div', {},
-            h('h2', {}, 'LinkedIn'),
-            h('p', {}, entry.getIn(['data', 'linkedin']))
-          ),
-          entry.getIn(['data', 'github']) && h('div', {},
-            h('h2', {}, 'GitHub'),
-            h('p', {}, entry.getIn(['data', 'github']))
-          ),
-          h('div', {dangerouslySetInnerHTML: {__html: renderMarkdown(entry.getIn(['data', 'message']))}})
-        );
-      }
-    });
-    CMS.registerPreviewTemplate("contact", ContactPreview);
-    
-    var ResumePreview = createClass({
-      render: function() {
-        var entry = this.props.entry;
-        return h('div', {},
-          h('h1', {}, entry.getIn(['data', 'title'])),
-          h('p', {style: 'font-size: 1.25rem; color: #8be9fd;'}, entry.getIn(['data', 'introduction'])),
-          h('div', {dangerouslySetInnerHTML: {__html: renderMarkdown(entry.getIn(['data', 'content']))}})
-        );
-      }
-    });
-    CMS.registerPreviewTemplate("resume", ResumePreview);
   </script>
 </body>
 </html>

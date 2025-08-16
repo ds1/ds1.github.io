@@ -3,7 +3,6 @@ Repository structure for: C:\Users\danma\Documents\GitHub\schmitzai\ds1.github.i
 
 ds1.github.io/
 ├── .gitignore
-├── ProjectInstructions.md
 ├── ReadMe.md
 ├── package-lock.json
 ├── package.json
@@ -45,7 +44,8 @@ ds1.github.io/
 │   └── robots.txt
 │   ├── admin/
 │   │   ├── config.yml
-│   │   └── index.html
+│   │   ├── index.html
+│   │   └── preview.css
 │   ├── static/
 │   │   ├── css/
 │   │   │   ├── main.e6c13ad2.css
@@ -53,9 +53,9 @@ ds1.github.io/
 │   │   ├── js/
 │   │   │   ├── 453.d5c4626d.chunk.js
 │   │   │   ├── 453.d5c4626d.chunk.js.map
-│   │   │   ├── main.f3bb321f.js
-│   │   │   ├── main.f3bb321f.js.LICENSE.txt
-│   │   │   └── main.f3bb321f.js.map
+│   │   │   ├── main.2689b9bf.js
+│   │   │   ├── main.2689b9bf.js.LICENSE.txt
+│   │   │   └── main.2689b9bf.js.map
 │   │   ├── media/
 │   │   │   ├── agt-domains-thumbnail.6550c4e58f4322fd8b2b.jpg
 │   │   │   ├── agt-ecosystem.ece1ae12655e74e070fb.jpg
@@ -97,20 +97,17 @@ ds1.github.io/
 │   ├── logo192.png
 │   ├── logo512.png
 │   ├── manifest.json
-│   ├── robots.txt
-│   └── shared-theme.css
+│   └── robots.txt
 │   ├── admin/
 │   │   ├── config.yml
-│   │   └── index.html
+│   │   ├── index.html
+│   │   └── preview.css
 ├── scripts/
 │   ├── convertCMSContent.js
 │   ├── convertContent.js
 │   ├── copyImages.js
 │   ├── generateImageImports.js
-│   ├── migrateToCMS.js
-│   ├── postbuild.js
-│   ├── syncTheme.js
-│   └── testImageSystem.js
+│   └── postbuild.js
 ├── src/
 │   ├── App.css
 │   ├── App.js

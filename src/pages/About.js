@@ -4,16 +4,20 @@ import RichText from '../components/RichText';
 import aboutData from '../data/about.json';
 import { imageMap } from '../utils/imageImports';
 
-const AboutWrapper = styled.div.attrs({
-  className: 'case-study-content' // Reuse the same class
-})`
+const AboutWrapper = styled.div`
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
+  
+  @media (min-width: 768px) {
+    padding: 2rem 0;
+  }
 `;
 
 const PageTitle = styled.h1`
   margin-bottom: 1.5rem;
+  color: ${({ theme }) => theme.colors.text};
+  font-size: 2.5rem;
   
   @media (max-width: 768px) {
     font-size: 1.75rem;
@@ -36,6 +40,7 @@ const ProfileImage = styled.img`
   height: auto;
   border-radius: 8px;
   display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   
   @media (max-width: 768px) {
     max-width: 100%;
@@ -45,7 +50,7 @@ const ProfileImage = styled.img`
 
 const Introduction = styled.p`
   font-size: 1.25rem;
-  color: var(--color-secondary, ${({ theme }) => theme.colors.secondary});
+  color: ${({ theme }) => theme.colors.secondary};
   margin-bottom: 2rem;
   line-height: 1.5;
   
@@ -62,14 +67,20 @@ const Introduction = styled.p`
 
 const FactsSection = styled.section`
   margin-top: 2rem;
+  background: ${({ theme }) => theme.colors.surface};
+  padding: 1.5rem;
+  border-radius: 8px;
   
   @media (max-width: 768px) {
     margin-top: 1.5rem;
+    padding: 1.25rem;
   }
 `;
 
 const FactsTitle = styled.h2`
   margin-bottom: 1rem;
+  color: ${({ theme }) => theme.colors.text};
+  font-size: 1.75rem;
   
   @media (max-width: 768px) {
     font-size: 1.375rem;
@@ -80,11 +91,7 @@ const FactsTitle = styled.h2`
 const FactsList = styled.ul`
   list-style-type: none;
   padding: 0;
-  margin-bottom: 2rem;
-  
-  @media (max-width: 768px) {
-    margin-bottom: 1.5rem;
-  }
+  margin: 0;
 `;
 
 const FactItem = styled.li`
@@ -92,12 +99,18 @@ const FactItem = styled.li`
   padding-left: 1.5rem;
   position: relative;
   line-height: 1.6;
+  color: ${({ theme }) => theme.colors.text};
 
   &:before {
     content: "•";
     position: absolute;
     left: 0;
-    color: var(--color-primary, ${({ theme }) => theme.colors.primary});
+    color: ${({ theme }) => theme.colors.primary};
+    font-weight: bold;
+  }
+  
+  &:last-child {
+    margin-bottom: 0;
   }
   
   @media (max-width: 768px) {

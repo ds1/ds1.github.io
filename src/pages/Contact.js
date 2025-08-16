@@ -3,16 +3,20 @@ import styled from 'styled-components';
 import RichText from '../components/RichText';
 import contactData from '../data/contact.json';
 
-const ContactWrapper = styled.div.attrs({
-  className: 'case-study-content'
-})`
+const ContactWrapper = styled.div`
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
+  
+  @media (min-width: 768px) {
+    padding: 2rem 0;
+  }
 `;
 
 const PageTitle = styled.h1`
   margin-bottom: 1.5rem;
+  color: ${({ theme }) => theme.colors.text};
+  font-size: 2.5rem;
   
   @media (max-width: 768px) {
     font-size: 1.75rem;
@@ -22,7 +26,7 @@ const PageTitle = styled.h1`
 
 const Introduction = styled.p`
   font-size: 1.25rem;
-  color: var(--color-secondary, ${({ theme }) => theme.colors.secondary});
+  color: ${({ theme }) => theme.colors.secondary};
   margin-bottom: 2rem;
   line-height: 1.5;
   
@@ -39,14 +43,22 @@ const Introduction = styled.p`
 
 const ContactInfo = styled.div`
   margin-bottom: 2rem;
+  background: ${({ theme }) => theme.colors.surface};
+  padding: 1.5rem;
+  border-radius: 8px;
   
   @media (max-width: 768px) {
     margin-bottom: 1.5rem;
+    padding: 1.25rem;
   }
 `;
 
 const ContactMethod = styled.div`
   margin-bottom: 1.5rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
   
   @media (max-width: 768px) {
     margin-bottom: 1.25rem;
@@ -56,7 +68,7 @@ const ContactMethod = styled.div`
 const ContactLabel = styled.h2`
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: var(--color-text, ${({ theme }) => theme.colors.text});
+  color: ${({ theme }) => theme.colors.text};
   
   @media (max-width: 768px) {
     font-size: 1.125rem;
@@ -65,7 +77,7 @@ const ContactLabel = styled.h2`
 `;
 
 const ContactLink = styled.a`
-  color: var(--color-primary, ${({ theme }) => theme.colors.primary});
+  color: ${({ theme }) => theme.colors.primary};
   text-decoration: none;
   transition: color 0.2s ease;
   display: inline-block;
@@ -73,13 +85,12 @@ const ContactLink = styled.a`
 
   &:hover {
     text-decoration: underline;
-    color: var(--color-secondary, ${({ theme }) => theme.colors.secondary});
+    color: ${({ theme }) => theme.colors.secondary};
   }
   
   @media (max-width: 768px) {
     font-size: 0.95rem;
     padding: 0.25rem 0; // Extra padding for touch targets
-    min-height: auto; // Override global link min-height
     line-height: 1.6;
   }
 `;

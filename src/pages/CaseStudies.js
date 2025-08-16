@@ -13,18 +13,23 @@ const PageHeader = styled.div`
 
 const Title = styled.h1`
   margin-bottom: 0.5rem;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 const Subtitle = styled.p`
   color: ${({ theme }) => theme.colors.textSecondary};
-  // Update to:
-  color: var(--color-text-secondary, ${({ theme }) => theme.colors.textSecondary});
+  line-height: 1.6;
 `;
 
 const ExternalLink = styled.a`
   color: ${({ theme }) => theme.colors.primary};
-  // Update to:
-  color: var(--color-primary, ${({ theme }) => theme.colors.primary});
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: ${({ theme }) => theme.colors.secondary};
+    text-decoration: underline;
+  }
 `;
 
 const CaseStudyGrid = styled.div`
@@ -32,12 +37,17 @@ const CaseStudyGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 `;
 
 const CaseStudyCard = styled(Link)`
   text-decoration: none;
-  color: var(--color-text, ${({ theme }) => theme.colors.text});
-  background-color: var(--color-surface, ${({ theme }) => theme.colors.surface});
+  color: ${({ theme }) => theme.colors.text};
+  background-color: ${({ theme }) => theme.colors.surface};
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -46,18 +56,30 @@ const CaseStudyCard = styled(Link)`
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
+  
+  @media (max-width: 768px) {
+    &:hover {
+      transform: none;
+    }
+    
+    &:active {
+      transform: scale(0.98);
+    }
+  }
 `;
 
 const CaseStudyImage = styled.img`
   width: 100%;
   height: 200px;
   object-fit: cover;
+  display: block;
 `;
 
 const CaseStudyVideo = styled.video`
   width: 100%;
   height: 200px;
   object-fit: cover;
+  display: block;
 `;
 
 const CaseStudyContent = styled.div`
@@ -66,14 +88,18 @@ const CaseStudyContent = styled.div`
 
 const CaseStudyTitle = styled.h2`
   color: ${({ theme }) => theme.colors.text};
-  // Update to:
-  color: var(--color-text, ${({ theme }) => theme.colors.text});
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
 `;
 
 const CaseStudyDescription = styled.p`
   color: ${({ theme }) => theme.colors.textSecondary};
-  // Update to:
-  color: var(--color-text-secondary, ${({ theme }) => theme.colors.textSecondary});
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
 `;
 
 const TagContainer = styled.div`
@@ -96,7 +122,18 @@ const TagBadge = styled.span`
 const NoResults = styled.div`
   text-align: center;
   padding: 3rem;
-  color: var(--color-text-secondary, ${({ theme }) => theme.colors.textSecondary});
+  color: ${({ theme }) => theme.colors.textSecondary};
+  
+  h3 {
+    color: ${({ theme }) => theme.colors.text};
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
 `;
 
 const getImage = (path) => {
@@ -158,7 +195,6 @@ const CaseStudies = () => {
             
             return (
               <CaseStudyCard key={study.id} to={`/case-study/${study.id}`}>
-                {/* ADD VIDEO SUPPORT HERE */}
                 {study.thumbnail_type === 'video' ? (
                   <CaseStudyVideo 
                     muted
