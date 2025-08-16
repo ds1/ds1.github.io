@@ -9,7 +9,7 @@ public_folder: "/images"
 
 # Content Collections
 collections:
-  # Case Studies with Flexible Content
+  # Simplified Case Studies
   - name: "case_studies"
     label: "Case Studies"
     folder: "content/cms/case-studies"
@@ -17,78 +17,43 @@ collections:
     create: true
     slug: "{{slug}}"
     identifier_field: "title"
-    summary: "{{title}} - {{description}}"
+    summary: "{{title}}"
     fields:
-      # Basic Metadata
-      - {label: "ID", name: "id", widget: "number", hint: "Unique identifier for ordering"}
+      # Basic Info
+      - {label: "ID", name: "id", widget: "number"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text", required: false, hint: "Short description for the card"}
+      - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
       - {label: "Thumbnail", name: "thumbnail", widget: "image", required: false}
-      - {
-          label: "Thumbnail Type", 
-          name: "thumbnail_type", 
-          widget: "select", 
-          options: ["image", "gif", "video"],
-          default: "image",
-          required: false
-        }
       - {label: "Duration", name: "duration", widget: "string", required: false}
       - {label: "Role", name: "role", widget: "string", required: false}
       - {label: "Project Type", name: "project_type", widget: "string", required: false}
       
-      # Flexible Content Sections - Using simple list of markdown blocks
-      - label: "Content Sections"
-        name: "content_sections"
-        widget: "list"
-        required: false
-        fields:
-          - label: "Section Type"
-            name: "type"
-            widget: "select"
-            options: 
-              - { label: "Heading 1", value: "h1" }
-              - { label: "Heading 2", value: "h2" }
-              - { label: "Heading 3", value: "h3" }
-              - { label: "Paragraph", value: "paragraph" }
-              - { label: "Rich Text", value: "body" }
-              - { label: "List", value: "list" }
-              - { label: "Image", value: "image" }
-              - { label: "Video", value: "video" }
-              - { label: "Code", value: "code" }
-              - { label: "Quote", value: "quote" }
-          
-          - {label: "Content", name: "content", widget: "text", required: false, hint: "Main content for this section. For lists, use semicolons to separate items"}
-          - {label: "List Items (deprecated - use Content field)", name: "items", widget: "text", required: false, hint: "Legacy field - please use Content field above"}
-          - {label: "Image/Video URL", name: "media_url", widget: "image", required: false}
-          - {label: "Alt Text", name: "alt", widget: "string", required: false}
-          - {label: "Caption", name: "caption", widget: "string", required: false}
-          - {label: "Code Language", name: "language", widget: "string", required: false, default: "javascript"}
+      # Main Content Fields
+      - {label: "Initial Vision", name: "initial_vision_h1", widget: "string", required: false}
+      - {label: "Problem Statement Title", name: "problem_statement_h2", widget: "string", required: false}
+      - {label: "Problem Body", name: "problem_body", widget: "markdown", required: false}
+      - {label: "Technical Approach Title", name: "technical_approach_h2", widget: "string", required: false}
+      - {label: "Approach List", name: "approach_list", widget: "text", required: false, hint: "Separate items with semicolons"}
+      - {label: "Architecture Title", name: "architecture_h2", widget: "string", required: false}
+      - {label: "Architecture Body", name: "architecture_body", widget: "markdown", required: false}
+      - {label: "Innovation Title", name: "innovation_details_h2", widget: "string", required: false}
+      - {label: "Innovation Body", name: "innovation_body", widget: "markdown", required: false}
+      - {label: "Collaboration Title", name: "collaboration_h2", widget: "string", required: false}
+      - {label: "Collaboration Body", name: "collaboration_body", widget: "markdown", required: false}
+      - {label: "Results Title", name: "results_h2", widget: "string", required: false}
+      - {label: "Results List", name: "results_list", widget: "text", required: false, hint: "Separate items with semicolons"}
       
-      # Media Gallery (optional, simpler approach)
-      - label: "Media Gallery"
-        name: "media"
-        widget: "list"
-        required: false
-        fields:
-          - {label: "Media Type", name: "type", widget: "select", options: ["image", "gif", "video"], default: "image"}
-          - {label: "File", name: "url", widget: "image"}
-          - {label: "Alt Text", name: "alt", widget: "string", required: false}
-          - {label: "Caption", name: "caption", widget: "string", required: false}
-      
-      # Tags Section (all optional)
-      - {label: "Design Tools", name: "design_tools", widget: "text", required: false, hint: "Semicolon-separated list"}
-      - {label: "AI Tools", name: "ai_tools", widget: "text", required: false, hint: "Semicolon-separated list"}
-      - {label: "Dev Tools", name: "dev_tools", widget: "text", required: false, hint: "Semicolon-separated list"}
-      - {label: "Skills", name: "skills", widget: "text", required: false, hint: "Semicolon-separated list"}
-      - {label: "Roles", name: "roles", widget: "text", required: false, hint: "Semicolon-separated list"}
-      - {label: "Artifact Types", name: "artifact_types", widget: "text", required: false, hint: "Semicolon-separated list"}
-      - {label: "Fidelity", name: "fidelity", widget: "text", required: false, hint: "Semicolon-separated list"}
-      - {label: "AI Models", name: "ai_models", widget: "text", required: false, hint: "Semicolon-separated list"}
+      # Tags (simplified)
+      - {label: "Design Tools", name: "design_tools", widget: "text", required: false, hint: "Semicolon-separated"}
+      - {label: "AI Tools", name: "ai_tools", widget: "text", required: false, hint: "Semicolon-separated"}
+      - {label: "Dev Tools", name: "dev_tools", widget: "text", required: false, hint: "Semicolon-separated"}
+      - {label: "Skills", name: "skills", widget: "text", required: false, hint: "Semicolon-separated"}
+      - {label: "Roles", name: "roles", widget: "text", required: false, hint: "Semicolon-separated"}
 
   # Static Pages
-  - name: "site_pages"
-    label: "Site Pages"
+  - name: "pages"
+    label: "Pages"
     files:
       - name: "about"
         label: "About Page"

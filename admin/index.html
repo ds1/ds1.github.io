@@ -3,35 +3,46 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- CHANGE THIS LINE - remove the ../ -->
-  <link rel="stylesheet" href="/shared-theme.css">
   <title>Content Manager</title>
-  <style>
-    /* Add wrapper class for CMS preview */
-    .frame-content {
-      background-color: var(--color-background);
-    }
-    .frame-content > div {
-      padding: 20px;
-    }
-  </style>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <!-- Include the script that builds the page and powers Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
+  
+  <!-- Custom styling for preview -->
   <script>
-    // Initialize CMS with preview styling
-    CMS.init();
+    CMS.registerPreviewStyle('/shared-theme.css');
     
-    // Register preview template with shared styles
-    CMS.registerPreviewTemplate("case_studies", ({ entry, widgetFor }) => {
-      const data = entry.get('data').toJS();
+    // Add custom CSS to fix overlay issues
+    const style = document.createElement('style');
+    style.innerHTML = `
+      /* Fix overlay issue */
+      div[class*="ControlPaneContainer"] {
+        position: relative !important;
+        z-index: 10 !important;
+      }
       
-      return h('div', { className: 'case-study-preview' },
-        h('h1', {}, data.title),
-        h('p', {}, data.subtitle),
-        h('div', {}, widgetFor('content_sections'))
-      );
-    });
+      /* Apply dark theme to CMS UI */
+      body {
+        background-color: #282c34;
+      }
+      
+      div[class*="AppHeader"] {
+        background-color: #3b3e47 !important;
+      }
+      
+      /* Fix preview pane background */
+      div[class*="PreviewPane"] {
+        background-color: #282c34 !important;
+      }
+      
+      /* Ensure preview content uses theme */
+      iframe {
+        background-color: #282c34 !important;
+      }
+    `;
+    document.head.appendChild(style);
   </script>
 </body>
 </html>
