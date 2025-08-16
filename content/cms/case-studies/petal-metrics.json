@@ -8,13 +8,6 @@
   "duration": "10/2016 - 09/2023",
   "role": "Founder and CEO",
   "project_type": "Petal",
-  "initial_vision_h1": "Data-Driven Neurotechnology",
-  "problem_statement_h2": "The Challenge",
-  "problem_body": "Created sophisticated visualization systems for complex neurological data analysis and research applications.",
-  "technical_approach_h2": "Development Focus",
-  "approach_list": "Designed intuitive data visualization interfaces;Created real-time analysis tools;Developed comprehensive reporting systems;Integrated machine learning capabilities",
-  "architecture_h2": "Research Impact",
-  "architecture_body": "Enabled breakthrough research findings;Accelerated data analysis workflows;Improved research productivity",
   "innovation_details_h2": "",
   "innovation_body": "",
   "collaboration_h2": "",
@@ -42,5 +35,35 @@
   "fidelity": "",
   "ai_models": "",
   "design_principles": "",
-  "usability_heuristics": ""
+  "usability_heuristics": "",
+  "content_sections": [
+    {
+      "type": "h1",
+      "content": "Data-Driven Neurotechnology"
+    },
+    {
+      "type": "h2",
+      "content": "The Challenge"
+    },
+    {
+      "type": "body",
+      "content": "Created sophisticated visualization systems for complex neurological data analysis and research applications."
+    },
+    {
+      "type": "h2",
+      "content": "Development Focus"
+    },
+    {
+      "type": "list",
+      "content": "Designed intuitive data visualization interfaces;Created real-time analysis tools;Developed comprehensive reporting systems;Integrated machine learning capabilities"
+    },
+    {
+      "type": "h2",
+      "content": "Research Impact"
+    },
+    {
+      "type": "body",
+      "content": "Enabled breakthrough research findings;Accelerated data analysis workflows;Improved research productivity"
+    }
+  ]
 }

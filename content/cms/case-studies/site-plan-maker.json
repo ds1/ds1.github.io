@@ -8,31 +8,10 @@
   "duration": "November 2024 - Present",
   "role": "Lead Product Designer & Developer",
   "project_type": "Enterprise Tool",
-  "initial_vision_h1": "Revolutionizing Construction Site Surveillance Planning",
-  "problem_statement_h2": "The Challenge",
-  "problem_body": "Security camera installation planning for construction sites traditionally relies on disconnected tools: paper blueprints, rough sketches, and guesswork about camera coverage. **This leads to blind spots, wasted resources, and security vulnerabilities.** \\n\\nSensera Systems needed a professional tool that could:\\n• Accurately overlay PDF site plans on satellite imagery\\n• Calculate precise camera coverage based on specifications\\n• Enable collaborative planning between teams\\n• Generate professional documentation for clients",
-  "technical_approach_h2": "Solution Architecture",
-  "approach_list": "Interactive map foundation with Leaflet.js for geospatial accuracy;PDF overlay system with transformation controls for blueprint alignment;Drag-and-drop resource placement with real-time visual feedback;Firebase integration for persistence and real-time collaboration;Export system generating professional PDF documentation",
-  "architecture_h2": "Technical Implementation",
-  "architecture_body": "The platform combines **three sophisticated systems** working in harmony:\\n\\n1. *Map & Overlay Engine*\\n<span class=\"text-primary\">• Multi-layer map with satellite/street/grid views\\n• PDF.js integration for blueprint processing\\n• Transform controls for precise alignment\\n• Scale reference system for accurate measurements</span>\\n\\n2. *Resource Management*\\n<span class=\"text-secondary\">• Camera types with FOV visualization\\n• Zone polygons with vertex editing\\n• Real-time coverage calculations\\n• Collision detection and optimization</span>\\n\\n3. *Collaboration & Export*\\n<span class=\"text-success\">• Firebase Firestore for real-time sync\\n• Share links with access control\\n• Professional PDF export with legends\\n• Version history and rollback</span>",
-  "innovation_details_h2": "Key Innovations",
-  "innovation_body": "**1. PDF Overlay Transformation**\\nDeveloped a unique system for aligning blueprints with satellite imagery:\\n• *Drag & drop positioning* with pixel-perfect accuracy\\n• *Scale reference tool* matching real-world measurements\\n• *Opacity controls* for seamless blending\\n• *Rotation handles* for angular alignment\\n\\n**2. Camera Coverage Visualization**\\nCreated dynamic field-of-view rendering that updates in real-time:\\n• *Distance rings* showing detection ranges\\n• *Angular FOV arcs* based on camera specifications\\n• *Color-coded overlays* for multiple camera types\\n• *Intersection analysis* identifying redundant coverage\\n\\n**3. Polygon Zone Editor**\\nBuilt a professional-grade polygon editing system:\\n• *Vertex manipulation* with drag handles\\n• *Midpoint insertion* for adding vertices\\n• *Batch operations* for multiple zones\\n• *Perimeter vs filled zones* with transparency controls",
-  "collaboration_h2": "User Experience Design",
-  "collaboration_body": "The interface prioritizes **efficiency and clarity** for security professionals:\\n\\n1. **Resource Panel Architecture**\\n<span class=\"text-primary\">Left panel: Active resources with accordion controls\\nDrag boundary: Resizable sections for workflow optimization\\nBottom panel: Available resources library</span>\\n\\n2. **Map Interaction Patterns**\\n<span class=\"text-secondary\">Direct manipulation: Drag cameras and zones onto map\\nContextual controls: Properties appear on selection\\nVisual feedback: Hover states and selection indicators</span>\\n\\n3. **Progressive Disclosure**\\n<span class=\"text-success\">Basic mode: Simple drag and drop placement\\nAdvanced mode: Precise measurements and angles\\nExpert mode: Keyboard shortcuts and batch operations</span>\\n\\nThis design reduced planning time from hours to minutes while maintaining professional accuracy.",
   "business_model_h2": "",
   "business_model_body": "",
   "challenges_h2": "",
   "challenges_body": "",
-  "results_h2": "Project Impact",
-  "results_list": "Reduced surveillance planning time by 75% through automation;Eliminated coverage blind spots with precise FOV calculations;Enabled remote collaboration between distributed teams;Generated 200+ professional site plans in first month;Achieved 95% user satisfaction score from field technicians;Established new industry standard for surveillance planning tools",
-  "process_media_type": "image",
-  "process_media_url": "/images/siteplan-workflow.jpg",
-  "process_media_alt": "Site planning workflow diagram",
-  "process_media_caption": "Step-by-step process from PDF upload to final export",
-  "system_media_type": "image",
-  "system_media_url": "/images/siteplan-architecture.jpg",
-  "system_media_alt": "System architecture diagram",
-  "system_media_caption": "Three-tier architecture showing data flow and integrations",
   "design_tools": "",
   "ai_tools": "",
   "dev_tools": "",
@@ -42,5 +21,73 @@
   "fidelity": "",
   "ai_models": "",
   "design_principles": "",
-  "usability_heuristics": ""
+  "usability_heuristics": "",
+  "content_sections": [
+    {
+      "type": "h1",
+      "content": "Revolutionizing Construction Site Surveillance Planning"
+    },
+    {
+      "type": "h2",
+      "content": "The Challenge"
+    },
+    {
+      "type": "body",
+      "content": "Security camera installation planning for construction sites traditionally relies on disconnected tools: paper blueprints, rough sketches, and guesswork about camera coverage. **This leads to blind spots, wasted resources, and security vulnerabilities.** \\n\\nSensera Systems needed a professional tool that could:\\n• Accurately overlay PDF site plans on satellite imagery\\n• Calculate precise camera coverage based on specifications\\n• Enable collaborative planning between teams\\n• Generate professional documentation for clients"
+    },
+    {
+      "type": "h2",
+      "content": "Solution Architecture"
+    },
+    {
+      "type": "list",
+      "content": "Interactive map foundation with Leaflet.js for geospatial accuracy;PDF overlay system with transformation controls for blueprint alignment;Drag-and-drop resource placement with real-time visual feedback;Firebase integration for persistence and real-time collaboration;Export system generating professional PDF documentation"
+    },
+    {
+      "type": "h2",
+      "content": "Technical Implementation"
+    },
+    {
+      "type": "body",
+      "content": "The platform combines **three sophisticated systems** working in harmony:\\n\\n1. *Map & Overlay Engine*\\n<span class=\"text-primary\">• Multi-layer map with satellite/street/grid views\\n• PDF.js integration for blueprint processing\\n• Transform controls for precise alignment\\n• Scale reference system for accurate measurements</span>\\n\\n2. *Resource Management*\\n<span class=\"text-secondary\">• Camera types with FOV visualization\\n• Zone polygons with vertex editing\\n• Real-time coverage calculations\\n• Collision detection and optimization</span>\\n\\n3. *Collaboration & Export*\\n<span class=\"text-success\">• Firebase Firestore for real-time sync\\n• Share links with access control\\n• Professional PDF export with legends\\n• Version history and rollback</span>"
+    },
+    {
+      "type": "h2",
+      "content": "Key Innovations"
+    },
+    {
+      "type": "body",
+      "content": "**1. PDF Overlay Transformation**\\nDeveloped a unique system for aligning blueprints with satellite imagery:\\n• *Drag & drop positioning* with pixel-perfect accuracy\\n• *Scale reference tool* matching real-world measurements\\n• *Opacity controls* for seamless blending\\n• *Rotation handles* for angular alignment\\n\\n**2. Camera Coverage Visualization**\\nCreated dynamic field-of-view rendering that updates in real-time:\\n• *Distance rings* showing detection ranges\\n• *Angular FOV arcs* based on camera specifications\\n• *Color-coded overlays* for multiple camera types\\n• *Intersection analysis* identifying redundant coverage\\n\\n**3. Polygon Zone Editor**\\nBuilt a professional-grade polygon editing system:\\n• *Vertex manipulation* with drag handles\\n• *Midpoint insertion* for adding vertices\\n• *Batch operations* for multiple zones\\n• *Perimeter vs filled zones* with transparency controls"
+    },
+    {
+      "type": "h2",
+      "content": "User Experience Design"
+    },
+    {
+      "type": "body",
+      "content": "The interface prioritizes **efficiency and clarity** for security professionals:\\n\\n1. **Resource Panel Architecture**\\n<span class=\"text-primary\">Left panel: Active resources with accordion controls\\nDrag boundary: Resizable sections for workflow optimization\\nBottom panel: Available resources library</span>\\n\\n2. **Map Interaction Patterns**\\n<span class=\"text-secondary\">Direct manipulation: Drag cameras and zones onto map\\nContextual controls: Properties appear on selection\\nVisual feedback: Hover states and selection indicators</span>\\n\\n3. **Progressive Disclosure**\\n<span class=\"text-success\">Basic mode: Simple drag and drop placement\\nAdvanced mode: Precise measurements and angles\\nExpert mode: Keyboard shortcuts and batch operations</span>\\n\\nThis design reduced planning time from hours to minutes while maintaining professional accuracy."
+    },
+    {
+      "type": "h2",
+      "content": "Project Impact"
+    },
+    {
+      "type": "list",
+      "content": "Reduced surveillance planning time by 75% through automation;Eliminated coverage blind spots with precise FOV calculations;Enabled remote collaboration between distributed teams;Generated 200+ professional site plans in first month;Achieved 95% user satisfaction score from field technicians;Established new industry standard for surveillance planning tools"
+    }
+  ],
+  "media": [
+    {
+      "type": "image",
+      "url": "/images/siteplan-workflow.jpg",
+      "alt": "Site planning workflow diagram",
+      "caption": "Step-by-step process from PDF upload to final export"
+    },
+    {
+      "type": "image",
+      "url": "/images/siteplan-architecture.jpg",
+      "alt": "System architecture diagram",
+      "caption": "Three-tier architecture showing data flow and integrations"
+    }
+  ]
 }

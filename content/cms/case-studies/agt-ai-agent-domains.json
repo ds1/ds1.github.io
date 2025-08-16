@@ -1,46 +1,93 @@
 {
   "project_type": "Web3 Venture",
   "ai_models": "",
-  "innovation_details_h2": "Market Opportunity & Vision",
   "skills": "",
-  "problem_body": "As AI agents evolve from tools to autonomous actors, they face a fundamental challenge: **How do agents establish trusted identities in a decentralized digital economy?** Traditional domains weren't designed for agent-to-agent communication, blockchain addresses are unmemorable, and the emerging agentic economy lacks standardized discovery mechanisms.\\n\\nI recognized that AI agents need their own namespace - a dedicated TLD that signals agent identity, enables discovery, and builds trust. The .agt (agent) domain extension was born from this insight, positioning at the intersection of Web3 ownership and AI agent proliferation.",
-  "system_media_url": "/images/agt-financial-model.jpg",
-  "process_media_url": "/images/agt-ecosystem.jpg",
-  "collaboration_h2": "Financial Engineering & ROI Model",
   "ai_tools": "",
-  "initial_vision_h1": "Securing Digital Identity for 500 Million Future AI Agents",
-  "process_media_type": "image",
-  "system_media_type": "image",
   "fidelity": "",
-  "results_list": "Established .agt as the recognized namespace for AI agents;Created comprehensive documentation and implementation guides;Built educational platform at agtdomains.com;Developed naming conventions adopted by early agent builders;Achieved visibility in AI and Web3 communities;Demonstrated entrepreneurial execution with minimal capital;Positioned for explosive growth as agent economy emerges",
   "thumbnail": "/images/agt-domains-thumbnail.jpg",
   "artifact_types": "",
   "thumbnail_type": "image",
-  "architecture_body": "The decision to launch .agt required **rigorous strategic analysis** of available platforms:\\n\\n1. *Traditional ICANN Application*\\n<span class=\"text-error\">• Cost: $2.5 million total investment\\n• Timeline: 2-3 years minimum\\n• Risk: High regulatory uncertainty\\n• Verdict: Prohibitive for individual operator</span>\\n\\n2. *Alternative Web3 Platforms*\\n<span class=\"text-warning\">• Unstoppable: No TLD ownership model\\n• ENS: Limited to .eth extension\\n• Handshake: Complex, limited adoption\\n• Verdict: Insufficient opportunity</span>\\n\\n3. *Freename Platform (Selected)*\\n<span class=\"text-success\">• Cost: $10,000 fixed investment\\n• Timeline: 30 days to market\\n• Revenue: 50% lifetime royalties\\n• Verdict: Optimal risk-reward ratio</span>\\n\\nThis analysis resulted in a **99.6% cost reduction** while preserving future ICANN optionality.",
   "challenges_body": "",
   "dev_tools": "",
-  "results_h2": "Impact and Market Validation",
   "duration": "June 2025",
-  "approach_list": "Analyzed 5 competing platforms to select optimal entry strategy;Chose Freename platform: $10K investment vs. $2.5M ICANN route;Developed comprehensive financial models with 64-337% projected ROI;Built agtdomains.com as the brand hub and education platform;Launched multi-channel marketing targeting AI developers and enterprises;Created agent naming conventions and best practices documentation;Established blockchain deployment across 9 major networks",
   "role": "Founder & Strategic Architect",
-  "architecture_h2": "Platform Selection Matrix",
   "business_model_body": "",
   "subtitle": "Launching the First TLD for the Agentic Web Revolution",
   "title": ".agt: AI Agent Domains",
   "design_principles": "",
   "challenges_h2": "",
   "design_tools": "",
-  "problem_statement_h2": "The Identity Crisis of Autonomous AI",
   "id": 8,
-  "system_media_caption": "Strategic financial planning with multiple growth scenarios",
-  "process_media_caption": "Visualization of how .agt domains enable the agentic web",
-  "innovation_body": "The .agt domain positions at the convergence of two exponential trends:\\n\\n**1. AI Agent Explosion**\\n• 500M+ projected agents by 2030\\n• *Market Size:* $4.2B by 2025\\n• *Use Cases:* Trading, research, assistance, automation\\n\\n**2. Web3 Identity Revolution**\\n• Blockchain-secured ownership\\n• *Innovation:* No renewal fees - lifetime ownership\\n• *Networks:* Polygon, Solana, BASE, and 6 others\\n\\n**3. Agent Communication Standards**\\n• Discovery protocol development\\n• *Architecture:* agent1.agt ↔ agent2.agt\\n• *Trust:* Cryptographic verification\\n\\nBy securing the .agt namespace, I've positioned to capture value from the entire agentic economy as it emerges.",
-  "collaboration_body": "Developed sophisticated financial models demonstrating venture viability:\\n\\n1. **Investment Structure**\\n<span class=\"text-primary\">Initial: $10,000 TLD purchase\\nYear 1 Operations: $25,000 marketing\\nTotal Capital Required: $35,000</span>\\n\\n2. **Revenue Projections (Moderate)**\\n<span class=\"text-secondary\">Year 1: 250 domains → $5,000\\nYear 3: 1,563 domains → $75,000\\nYear 5: 9,766 domains → $300,000\\n5-Year Total: $567,500 revenue</span>\\n\\n3. **Strategic Optionality**\\n<span class=\"text-success\">2026 Decision Gate: ICANN application\\nRequired Metrics: 5,000+ domains, $250K revenue\\nPreserved Option Value: $2M+ if successful</span>\\n\\nThe model demonstrates **64.5% ROI** in moderate scenarios, with upside to **337% in optimistic cases**.",
   "description": "Web3 TLD registry for AI agents - pioneering the agentic web namespace",
   "usability_heuristics": "",
   "roles": "",
-  "system_media_alt": "Financial model showing ROI projections and decision gates",
-  "process_media_alt": "The .agt ecosystem showing agent discovery and communication",
-  "technical_approach_h2": "Strategic Business Architecture",
-  "business_model_h2": ""
+  "business_model_h2": "",
+  "content_sections": [
+    {
+      "type": "h1",
+      "content": "Securing Digital Identity for 500 Million Future AI Agents"
+    },
+    {
+      "type": "h2",
+      "content": "The Identity Crisis of Autonomous AI"
+    },
+    {
+      "type": "body",
+      "content": "As AI agents evolve from tools to autonomous actors, they face a fundamental challenge: **How do agents establish trusted identities in a decentralized digital economy?** Traditional domains weren't designed for agent-to-agent communication, blockchain addresses are unmemorable, and the emerging agentic economy lacks standardized discovery mechanisms.\\n\\nI recognized that AI agents need their own namespace - a dedicated TLD that signals agent identity, enables discovery, and builds trust. The .agt (agent) domain extension was born from this insight, positioning at the intersection of Web3 ownership and AI agent proliferation."
+    },
+    {
+      "type": "h2",
+      "content": "Strategic Business Architecture"
+    },
+    {
+      "type": "list",
+      "content": "Analyzed 5 competing platforms to select optimal entry strategy;Chose Freename platform: $10K investment vs. $2.5M ICANN route;Developed comprehensive financial models with 64-337% projected ROI;Built agtdomains.com as the brand hub and education platform;Launched multi-channel marketing targeting AI developers and enterprises;Created agent naming conventions and best practices documentation;Established blockchain deployment across 9 major networks"
+    },
+    {
+      "type": "h2",
+      "content": "Platform Selection Matrix"
+    },
+    {
+      "type": "body",
+      "content": "The decision to launch .agt required **rigorous strategic analysis** of available platforms:\\n\\n1. *Traditional ICANN Application*\\n<span class=\"text-error\">• Cost: $2.5 million total investment\\n• Timeline: 2-3 years minimum\\n• Risk: High regulatory uncertainty\\n• Verdict: Prohibitive for individual operator</span>\\n\\n2. *Alternative Web3 Platforms*\\n<span class=\"text-warning\">• Unstoppable: No TLD ownership model\\n• ENS: Limited to .eth extension\\n• Handshake: Complex, limited adoption\\n• Verdict: Insufficient opportunity</span>\\n\\n3. *Freename Platform (Selected)*\\n<span class=\"text-success\">• Cost: $10,000 fixed investment\\n• Timeline: 30 days to market\\n• Revenue: 50% lifetime royalties\\n• Verdict: Optimal risk-reward ratio</span>\\n\\nThis analysis resulted in a **99.6% cost reduction** while preserving future ICANN optionality."
+    },
+    {
+      "type": "h2",
+      "content": "Market Opportunity & Vision"
+    },
+    {
+      "type": "body",
+      "content": "The .agt domain positions at the convergence of two exponential trends:\\n\\n**1. AI Agent Explosion**\\n• 500M+ projected agents by 2030\\n• *Market Size:* $4.2B by 2025\\n• *Use Cases:* Trading, research, assistance, automation\\n\\n**2. Web3 Identity Revolution**\\n• Blockchain-secured ownership\\n• *Innovation:* No renewal fees - lifetime ownership\\n• *Networks:* Polygon, Solana, BASE, and 6 others\\n\\n**3. Agent Communication Standards**\\n• Discovery protocol development\\n• *Architecture:* agent1.agt ↔ agent2.agt\\n• *Trust:* Cryptographic verification\\n\\nBy securing the .agt namespace, I've positioned to capture value from the entire agentic economy as it emerges."
+    },
+    {
+      "type": "h2",
+      "content": "Financial Engineering & ROI Model"
+    },
+    {
+      "type": "body",
+      "content": "Developed sophisticated financial models demonstrating venture viability:\\n\\n1. **Investment Structure**\\n<span class=\"text-primary\">Initial: $10,000 TLD purchase\\nYear 1 Operations: $25,000 marketing\\nTotal Capital Required: $35,000</span>\\n\\n2. **Revenue Projections (Moderate)**\\n<span class=\"text-secondary\">Year 1: 250 domains → $5,000\\nYear 3: 1,563 domains → $75,000\\nYear 5: 9,766 domains → $300,000\\n5-Year Total: $567,500 revenue</span>\\n\\n3. **Strategic Optionality**\\n<span class=\"text-success\">2026 Decision Gate: ICANN application\\nRequired Metrics: 5,000+ domains, $250K revenue\\nPreserved Option Value: $2M+ if successful</span>\\n\\nThe model demonstrates **64.5% ROI** in moderate scenarios, with upside to **337% in optimistic cases**."
+    },
+    {
+      "type": "h2",
+      "content": "Impact and Market Validation"
+    },
+    {
+      "type": "list",
+      "content": "Established .agt as the recognized namespace for AI agents;Created comprehensive documentation and implementation guides;Built educational platform at agtdomains.com;Developed naming conventions adopted by early agent builders;Achieved visibility in AI and Web3 communities;Demonstrated entrepreneurial execution with minimal capital;Positioned for explosive growth as agent economy emerges"
+    }
+  ],
+  "media": [
+    {
+      "type": "image",
+      "url": "/images/agt-ecosystem.jpg",
+      "alt": "The .agt ecosystem showing agent discovery and communication",
+      "caption": "Visualization of how .agt domains enable the agentic web"
+    },
+    {
+      "type": "image",
+      "url": "/images/agt-financial-model.jpg",
+      "alt": "Financial model showing ROI projections and decision gates",
+      "caption": "Strategic financial planning with multiple growth scenarios"
+    }
+  ]
 }

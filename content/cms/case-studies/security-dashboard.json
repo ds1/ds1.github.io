@@ -8,31 +8,10 @@
   "duration": "December 2024 - Present",
   "role": "Product Designer & Frontend Developer",
   "project_type": "Professional Project",
-  "initial_vision_h1": "Reimagining Construction Site Surveillance Through Intuitive Design",
-  "problem_statement_h2": "The Challenge of Multi-Site Monitoring",
-  "problem_body": "Construction companies managing multiple sites face a critical challenge: **How can security teams efficiently monitor dozens of camera feeds across multiple locations without overwhelming operators?**\\n\\nTraditional surveillance systems force users to navigate through complex menus and separate windows for each camera. Security personnel waste valuable time switching between feeds, missing critical events, and struggling with outdated interfaces that weren't designed for modern construction site needs.\\n\\nThe industry needed a solution that could handle the scale and complexity of multi-site monitoring while remaining simple enough for non-technical staff to operate effectively.",
-  "technical_approach_h2": "User-Centered Design Approach",
-  "approach_list": "Conducted stakeholder interviews with security teams to understand pain points;Analyzed existing surveillance systems to identify UX failures;Created user journey maps for different monitoring scenarios;Developed a modular component system for scalability;Implemented progressive disclosure to reduce cognitive load;Built interactive prototypes for rapid user testing",
-  "architecture_h2": "Technical Architecture",
-  "architecture_body": "The dashboard employs a **three-tier architecture** optimized for real-time monitoring:\\n\\n1. *Presentation Layer*\\n<span class=\"text-primary\">• Vanilla JavaScript for zero dependencies\\n• Custom CSS with CSS Variables\\n• Responsive grid system\\n• Touch-optimized controls</span>\\n\\n2. *State Management*\\n<span class=\"text-secondary\">• LocalStorage persistence\\n• Real-time status updates\\n• Efficient DOM manipulation\\n• Memory-optimized video handling</span>\\n\\n3. *Performance Optimization*\\n<span class=\"text-success\">• Lazy loading for video streams\\n• Debounced resize handlers\\n• RequestAnimationFrame for smooth animations\\n• Optimized event delegation</span>",
-  "innovation_details_h2": "Design System Innovation",
-  "innovation_body": "The project introduced several **design innovations** specifically for surveillance interfaces:\\n\\n**1. Adaptive Grid System**\\n• Dynamic layouts from 1×1 to 4×4 without page refresh\\n• *Smart Scaling:* Automatic adjustment based on viewport\\n• *Memory:* Persistent layout preferences per user\\n\\n**2. Mobile-First Interactions**\\n• Long-press gestures for touch devices (500ms activation)\\n• *Haptic Feedback:* Subtle vibration on drag operations\\n• *Visual Indicators:* \"Hold to drag\" tooltip system\\n\\n**3. Status Communication**\\n• Three-state system (online/offline/maintenance)\\n• *Battery Monitoring:* Color-coded warnings below 30%\\n• *Connection Quality:* Real-time status indicators\\n\\n**4. Dark Mode Optimization**\\n• Reduced eye strain for 24/7 monitoring\\n• WCAG AAA contrast ratios\\n• Automatic theme persistence",
-  "collaboration_h2": "Feature Branch Strategy",
-  "collaboration_body": "The project pioneered a **subdomain preview system** for rapid iteration:\\n\\n1. **Branch Deployments**\\n<span class=\"text-primary\">Developer Experience: Each feature branch gets a unique preview URL\\nStakeholder Review: Non-technical users can test features instantly</span>\\n\\n2. **Feature Testing**\\n<span class=\"text-secondary\">Alerts Panel: Testing motion detection UI in isolation\\nSearch Integration: AI-powered camera search experiments\\nBanner System: Emergency announcement testing</span>\\n\\n3. **Deployment Architecture**\\n<span class=\"text-success\">CI/CD Pipeline: Automatic deployment on push\\nPreview Index: Central hub for all active previews\\nRollback Safety: Easy reversion without affecting production</span>\\n\\nThis approach reduced feedback cycles from days to hours and enabled parallel feature development without conflicts.",
   "business_model_h2": "",
   "business_model_body": "",
   "challenges_h2": "",
   "challenges_body": "",
-  "results_h2": "Project Impact",
-  "results_list": "Reduced camera switching time by 75% through grid view implementation;Decreased training time for new security personnel from 2 hours to 15 minutes;Achieved 100% mobile compatibility for field supervisors;Enabled monitoring of 4× more cameras simultaneously;Reduced false alarm response time by 60% with visual status indicators;Established scalable design system for future feature development;Created reusable component library saving 40% development time on new features",
-  "process_media_type": "image",
-  "process_media_url": "/images/security-dashboard-process.jpg",
-  "process_media_alt": "Security Dashboard design process",
-  "process_media_caption": "User journey mapping and interface evolution from wireframes to final design",
-  "system_media_type": "image",
-  "system_media_url": "/images/security-dashboard-architecture.jpg",
-  "system_media_alt": "Dashboard architecture diagram",
-  "system_media_caption": "Technical architecture showing data flow and component relationships",
   "design_tools": "",
   "ai_tools": "",
   "dev_tools": "",
@@ -42,5 +21,73 @@
   "fidelity": "",
   "ai_models": "",
   "design_principles": "",
-  "usability_heuristics": ""
+  "usability_heuristics": "",
+  "content_sections": [
+    {
+      "type": "h1",
+      "content": "Reimagining Construction Site Surveillance Through Intuitive Design"
+    },
+    {
+      "type": "h2",
+      "content": "The Challenge of Multi-Site Monitoring"
+    },
+    {
+      "type": "body",
+      "content": "Construction companies managing multiple sites face a critical challenge: **How can security teams efficiently monitor dozens of camera feeds across multiple locations without overwhelming operators?**\\n\\nTraditional surveillance systems force users to navigate through complex menus and separate windows for each camera. Security personnel waste valuable time switching between feeds, missing critical events, and struggling with outdated interfaces that weren't designed for modern construction site needs.\\n\\nThe industry needed a solution that could handle the scale and complexity of multi-site monitoring while remaining simple enough for non-technical staff to operate effectively."
+    },
+    {
+      "type": "h2",
+      "content": "User-Centered Design Approach"
+    },
+    {
+      "type": "list",
+      "content": "Conducted stakeholder interviews with security teams to understand pain points;Analyzed existing surveillance systems to identify UX failures;Created user journey maps for different monitoring scenarios;Developed a modular component system for scalability;Implemented progressive disclosure to reduce cognitive load;Built interactive prototypes for rapid user testing"
+    },
+    {
+      "type": "h2",
+      "content": "Technical Architecture"
+    },
+    {
+      "type": "body",
+      "content": "The dashboard employs a **three-tier architecture** optimized for real-time monitoring:\\n\\n1. *Presentation Layer*\\n<span class=\"text-primary\">• Vanilla JavaScript for zero dependencies\\n• Custom CSS with CSS Variables\\n• Responsive grid system\\n• Touch-optimized controls</span>\\n\\n2. *State Management*\\n<span class=\"text-secondary\">• LocalStorage persistence\\n• Real-time status updates\\n• Efficient DOM manipulation\\n• Memory-optimized video handling</span>\\n\\n3. *Performance Optimization*\\n<span class=\"text-success\">• Lazy loading for video streams\\n• Debounced resize handlers\\n• RequestAnimationFrame for smooth animations\\n• Optimized event delegation</span>"
+    },
+    {
+      "type": "h2",
+      "content": "Design System Innovation"
+    },
+    {
+      "type": "body",
+      "content": "The project introduced several **design innovations** specifically for surveillance interfaces:\\n\\n**1. Adaptive Grid System**\\n• Dynamic layouts from 1×1 to 4×4 without page refresh\\n• *Smart Scaling:* Automatic adjustment based on viewport\\n• *Memory:* Persistent layout preferences per user\\n\\n**2. Mobile-First Interactions**\\n• Long-press gestures for touch devices (500ms activation)\\n• *Haptic Feedback:* Subtle vibration on drag operations\\n• *Visual Indicators:* \"Hold to drag\" tooltip system\\n\\n**3. Status Communication**\\n• Three-state system (online/offline/maintenance)\\n• *Battery Monitoring:* Color-coded warnings below 30%\\n• *Connection Quality:* Real-time status indicators\\n\\n**4. Dark Mode Optimization**\\n• Reduced eye strain for 24/7 monitoring\\n• WCAG AAA contrast ratios\\n• Automatic theme persistence"
+    },
+    {
+      "type": "h2",
+      "content": "Feature Branch Strategy"
+    },
+    {
+      "type": "body",
+      "content": "The project pioneered a **subdomain preview system** for rapid iteration:\\n\\n1. **Branch Deployments**\\n<span class=\"text-primary\">Developer Experience: Each feature branch gets a unique preview URL\\nStakeholder Review: Non-technical users can test features instantly</span>\\n\\n2. **Feature Testing**\\n<span class=\"text-secondary\">Alerts Panel: Testing motion detection UI in isolation\\nSearch Integration: AI-powered camera search experiments\\nBanner System: Emergency announcement testing</span>\\n\\n3. **Deployment Architecture**\\n<span class=\"text-success\">CI/CD Pipeline: Automatic deployment on push\\nPreview Index: Central hub for all active previews\\nRollback Safety: Easy reversion without affecting production</span>\\n\\nThis approach reduced feedback cycles from days to hours and enabled parallel feature development without conflicts."
+    },
+    {
+      "type": "h2",
+      "content": "Project Impact"
+    },
+    {
+      "type": "list",
+      "content": "Reduced camera switching time by 75% through grid view implementation;Decreased training time for new security personnel from 2 hours to 15 minutes;Achieved 100% mobile compatibility for field supervisors;Enabled monitoring of 4× more cameras simultaneously;Reduced false alarm response time by 60% with visual status indicators;Established scalable design system for future feature development;Created reusable component library saving 40% development time on new features"
+    }
+  ],
+  "media": [
+    {
+      "type": "image",
+      "url": "/images/security-dashboard-process.jpg",
+      "alt": "Security Dashboard design process",
+      "caption": "User journey mapping and interface evolution from wireframes to final design"
+    },
+    {
+      "type": "image",
+      "url": "/images/security-dashboard-architecture.jpg",
+      "alt": "Dashboard architecture diagram",
+      "caption": "Technical architecture showing data flow and component relationships"
+    }
+  ]
 }

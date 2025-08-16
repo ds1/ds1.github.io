@@ -8,31 +8,10 @@
   "duration": "April 2025",
   "role": "Frontend Engineer & Interaction Designer",
   "project_type": "Professional Project",
-  "initial_vision_h1": "Revolutionizing Construction Site Surveillance Through Intuitive Camera Control",
-  "problem_statement_h2": "The Construction Security Monitoring Crisis",
-  "problem_body": "Construction sites require **24/7 surveillance across multiple zones**, but security teams struggle with outdated PTZ camera interfaces that make rapid response nearly impossible. When theft, vandalism, or safety incidents occur, every second counts - yet operators waste precious time fighting with clunky controls.\\n\\nSecurity personnel monitoring construction sites face a perfect storm of challenges: **multiple camera feeds across sprawling sites, the need for precise camera positioning to investigate incidents, and legacy interfaces designed by engineers rather than users.** Night shift operators particularly struggle with complex controls during critical moments when fatigue compounds usability issues.\\n\\nThe existing PTZ control software used by most construction security companies requires desktop installation, uses hypersensitive slider controls that make precise adjustments nearly impossible, and spreads controls across multiple panels that obscure the video feed.",
-  "technical_approach_h2": "Multi-Modal Control System Design",
-  "approach_list": "Analyzed security operator workflows through ride-alongs and observation sessions at active construction sites;Identified critical pain points: imprecise slider controls, scattered interface elements, and slow response times;Developed **four complementary input methods** to accommodate different scenarios and operator preferences;Created responsive design supporting desktop monitoring stations, tablet field use, and emergency mobile access;Implemented millisecond-precision throttling to prevent camera motor overload while maintaining responsiveness;Built comprehensive keyboard shortcuts for experienced operators who need rapid camera repositioning;Established visual feedback system showing exact position values for incident documentation",
-  "architecture_h2": "Legacy vs. Modern: A Tale of Two Interfaces",
-  "architecture_body": "The transformation from legacy to modern reveals **fundamental UX failures** in traditional PTZ software:\\n\\n**Legacy Interface Problems:**\\n<span class=\"text-error\">• Hypersensitive Sliders: Minimal movement causes large camera swings\\n• Scattered Controls: Pan/tilt/zoom in separate interface regions\\n• No Direct Input: Cannot type specific coordinates for repeatability\\n• Delayed Response: 500ms+ lag between input and camera movement\\n• Desktop-Only: Requires software installation on each workstation</span>\\n\\n**Modern Solution Benefits:**\\n<span class=\"text-success\">• Precise Control: Multiple input methods for different precision needs\\n• Unified Interface: All controls in peripheral vision while watching feed\\n• Direct Value Entry: Type exact coordinates for incident documentation\\n• Real-Time Response: 50ms throttled commands with instant feedback\\n• Browser-Based: Access from any device without installation</span>\\n\\n**Side-by-Side Comparison:**\\nThe legacy interface forces operators to constantly shift focus between the video feed and distant control sliders. Our redesign keeps all controls in the operator's peripheral vision, allowing continuous monitoring while adjusting camera position.",
-  "innovation_details_h2": "Control Innovation for Security Operations",
-  "innovation_body": "Version 1.2 introduces **purpose-built features** for construction site monitoring:\\n\\n**1. Precision Value Controls**\\n• Direct coordinate entry for returning to specific positions\\n• *Security Use Case:* Document exact camera angles for incident reports\\n• *Implementation:* ContentEditable fields with validation\\n• *Increment Buttons:* Fine adjustments without losing video focus\\n\\n**2. Axis Lock Mode**\\n• Isolate horizontal or vertical movement\\n• *Security Application:* Follow fence lines or scan floors systematically\\n• *Left-Click:* Pan-only for perimeter checks\\n• *Right-Click:* Tilt-only for multi-story scanning\\n\\n**3. Hotkey Navigation System**\\n• P/T/Z keys instantly focus control fields\\n• *Night Shift Benefit:* Reduce eye strain from mouse movement\\n• *WASD Controls:* Gaming-familiar movement for younger operators\\n• *R Reset:* Instant return to default position after incident\\n\\n**4. Click-and-Drag Adjustment**\\n• Drag on values for smooth, controlled changes\\n• *Advantage:* More precise than legacy sliders\\n• *Visual Feedback:* Cursor changes indicate drag mode\\n• *No Overshoot:* Natural resistance prevents accidental extreme positions",
-  "collaboration_h2": "Solving Real Security Scenarios",
-  "collaboration_body": "The interface design addresses **specific construction site security workflows**:\\n\\n1. **Incident Investigation Mode**\\n<span class=\"text-primary\">Scenario: Copper theft reported in Zone 3\\nLegacy Process: Fight with sliders, lose suspect while adjusting\\nNew Process: Type coordinates, zoom directly to hot spot\\nDocumentation: Save exact PTZ values for police report</span>\\n\\n2. **Perimeter Patrol Workflow**\\n<span class=\"text-secondary\">Scenario: Hourly fence line checks required\\nLegacy Challenge: Sliders too sensitive for smooth panning\\nSolution: Axis lock mode for controlled horizontal sweeps\\nBenefit: Complete perimeter scan without missing blind spots</span>\\n\\n3. **Multi-Camera Coordination**\\n<span class=\"text-success\">Scenario: Track vehicle moving between camera zones\\nLegacy Issue: Different interfaces per camera model\\nUnified Interface: Same controls work for all PTZ cameras\\nResult: Seamless handoff between camera operators</span>\\n\\n4. **Emergency Response**\\n<span class=\"text-warning\">Scenario: Fire detected on upper floor\\nMobile Access: Security guard uses phone to check cameras\\nTouch Controls: Pinch to zoom on specific area\\nSpeed: No software installation required for immediate access</span>",
   "business_model_h2": "",
   "business_model_body": "",
   "challenges_h2": "",
   "challenges_body": "",
-  "results_h2": "Implementation Results & Field Testing",
-  "results_list": "Deployed across multiple construction sites for overnight security monitoring;Eliminated desktop software installation reducing IT support tickets;Enabled mobile access for field supervisors checking cameras remotely;Improved incident documentation with precise coordinate recording;Reduced training time for new security personnel through intuitive controls;Extended camera coverage effectiveness through smoother patrol patterns;Created open-source solution eliminating per-seat licensing costs;Field-tested through complete overnight shifts with security operators;Gathered feedback from operators with varying technical expertise levels",
-  "process_media_type": "image",
-  "process_media_url": "/images/ptz-legacy-vs-modern.gif",
-  "process_media_alt": "Animated comparison of legacy slider controls vs modern interface",
-  "process_media_caption": "Side-by-side: Legacy sliders causing overshoot vs precise modern controls",
-  "system_media_type": "image",
-  "system_media_url": "/images/ptz-security-workflow.jpg",
-  "system_media_alt": "Security monitoring workflow diagram",
-  "system_media_caption": "Construction site monitoring patterns and camera positioning strategies",
   "design_tools": "Figma;Adobe XD",
   "ai_tools": "Claude",
   "dev_tools": "JavaScript;HTML5;CSS3;Git;GitHub Pages",
@@ -42,5 +21,73 @@
   "fidelity": "Production",
   "ai_models": "",
   "design_principles": "Direct Manipulation;Progressive Disclosure;User Control and Freedom;Consistency;Error Prevention;Flexibility",
-  "usability_heuristics": "Visibility of System Status;Match Between System and Real World;User Control and Freedom;Consistency and Standards;Error Prevention;Recognition Rather Than Recall;Flexibility and Efficiency of Use;Aesthetic and Minimalist Design;Help Users Recognize Diagnose and Recover from Errors;Help and Documentation"
+  "usability_heuristics": "Visibility of System Status;Match Between System and Real World;User Control and Freedom;Consistency and Standards;Error Prevention;Recognition Rather Than Recall;Flexibility and Efficiency of Use;Aesthetic and Minimalist Design;Help Users Recognize Diagnose and Recover from Errors;Help and Documentation",
+  "content_sections": [
+    {
+      "type": "h1",
+      "content": "Revolutionizing Construction Site Surveillance Through Intuitive Camera Control"
+    },
+    {
+      "type": "h2",
+      "content": "The Construction Security Monitoring Crisis"
+    },
+    {
+      "type": "body",
+      "content": "Construction sites require **24/7 surveillance across multiple zones**, but security teams struggle with outdated PTZ camera interfaces that make rapid response nearly impossible. When theft, vandalism, or safety incidents occur, every second counts - yet operators waste precious time fighting with clunky controls.\\n\\nSecurity personnel monitoring construction sites face a perfect storm of challenges: **multiple camera feeds across sprawling sites, the need for precise camera positioning to investigate incidents, and legacy interfaces designed by engineers rather than users.** Night shift operators particularly struggle with complex controls during critical moments when fatigue compounds usability issues.\\n\\nThe existing PTZ control software used by most construction security companies requires desktop installation, uses hypersensitive slider controls that make precise adjustments nearly impossible, and spreads controls across multiple panels that obscure the video feed."
+    },
+    {
+      "type": "h2",
+      "content": "Multi-Modal Control System Design"
+    },
+    {
+      "type": "list",
+      "content": "Analyzed security operator workflows through ride-alongs and observation sessions at active construction sites;Identified critical pain points: imprecise slider controls, scattered interface elements, and slow response times;Developed **four complementary input methods** to accommodate different scenarios and operator preferences;Created responsive design supporting desktop monitoring stations, tablet field use, and emergency mobile access;Implemented millisecond-precision throttling to prevent camera motor overload while maintaining responsiveness;Built comprehensive keyboard shortcuts for experienced operators who need rapid camera repositioning;Established visual feedback system showing exact position values for incident documentation"
+    },
+    {
+      "type": "h2",
+      "content": "Legacy vs. Modern: A Tale of Two Interfaces"
+    },
+    {
+      "type": "body",
+      "content": "The transformation from legacy to modern reveals **fundamental UX failures** in traditional PTZ software:\\n\\n**Legacy Interface Problems:**\\n<span class=\"text-error\">• Hypersensitive Sliders: Minimal movement causes large camera swings\\n• Scattered Controls: Pan/tilt/zoom in separate interface regions\\n• No Direct Input: Cannot type specific coordinates for repeatability\\n• Delayed Response: 500ms+ lag between input and camera movement\\n• Desktop-Only: Requires software installation on each workstation</span>\\n\\n**Modern Solution Benefits:**\\n<span class=\"text-success\">• Precise Control: Multiple input methods for different precision needs\\n• Unified Interface: All controls in peripheral vision while watching feed\\n• Direct Value Entry: Type exact coordinates for incident documentation\\n• Real-Time Response: 50ms throttled commands with instant feedback\\n• Browser-Based: Access from any device without installation</span>\\n\\n**Side-by-Side Comparison:**\\nThe legacy interface forces operators to constantly shift focus between the video feed and distant control sliders. Our redesign keeps all controls in the operator's peripheral vision, allowing continuous monitoring while adjusting camera position."
+    },
+    {
+      "type": "h2",
+      "content": "Control Innovation for Security Operations"
+    },
+    {
+      "type": "body",
+      "content": "Version 1.2 introduces **purpose-built features** for construction site monitoring:\\n\\n**1. Precision Value Controls**\\n• Direct coordinate entry for returning to specific positions\\n• *Security Use Case:* Document exact camera angles for incident reports\\n• *Implementation:* ContentEditable fields with validation\\n• *Increment Buttons:* Fine adjustments without losing video focus\\n\\n**2. Axis Lock Mode**\\n• Isolate horizontal or vertical movement\\n• *Security Application:* Follow fence lines or scan floors systematically\\n• *Left-Click:* Pan-only for perimeter checks\\n• *Right-Click:* Tilt-only for multi-story scanning\\n\\n**3. Hotkey Navigation System**\\n• P/T/Z keys instantly focus control fields\\n• *Night Shift Benefit:* Reduce eye strain from mouse movement\\n• *WASD Controls:* Gaming-familiar movement for younger operators\\n• *R Reset:* Instant return to default position after incident\\n\\n**4. Click-and-Drag Adjustment**\\n• Drag on values for smooth, controlled changes\\n• *Advantage:* More precise than legacy sliders\\n• *Visual Feedback:* Cursor changes indicate drag mode\\n• *No Overshoot:* Natural resistance prevents accidental extreme positions"
+    },
+    {
+      "type": "h2",
+      "content": "Solving Real Security Scenarios"
+    },
+    {
+      "type": "body",
+      "content": "The interface design addresses **specific construction site security workflows**:\\n\\n1. **Incident Investigation Mode**\\n<span class=\"text-primary\">Scenario: Copper theft reported in Zone 3\\nLegacy Process: Fight with sliders, lose suspect while adjusting\\nNew Process: Type coordinates, zoom directly to hot spot\\nDocumentation: Save exact PTZ values for police report</span>\\n\\n2. **Perimeter Patrol Workflow**\\n<span class=\"text-secondary\">Scenario: Hourly fence line checks required\\nLegacy Challenge: Sliders too sensitive for smooth panning\\nSolution: Axis lock mode for controlled horizontal sweeps\\nBenefit: Complete perimeter scan without missing blind spots</span>\\n\\n3. **Multi-Camera Coordination**\\n<span class=\"text-success\">Scenario: Track vehicle moving between camera zones\\nLegacy Issue: Different interfaces per camera model\\nUnified Interface: Same controls work for all PTZ cameras\\nResult: Seamless handoff between camera operators</span>\\n\\n4. **Emergency Response**\\n<span class=\"text-warning\">Scenario: Fire detected on upper floor\\nMobile Access: Security guard uses phone to check cameras\\nTouch Controls: Pinch to zoom on specific area\\nSpeed: No software installation required for immediate access</span>"
+    },
+    {
+      "type": "h2",
+      "content": "Implementation Results & Field Testing"
+    },
+    {
+      "type": "list",
+      "content": "Deployed across multiple construction sites for overnight security monitoring;Eliminated desktop software installation reducing IT support tickets;Enabled mobile access for field supervisors checking cameras remotely;Improved incident documentation with precise coordinate recording;Reduced training time for new security personnel through intuitive controls;Extended camera coverage effectiveness through smoother patrol patterns;Created open-source solution eliminating per-seat licensing costs;Field-tested through complete overnight shifts with security operators;Gathered feedback from operators with varying technical expertise levels"
+    }
+  ],
+  "media": [
+    {
+      "type": "image",
+      "url": "/images/ptz-legacy-vs-modern.gif",
+      "alt": "Animated comparison of legacy slider controls vs modern interface",
+      "caption": "Side-by-side: Legacy sliders causing overshoot vs precise modern controls"
+    },
+    {
+      "type": "image",
+      "url": "/images/ptz-security-workflow.jpg",
+      "alt": "Security monitoring workflow diagram",
+      "caption": "Construction site monitoring patterns and camera positioning strategies"
+    }
+  ]
 }

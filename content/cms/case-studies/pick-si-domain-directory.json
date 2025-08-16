@@ -8,31 +8,10 @@
   "duration": "November 2024 - Present",
   "role": "Full-Stack Developer & Product Designer",
   "project_type": "Personal Venture",
-  "initial_vision_h1": "Creating the Premier Marketplace for Superintelligence Domain Names",
-  "problem_statement_h2": "The .SI Domain Opportunity",
-  "problem_body": "The .si top-level domain presents a unique opportunity: **What if Slovenia's country code could become the de facto namespace for the superintelligence era?**\\n\\nAs AI capabilities advance toward AGI and beyond, forward-thinking organizations need domain names that signal their position in this transformation. The .si extension offers perfect dual meaning - both a legitimate country code and an abbreviation for superintelligence.\\n\\nI recognized that no centralized marketplace existed for discovering, valuing, and trading premium .si domains specifically positioned for the AI industry. This gap represented both a technical challenge and a business opportunity.",
-  "technical_approach_h2": "Full-Stack Development Strategy",
-  "approach_list": "Built Django REST API with PostgreSQL for robust data management;Developed React frontend with Material-UI components;Implemented Celery task queue with Redis for automated WHOIS monitoring;Created custom socket programming for .si WHOIS server integration;Integrated Stripe payment processing with webhook handling;Designed bulk import system for CSV domain lists;Built two-tier listing system (Standard vs Showcase domains)",
-  "architecture_h2": "System Architecture",
-  "architecture_body": "Pick.si employs a **sophisticated distributed architecture** optimized for automation:\\n\\n1. *Backend Services*\\n<span class=\"text-primary\">• Django REST Framework with ViewSets\\n• PostgreSQL with complex model relationships\\n• Redis for Celery message broker\\n• Custom WHOIS socket connections to arnes.si</span>\\n\\n2. *Frontend Application*\\n<span class=\"text-secondary\">• React with React Router for SPA navigation\\n• Material-UI DataGrid with sorting and pagination\\n• Stripe Elements for PCI-compliant payments\\n• Real-time showcase status updates</span>\\n\\n3. *Automation Pipeline*\\n<span class=\"text-success\">• Celery workers with retry logic\\n• BeautifulSoup web scraping for metadata\\n• 5-second throttling between WHOIS queries\\n• Scheduled tasks for expired showcase cleanup</span>",
-  "innovation_details_h2": "Technical Innovations",
-  "innovation_body": "The platform introduced several **technical breakthroughs** for domain marketplaces:\\n\\n**1. Custom WHOIS Integration**\\n• Direct socket connection to whois.arnes.si (port 43)\\n• *Regex Parsing:* Extract registrar, nameservers, dates from raw WHOIS\\n• *Retry Logic:* MaxRetriesExceededError handling with exponential backoff\\n• *Rate Limiting:* 5-second delays prevent server blocking\\n\\n**2. Showcase Listing System**\\n• Time-limited premium placement (7-day cycles)\\n• *Stripe Webhooks:* payment_intent.succeeded triggers upgrade\\n• *Automatic Expiration:* showcase_until field with timezone awareness\\n• *Visual Differentiation:* Light blue background (#e3f2fd) for showcase rows\\n\\n**3. Advanced Search & Filtering**\\n• DjangoFilterBackend with custom DomainFilter class\\n• *Price Range:* Min/max price filtering with NumberFilter\\n• *Dual Pagination:* Separate controls for showcase vs standard domains\\n• *Smart Ordering:* Multi-field sorting (-is_showcase, -date_added, name)\\n\\n**4. Bulk Import System**\\n• CSV parsing with comment line skipping\\n• *Error Handling:* Row-by-row validation with detailed error reporting\\n• *Batch Processing:* Celery task queuing for large imports",
-  "collaboration_h2": "Development Challenges Solved",
-  "collaboration_body": "Implementing Pick.si required solving several **complex technical challenges**:\\n\\n1. **WHOIS Server Integration**\\n<span class=\"text-primary\">Challenge: .si WHOIS doesn't support standard Python whois library\\nSolution: Raw socket programming with custom regex parsing\\nResult: 100% reliable .si domain data extraction</span>\\n\\n2. **Payment Processing**\\n<span class=\"text-secondary\">Challenge: Secure upgrade flow with immediate status updates\\nSolution: Stripe PaymentIntent with webhook verification\\nResult: Zero failed transactions, instant showcase activation</span>\\n\\n3. **Performance at Scale**\\n<span class=\"text-success\">Challenge: Updating 500+ domains without overwhelming WHOIS servers\\nSolution: Celery task distribution with intelligent throttling\\nResult: Complete dataset updates in under 1 hour</span>\\n\\nEach solution demonstrates deep understanding of distributed systems, API integration, and production-grade error handling.",
   "business_model_h2": "",
   "business_model_body": "",
   "challenges_h2": "",
   "challenges_body": "",
-  "results_h2": "Implementation Results",
-  "results_list": "Built complete marketplace handling 500+ .si domains;Achieved 95% WHOIS data accuracy through custom parsing;Implemented $50 showcase upgrades with Stripe ($2,500 MRR potential);Created dual-view system supporting 1000+ domains efficiently;Reduced domain update time from manual hours to automated minutes;Established SEO foundation for 'superintelligence domains' keyword;Developed reusable Django/React/Celery template for future marketplaces;Zero security incidents with token-based authentication system",
-  "process_media_type": "image",
-  "process_media_url": "/images/picksi-architecture.jpg",
-  "process_media_alt": "Pick.si system architecture",
-  "process_media_caption": "Full-stack architecture showing Django backend, React frontend, and Celery automation",
-  "system_media_type": "image",
-  "system_media_url": "/images/picksi-interface.jpg",
-  "system_media_alt": "Domain marketplace interface",
-  "system_media_caption": "Homepage showing domain search, filtering, and premium listings",
   "design_tools": "",
   "ai_tools": "",
   "dev_tools": "",
@@ -42,5 +21,73 @@
   "fidelity": "",
   "ai_models": "",
   "design_principles": "",
-  "usability_heuristics": ""
+  "usability_heuristics": "",
+  "content_sections": [
+    {
+      "type": "h1",
+      "content": "Creating the Premier Marketplace for Superintelligence Domain Names"
+    },
+    {
+      "type": "h2",
+      "content": "The .SI Domain Opportunity"
+    },
+    {
+      "type": "body",
+      "content": "The .si top-level domain presents a unique opportunity: **What if Slovenia's country code could become the de facto namespace for the superintelligence era?**\\n\\nAs AI capabilities advance toward AGI and beyond, forward-thinking organizations need domain names that signal their position in this transformation. The .si extension offers perfect dual meaning - both a legitimate country code and an abbreviation for superintelligence.\\n\\nI recognized that no centralized marketplace existed for discovering, valuing, and trading premium .si domains specifically positioned for the AI industry. This gap represented both a technical challenge and a business opportunity."
+    },
+    {
+      "type": "h2",
+      "content": "Full-Stack Development Strategy"
+    },
+    {
+      "type": "list",
+      "content": "Built Django REST API with PostgreSQL for robust data management;Developed React frontend with Material-UI components;Implemented Celery task queue with Redis for automated WHOIS monitoring;Created custom socket programming for .si WHOIS server integration;Integrated Stripe payment processing with webhook handling;Designed bulk import system for CSV domain lists;Built two-tier listing system (Standard vs Showcase domains)"
+    },
+    {
+      "type": "h2",
+      "content": "System Architecture"
+    },
+    {
+      "type": "body",
+      "content": "Pick.si employs a **sophisticated distributed architecture** optimized for automation:\\n\\n1. *Backend Services*\\n<span class=\"text-primary\">• Django REST Framework with ViewSets\\n• PostgreSQL with complex model relationships\\n• Redis for Celery message broker\\n• Custom WHOIS socket connections to arnes.si</span>\\n\\n2. *Frontend Application*\\n<span class=\"text-secondary\">• React with React Router for SPA navigation\\n• Material-UI DataGrid with sorting and pagination\\n• Stripe Elements for PCI-compliant payments\\n• Real-time showcase status updates</span>\\n\\n3. *Automation Pipeline*\\n<span class=\"text-success\">• Celery workers with retry logic\\n• BeautifulSoup web scraping for metadata\\n• 5-second throttling between WHOIS queries\\n• Scheduled tasks for expired showcase cleanup</span>"
+    },
+    {
+      "type": "h2",
+      "content": "Technical Innovations"
+    },
+    {
+      "type": "body",
+      "content": "The platform introduced several **technical breakthroughs** for domain marketplaces:\\n\\n**1. Custom WHOIS Integration**\\n• Direct socket connection to whois.arnes.si (port 43)\\n• *Regex Parsing:* Extract registrar, nameservers, dates from raw WHOIS\\n• *Retry Logic:* MaxRetriesExceededError handling with exponential backoff\\n• *Rate Limiting:* 5-second delays prevent server blocking\\n\\n**2. Showcase Listing System**\\n• Time-limited premium placement (7-day cycles)\\n• *Stripe Webhooks:* payment_intent.succeeded triggers upgrade\\n• *Automatic Expiration:* showcase_until field with timezone awareness\\n• *Visual Differentiation:* Light blue background (#e3f2fd) for showcase rows\\n\\n**3. Advanced Search & Filtering**\\n• DjangoFilterBackend with custom DomainFilter class\\n• *Price Range:* Min/max price filtering with NumberFilter\\n• *Dual Pagination:* Separate controls for showcase vs standard domains\\n• *Smart Ordering:* Multi-field sorting (-is_showcase, -date_added, name)\\n\\n**4. Bulk Import System**\\n• CSV parsing with comment line skipping\\n• *Error Handling:* Row-by-row validation with detailed error reporting\\n• *Batch Processing:* Celery task queuing for large imports"
+    },
+    {
+      "type": "h2",
+      "content": "Development Challenges Solved"
+    },
+    {
+      "type": "body",
+      "content": "Implementing Pick.si required solving several **complex technical challenges**:\\n\\n1. **WHOIS Server Integration**\\n<span class=\"text-primary\">Challenge: .si WHOIS doesn't support standard Python whois library\\nSolution: Raw socket programming with custom regex parsing\\nResult: 100% reliable .si domain data extraction</span>\\n\\n2. **Payment Processing**\\n<span class=\"text-secondary\">Challenge: Secure upgrade flow with immediate status updates\\nSolution: Stripe PaymentIntent with webhook verification\\nResult: Zero failed transactions, instant showcase activation</span>\\n\\n3. **Performance at Scale**\\n<span class=\"text-success\">Challenge: Updating 500+ domains without overwhelming WHOIS servers\\nSolution: Celery task distribution with intelligent throttling\\nResult: Complete dataset updates in under 1 hour</span>\\n\\nEach solution demonstrates deep understanding of distributed systems, API integration, and production-grade error handling."
+    },
+    {
+      "type": "h2",
+      "content": "Implementation Results"
+    },
+    {
+      "type": "list",
+      "content": "Built complete marketplace handling 500+ .si domains;Achieved 95% WHOIS data accuracy through custom parsing;Implemented $50 showcase upgrades with Stripe ($2,500 MRR potential);Created dual-view system supporting 1000+ domains efficiently;Reduced domain update time from manual hours to automated minutes;Established SEO foundation for 'superintelligence domains' keyword;Developed reusable Django/React/Celery template for future marketplaces;Zero security incidents with token-based authentication system"
+    }
+  ],
+  "media": [
+    {
+      "type": "image",
+      "url": "/images/picksi-architecture.jpg",
+      "alt": "Pick.si system architecture",
+      "caption": "Full-stack architecture showing Django backend, React frontend, and Celery automation"
+    },
+    {
+      "type": "image",
+      "url": "/images/picksi-interface.jpg",
+      "alt": "Domain marketplace interface",
+      "caption": "Homepage showing domain search, filtering, and premium listings"
+    }
+  ]
 }

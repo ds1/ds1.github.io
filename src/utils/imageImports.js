@@ -1,5 +1,5 @@
 // This file is auto-generated. Do not edit manually.
-// Generated 2025-08-16T18:58:31.794Z
+// Generated 2025-08-16T19:59:26.148Z
 
 import aicollabthumbnail from '../images/ai-collab-thumbnail.jpg';
 import applethumbnail from '../images/apple-thumbnail.jpg';

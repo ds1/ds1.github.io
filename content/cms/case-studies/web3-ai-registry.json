@@ -8,31 +8,10 @@
   "duration": "July 2025",
   "role": "Full-Stack Developer & Web3 Architect",
   "project_type": "Personal Project",
-  "initial_vision_h1": "Bridging Web3 Domains with AI Agent Discovery",
-  "problem_statement_h2": "The Challenge of AI Agent Discovery",
-  "problem_body": "The rapid proliferation of AI agents and MCP (Model Context Protocol) servers created a critical discovery problem. **How do users find and connect with specialized AI services?** Traditional centralized registries pose risks of censorship, single points of failure, and lack of transparency.\\n\\nI set out to create a decentralized solution that would leverage Web3 domains (.agt) as unique identifiers for AI agents, enabling a trustless, permissionless marketplace for AI services on the Polygon blockchain.",
-  "technical_approach_h2": "Technical Solution Architecture",
-  "approach_list": "Architected smart contracts for on-chain agent registration;Implemented WebSocket validation for MCP endpoint verification;Built capability-based discovery and search functionality;Created Web3 wallet integration with RainbowKit;Developed real-time blockchain data synchronization;Designed intuitive UI for non-technical users to register agents",
-  "architecture_h2": "Decentralized Registry System",
-  "architecture_body": "The platform consists of **three core components** working in harmony:\\n\\n1. *Smart Contract Layer*\\n<span class=\"text-primary\">• ERC-721 domain ownership verification\\n• On-chain agent metadata storage\\n• Capability tagging system\\n• Active status tracking</span>\\n\\n2. *Frontend Application*\\n<span class=\"text-secondary\">• Next.js 14 with TypeScript\\n• Real-time blockchain queries\\n• WebSocket connection testing\\n• Search and filter interface</span>\\n\\n3. *MCP Integration*\\n<span class=\"text-success\">• JSON-RPC 2.0 protocol support\\n• WebSocket endpoint validation\\n• Capability standardization\\n• Agent chain linking</span>",
-  "innovation_details_h2": "Technical Innovations",
-  "innovation_body": "Several key innovations emerged from this project:\\n\\n**1. Domain-Based Registration**\\n• Human-readable .agt domains instead of token IDs\\n• *Innovation:* Reverse lookup system for NFT metadata\\n• *Result:* Intuitive user experience for Web3 newcomers\\n\\n**2. Live Endpoint Validation**\\n• Pre-registration WebSocket testing\\n• *Process:* Automated handshake verification\\n• *Benefit:* Ensures only working agents are registered\\n\\n**3. Composable Agent Chains**\\n• Agents can reference other agents\\n• *Architecture:* Graph-based discovery network\\n• *Impact:* Enable complex AI workflows through composition",
-  "collaboration_h2": "Web3 and AI Convergence",
-  "collaboration_body": "This project represents the convergence of two transformative technologies:\\n\\n1. **Blockchain Benefits**\\n<span class=\"text-primary\">Ownership: Agents tied to verifiable domain ownership\\nTransparency: All registrations publicly auditable\\nCensorship Resistance: No central authority can remove agents</span>\\n\\n2. **AI Accessibility**\\n<span class=\"text-secondary\">Discovery: Find specialized AI services by capability\\nInteroperability: Standard MCP protocol for all agents\\nComposability: Build complex workflows from simple agents</span>\\n\\n3. **Developer Experience**\\n<span class=\"text-success\">Templates: Ready-to-deploy MCP server examples\\nValidation: Built-in testing before blockchain transactions\\nDocumentation: Comprehensive guides for agent builders</span>\\n\\nThe platform bridges the gap between Web3 infrastructure and practical AI applications.",
   "business_model_h2": "",
   "business_model_body": "",
   "challenges_h2": "",
   "challenges_body": "",
-  "results_h2": "Project Impact and Adoption",
-  "results_list": "Successfully deployed on Polygon Amoy testnet with verified contracts;Registered multiple live AI agents including Keyword Scout and Test Agent;Created reusable MCP server templates for rapid agent development;Established capability taxonomy for AI service discovery;Built working proof-of-concept for decentralized AI marketplace;Open-sourced entire codebase for community development",
-  "process_media_type": "image",
-  "process_media_url": "/images/agt-registry-architecture.jpg",
-  "process_media_alt": "System architecture showing smart contract, frontend, and MCP layers",
-  "process_media_caption": "Three-tier architecture of the decentralized registry system",
-  "system_media_type": "image",
-  "system_media_url": "/images/agt-registry-discovery.jpg",
-  "system_media_alt": "Discovery page showing registered agents with capabilities",
-  "system_media_caption": "Live discovery interface with search and filter functionality",
   "design_tools": "",
   "ai_tools": "",
   "dev_tools": "",
@@ -42,5 +21,73 @@
   "fidelity": "",
   "ai_models": "",
   "design_principles": "",
-  "usability_heuristics": ""
+  "usability_heuristics": "",
+  "content_sections": [
+    {
+      "type": "h1",
+      "content": "Bridging Web3 Domains with AI Agent Discovery"
+    },
+    {
+      "type": "h2",
+      "content": "The Challenge of AI Agent Discovery"
+    },
+    {
+      "type": "body",
+      "content": "The rapid proliferation of AI agents and MCP (Model Context Protocol) servers created a critical discovery problem. **How do users find and connect with specialized AI services?** Traditional centralized registries pose risks of censorship, single points of failure, and lack of transparency.\\n\\nI set out to create a decentralized solution that would leverage Web3 domains (.agt) as unique identifiers for AI agents, enabling a trustless, permissionless marketplace for AI services on the Polygon blockchain."
+    },
+    {
+      "type": "h2",
+      "content": "Technical Solution Architecture"
+    },
+    {
+      "type": "list",
+      "content": "Architected smart contracts for on-chain agent registration;Implemented WebSocket validation for MCP endpoint verification;Built capability-based discovery and search functionality;Created Web3 wallet integration with RainbowKit;Developed real-time blockchain data synchronization;Designed intuitive UI for non-technical users to register agents"
+    },
+    {
+      "type": "h2",
+      "content": "Decentralized Registry System"
+    },
+    {
+      "type": "body",
+      "content": "The platform consists of **three core components** working in harmony:\\n\\n1. *Smart Contract Layer*\\n<span class=\"text-primary\">• ERC-721 domain ownership verification\\n• On-chain agent metadata storage\\n• Capability tagging system\\n• Active status tracking</span>\\n\\n2. *Frontend Application*\\n<span class=\"text-secondary\">• Next.js 14 with TypeScript\\n• Real-time blockchain queries\\n• WebSocket connection testing\\n• Search and filter interface</span>\\n\\n3. *MCP Integration*\\n<span class=\"text-success\">• JSON-RPC 2.0 protocol support\\n• WebSocket endpoint validation\\n• Capability standardization\\n• Agent chain linking</span>"
+    },
+    {
+      "type": "h2",
+      "content": "Technical Innovations"
+    },
+    {
+      "type": "body",
+      "content": "Several key innovations emerged from this project:\\n\\n**1. Domain-Based Registration**\\n• Human-readable .agt domains instead of token IDs\\n• *Innovation:* Reverse lookup system for NFT metadata\\n• *Result:* Intuitive user experience for Web3 newcomers\\n\\n**2. Live Endpoint Validation**\\n• Pre-registration WebSocket testing\\n• *Process:* Automated handshake verification\\n• *Benefit:* Ensures only working agents are registered\\n\\n**3. Composable Agent Chains**\\n• Agents can reference other agents\\n• *Architecture:* Graph-based discovery network\\n• *Impact:* Enable complex AI workflows through composition"
+    },
+    {
+      "type": "h2",
+      "content": "Web3 and AI Convergence"
+    },
+    {
+      "type": "body",
+      "content": "This project represents the convergence of two transformative technologies:\\n\\n1. **Blockchain Benefits**\\n<span class=\"text-primary\">Ownership: Agents tied to verifiable domain ownership\\nTransparency: All registrations publicly auditable\\nCensorship Resistance: No central authority can remove agents</span>\\n\\n2. **AI Accessibility**\\n<span class=\"text-secondary\">Discovery: Find specialized AI services by capability\\nInteroperability: Standard MCP protocol for all agents\\nComposability: Build complex workflows from simple agents</span>\\n\\n3. **Developer Experience**\\n<span class=\"text-success\">Templates: Ready-to-deploy MCP server examples\\nValidation: Built-in testing before blockchain transactions\\nDocumentation: Comprehensive guides for agent builders</span>\\n\\nThe platform bridges the gap between Web3 infrastructure and practical AI applications."
+    },
+    {
+      "type": "h2",
+      "content": "Project Impact and Adoption"
+    },
+    {
+      "type": "list",
+      "content": "Successfully deployed on Polygon Amoy testnet with verified contracts;Registered multiple live AI agents including Keyword Scout and Test Agent;Created reusable MCP server templates for rapid agent development;Established capability taxonomy for AI service discovery;Built working proof-of-concept for decentralized AI marketplace;Open-sourced entire codebase for community development"
+    }
+  ],
+  "media": [
+    {
+      "type": "image",
+      "url": "/images/agt-registry-architecture.jpg",
+      "alt": "System architecture showing smart contract, frontend, and MCP layers",
+      "caption": "Three-tier architecture of the decentralized registry system"
+    },
+    {
+      "type": "image",
+      "url": "/images/agt-registry-discovery.jpg",
+      "alt": "Discovery page showing registered agents with capabilities",
+      "caption": "Live discovery interface with search and filter functionality"
+    }
+  ]
 }

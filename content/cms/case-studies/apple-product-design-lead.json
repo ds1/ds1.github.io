@@ -8,13 +8,6 @@
   "duration": "06/2022 - 08/2024",
   "role": "Product Design Lead",
   "project_type": "Apple",
-  "initial_vision_h1": "Transforming Apple's Admin Experience",
-  "problem_statement_h2": "The Challenge",
-  "problem_body": "Led the redesign of a business-critical admin web application used by teams globally at Apple, focusing on streamlining operations while maintaining the highest standards of security and efficiency.",
-  "technical_approach_h2": "Key Responsibilities",
-  "approach_list": "Facilitated cross-functional workshops to structure unrefined thoughts into strategic plans;Measurably improved usability through research-driven design;Streamlined design operations and established governance systems;Initiated product migration to a uniform design system;Managed product design sprints through effective requirements gathering",
-  "architecture_h2": "Impact & Results",
-  "architecture_body": "Reduced workflow completion time by 40%;Improved user satisfaction scores significantly;Decreased training time for new users by 30%;Established consistent design patterns across the platform",
   "innovation_details_h2": "",
   "innovation_body": "",
   "collaboration_h2": "",
@@ -42,5 +35,35 @@
   "fidelity": "",
   "ai_models": "",
   "design_principles": "",
-  "usability_heuristics": ""
+  "usability_heuristics": "",
+  "content_sections": [
+    {
+      "type": "h1",
+      "content": "Transforming Apple's Admin Experience"
+    },
+    {
+      "type": "h2",
+      "content": "The Challenge"
+    },
+    {
+      "type": "body",
+      "content": "Led the redesign of a business-critical admin web application used by teams globally at Apple, focusing on streamlining operations while maintaining the highest standards of security and efficiency."
+    },
+    {
+      "type": "h2",
+      "content": "Key Responsibilities"
+    },
+    {
+      "type": "list",
+      "content": "Facilitated cross-functional workshops to structure unrefined thoughts into strategic plans;Measurably improved usability through research-driven design;Streamlined design operations and established governance systems;Initiated product migration to a uniform design system;Managed product design sprints through effective requirements gathering"
+    },
+    {
+      "type": "h2",
+      "content": "Impact & Results"
+    },
+    {
+      "type": "body",
+      "content": "Reduced workflow completion time by 40%;Improved user satisfaction scores significantly;Decreased training time for new users by 30%;Established consistent design patterns across the platform"
+    }
+  ]
 }
