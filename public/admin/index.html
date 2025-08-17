@@ -5,10 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>Content Manager</title>
+  <script>
+    // Force GitHub OAuth without Netlify
+    window.CMS_MANUAL_INIT = true;
+  </script>
 </head>
 <body>
   <!-- Include Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.1.10/dist/decap-cms.js"></script>
+    <script>
+    // Initialize CMS with explicit GitHub backend
+    const CMS = window.CMS;
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'ds1/ds1.github.io',
+          branch: 'main',
+          auth_scope: 'repo' // Explicitly set scope
+        },
+        load_config_file: true
+      }
+    });
   <script>
     // Register preview styles
     CMS.registerPreviewStyle("/admin/preview.css");
