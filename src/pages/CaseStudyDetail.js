@@ -55,7 +55,6 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   font-size: 1.5rem;
   color: ${({ theme }) => theme.colors.textSecondary};
-  margin-bottom: 1rem;
   font-weight: normal;
   
   @media (max-width: 768px) {

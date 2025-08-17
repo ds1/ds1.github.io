@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledText = styled.span`
-  &.text-primary { color: ${({ theme }) => theme.colors.primary}; }
-  &.text-secondary { color: ${({ theme }) => theme.colors.secondary}; }
-  &.text-success { color: #4ade80; }
-  &.text-warning { color: #fbbf24; }
-  &.text-error { color: #ef4444; }
+  /* All text classes now just use white */
+  &.text-primary { color: ${({ theme }) => theme.colors.text}; }
+  &.text-secondary { color: ${({ theme }) => theme.colors.text}; }
+  &.text-success { color: ${({ theme }) => theme.colors.text}; }
+  &.text-warning { color: ${({ theme }) => theme.colors.text}; }
+  &.text-error { color: ${({ theme }) => theme.colors.text}; }
 `;
 
 const Paragraph = styled.p`

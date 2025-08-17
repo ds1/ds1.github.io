@@ -30,7 +30,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: ${({ theme }) => theme.fonts.heading};
     margin-bottom: 1rem;
     color: ${({ theme }) => theme.colors.text};
     line-height: 1.2;
@@ -82,8 +81,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${({ theme }) => theme.colors.primary};
-    text-decoration: none;
+    color: ${({ theme }) => theme.colors.text};
+    text-decoration: underline;
+    opacity: 0.9;
     
     /* Improve touch target size on mobile */
     @media (max-width: 768px) {
@@ -95,6 +95,7 @@ const GlobalStyle = createGlobalStyle`
     }
     
     &:hover {
+      opacity: 1;
       text-decoration: underline;
     }
     
