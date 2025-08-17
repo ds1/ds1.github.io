@@ -1,6 +1,6 @@
 // src/components/CaseStudyFilters.js
-import React, { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, { useState, useEffect } from 'react';
+import styled, { keyframes, css } from 'styled-components';
 import { tagCategoryColors, tagCategoryNames, getTagColor } from '../utils/tagConfig';
 
 // Animations
@@ -58,48 +58,36 @@ const SearchSection = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing.base};
   align-items: center;
-  margin-bottom: ${({ $hasFilters, theme }) => $hasFilters ? theme.spacing.lg : '0'};
+  margin-bottom: ${({ $hasFilters, theme }) => $hasFilters ? theme.spacing.xl : '0'};
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: column;
     align-items: stretch;
-    gap: ${({ theme }) => theme.spacing.sm};
   }
 `;
 
 const SearchBarWrapper = styled.div`
   flex: 1;
   position: relative;
-  
-  /* Search icon */
-  &::before {
-    content: '🔍';
-    position: absolute;
-    left: ${({ theme }) => theme.spacing.base};
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.5;
-    pointer-events: none;
-  }
 `;
 
 const SearchBar = styled.input`
   width: 100%;
-  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.base};
-  padding-left: ${({ theme }) => theme.spacing['2xl']};
+  padding: ${({ theme }) => theme.spacing.base};
   border: 2px solid ${({ theme }) => theme.colors.borderLight};
-  border-radius: ${({ theme }) => theme.borderRadius.full};
-  background-color: ${({ theme }) => theme.colors.background};
+  border-radius: ${({ theme }) => theme.borderRadius.lg};
+  background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
   font-size: ${({ theme }) => theme.fontSizes.base};
   font-weight: ${({ theme }) => theme.fontWeights.normal};
   transition: all ${({ theme }) => theme.transitions.fast};
+  font-family: ${({ theme }) => theme.fonts.body};
   
   &:focus {
     outline: none;
     border-color: ${({ theme }) => theme.colors.secondary};
     box-shadow: 0 0 0 3px ${({ theme }) => theme.colors.focusRing};
-    background-color: ${({ theme }) => theme.colors.surface};
+    background: ${({ theme }) => theme.colors.background};
   }
 
   &::placeholder {
@@ -112,7 +100,7 @@ const SearchBar = styled.input`
 `;
 
 const FilterToggleButton = styled.button`
-  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.lg};
+  padding: ${({ theme }) => theme.spacing.base} ${({ theme }) => theme.spacing.xl};
   border: 2px solid ${({ theme, $active }) => 
     $active ? theme.colors.secondary : theme.colors.borderLight};
   background: ${({ theme, $active }) => 
@@ -134,6 +122,7 @@ const FilterToggleButton = styled.button`
   justify-content: center;
   position: relative;
   overflow: hidden;
+  font-family: ${({ theme }) => theme.fonts.body};
   
   /* Ripple effect */
   &::before {
@@ -187,13 +176,14 @@ const ActiveFilterIndicator = styled.span`
   animation: ${pulse} 2s ease-in-out infinite;
 `;
 
+// FIXED: Using css helper for keyframe interpolation
 const FiltersWrapper = styled.div`
   overflow: hidden;
   transition: all ${({ theme }) => theme.transitions.slow};
   max-height: ${({ $show }) => $show ? '1000px' : '0'};
   opacity: ${({ $show }) => $show ? '1' : '0'};
   
-  ${({ $show }) => $show && `
+  ${({ $show }) => $show && css`
     animation: ${slideDown} 0.3s ease-out;
   `}
 `;
@@ -218,6 +208,7 @@ const FilterTitle = styled.h3`
   text-transform: uppercase;
   letter-spacing: ${({ theme }) => theme.letterSpacing.wider};
   opacity: 0.9;
+  font-family: ${({ theme }) => theme.fonts.heading};
 `;
 
 const TagGroup = styled.div`
@@ -243,9 +234,10 @@ const Tag = styled.button`
   transition: all ${({ theme }) => theme.transitions.fast};
   position: relative;
   overflow: hidden;
+  font-family: ${({ theme }) => theme.fonts.body};
   
   /* Subtle inner shadow when active */
-  ${({ $active, theme }) => $active && `
+  ${({ $active, theme }) => $active && css`
     box-shadow: ${theme.shadows.inner};
     transform: scale(0.98);
   `}
@@ -284,19 +276,19 @@ const ClearButton = styled.button`
   padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.lg};
   margin-top: ${({ theme }) => theme.spacing.lg};
   border: none;
-  background: linear-gradient(
-    135deg,
-    ${({ theme }) => theme.colors.primary},
+  background: linear-gradient(135deg, 
+    ${({ theme }) => theme.colors.primary}, 
     ${({ theme }) => theme.colors.secondary}
   );
   color: ${({ theme }) => theme.colors.background};
-  border-radius: ${({ theme }) => theme.borderRadius.sm};
+  border-radius: ${({ theme }) => theme.borderRadius.base};
   cursor: pointer;
   font-size: ${({ theme }) => theme.fontSizes.sm};
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  font-weight: ${({ theme }) => theme.fontWeights.semibold};
   transition: all ${({ theme }) => theme.transitions.fast};
   position: relative;
   overflow: hidden;
+  font-family: ${({ theme }) => theme.fonts.body};
   
   &::before {
     content: '';
@@ -308,27 +300,23 @@ const ClearButton = styled.button`
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.3);
     transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
+    transition: width 0.4s, height 0.4s;
   }
   
   &:active::before {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
 
   &:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     box-shadow: ${({ theme }) => theme.shadows.md};
-    background: linear-gradient(
-      135deg,
-      ${({ theme }) => theme.colors.secondary},
-      ${({ theme }) => theme.colors.accent}
-    );
   }
 
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    transform: none;
   }
 `;
 
@@ -337,10 +325,11 @@ const ResultCount = styled.p`
   margin-bottom: 0;
   color: ${({ theme }) => theme.colors.textSecondary};
   font-size: ${({ theme }) => theme.fontSizes.sm};
-  padding-top: ${({ theme, $hasFilters }) => 
-    $hasFilters ? '0' : theme.spacing.base};
+  padding-top: ${({ $hasFilters, theme }) => $hasFilters ? '0' : theme.spacing.lg};
   border-top: ${({ theme, $hasFilters }) => 
     $hasFilters ? 'none' : `1px solid ${theme.colors.borderLight}`};
+  font-weight: ${({ theme }) => theme.fontWeights.normal};
+  font-family: ${({ theme }) => theme.fonts.body};
 `;
 
 const SearchHighlight = styled.span`
@@ -348,7 +337,7 @@ const SearchHighlight = styled.span`
   font-weight: ${({ theme }) => theme.fontWeights.semibold};
 `;
 
-const CaseStudyFilters = ({ caseStudies, onFilter }) => {
+const CaseStudyFilters = ({ caseStudies = [], onFilter = () => {} }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredCount, setFilteredCount] = useState(caseStudies.length);
   const [showFilters, setShowFilters] = useState(false);
@@ -379,8 +368,10 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
     caseStudies.forEach(study => {
       if (study.tags) {
         Object.keys(availableTags).forEach(category => {
-          if (study.tags[category]) {
-            study.tags[category].forEach(tag => availableTags[category].add(tag));
+          if (study.tags[category] && Array.isArray(study.tags[category])) {
+            study.tags[category].forEach(tag => {
+              if (tag) availableTags[category].add(tag);
+            });
           }
         });
       }
@@ -392,23 +383,27 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
   };
 
   const availableTags = getAvailableTags();
-  const activeFilterCount = Object.values(selectedTags).reduce((sum, tags) => sum + tags.length, 0);
+  const activeFilterCount = Object.values(selectedTags).reduce((sum, tags) => sum + (tags ? tags.length : 0), 0);
 
   const handleTagClick = (category, tag) => {
     setSelectedTags(prev => {
       const newTags = { ...prev };
+      if (!newTags[category]) {
+        newTags[category] = [];
+      }
+      
       if (newTags[category].includes(tag)) {
         newTags[category] = newTags[category].filter(t => t !== tag);
       } else {
         newTags[category] = [...newTags[category], tag];
       }
+      
       return newTags;
     });
   };
 
   const clearFilters = () => {
     setSearchTerm('');
-    setFilteredCount(caseStudies.length);
     setSelectedTags({
       designTools: [],
       aiTools: [],
@@ -422,7 +417,7 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
   };
 
   // Apply filters whenever search term or selected tags change
-  React.useEffect(() => {
+  useEffect(() => {
     const filtered = caseStudies.filter(study => {
       // Search filter - searches across all content
       if (searchTerm) {
@@ -453,7 +448,11 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
         
         // Search in tags
         if (!matchesSearch && study.tags) {
-          const allTags = Object.values(study.tags).flat().join(' ').toLowerCase();
+          const allTags = Object.values(study.tags)
+            .filter(tags => Array.isArray(tags))
+            .flat()
+            .join(' ')
+            .toLowerCase();
           matchesSearch = allTags.includes(searchLower);
         }
         
@@ -462,7 +461,8 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
 
       // Tag filters
       for (const [category, tags] of Object.entries(selectedTags)) {
-        if (tags.length > 0 && study.tags && study.tags[category]) {
+        if (tags && tags.length > 0) {
+          if (!study.tags || !study.tags[category]) return false;
           const hasTag = tags.some(tag => study.tags[category].includes(tag));
           if (!hasTag) return false;
         }
@@ -475,8 +475,8 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
     onFilter(filtered);
   }, [searchTerm, selectedTags, caseStudies, onFilter]);
 
-  const hasActiveFilters = searchTerm || Object.values(selectedTags).some(tags => tags.length > 0);
-  const hasTagFilters = Object.entries(availableTags).some(([_, tags]) => tags.length > 0);
+  const hasActiveFilters = searchTerm || Object.values(selectedTags).some(tags => tags && tags.length > 0);
+  const hasTagFilters = Object.entries(availableTags).some(([_, tags]) => tags && tags.length > 0);
 
   return (
     <FilterContainer>
@@ -487,6 +487,7 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
             placeholder="Search projects, skills, tools..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+            aria-label="Search projects"
           />
         </SearchBarWrapper>
         
@@ -494,6 +495,8 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
           <FilterToggleButton 
             onClick={() => setShowFilters(!showFilters)}
             $active={showFilters}
+            aria-expanded={showFilters}
+            aria-label="Toggle filters"
           >
             <span>Filters</span>
             {activeFilterCount > 0 && (
@@ -507,7 +510,7 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
       {hasTagFilters && (
         <FiltersWrapper $show={showFilters}>
           {Object.entries(availableTags).map(([category, tags]) => (
-            tags.length > 0 && (
+            tags && tags.length > 0 && (
               <FilterSection key={category}>
                 <FilterTitle $category={category}>
                   {tagCategoryNames[category] || category.replace(/([A-Z])/g, ' $1').trim()}
@@ -516,9 +519,10 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
                   {tags.map(tag => (
                     <Tag
                       key={tag}
-                      $active={selectedTags[category].includes(tag)}
+                      $active={selectedTags[category]?.includes(tag)}
                       $category={category}
                       onClick={() => handleTagClick(category, tag)}
+                      aria-pressed={selectedTags[category]?.includes(tag)}
                     >
                       {tag}
                     </Tag>

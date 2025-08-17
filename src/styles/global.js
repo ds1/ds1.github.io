@@ -2,69 +2,60 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  /* CSS Reset and Box Model */
-  * {
+  /* CSS Reset and Base Styles */
+  *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
   
-  /* Prevent horizontal scroll on mobile */
   html {
-    overflow-x: hidden;
-    width: 100%;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
-    
-    /* Prevent iOS zoom on inputs */
+    font-size: 16px;
     -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
   
   body {
+    margin: 0;
     font-family: ${({ theme }) => theme.fonts.body};
     font-size: ${({ theme }) => theme.fontSizes.base};
     font-weight: ${({ theme }) => theme.fontWeights.normal};
     line-height: ${({ theme }) => theme.lineHeights.base};
-    letter-spacing: ${({ theme }) => theme.letterSpacing.normal};
     color: ${({ theme }) => theme.colors.text};
-    background-color: ${({ theme }) => theme.colors.background};
-    overflow-x: hidden;
+    background: ${({ theme }) => theme.colors.background};
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    min-height: 100vh;
     position: relative;
     
-    /* Sophisticated gradient background with orbs */
-    background: 
-      radial-gradient(
-        ellipse 800px 600px at 10% 20%,
-        rgba(22, 163, 74, 0.03) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        ellipse 600px 800px at 90% 80%,
-        rgba(124, 58, 237, 0.02) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        circle 1000px at 50% 50%,
-        rgba(22, 163, 74, 0.01) 0%,
-        transparent 70%
-      ),
-      linear-gradient(
-        180deg,
-        ${({ theme }) => theme.colors.background} 0%,
-        ${({ theme }) => theme.colors.backgroundSecondary} 100%
-      );
-    min-height: 100vh;
-    
-    /* Subtle noise texture overlay */
+    /* Subtle gradient background */
     &::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: 
-        url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
+      background: radial-gradient(
+        ellipse at top left,
+        ${({ theme }) => theme.colors.secondary}04 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at bottom right,
+        ${({ theme }) => theme.colors.accent}03 0%,
+        transparent 50%
+      );
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    /* Subtle texture overlay */
+    &::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
       pointer-events: none;
       opacity: 0.4;
       mix-blend-mode: multiply;
@@ -127,79 +118,59 @@ const GlobalStyle = createGlobalStyle`
   }
   
   h4 {
-    font-size: ${({ theme }) => theme.fontSizes.xl};
+    font-size: clamp(${({ theme }) => theme.fontSizes.xl}, 2.5vw, ${({ theme }) => theme.fontSizes['2xl']});
     font-weight: ${({ theme }) => theme.fontWeights.semibold};
     margin-bottom: ${({ theme }) => theme.spacing.sm};
     margin-top: ${({ theme }) => theme.spacing.lg};
+    line-height: 1.4;
   }
   
+  /* Body text */
   p {
     margin-bottom: ${({ theme }) => theme.spacing.base};
     line-height: ${({ theme }) => theme.lineHeights.relaxed};
-    color: ${({ theme }) => theme.colors.textSecondary};
+    font-weight: ${({ theme }) => theme.fontWeights.normal};
     letter-spacing: ${({ theme }) => theme.letterSpacing.normal};
-    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
     text-wrap: pretty;
   }
-
-  /* Links with refined hover states */
+  
+  /* Links with refined style */
   a {
     color: ${({ theme }) => theme.colors.secondary};
     text-decoration: none;
-    transition: all ${({ theme }) => theme.transitions.fast};
     font-weight: ${({ theme }) => theme.fontWeights.medium};
+    transition: all ${({ theme }) => theme.transitions.fast};
     position: relative;
     
-    /* Subtle underline animation */
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: ${({ theme }) => theme.colors.secondary};
-      transition: width ${({ theme }) => theme.transitions.base};
-    }
-    
     &:hover {
-      color: ${({ theme }) => theme.colors.accent};
-      
-      &::after {
-        width: 100%;
-      }
+      color: ${({ theme }) => theme.colors.primary};
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 1px;
     }
     
-    /* Remove tap highlight on mobile */
-    -webkit-tap-highlight-color: transparent;
-    
-    /* Ensure touch targets */
-    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-      display: inline-block;
-      min-height: 44px;
-      padding: ${({ theme }) => theme.spacing.xs} 0;
+    &:active {
+      transform: translateY(1px);
     }
   }
   
-  /* Lists with refined styling */
+  /* Lists with better spacing */
   ul, ol {
     margin-bottom: ${({ theme }) => theme.spacing.base};
-    padding-left: ${({ theme }) => theme.spacing.lg};
-    color: ${({ theme }) => theme.colors.textSecondary};
+    padding-left: ${({ theme }) => theme.spacing.xl};
     
     li {
       margin-bottom: ${({ theme }) => theme.spacing.sm};
       line-height: ${({ theme }) => theme.lineHeights.relaxed};
-      position: relative;
       
-      /* Custom bullet points */
       &::marker {
         color: ${({ theme }) => theme.colors.secondary};
+        font-weight: ${({ theme }) => theme.fontWeights.bold};
       }
     }
   }
   
-  /* Code with enhanced styling */
+  /* Enhanced code styling */
   code {
     font-family: ${({ theme }) => theme.fonts.mono};
     font-size: ${({ theme }) => theme.fontSizes.sm};
@@ -370,24 +341,6 @@ const GlobalStyle = createGlobalStyle`
     outline: 2px solid ${({ theme }) => theme.colors.secondary};
     outline-offset: 2px;
     border-radius: ${({ theme }) => theme.borderRadius.xs};
-  }
-  
-  /* Skip to content link for accessibility */
-  .skip-to-content {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.background};
-    padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.base};
-    text-decoration: none;
-    z-index: 100;
-    border-radius: ${({ theme }) => theme.borderRadius.sm};
-    
-    &:focus {
-      top: 10px;
-      left: 10px;
-    }
   }
   
   /* Reduced motion preferences */

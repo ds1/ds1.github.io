@@ -1,5 +1,5 @@
 // src/components/Layout.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Navigation from './Navigation';
 
@@ -66,82 +66,77 @@ const Main = styled.main`
     right: -300px;
     animation: ${float} 25s ease-in-out infinite reverse;
   }
-  
-  /* Skip to content link for accessibility */
-  .skip-to-content {
-    position: absolute;
-    top: -40px;
-    left: ${({ theme }) => theme.spacing.base};
-    background: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.background};
-    padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.base};
-    text-decoration: none;
-    z-index: ${({ theme }) => theme.zIndex.tooltip};
-    border-radius: ${({ theme }) => theme.borderRadius.sm};
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
-    
-    &:focus {
-      top: ${({ theme }) => theme.spacing.base};
-    }
-  }
 `;
 
 // Enhanced footer with glass morphism
 const Footer = styled.footer`
-  margin-top: ${({ theme }) => theme.spacing['4xl']};
-  padding: ${({ theme }) => theme.spacing['2xl']} ${({ theme }) => theme.spacing.lg};
+  margin-top: auto;
+  padding: ${({ theme }) => theme.spacing['2xl']} 0;
   background: ${({ theme }) => theme.colors.glassSurface};
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-top: 1px solid ${({ theme }) => theme.colors.borderSubtle};
   position: relative;
   
-  /* Decorative gradient line */
+  /* Decorative gradient */
   &::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
+    inset: 0;
     background: linear-gradient(
       90deg,
-      transparent 0%,
-      ${({ theme }) => theme.colors.secondary} 20%,
-      ${({ theme }) => theme.colors.accent} 50%,
-      ${({ theme }) => theme.colors.secondary} 80%,
-      transparent 100%
+      ${({ theme }) => theme.colors.secondary}02 0%,
+      transparent 50%,
+      ${({ theme }) => theme.colors.accent}02 100%
     );
+    pointer-events: none;
+  }
+  
+  /* Animated dots pattern */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      ${({ theme }) => theme.colors.secondary}10 1px,
+      transparent 1px
+    );
+    background-size: 30px 30px;
+    opacity: 0.5;
     animation: ${pulse} 4s ease-in-out infinite;
+    pointer-events: none;
   }
 `;
 
 const FooterContent = styled.div`
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 ${({ theme }) => theme.spacing.lg};
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: ${({ theme }) => theme.spacing.lg};
+  position: relative;
+  z-index: 1;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: column;
     text-align: center;
-    gap: ${({ theme }) => theme.spacing.base};
   }
 `;
 
 const FooterText = styled.p`
   color: ${({ theme }) => theme.colors.textSecondary};
   font-size: ${({ theme }) => theme.fontSizes.sm};
+  font-weight: ${({ theme }) => theme.fontWeights.normal};
   margin: 0;
   letter-spacing: ${({ theme }) => theme.letterSpacing.normal};
   
-  /* Year with special styling */
   .year {
-    font-weight: ${({ theme }) => theme.fontWeights.semibold};
-    color: ${({ theme }) => theme.colors.textTertiary};
+    font-weight: ${({ theme }) => theme.fontWeights.medium};
+    color: ${({ theme }) => theme.colors.text};
   }
 `;
 
@@ -242,9 +237,9 @@ const ScrollToTop = styled.button`
 
 const Layout = ({ children }) => {
   const currentYear = new Date().getFullYear();
-  const [showScrollTop, setShowScrollTop] = React.useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   
-  React.useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
     };
@@ -261,12 +256,7 @@ const Layout = ({ children }) => {
     <LayoutWrapper>
       <Navigation />
       <Main>
-        <a href="#main-content" className="skip-to-content">
-          Skip to content
-        </a>
-        <div id="main-content">
-          {children}
-        </div>
+        {children}
       </Main>
       <Footer>
         <FooterContent>
