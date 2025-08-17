@@ -17,10 +17,10 @@ const fadeInUp = keyframes`
   }
 `;
 
-const fadeIn = keyframes`
-  from { opacity: 0; }
-  to { opacity: 1; }
-`;
+// const fadeIn = keyframes`
+//   from { opacity: 0; }
+//   to { opacity: 1; }
+// `;
 
 const slideInRight = keyframes`
   from {
