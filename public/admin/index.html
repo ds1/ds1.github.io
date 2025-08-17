@@ -13,75 +13,92 @@
     // Register preview styles
     CMS.registerPreviewStyle("/admin/preview.css");
     
-    // Helper function to render markdown content
+    // Simplified markdown renderer - CHANGE: Made more efficient
     var renderMarkdown = function(content) {
       if (!content) return '';
       
-      // Ensure content is a string
-      content = String(content);
+      // Use CMS's built-in markdown parser if available
+      if (window.CMS && window.CMS.markdownToHtml) {
+        return window.CMS.markdownToHtml(content);
+      }
       
-      // Basic markdown to HTML conversion
+      // Fallback to basic conversion
+      content = String(content);
       var html = content;
       
-      // Convert headings
-      html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-      html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
-      html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+      // Batch all regex replacements for better performance
+      html = html
+        .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+        .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+        .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+        .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/\\n\\n/g, '</p><p>')
+        .replace(/\\n/g, '<br>');
       
-      // Convert bold and italic
-      html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
-      html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-      html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-      
-      // Convert line breaks  
-      html = html.replace(/\\n\\n/g, '</p><p>');
-      html = html.replace(/\\n/g, '<br>');
-      
-      // Wrap in paragraph tags if needed
       if (html && !html.startsWith('<')) {
         html = '<p>' + html + '</p>';
       }
       
-      // Handle color spans
-      html = html.replace(/<span class="(text-[^"]+)">/g, '<span class="$1">');
-      
       return html;
     };
     
-    // Helper to render list from markdown
+    // Optimized list renderer - CHANGE: More efficient
     var renderList = function(content) {
       if (!content) return '';
       
       content = String(content);
       
-      // Check if it's semicolon-separated
-      if (content.includes(';') && !content.includes('\n')) {
-        var items = content.split(';').filter(function(item) { return item.trim(); });
+      if (content.includes(';')) {
+        var items = content.split(';')
+          .map(function(item) { return item.trim(); })
+          .filter(Boolean);
+        
         return '<ul>' + items.map(function(item) {
-          return '<li>' + item.trim() + '</li>';
+          return '<li>' + item + '</li>';
         }).join('') + '</ul>';
       }
       
-      // Otherwise treat as markdown list
-      var html = content;
-      html = html.replace(/^\* (.+)$/gm, '<li>$1</li>');
-      html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
-      html = html.replace(/^\d+\. (.+)$/gm, '<li>$1</li>');
+      // For markdown lists
+      var lines = content.split('\n');
+      var listItems = [];
       
-      if (html.includes('<li>')) {
-        html = '<ul>' + html + '</ul>';
-      }
+      lines.forEach(function(line) {
+        var match = line.match(/^[\*\-\d+]\.\s+(.+)$/);
+        if (match) {
+          listItems.push('<li>' + match[1] + '</li>');
+        }
+      });
       
-      return html;
+      return listItems.length > 0 ? '<ul>' + listItems.join('') + '</ul>' : content;
     };
     
-    // Create flexible preview template for Case Studies
+    // CHANGE: Optimized preview component with deferred rendering
     var CaseStudyPreview = createClass({
+      getInitialState: function() {
+        return { rendered: false };
+      },
+      
+      componentDidMount: function() {
+        // Defer heavy rendering to next tick
+        var self = this;
+        setTimeout(function() {
+          self.setState({ rendered: true });
+        }, 0);
+      },
+      
       render: function() {
         var entry = this.props.entry;
-        var sections = entry.getIn(['data', 'content_sections']);
         
-        // Build array of child elements
+        // Show loading state initially
+        if (!this.state.rendered) {
+          return h('div', {className: 'frame-content'}, 
+            h('p', {}, 'Loading preview...')
+          );
+        }
+        
+        // Build preview content
         var children = [];
         
         // Add title
@@ -95,7 +112,7 @@
         if (subtitle) {
           children.push(h('p', {
             key: 'subtitle',
-            style: 'font-size: 1.25rem; color: #8be9fd;'
+            className: 'subtitle'
           }, subtitle));
         }
         
@@ -105,79 +122,90 @@
         var projectType = entry.getIn(['data', 'project_type']);
         
         if (duration || role || projectType) {
-          var metaChildren = [];
-          if (duration) metaChildren.push(h('span', {key: 'meta-duration'}, duration));
-          if (role) metaChildren.push(h('span', {key: 'meta-role'}, role));
-          if (projectType) metaChildren.push(h('span', {key: 'meta-type'}, projectType));
+          var metaItems = [];
+          if (duration) metaItems.push(duration);
+          if (role) metaItems.push(role);
+          if (projectType) metaItems.push(projectType);
           
           children.push(h('div', {
             key: 'metadata',
             className: 'case-study-meta'
-          }, metaChildren));
+          }, metaItems.join(' • ')));
         }
         
-        // Process content sections
-        if (sections && sections.size > 0) {
-          var sectionElements = [];
+        // Process content sections with guard
+        try {
+          var sections = entry.getIn(['data', 'content_sections']);
           
-          // Convert Immutable List to regular array for safer iteration
-          var sectionsArray = sections.toJS ? sections.toJS() : sections;
-          
-          if (Array.isArray(sectionsArray)) {
-            sectionsArray.forEach(function(section, index) {
-              if (!section || !section.content) return;
+          if (sections && sections.size > 0) {
+            // CHANGE: Use forEach directly on Immutable List
+            sections.forEach(function(section, index) {
+              if (!section) return;
+              
+              var content = section.get('content');
+              var type = section.get('type');
+              
+              if (!content) return;
               
               var key = 'section-' + index;
-              var type = section.type;
-              var content = section.content;
               
               switch(type) {
                 case 'h1':
-                  sectionElements.push(h('h1', {key: key}, content));
+                  children.push(h('h1', {key: key}, content));
                   break;
                 case 'h2':
-                  sectionElements.push(h('h2', {key: key}, content));
+                  children.push(h('h2', {key: key}, content));
                   break;
                 case 'h3':
-                  sectionElements.push(h('h3', {key: key}, content));
+                  children.push(h('h3', {key: key}, content));
                   break;
                 case 'body':
-                  sectionElements.push(h('div', {
+                  children.push(h('div', {
                     key: key,
+                    className: 'rich-text',
                     dangerouslySetInnerHTML: {__html: renderMarkdown(content)}
                   }));
                   break;
                 case 'list':
-                  sectionElements.push(h('div', {
+                  children.push(h('div', {
                     key: key,
+                    className: 'list-content',
                     dangerouslySetInnerHTML: {__html: renderList(content)}
                   }));
                   break;
                 case 'quote':
-                  sectionElements.push(h('blockquote', {key: key}, content));
+                  children.push(h('blockquote', {key: key}, content));
                   break;
                 case 'code':
-                  sectionElements.push(h('pre', {key: key}, 
+                  children.push(h('pre', {key: key}, 
                     h('code', {}, content)
                   ));
                   break;
                 default:
-                  sectionElements.push(h('p', {key: key}, content));
+                  children.push(h('p', {key: key}, content));
               }
             });
           }
-          
-          // Add all section elements to children
-          children = children.concat(sectionElements);
+        } catch (error) {
+          console.error('Error rendering sections:', error);
+          children.push(h('p', {key: 'error', className: 'error'}, 
+            'Error rendering content sections'
+          ));
         }
         
-        // Return single root div with all children
         return h('div', {className: 'frame-content'}, children);
       }
     });
     
     // Register the preview template
     CMS.registerPreviewTemplate("case_studies", CaseStudyPreview);
+    
+    // CHANGE: Add error boundary for the entire CMS
+    window.addEventListener('error', function(event) {
+      console.error('CMS Preview Error:', event.error);
+      // Prevent the error from bubbling up
+      event.preventDefault();
+    });
   </script>
 </body>
 </html>

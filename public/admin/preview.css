@@ -9,10 +9,39 @@
   margin: 0 auto;
 }
 
+/* CHANGE: Add subtitle styling */
+.subtitle {
+  font-size: 1.25rem;
+  color: #8be9fd;
+  margin-bottom: 1rem;
+}
+
+/* CHANGE: Add metadata styling */
+.case-study-meta {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #3b3e47;
+}
+
+/* CHANGE: Add error styling */
+.error {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
 .frame-content h1 {
   color: #ffffff;
   font-size: 2.5rem;
   margin: 2rem 0 1rem 0;
+}
+
+.frame-content h1:first-child {
+  margin-top: 0;
 }
 
 .frame-content h2 {
@@ -88,3 +117,10 @@
   border-radius: 8px;
   margin: 1.5rem 0;
 }
+
+/* CHANGE: Add text color classes for rich text */
+.text-primary { color: #61dafb; }
+.text-secondary { color: #8be9fd; }
+.text-success { color: #4ade80; }
+.text-warning { color: #fbbf24; }
+.text-error { color: #ef4444; }
