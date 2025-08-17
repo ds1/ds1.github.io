@@ -1,7 +1,7 @@
 // src/components/Navigation.js
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components'; // Added css import
 
 // Animations
 const slideIn = keyframes`
@@ -56,8 +56,8 @@ const NavWrapper = styled.header`
     pointer-events: none;
   }
   
-  /* Enhanced shadow on scroll */
-  ${({ $scrolled }) => $scrolled && `
+  /* Enhanced shadow on scroll - using css helper */
+  ${({ $scrolled }) => $scrolled && css`
     box-shadow: 
       0 1px 3px 0 rgba(26, 47, 42, 0.08),
       0 0 20px 0 rgba(22, 163, 74, 0.03);
@@ -89,6 +89,7 @@ const Logo = styled(NavLink)`
   position: relative;
   z-index: ${({ theme }) => theme.zIndex.sticky + 1};
   transition: all ${({ theme }) => theme.transitions.base};
+  font-family: ${({ theme }) => theme.fonts.heading};
   
   /* Gradient text on hover */
   background: linear-gradient(
@@ -181,7 +182,7 @@ const MobileMenuOverlay = styled.div`
   }
 `;
 
-// Enhanced mobile menu with glass morphism
+// Enhanced mobile menu with glass morphism - FIXED with css helper
 const MobileMenu = styled.div`
   display: none;
   
@@ -202,7 +203,7 @@ const MobileMenu = styled.div`
     box-shadow: -2px 0 20px rgba(26, 47, 42, 0.1);
     border-left: 1px solid ${({ theme }) => theme.colors.borderSubtle};
     
-    ${({ $isOpen }) => $isOpen && `
+    ${({ $isOpen }) => $isOpen && css`
       animation: ${slideIn} 0.3s ease-out;
     `}
   }
@@ -224,6 +225,7 @@ const NavLinkStyled = styled(NavLink)`
   position: relative;
   transition: all ${({ theme }) => theme.transitions.fast};
   padding: ${({ theme }) => theme.spacing.xs} 0;
+  font-family: ${({ theme }) => theme.fonts.body};
   
   /* Animated underline */
   &::after {
