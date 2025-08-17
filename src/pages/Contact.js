@@ -27,15 +27,6 @@ const slideInLeft = keyframes`
   }
 `;
 
-const shimmer = keyframes`
-  0% {
-    background-position: -100% 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
-`;
-
 const glow = keyframes`
   0%, 100% {
     box-shadow: 0 0 20px rgba(22, 163, 74, 0.1);
