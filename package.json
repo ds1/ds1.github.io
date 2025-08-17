@@ -21,7 +21,7 @@
     "postbuild": "node scripts/postbuild.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d docs",
-    "convert-content": "node scripts/convertContent.js && node scripts/convertCMSContent.js && node scripts/generateImageImports.js"
+    "convert-content": "node scripts/convertCMSContent.js && node scripts/generateImageImports.js"
   },
   "eslintConfig": {
     "extends": [

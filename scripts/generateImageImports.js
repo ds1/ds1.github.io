@@ -1,13 +1,13 @@
 const fs = require('fs');
-const csv = require('csvtojson');
 const path = require('path');
 
 async function generateImageImports() {
   try {
-    // Read CSV files
-    const caseStudies = await csv().fromFile(path.join(__dirname, '../content/caseStudies.csv'));
-    const caseStudyDetails = await csv().fromFile(path.join(__dirname, '../content/caseStudyDetails.csv'));
-    const aboutData = await csv().fromFile(path.join(__dirname, '../content/about.csv'));
+    // Read JSON data files (generated from CMS)
+    const dataDir = path.join(__dirname, '../src/data');
+    const caseStudies = JSON.parse(fs.readFileSync(path.join(dataDir, 'caseStudies.json'), 'utf8'));
+    const caseStudyDetails = JSON.parse(fs.readFileSync(path.join(dataDir, 'caseStudyDetails.json'), 'utf8'));
+    const aboutData = JSON.parse(fs.readFileSync(path.join(dataDir, 'about.json'), 'utf8'));
     
     // Use a Map to track unique image paths and their corresponding data
     const imagePathMap = new Map();
@@ -66,17 +66,41 @@ async function generateImageImports() {
       }
     };
     
-    // Process all CSV files for image paths
-    console.log('\nProcessing CSV files for image paths...');
-    [...caseStudies, ...caseStudyDetails, aboutData[0]].forEach(item => {
-      if (!item) return;
-      Object.entries(item).forEach(([key, value]) => {
-        if (typeof value === 'string' && value.includes('/images/')) {
-          console.log(`\nFound image path in ${key}:`);
-          processImagePath(value);
+    // Process all data files for image paths
+    console.log('\nProcessing data files for image paths...');
+    
+    // Process case studies
+    if (caseStudies.caseStudies) {
+      caseStudies.caseStudies.forEach(item => {
+        if (item.thumbnail) processImagePath(item.thumbnail);
+      });
+    }
+    
+    // Process case study details
+    if (caseStudyDetails.caseStudyDetails) {
+      caseStudyDetails.caseStudyDetails.forEach(item => {
+        if (item.thumbnail) processImagePath(item.thumbnail);
+        
+        // Process media array if exists
+        if (item.media && Array.isArray(item.media)) {
+          item.media.forEach(media => {
+            if (media.url) processImagePath(media.url);
+          });
+        }
+        
+        // Process old images array if exists (backward compatibility)
+        if (item.images && Array.isArray(item.images)) {
+          item.images.forEach(image => {
+            if (image.url) processImagePath(image.url);
+          });
         }
       });
-    });
+    }
+    
+    // Process about page
+    if (aboutData.profileImage) {
+      processImagePath(aboutData.profileImage);
+    }
 
     console.log('\nGenerating imports and imageMap...');
     
