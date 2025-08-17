@@ -1,95 +1,64 @@
-// src/pages/Resume.js
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import RichText from '../components/RichText';
 import resumeData from '../data/resume.json';
 
 // Animations
 const fadeInUp = keyframes`
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-`;
-
-const slideIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`;
-
-const pulse = keyframes`
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
   }
 `;
 
 const shimmer = keyframes`
   0% {
-    background-position: -200% center;
+    transform: translateX(-100%);
   }
   100% {
-    background-position: 200% center;
+    transform: translateX(100%);
   }
 `;
 
 const downloadIcon = keyframes`
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(-50%);
   }
-  25% {
-    transform: translateY(-3px);
-  }
-  75% {
-    transform: translateY(3px);
+  50% {
+    transform: translateY(calc(-50% + 4px));
   }
 `;
 
-// Main wrapper with refined spacing
+// Main wrapper
 const ResumeWrapper = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: ${({ theme }) => theme.spacing['2xl']} ${({ theme }) => theme.spacing.lg};
-  position: relative;
   
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: ${({ theme }) => theme.spacing['3xl']} 0;
   }
 `;
 
-// Enhanced page title with Geist font
+// Enhanced page title
 const PageTitle = styled.h1`
-  margin-bottom: ${({ theme }) => theme.spacing.lg};
-  color: ${({ theme }) => theme.colors.text};
   font-size: clamp(${({ theme }) => theme.fontSizes['3xl']}, 4vw, ${({ theme }) => theme.fontSizes['5xl']});
-  font-weight: ${({ theme }) => theme.fontWeights.black};
-  letter-spacing: ${({ theme }) => theme.letterSpacing.tighter};
-  line-height: 1.1;
-  font-feature-settings: "kern" 1, "liga" 1, "ss01" 1;
-  animation: ${fadeInUp} 0.6s ${({ theme }) => theme.transitions.easeOut};
-  
-  /* Gradient text effect */
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
   background: linear-gradient(
     135deg,
-    ${({ theme }) => theme.colors.primary} 0%,
-    ${({ theme }) => theme.colors.primary} 60%,
+    ${({ theme }) => theme.colors.text} 0%,
     ${({ theme }) => theme.colors.secondary} 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: ${fadeInUp} 0.6s ${({ theme }) => theme.transitions.easeOut};
+  letter-spacing: ${({ theme }) => theme.letterSpacing.tight};
+  line-height: ${({ theme }) => theme.lineHeights.tight};
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: ${({ theme }) => theme.fontSizes['3xl']};
@@ -135,7 +104,7 @@ const DownloadButton = styled.a`
     ${({ theme }) => theme.colors.primary} 100%
   );
   color: ${({ theme }) => theme.colors.background};
-  padding: ${({ theme }) => theme.spacing.base} ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => theme.spacing.base} ${({ theme }) => theme.spacing['3xl']} ${({ theme }) => theme.spacing.base} ${({ theme }) => theme.spacing.xl};
   text-decoration: none;
   border-radius: ${({ theme }) => theme.borderRadius.lg};
   margin: ${({ theme }) => theme.spacing['2xl']} 0;
@@ -146,7 +115,7 @@ const DownloadButton = styled.a`
   border: none;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: ${({ theme }) => theme.shadows.lg};
   animation: ${fadeInUp} 0.6s 0.2s both ${({ theme }) => theme.transitions.easeOut};
   transition: all ${({ theme }) => theme.transitions.base};
@@ -166,13 +135,20 @@ const DownloadButton = styled.a`
     transition: transform 0.6s;
   }
   
-  /* Ripple effect */
+  /* Down arrow icon - FIXED vertical centering */
   &::after {
     content: '↓';
     position: absolute;
-    right: ${({ theme }) => theme.spacing.lg};
+    right: ${({ theme }) => theme.spacing.xl};
+    top: 50%;
+    transform: translateY(-50%);
     font-size: ${({ theme }) => theme.fontSizes.xl};
     animation: ${downloadIcon} 2s ease-in-out infinite;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
   }
 
   &:hover {
@@ -207,7 +183,7 @@ const DownloadButton = styled.a`
     display: flex;
     width: 100%;
     justify-content: center;
-    padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.xl};
+    padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing['3xl']} ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.xl};
     margin: ${({ theme }) => theme.spacing.xl} 0;
     font-size: ${({ theme }) => theme.fontSizes.base};
     
@@ -217,6 +193,10 @@ const DownloadButton = styled.a`
     
     &:active {
       transform: scale(0.98);
+    }
+    
+    &::after {
+      right: ${({ theme }) => theme.spacing.lg};
     }
   }
 `;
@@ -233,53 +213,59 @@ const ContentSection = styled.div`
 
 // Glass morphism content card
 const ResumeContent = styled.div`
-  backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
-  background: ${({ theme }) => theme.colors.glassSurface};
-  padding: ${({ theme }) => theme.spacing['2xl']};
-  border-radius: ${({ theme }) => theme.borderRadius.lg};
-  border: 1px solid ${({ theme }) => theme.colors.borderSubtle};
-  box-shadow: ${({ theme }) => theme.shadows.base};
+  backdrop-filter: blur(10px);
+  background: ${({ theme }) => 
+    theme.mode === 'dark' 
+      ? 'rgba(255, 255, 255, 0.03)' 
+      : 'rgba(255, 255, 255, 0.9)'
+  };
+  border: 1px solid ${({ theme }) => 
+    theme.mode === 'dark' 
+      ? 'rgba(255, 255, 255, 0.1)' 
+      : 'rgba(0, 0, 0, 0.1)'
+  };
+  border-radius: ${({ theme }) => theme.borderRadius.xl};
+  padding: ${({ theme }) => theme.spacing['3xl']};
+  box-shadow: ${({ theme }) => theme.shadows.xl};
   position: relative;
   overflow: hidden;
   
-  /* Subtle gradient overlay */
+  /* Gradient border effect */
   &::before {
     content: '';
     position: absolute;
     inset: 0;
+    border-radius: ${({ theme }) => theme.borderRadius.xl};
+    padding: 1px;
     background: linear-gradient(
       135deg,
-      ${({ theme }) => theme.colors.secondary}03 0%,
-      transparent 100%
+      ${({ theme }) => theme.colors.secondary}22,
+      transparent 50%,
+      ${({ theme }) => theme.colors.primary}22
     );
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
     pointer-events: none;
   }
   
-  /* Enhanced typography */
   h2 {
-    margin-top: ${({ theme }) => theme.spacing['3xl']};
-    margin-bottom: ${({ theme }) => theme.spacing.lg};
-    color: ${({ theme }) => theme.colors.secondary};
+    color: ${({ theme }) => theme.colors.text};
     font-size: ${({ theme }) => theme.fontSizes['2xl']};
     font-weight: ${({ theme }) => theme.fontWeights.bold};
-    letter-spacing: ${({ theme }) => theme.letterSpacing.tight};
+    margin-top: ${({ theme }) => theme.spacing['2xl']};
+    margin-bottom: ${({ theme }) => theme.spacing.lg};
     position: relative;
-    animation: ${slideIn} 0.5s ${({ theme }) => theme.transitions.easeOut};
+    letter-spacing: ${({ theme }) => theme.letterSpacing.tight};
     
-    /* Decorative line */
+    /* Section underline */
     &::after {
       content: '';
       position: absolute;
-      bottom: -${({ theme }) => theme.spacing.xs};
+      bottom: -8px;
       left: 0;
       width: 60px;
       height: 3px;
-      background: linear-gradient(
-        90deg,
-        ${({ theme }) => theme.colors.secondary},
-        ${({ theme }) => theme.colors.accent}
-      );
+      background: ${({ theme }) => theme.colors.secondary};
       border-radius: ${({ theme }) => theme.borderRadius.full};
     }
     
@@ -288,18 +274,18 @@ const ResumeContent = styled.div`
     }
     
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-      margin-top: ${({ theme }) => theme.spacing['2xl']};
-      margin-bottom: ${({ theme }) => theme.spacing.base};
       font-size: ${({ theme }) => theme.fontSizes.xl};
+      margin-top: ${({ theme }) => theme.spacing.xl};
+      margin-bottom: ${({ theme }) => theme.spacing.base};
     }
   }
   
   h3 {
+    color: ${({ theme }) => theme.colors.text};
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+    font-weight: ${({ theme }) => theme.fontWeights.semibold};
     margin-top: ${({ theme }) => theme.spacing.xl};
     margin-bottom: ${({ theme }) => theme.spacing.sm};
-    color: ${({ theme }) => theme.colors.text};
-    font-size: ${({ theme }) => theme.fontSizes.xl};
-    font-weight: ${({ theme }) => theme.fontWeights.semibold};
     letter-spacing: ${({ theme }) => theme.letterSpacing.tight};
     
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
@@ -314,14 +300,27 @@ const ResumeContent = styled.div`
     line-height: ${({ theme }) => theme.lineHeights.relaxed};
     color: ${({ theme }) => theme.colors.textSecondary};
     font-weight: ${({ theme }) => theme.fontWeights.normal};
+    font-size: ${({ theme }) => theme.fontSizes.base};
+  }
+  
+  .role-date {
+    color: ${({ theme }) => theme.colors.text};
+    font-weight: ${({ theme }) => theme.fontWeights.medium};
+    margin-bottom: ${({ theme }) => theme.spacing.sm};
   }
   
   ul, ol {
-    margin-bottom: ${({ theme }) => theme.spacing.base};
+    margin-bottom: ${({ theme }) => theme.spacing.xl};
     padding-left: ${({ theme }) => theme.spacing.xl};
+    list-style: none;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
     
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
       padding-left: ${({ theme }) => theme.spacing.lg};
+      margin-bottom: ${({ theme }) => theme.spacing.lg};
     }
   }
   
@@ -330,80 +329,30 @@ const ResumeContent = styled.div`
     line-height: ${({ theme }) => theme.lineHeights.relaxed};
     color: ${({ theme }) => theme.colors.textSecondary};
     position: relative;
+    padding-left: ${({ theme }) => theme.spacing.lg};  /* Reduced from 2xl to lg */
+    border-radius: ${({ theme }) => theme.borderRadius.sm};
     
     /* Custom bullet style */
-    &::marker {
+    &::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
       color: ${({ theme }) => theme.colors.secondary};
       font-weight: ${({ theme }) => theme.fontWeights.bold};
     }
     
-    /* Hover effect for list items */
-    transition: all ${({ theme }) => theme.transitions.fast};
-    padding-left: ${({ theme }) => theme.spacing.xs};
-    margin-left: -${({ theme }) => theme.spacing.xs};
-    border-radius: ${({ theme }) => theme.borderRadius.sm};
-    
-    &:hover {
-      background: ${({ theme }) => theme.colors.backgroundSecondary};
-      padding-left: ${({ theme }) => theme.spacing.sm};
-    }
-    
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
       margin-bottom: ${({ theme }) => theme.spacing.sm};
-      font-size: ${({ theme }) => theme.fontSizes.base};
+      font-size: ${({ theme }) => theme.fontSizes.sm};
       line-height: ${({ theme }) => theme.lineHeights.relaxed};
     }
   }
   
-  /* Enhanced links */
-  a {
-    color: ${({ theme }) => theme.colors.secondary};
-    text-decoration: none;
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
-    position: relative;
-    transition: all ${({ theme }) => theme.transitions.fast};
-    
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: ${({ theme }) => theme.colors.secondary};
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform ${({ theme }) => theme.transitions.base};
-    }
-    
-    &:hover {
-      color: ${({ theme }) => theme.colors.primary};
-      
-      &::after {
-        transform: scaleX(1);
-      }
-    }
-  }
-  
-  /* Code blocks with enhanced styling */
-  code {
-    font-family: ${({ theme }) => theme.fonts.mono};
-    font-size: ${({ theme }) => theme.fontSizes.sm};
-    background: ${({ theme }) => theme.colors.codeBackground};
-    padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.sm};
-    border-radius: ${({ theme }) => theme.borderRadius.xs};
-    color: ${({ theme }) => theme.colors.secondary};
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
-    border: 1px solid ${({ theme }) => theme.colors.borderLight};
-  }
-  
-  /* Blockquotes with style */
+  /* Quote styling */
   blockquote {
-    border-left: 4px solid ${({ theme }) => theme.colors.secondary};
-    padding: ${({ theme }) => theme.spacing.base} ${({ theme }) => theme.spacing.lg};
     margin: ${({ theme }) => theme.spacing.xl} 0;
-    color: ${({ theme }) => theme.colors.textSecondary};
-    font-style: italic;
+    padding: ${({ theme }) => theme.spacing.lg};
+    border-left: 4px solid ${({ theme }) => theme.colors.secondary};
     background: ${({ theme }) => theme.colors.backgroundSecondary};
     border-radius: ${({ theme }) => theme.borderRadius.sm};
     position: relative;
@@ -426,6 +375,39 @@ const ResumeContent = styled.div`
 `;
 
 const Resume = () => {
+  // Parse the special resume content format
+  const parseResumeContent = (content) => {
+    if (!content || !Array.isArray(content)) return null;
+    
+    // Find the content object with the actual resume data
+    const resumeContentObj = content.find(item => 
+      item.content && item.content.includes('#h2#')
+    );
+    
+    if (!resumeContentObj || !resumeContentObj.content) return null;
+    
+    // Split the content by markers and parse
+    const parsedSections = [];
+    const lines = resumeContentObj.content.split('\\n');
+    
+    lines.forEach(line => {
+      if (line.startsWith('#h2#')) {
+        parsedSections.push({ type: 'h2', content: line.replace('#h2#', '') });
+      } else if (line.startsWith('#h3#')) {
+        parsedSections.push({ type: 'h3', content: line.replace('#h3#', '') });
+      } else if (line.startsWith('#p#')) {
+        parsedSections.push({ type: 'p', content: line.replace('#p#', '') });
+      } else if (line.startsWith('#list#')) {
+        const items = line.replace('#list#', '').split(';').filter(item => item.trim());
+        parsedSections.push({ type: 'list', items });
+      }
+    });
+    
+    return parsedSections;
+  };
+  
+  const parsedContent = parseResumeContent(resumeData.content);
+  
   return (
     <ResumeWrapper>
       <PageTitle>{resumeData.title}</PageTitle>
@@ -442,7 +424,41 @@ const Resume = () => {
       
       <ContentSection>
         <ResumeContent>
-          <RichText content={resumeData.content} />
+          {parsedContent && parsedContent.length > 0 ? (
+            parsedContent.map((section, index) => {
+              switch(section.type) {
+                case 'h2':
+                  return <h2 key={index}>{section.content}</h2>;
+                case 'h3':
+                  return <h3 key={index}>{section.content}</h3>;
+                case 'p':
+                  return (
+                    <p key={index} className={section.content.includes('|') ? 'role-date' : ''}>
+                      {section.content}
+                    </p>
+                  );
+                case 'list':
+                  return (
+                    <ul key={index}>
+                      {section.items.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  );
+                default:
+                  return null;
+              }
+            })
+          ) : (
+            <p style={{ 
+              textAlign: 'center', 
+              padding: '2rem',
+              color: 'var(--text-secondary)',
+              fontStyle: 'italic'
+            }}>
+              Resume content is being updated. Please download the PDF above for the complete resume.
+            </p>
+          )}
         </ResumeContent>
       </ContentSection>
     </ResumeWrapper>
