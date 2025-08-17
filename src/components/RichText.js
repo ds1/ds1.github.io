@@ -1,71 +1,96 @@
+// src/components/RichText.js
 import React from 'react';
 import styled from 'styled-components';
 
 const StyledText = styled.span`
-  /* All text classes now just use white */
-  &.text-primary { color: ${({ theme }) => theme.colors.text}; }
-  &.text-secondary { color: ${({ theme }) => theme.colors.text}; }
-  &.text-success { color: ${({ theme }) => theme.colors.text}; }
-  &.text-warning { color: ${({ theme }) => theme.colors.text}; }
-  &.text-error { color: ${({ theme }) => theme.colors.text}; }
+  /* Updated text classes with new theme colors */
+  &.text-primary { color: ${({ theme }) => theme.colors.secondary}; font-weight: 500; }
+  &.text-secondary { color: ${({ theme }) => theme.colors.accent}; font-weight: 500; }
+  &.text-success { color: ${({ theme }) => theme.colors.success}; font-weight: 500; }
+  &.text-warning { color: ${({ theme }) => theme.colors.warning}; font-weight: 500; }
+  &.text-error { color: ${({ theme }) => theme.colors.error}; font-weight: 500; }
 `;
 
 const Paragraph = styled.p`
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  line-height: ${({ theme }) => theme.lineHeights.relaxed};
+  color: ${({ theme }) => theme.colors.textSecondary};
+  font-size: ${({ theme }) => theme.fontSizes.base};
   white-space: pre-wrap;
   
-  @media (max-width: 768px) {
-    margin-bottom: 0.875rem;
-    line-height: 1.7; // Slightly more line height for mobile readability
-    font-size: 0.95rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin-bottom: ${({ theme }) => theme.spacing.md};
+    font-size: ${({ theme }) => theme.fontSizes.base};
   }
 `;
 
 const List = styled.ul`
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  list-style-type: disc;
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  padding-left: ${({ theme }) => theme.spacing.xl};
+  list-style-type: none;
+  position: relative;
   
-  @media (max-width: 768px) {
-    margin-bottom: 0.875rem;
-    padding-left: 1.25rem;
+  li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: ${({ theme }) => theme.colors.secondary};
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin-bottom: ${({ theme }) => theme.spacing.md};
+    padding-left: ${({ theme }) => theme.spacing.lg};
   }
 `;
 
 const NumberedList = styled.ol`
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  list-style-type: decimal;
-  counter-reset: ${props => props.start ? `list ${props.start - 1}` : 'none'};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  padding-left: ${({ theme }) => theme.spacing.xl};
+  list-style-type: none;
+  counter-reset: ${props => props.start ? `list ${props.start - 1}` : 'list'};
   
   & > li {
     counter-increment: list;
+    position: relative;
+    
+    &::before {
+      content: counter(list) ".";
+      position: absolute;
+      left: -${({ theme }) => theme.spacing.xl};
+      color: ${({ theme }) => theme.colors.secondary};
+      font-weight: ${({ theme }) => theme.fontWeights.semibold};
+    }
   }
   
-  & > li::marker {
-    content: counter(list) ". ";
-  }
-  
-  @media (max-width: 768px) {
-    margin-bottom: 0.875rem;
-    padding-left: 1.25rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin-bottom: ${({ theme }) => theme.spacing.md};
+    padding-left: ${({ theme }) => theme.spacing.lg};
   }
 `;
 
 const ListItem = styled.li`
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
+  line-height: ${({ theme }) => theme.lineHeights.relaxed};
+  color: ${({ theme }) => theme.colors.textSecondary};
+  position: relative;
+  padding-left: ${({ theme }) => theme.spacing.lg};
   
-  @media (max-width: 768px) {
-    margin-bottom: 0.625rem;
-    line-height: 1.7;
-    font-size: 0.95rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin-bottom: ${({ theme }) => theme.spacing.sm};
+    font-size: ${({ theme }) => theme.fontSizes.base};
   }
   
   /* Handle nested content with proper spacing */
-  strong, em {
-    line-height: inherit;
+  strong {
+    color: ${({ theme }) => theme.colors.text};
+    font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  }
+  
+  em {
+    font-style: italic;
+    color: ${({ theme }) => theme.colors.textSecondary};
   }
 `;
 
@@ -90,7 +115,7 @@ const processInlineFormatting = (text) => {
 
   // Now handle any remaining inline formatting
   processed = processed.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
-  processed = processed.replace(/\*\*(.*?)\*\*\*/g, '<strong>$1</strong>');
+  processed = processed.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   processed = processed.replace(/\*(.*?)\*/g, '<em>$1</em>');
 
   return processed;

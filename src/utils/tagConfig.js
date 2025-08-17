@@ -1,42 +1,42 @@
 // src/utils/tagConfig.js
 
 export const tagCategoryColors = {
-  // Tools categories
-  designTools: '#A259FF',    // Purple - for design tools
-  aiTools: '#FF6B6B',       // Coral red - for AI tools
-  devTools: '#4ECDC4',      // Teal - for development tools
+  // Tools categories - using sophisticated colors from the new theme
+  designTools: '#7C3AED',    // Purple
+  aiTools: '#3B82F6',        // Blue
+  devTools: '#14B8A6',       // Teal
   
   // Work categories
-  skills: '#61dafb',        // Light blue (your primary) - for skills
-  roles: '#FFD93D',         // Golden yellow - for roles
+  skills: '#10B981',         // Green
+  roles: '#F97316',          // Orange
   
   // Output categories
-  artifactTypes: '#95E1D3', // Mint green - for artifact types
-  fidelity: '#F38181',      // Salmon - for fidelity levels
+  artifactTypes: '#EC4899',  // Pink
+  fidelity: '#6366F1',       // Indigo
   
   // AI/Design categories
-  aiModels: '#FF8787',      // Light red - for AI models
-  designPrinciples: '#A8E6CF', // Pastel green - for design principles
-  usabilityHeuristics: '#C7CEEA' // Lavender - for usability heuristics
+  aiModels: '#EAB308',       // Yellow
+  designPrinciples: '#10B981', // Green
+  usabilityHeuristics: '#6366F1' // Indigo
 };
 
 // Category display names
 export const tagCategoryNames = {
   designTools: 'Design Tools',
   aiTools: 'AI Tools',
-  devTools: 'Development Tools',
+  devTools: 'Development',
   skills: 'Skills',
-  roles: 'Roles',
-  artifactTypes: 'Artifact Types',
+  roles: 'Role',
+  artifactTypes: 'Deliverables',
   fidelity: 'Fidelity',
   aiModels: 'AI Models',
   designPrinciples: 'Design Principles',
-  usabilityHeuristics: 'Usability Heuristics'
+  usabilityHeuristics: 'UX Heuristics'
 };
 
 // Helper to get color with opacity
 export const getTagColor = (category, opacity = 1) => {
-  const color = tagCategoryColors[category] || '#61dafb';
+  const color = tagCategoryColors[category] || '#5865F2';
   if (opacity === 1) return color;
   
   // Convert hex to rgba
