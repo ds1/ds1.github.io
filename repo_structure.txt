@@ -11,13 +11,64 @@ ds1.github.io/
 ├── .github/
 │   ├── workflows/
 │   │   └── build-and-deploy.yml
+├── build/
+│   ├── CNAME
+│   ├── DanSchmitzResume.pdf
+│   ├── asset-manifest.json
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+│   ├── admin/
+│   │   ├── config.yml
+│   │   ├── index.html
+│   │   └── preview.css
+│   ├── static/
+│   │   ├── css/
+│   │   │   ├── main.e6c13ad2.css
+│   │   │   └── main.e6c13ad2.css.map
+│   │   ├── js/
+│   │   │   ├── 453.d5c4626d.chunk.js
+│   │   │   ├── 453.d5c4626d.chunk.js.map
+│   │   │   ├── main.9e576024.js
+│   │   │   ├── main.9e576024.js.LICENSE.txt
+│   │   │   └── main.9e576024.js.map
+│   │   ├── media/
+│   │   │   ├── agt-domains-thumbnail.6550c4e58f4322fd8b2b.jpg
+│   │   │   ├── agt-ecosystem.ece1ae12655e74e070fb.jpg
+│   │   │   ├── agt-financial-model.ece1ae12655e74e070fb.jpg
+│   │   │   ├── agt-registry-architecture.ece1ae12655e74e070fb.jpg
+│   │   │   ├── agt-registry-discovery.ece1ae12655e74e070fb.jpg
+│   │   │   ├── agt-registry-thumbnail.f9f3b569928f175779aa.jpg
+│   │   │   ├── ai-collab-thumbnail.e648a515598d1a96888e.jpg
+│   │   │   ├── apple-thumbnail.bd3ca23da417abe2a296.jpg
+│   │   │   ├── collaboration-flow.a1d352b9c16b2e2cd84e.jpg
+│   │   │   ├── dan-eldorado.f8c402fa3e4c7948aeb4.jpg
+│   │   │   ├── dsdev-portal-grid.ece1ae12655e74e070fb.jpg
+│   │   │   ├── dsdev-portal-workflow.ece1ae12655e74e070fb.jpg
+│   │   │   ├── dsdev-preview-thumbnail.a3a3f05da89a9bd9e4a2.jpg
+│   │   │   ├── magic-leap-thumbnail.95ef1520708235a8cee5.gif
+│   │   │   ├── petal-metrics-thumbnail.1c2737daef8c52a18e08.gif
+│   │   │   ├── picksi-architecture.ece1ae12655e74e070fb.jpg
+│   │   │   ├── picksi-thumbnail.6550c4e58f4322fd8b2b.jpg
+│   │   │   ├── ptz-controller-thumbnail.6550c4e58f4322fd8b2b.jpg
+│   │   │   ├── ptz-legacy-vs-modern.7799c2a21668370e0fd2.gif
+│   │   │   ├── ptz-security-workflow.6550c4e58f4322fd8b2b.jpg
+│   │   │   ├── security-dashboard-architecture.ece1ae12655e74e070fb.jpg
+│   │   │   ├── security-dashboard-process.ece1ae12655e74e070fb.jpg
+│   │   │   ├── security-dashboard-thumbnail.274efa5a33eca7326d42.jpg
+│   │   │   ├── siteplan-architecture.ece1ae12655e74e070fb.jpg
+│   │   │   ├── siteplan-thumbnail.6550c4e58f4322fd8b2b.jpg
+│   │   │   ├── siteplan-workflow.ece1ae12655e74e070fb.jpg
+│   │   │   ├── system-architecture.437ccd342433e2127be1.jpg
+│   │   │   ├── thubble-dashboard.ece1ae12655e74e070fb.jpg
+│   │   │   ├── thubble-thumbnail.025063eef64c01438427.jpg
+│   │   │   ├── youtube-tts-interface.ece1ae12655e74e070fb.jpg
+│   │   │   ├── youtube-tts-thumbnail.6550c4e58f4322fd8b2b.jpg
+│   │   │   └── youtube-tts-workflow.ece1ae12655e74e070fb.jpg
 ├── content/
-│   ├── about.csv
-│   ├── caseStudies.csv
-│   ├── caseStudyDetails.csv
-│   ├── contact.csv
-│   ├── resume.csv
-│   └── tagCategories.csv
 │   ├── cms/
 │   │   ├── case-studies/
 │   │   │   ├── agt-ai-agent-domains.json
@@ -53,9 +104,9 @@ ds1.github.io/
 │   │   ├── js/
 │   │   │   ├── 453.d5c4626d.chunk.js
 │   │   │   ├── 453.d5c4626d.chunk.js.map
-│   │   │   ├── main.2689b9bf.js
-│   │   │   ├── main.2689b9bf.js.LICENSE.txt
-│   │   │   └── main.2689b9bf.js.map
+│   │   │   ├── main.d72a50df.js
+│   │   │   ├── main.d72a50df.js.LICENSE.txt
+│   │   │   └── main.d72a50df.js.map
 │   │   ├── media/
 │   │   │   ├── agt-domains-thumbnail.6550c4e58f4322fd8b2b.jpg
 │   │   │   ├── agt-ecosystem.ece1ae12655e74e070fb.jpg
@@ -65,7 +116,6 @@ ds1.github.io/
 │   │   │   ├── agt-registry-thumbnail.f9f3b569928f175779aa.jpg
 │   │   │   ├── ai-collab-thumbnail.e648a515598d1a96888e.jpg
 │   │   │   ├── apple-thumbnail.bd3ca23da417abe2a296.jpg
-│   │   │   ├── collaboration-flow.a1d352b9c16b2e2cd84e.jpg
 │   │   │   ├── dan-eldorado.f8c402fa3e4c7948aeb4.jpg
 │   │   │   ├── dsdev-portal-grid.ece1ae12655e74e070fb.jpg
 │   │   │   ├── dsdev-portal-workflow.ece1ae12655e74e070fb.jpg
@@ -83,7 +133,6 @@ ds1.github.io/
 │   │   │   ├── siteplan-architecture.ece1ae12655e74e070fb.jpg
 │   │   │   ├── siteplan-thumbnail.6550c4e58f4322fd8b2b.jpg
 │   │   │   ├── siteplan-workflow.ece1ae12655e74e070fb.jpg
-│   │   │   ├── system-architecture.437ccd342433e2127be1.jpg
 │   │   │   ├── thubble-dashboard.ece1ae12655e74e070fb.jpg
 │   │   │   ├── thubble-thumbnail.025063eef64c01438427.jpg
 │   │   │   ├── youtube-tts-interface.ece1ae12655e74e070fb.jpg
@@ -104,8 +153,6 @@ ds1.github.io/
 │   │   └── preview.css
 ├── scripts/
 │   ├── convertCMSContent.js
-│   ├── convertContent.js
-│   ├── copyImages.js
 │   ├── generateImageImports.js
 │   └── postbuild.js
 ├── src/

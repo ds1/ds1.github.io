@@ -61,9 +61,6 @@ git push origin main
 # ✅ GitHub Actions handles everything else
 ```
 
-### Monitor Deployments
-View build status at: https://github.com/ds1/ds1.github.io/actions
-
 ## 📝 Content Management System
 
 ### Accessing the CMS
@@ -79,7 +76,7 @@ All content is managed through the visual CMS interface. When you publish change
 4. Changes appear in 2-3 minutes
 
 ### Flexible Content Blocks
-The CMS now supports dynamic content sections instead of predetermined fields:
+The CMS supports dynamic content sections:
 
 #### Available Content Types
 - **Headings**: H1, H2, H3
@@ -108,68 +105,6 @@ The CMS now supports dynamic content sections instead of predetermined fields:
 7. Image: solution-screenshot.jpg
 8. Quote: "Client testimonial"
 ```
-
-## 🎨 Theme Management
-
-### Shared Theme System
-The site uses a unified CSS system that keeps the main site and CMS preview in sync.
-
-#### Theme Architecture
-```
-public/shared-theme.css     ← Single source of truth
-    ├── Used by main site
-    └── Used by CMS preview
-```
-
-### Changing Theme Colors
-
-#### Method 1: Edit CSS Variables (Simplest)
-Edit `public/shared-theme.css`:
-
-```css
-:root {
-  /* Update colors here - changes apply everywhere */
-  --color-primary: #61dafb;      /* Light blue */
-  --color-secondary: #8be9fd;    /* Lighter blue */
-  --color-background: #282c34;   /* Dark background */
-  --color-surface: #3b3e47;      /* Card background */
-  --color-text: #ffffff;         /* Main text */
-  --color-text-secondary: #b3b3b3; /* Muted text */
-}
-```
-
-After editing:
-```bash
-# Copy to production folder
-cp public/shared-theme.css docs/
-
-# Deploy
-git add .
-git commit -m "Update theme colors"
-git push origin main
-```
-
-#### Method 2: Theme.js Sync (Advanced)
-If you prefer to keep `theme.js` as source of truth:
-
-1. Edit `src/styles/theme.js`:
-```javascript
-rawColors: {
-  primary: '#61dafb',  // Change colors here
-  secondary: '#8be9fd',
-}
-```
-
-2. Run sync script:
-```bash
-npm run sync-theme
-```
-
-### Where Theme Changes Apply
-✅ Main website  
-✅ CMS preview pane  
-✅ All React components using CSS variables  
-✅ Future components automatically  
 
 ## 💻 Development Workflow
 
@@ -214,18 +149,14 @@ project-root/
 │   └── workflows/
 │       └── build-and-deploy.yml    # GitHub Actions automation
 ├── content/                        
-│   ├── *.csv                       # Legacy CSV files (not actively used)
 │   └── cms/                        # CMS-generated content
 │       └── case-studies/           # Individual JSON files from CMS
 ├── public/
-│   ├── shared-theme.css            # Unified theme styles
 │   └── admin/
 │       ├── index.html              # CMS interface
 │       └── config.yml              # CMS configuration
 ├── scripts/
-│   ├── convertContent.js           # Legacy CSV converter
 │   ├── convertCMSContent.js        # CMS → JSON converter
-│   └── syncTheme.js               # Theme sync (optional)
 ├── src/
 │   ├── components/                 # React components
 │   ├── data/                       # Generated JSON (don't edit)
@@ -252,20 +183,13 @@ project-root/
 ## 📚 Content Guidelines
 
 ### Rich Text Formatting
-In CSV files and CMS rich text fields:
+In CMS rich text fields:
 - **Bold**: `**text**`
 - **Italic**: `*text*`
 - **Bold+Italic**: `***text***`
 - **Line Break**: `\n`
 - **Paragraph Break**: `\n\n`
 - **Color Spans**: `<span class="text-primary">text</span>`
-
-### Available Color Classes
-- `text-primary` - Theme primary color
-- `text-secondary` - Theme secondary color
-- `text-success` - Green
-- `text-warning` - Yellow
-- `text-error` - Red
 
 ### Image Management
 - Store images in `src/images/`
@@ -285,11 +209,6 @@ In CSV files and CMS rich text fields:
 2. Re-authenticate with GitHub
 3. Check GitHub permissions
 
-### Theme Changes Not Showing
-1. Ensure you copied `shared-theme.css` to `docs/`
-2. Clear browser cache
-3. Check CSS syntax for errors
-
 ### Build Failures
 1. Check GitHub Actions logs
 2. Run locally to debug:
@@ -298,36 +217,12 @@ npm run convert-content
 npm run build
 ```
 
-## 🚀 Advanced Features
-
-### Custom Preview Styles
-The CMS preview pane uses the same styles as the live site through `shared-theme.css`. Changes to theme colors immediately reflect in both places.
-
-### Content Merge Strategy
-- CSV content is converted first
-- CMS content is merged, taking precedence for matching IDs
-- Both sources combine in the final JSON
-
-### Monitoring
-- **GitHub Actions**: https://github.com/ds1/ds1.github.io/actions
-- **Live Site**: https://schmitz.ai
-- **CMS**: https://schmitz.ai/admin/
-
-## 📮 Support
-
-For issues or questions:
-- Create an issue in this repository
-- Contact: dan@schmitz.ai
-
 ## 🎯 Key Commands Reference
 
 ```bash
 # Development
 npm start                    # Start local server
 npm run convert-content      # Manual content conversion
-
-# Theme Management
-npm run sync-theme          # Sync theme.js to CSS (optional)
 
 # Deployment (automatic via GitHub Actions)
 git push origin main        # Triggers auto-deploy
