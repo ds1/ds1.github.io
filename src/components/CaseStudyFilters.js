@@ -1,160 +1,329 @@
+// src/components/CaseStudyFilters.js
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { tagCategoryColors, tagCategoryNames, getTagColor } from '../utils/tagConfig';
 
+// Animations
+const slideDown = keyframes`
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+`;
+
+const pulse = keyframes`
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+`;
+
+// Refined filter container with glass morphism
 const FilterContainer = styled.div`
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background-color: ${({ theme }) => theme.colors.surface};
-  border-radius: 8px;
+  margin-bottom: ${({ theme }) => theme.spacing['2xl']};
+  padding: ${({ theme }) => theme.spacing.lg};
+  background: ${({ theme }) => theme.colors.surface};
+  backdrop-filter: blur(10px);
+  border-radius: ${({ theme }) => theme.borderRadius.lg};
+  border: 1px solid ${({ theme }) => theme.colors.borderLight};
+  position: relative;
+  box-shadow: 
+    ${({ theme }) => theme.shadows['inner-sm']},
+    ${({ theme }) => theme.shadows.sm};
+  
+  /* Subtle gradient overlay */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      ${({ theme }) => theme.colors.secondary}03 0%,
+      transparent 50%,
+      ${({ theme }) => theme.colors.accent}02 100%
+    );
+    pointer-events: none;
+  }
+  
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 `;
 
 const SearchSection = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: ${({ theme }) => theme.spacing.base};
   align-items: center;
-  margin-bottom: ${({ $hasFilters }) => $hasFilters ? '1.5rem' : '0'};
+  margin-bottom: ${({ $hasFilters, theme }) => $hasFilters ? theme.spacing.lg : '0'};
   
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: column;
     align-items: stretch;
+    gap: ${({ theme }) => theme.spacing.sm};
   }
 `;
 
 const SearchBarWrapper = styled.div`
   flex: 1;
   position: relative;
+  
+  /* Search icon */
+  &::before {
+    content: '🔍';
+    position: absolute;
+    left: ${({ theme }) => theme.spacing.base};
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    pointer-events: none;
+  }
 `;
 
 const SearchBar = styled.input`
   width: 100%;
-  padding: 0.75rem;
-  border: 2px solid ${({ theme }) => theme.colors.primary};
-  border-radius: 4px;
+  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.base};
+  padding-left: ${({ theme }) => theme.spacing['2xl']};
+  border: 2px solid ${({ theme }) => theme.colors.borderLight};
+  border-radius: ${({ theme }) => theme.borderRadius.full};
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
-  font-size: 1rem;
-
+  font-size: ${({ theme }) => theme.fontSizes.base};
+  font-weight: ${({ theme }) => theme.fontWeights.normal};
+  transition: all ${({ theme }) => theme.transitions.fast};
+  
   &:focus {
     outline: none;
     border-color: ${({ theme }) => theme.colors.secondary};
+    box-shadow: 0 0 0 3px ${({ theme }) => theme.colors.focusRing};
+    background-color: ${({ theme }) => theme.colors.surface};
   }
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.textSecondary};
+    color: ${({ theme }) => theme.colors.textTertiary};
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: 16px; /* Prevent iOS zoom */
   }
 `;
 
 const FilterToggleButton = styled.button`
-  padding: 0.75rem 1.5rem;
-  border: 2px solid ${({ theme, $active }) => $active ? theme.colors.primary : theme.colors.textSecondary};
-  background-color: ${({ theme, $active }) => $active ? theme.colors.primary : 'transparent'};
-  color: ${({ theme, $active }) => $active ? theme.colors.background : theme.colors.text};
-  border-radius: 4px;
-  font-size: 1rem;
+  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.lg};
+  border: 2px solid ${({ theme, $active }) => 
+    $active ? theme.colors.secondary : theme.colors.borderLight};
+  background: ${({ theme, $active }) => 
+    $active 
+      ? `linear-gradient(135deg, ${theme.colors.secondary}, ${theme.colors.secondary}DD)`
+      : theme.colors.surface};
+  color: ${({ theme, $active }) => 
+    $active ? theme.colors.background : theme.colors.text};
+  border-radius: ${({ theme }) => theme.borderRadius.full};
+  font-size: ${({ theme }) => theme.fontSizes.base};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all ${({ theme }) => theme.transitions.fast};
   white-space: nowrap;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  min-width: 120px;
+  gap: ${({ theme }) => theme.spacing.sm};
+  min-width: 140px;
   justify-content: center;
-
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.primary};
-    background-color: ${({ theme, $active }) => $active ? theme.colors.secondary : theme.colors.primary + '20'};
+  position: relative;
+  overflow: hidden;
+  
+  /* Ripple effect */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  &:active::before {
+    width: 200px;
+    height: 200px;
   }
 
-  @media (max-width: 768px) {
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: ${({ theme }) => theme.shadows.md};
+    border-color: ${({ theme }) => theme.colors.secondary};
+    background: ${({ theme, $active }) => 
+      $active 
+        ? `linear-gradient(135deg, ${theme.colors.secondary}DD, ${theme.colors.accent}DD)`
+        : theme.colors.backgroundSecondary};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     width: 100%;
   }
 `;
 
-const FilterIconWrapper = styled.span`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-`;
-
 const ChevronIcon = styled.span`
   display: inline-block;
-  font-size: 0.75rem;
-  transition: transform 0.2s ease;
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  transition: transform ${({ theme }) => theme.transitions.fast};
   transform: ${({ $rotated }) => $rotated ? 'rotate(180deg)' : 'rotate(0deg)'};
 `;
 
 const ActiveFilterIndicator = styled.span`
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background: ${({ theme }) => theme.colors.accent};
   color: ${({ theme }) => theme.colors.background};
-  padding: 0.125rem 0.375rem;
-  border-radius: 10px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  margin-left: 0.25rem;
+  padding: ${({ theme }) => theme.spacing['2xs']} ${({ theme }) => theme.spacing.xs};
+  border-radius: ${({ theme }) => theme.borderRadius.full};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  margin-left: ${({ theme }) => theme.spacing.xs};
+  animation: ${pulse} 2s ease-in-out infinite;
 `;
 
 const FiltersWrapper = styled.div`
-  max-height: ${({ $show }) => $show ? '1000px' : '0'};
   overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
+  transition: all ${({ theme }) => theme.transitions.slow};
+  max-height: ${({ $show }) => $show ? '1000px' : '0'};
+  opacity: ${({ $show }) => $show ? '1' : '0'};
+  
+  ${({ $show }) => $show && `
+    animation: ${slideDown} 0.3s ease-out;
+  `}
 `;
 
 const FilterSection = styled.div`
-  margin-bottom: 1.5rem;
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
   
   &:first-child {
-    margin-top: 0.5rem;
+    margin-top: ${({ theme }) => theme.spacing.xs};
+  }
+  
+  &:last-child {
+    margin-bottom: 0;
   }
 `;
 
 const FilterTitle = styled.h3`
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
   color: ${({ theme, $category }) => tagCategoryColors[$category] || theme.colors.textSecondary};
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: ${({ theme }) => theme.letterSpacing.wider};
+  opacity: 0.9;
 `;
 
 const TagGroup = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: ${({ theme }) => theme.spacing.sm};
 `;
 
 const Tag = styled.button`
-  padding: 0.375rem 0.75rem;
+  padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.base};
   border: 1px solid ${({ $category, $active }) => 
-    $active ? tagCategoryColors[$category] : getTagColor($category, 0.5)};
-  background-color: ${({ $category, $active }) => 
-    $active ? tagCategoryColors[$category] : getTagColor($category, 0.1)};
+    $active ? tagCategoryColors[$category] : getTagColor($category, 0.3)};
+  background: ${({ $category, $active }) => 
+    $active 
+      ? `linear-gradient(135deg, ${tagCategoryColors[$category]}DD, ${tagCategoryColors[$category]})`
+      : getTagColor($category, 0.05)};
   color: ${({ theme, $category, $active }) => 
     $active ? theme.colors.background : theme.colors.text};
-  border-radius: 20px;
-  font-size: 0.875rem;
+  border-radius: ${({ theme }) => theme.borderRadius.full};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all ${({ theme }) => theme.transitions.fast};
+  position: relative;
+  overflow: hidden;
+  
+  /* Subtle inner shadow when active */
+  ${({ $active, theme }) => $active && `
+    box-shadow: ${theme.shadows.inner};
+    transform: scale(0.98);
+  `}
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+  }
+  
+  &:active::before {
+    width: 100px;
+    height: 100px;
+  }
 
   &:hover {
+    transform: ${({ $active }) => $active ? 'scale(0.98)' : 'translateY(-1px)'};
+    box-shadow: ${({ theme, $active }) => 
+      $active ? theme.shadows.inner : theme.shadows.sm};
     border-color: ${({ $category }) => tagCategoryColors[$category]};
-    background-color: ${({ $category, $active }) => 
-      $active ? tagCategoryColors[$category] : getTagColor($category, 0.2)};
+    background: ${({ $category, $active }) => 
+      $active 
+        ? tagCategoryColors[$category]
+        : getTagColor($category, 0.15)};
   }
 `;
 
 const ClearButton = styled.button`
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
+  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.lg};
+  margin-top: ${({ theme }) => theme.spacing.lg};
   border: none;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background: linear-gradient(
+    135deg,
+    ${({ theme }) => theme.colors.primary},
+    ${({ theme }) => theme.colors.secondary}
+  );
   color: ${({ theme }) => theme.colors.background};
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme.borderRadius.sm};
   cursor: pointer;
-  font-size: 0.875rem;
-  transition: background-color 0.2s ease;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  transition: all ${({ theme }) => theme.transitions.fast};
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  &:active::before {
+    width: 200px;
+    height: 200px;
+  }
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.secondary};
+    transform: translateY(-1px);
+    box-shadow: ${({ theme }) => theme.shadows.md};
+    background: linear-gradient(
+      135deg,
+      ${({ theme }) => theme.colors.secondary},
+      ${({ theme }) => theme.colors.accent}
+    );
   }
 
   &:disabled {
@@ -164,17 +333,19 @@ const ClearButton = styled.button`
 `;
 
 const ResultCount = styled.p`
-  margin-top: 1rem;
+  margin-top: ${({ theme }) => theme.spacing.lg};
   margin-bottom: 0;
   color: ${({ theme }) => theme.colors.textSecondary};
-  font-size: 0.875rem;
-  padding-top: ${({ $hasFilters }) => $hasFilters ? '0' : '1rem'};
-  border-top: ${({ theme, $hasFilters }) => $hasFilters ? 'none' : `1px solid ${theme.colors.background}`};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  padding-top: ${({ theme, $hasFilters }) => 
+    $hasFilters ? '0' : theme.spacing.base};
+  border-top: ${({ theme, $hasFilters }) => 
+    $hasFilters ? 'none' : `1px solid ${theme.colors.borderLight}`};
 `;
 
 const SearchHighlight = styled.span`
-  color: ${({ theme }) => theme.colors.primary};
-  font-weight: 500;
+  color: ${({ theme }) => theme.colors.secondary};
+  font-weight: ${({ theme }) => theme.fontWeights.semibold};
 `;
 
 const CaseStudyFilters = ({ caseStudies, onFilter }) => {
@@ -257,7 +428,7 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
       if (searchTerm) {
         const searchLower = searchTerm.toLowerCase();
         
-        // Search in basic fields (title, description, subtitle, metadata)
+        // Search in basic fields
         let matchesSearch = 
           study.title?.toLowerCase().includes(searchLower) ||
           study.description?.toLowerCase().includes(searchLower) ||
@@ -266,7 +437,7 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
           study.duration?.toLowerCase().includes(searchLower) ||
           study.project_type?.toLowerCase().includes(searchLower);
         
-        // Search in all content sections (h1, h2, h3, body text, lists)
+        // Search in content sections
         if (!matchesSearch && study.content) {
           const contentText = study.content.map(section => {
             if (typeof section.content === 'string') {
@@ -280,18 +451,10 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
           matchesSearch = contentText.includes(searchLower);
         }
         
-        // Search in all tags
+        // Search in tags
         if (!matchesSearch && study.tags) {
           const allTags = Object.values(study.tags).flat().join(' ').toLowerCase();
           matchesSearch = allTags.includes(searchLower);
-        }
-        
-        // Search in images (alt text and captions)
-        if (!matchesSearch && study.images) {
-          const imageText = study.images.map(img => 
-            `${img.alt || ''} ${img.caption || ''}`
-          ).join(' ').toLowerCase();
-          matchesSearch = imageText.includes(searchLower);
         }
         
         if (!matchesSearch) return false;
@@ -321,7 +484,7 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
         <SearchBarWrapper>
           <SearchBar
             type="text"
-            placeholder="Search titles, content, tags, roles..."
+            placeholder="Search projects, skills, tools..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -332,13 +495,11 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
             onClick={() => setShowFilters(!showFilters)}
             $active={showFilters}
           >
-            <FilterIconWrapper>
-              <span>Filters</span>
-              {activeFilterCount > 0 && (
-                <ActiveFilterIndicator>{activeFilterCount}</ActiveFilterIndicator>
-              )}
-              <ChevronIcon $rotated={showFilters}>▼</ChevronIcon>
-            </FilterIconWrapper>
+            <span>Filters</span>
+            {activeFilterCount > 0 && (
+              <ActiveFilterIndicator>{activeFilterCount}</ActiveFilterIndicator>
+            )}
+            <ChevronIcon $rotated={showFilters}>▼</ChevronIcon>
           </FilterToggleButton>
         )}
       </SearchSection>
@@ -377,8 +538,8 @@ const CaseStudyFilters = ({ caseStudies, onFilter }) => {
 
       {(searchTerm || hasActiveFilters) && (
         <ResultCount $hasFilters={hasTagFilters}>
-          Found <SearchHighlight>{filteredCount}</SearchHighlight> case 
-          {filteredCount === 1 ? ' study' : ' studies'}
+          Found <SearchHighlight>{filteredCount}</SearchHighlight> project
+          {filteredCount === 1 ? '' : 's'}
           {searchTerm && (
             <> matching "<SearchHighlight>{searchTerm}</SearchHighlight>"</>
           )}

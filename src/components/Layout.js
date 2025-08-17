@@ -1,41 +1,119 @@
 // src/components/Layout.js
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Navigation from './Navigation';
 
+// Animations
+const float = keyframes`
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+`;
+
+const pulse = keyframes`
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+`;
+
+// Layout wrapper with enhanced background
 const LayoutWrapper = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
 `;
 
+// Main content area with decorative elements
 const Main = styled.main`
   flex: 1;
   width: 100%;
   position: relative;
   
-  /* Add subtle pattern background */
-  &::before {
+  /* Animated background orbs */
+  &::before,
+  &::after {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      radial-gradient(circle at 20% 80%, ${({ theme }) => theme.colors.secondary}05 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, ${({ theme }) => theme.colors.accent}05 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, ${({ theme }) => theme.colors.secondary}03 0%, transparent 50%);
+    border-radius: 50%;
+    filter: blur(60px);
     pointer-events: none;
     z-index: -1;
   }
+  
+  &::before {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(
+      circle,
+      ${({ theme }) => theme.colors.secondary}08 0%,
+      transparent 70%
+    );
+    top: -200px;
+    left: -200px;
+    animation: ${float} 20s ease-in-out infinite;
+  }
+  
+  &::after {
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(
+      circle,
+      ${({ theme }) => theme.colors.accent}05 0%,
+      transparent 70%
+    );
+    bottom: -300px;
+    right: -300px;
+    animation: ${float} 25s ease-in-out infinite reverse;
+  }
+  
+  /* Skip to content link for accessibility */
+  .skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: ${({ theme }) => theme.spacing.base};
+    background: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.background};
+    padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.base};
+    text-decoration: none;
+    z-index: ${({ theme }) => theme.zIndex.tooltip};
+    border-radius: ${({ theme }) => theme.borderRadius.sm};
+    font-weight: ${({ theme }) => theme.fontWeights.medium};
+    
+    &:focus {
+      top: ${({ theme }) => theme.spacing.base};
+    }
+  }
 `;
 
+// Enhanced footer with glass morphism
 const Footer = styled.footer`
   margin-top: ${({ theme }) => theme.spacing['4xl']};
   padding: ${({ theme }) => theme.spacing['2xl']} ${({ theme }) => theme.spacing.lg};
-  border-top: 1px solid ${({ theme }) => theme.colors.border};
-  background: ${({ theme }) => theme.colors.backgroundSecondary};
+  background: ${({ theme }) => theme.colors.glassSurface};
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid ${({ theme }) => theme.colors.borderSubtle};
+  position: relative;
+  
+  /* Decorative gradient line */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      ${({ theme }) => theme.colors.secondary} 20%,
+      ${({ theme }) => theme.colors.accent} 50%,
+      ${({ theme }) => theme.colors.secondary} 80%,
+      transparent 100%
+    );
+    animation: ${pulse} 4s ease-in-out infinite;
+  }
 `;
 
 const FooterContent = styled.div`
@@ -50,6 +128,7 @@ const FooterContent = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: column;
     text-align: center;
+    gap: ${({ theme }) => theme.spacing.base};
   }
 `;
 
@@ -57,48 +136,180 @@ const FooterText = styled.p`
   color: ${({ theme }) => theme.colors.textSecondary};
   font-size: ${({ theme }) => theme.fontSizes.sm};
   margin: 0;
+  letter-spacing: ${({ theme }) => theme.letterSpacing.normal};
+  
+  /* Year with special styling */
+  .year {
+    font-weight: ${({ theme }) => theme.fontWeights.semibold};
+    color: ${({ theme }) => theme.colors.textTertiary};
+  }
 `;
 
 const FooterLinks = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing.xl};
+  align-items: center;
   
-  a {
-    color: ${({ theme }) => theme.colors.textSecondary};
-    font-size: ${({ theme }) => theme.fontSizes.sm};
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
-    text-decoration: none;
-    transition: ${({ theme }) => theme.transitions.fast};
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    gap: ${({ theme }) => theme.spacing.lg};
+  }
+`;
+
+const FooterLink = styled.a`
+  color: ${({ theme }) => theme.colors.textSecondary};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  text-decoration: none;
+  transition: all ${({ theme }) => theme.transitions.fast};
+  position: relative;
+  padding: ${({ theme }) => theme.spacing.xs} 0;
+  
+  /* Hover indicator */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: ${({ theme }) => theme.colors.secondary};
+    transition: width ${({ theme }) => theme.transitions.base};
+  }
+  
+  &:hover {
+    color: ${({ theme }) => theme.colors.secondary};
+    transform: translateY(-1px);
     
-    &:hover {
-      color: ${({ theme }) => theme.colors.secondary};
+    &::after {
+      width: 100%;
     }
+  }
+  
+  /* Icon enhancement */
+  &[data-icon]::before {
+    content: attr(data-icon);
+    margin-right: ${({ theme }) => theme.spacing.xs};
+    opacity: 0.7;
+    transition: opacity ${({ theme }) => theme.transitions.fast};
+  }
+  
+  &:hover[data-icon]::before {
+    opacity: 1;
+  }
+`;
+
+// Scroll to top button
+const ScrollToTop = styled.button`
+  position: fixed;
+  bottom: ${({ theme }) => theme.spacing.xl};
+  right: ${({ theme }) => theme.spacing.xl};
+  width: 48px;
+  height: 48px;
+  border-radius: ${({ theme }) => theme.borderRadius.full};
+  background: linear-gradient(
+    135deg,
+    ${({ theme }) => theme.colors.secondary},
+    ${({ theme }) => theme.colors.accent}
+  );
+  color: ${({ theme }) => theme.colors.background};
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: ${({ theme }) => theme.shadows.lg};
+  transition: all ${({ theme }) => theme.transitions.base};
+  opacity: ${({ $visible }) => $visible ? 1 : 0};
+  pointer-events: ${({ $visible }) => $visible ? 'auto' : 'none'};
+  z-index: ${({ theme }) => theme.zIndex.sticky};
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: ${({ theme }) => theme.shadows.xl};
+  }
+  
+  &:active {
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    bottom: ${({ theme }) => theme.spacing.lg};
+    right: ${({ theme }) => theme.spacing.lg};
+    width: 44px;
+    height: 44px;
   }
 `;
 
 const Layout = ({ children }) => {
   const currentYear = new Date().getFullYear();
+  const [showScrollTop, setShowScrollTop] = React.useState(false);
+  
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   
   return (
     <LayoutWrapper>
       <Navigation />
-      <Main>{children}</Main>
+      <Main>
+        <a href="#main-content" className="skip-to-content">
+          Skip to content
+        </a>
+        <div id="main-content">
+          {children}
+        </div>
+      </Main>
       <Footer>
         <FooterContent>
-          <FooterText>© {currentYear} Dan Schmitz. All rights reserved.</FooterText>
+          <FooterText>
+            © <span className="year">{currentYear}</span> Dan Schmitz. All rights reserved.
+          </FooterText>
           <FooterLinks>
-            <a href="https://www.linkedin.com/in/schmitzdan" target="_blank" rel="noopener noreferrer">
+            <FooterLink 
+              href="https://www.linkedin.com/in/schmitzdan" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              data-icon="🔗"
+              aria-label="LinkedIn Profile"
+            >
               LinkedIn
-            </a>
-            <a href="https://github.com/ds1" target="_blank" rel="noopener noreferrer">
+            </FooterLink>
+            <FooterLink 
+              href="https://github.com/ds1" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              data-icon="⚡"
+              aria-label="GitHub Profile"
+            >
               GitHub
-            </a>
-            <a href="mailto:dan@schmitz.ai">
+            </FooterLink>
+            <FooterLink 
+              href="mailto:dan@schmitz.ai"
+              data-icon="✉"
+              aria-label="Send Email"
+            >
               Email
-            </a>
+            </FooterLink>
           </FooterLinks>
         </FooterContent>
       </Footer>
+      
+      <ScrollToTop 
+        onClick={scrollToTop} 
+        $visible={showScrollTop}
+        aria-label="Scroll to top"
+      >
+        ↑
+      </ScrollToTop>
     </LayoutWrapper>
   );
 };

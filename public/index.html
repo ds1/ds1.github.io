@@ -4,14 +4,111 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Dan Schmitz Portfolio" />
+    <meta name="theme-color" content="#1A2F2A" />
+    <meta name="description" content="Dan Schmitz - AI Product Design and Strategic Innovation Portfolio" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>SCHMITZ.AI</title>
+    
+    <!-- Preconnect to Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Critical Font Loading with Geist -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" as="style">
+    
+    <!-- Load Geist Fonts with swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Playfair Display for elegant headings option -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      /* Prevent FOUT with font loading */
+      body {
+        font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1;
+      }
+      
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Loading animation for initial render */
+      .app-loading {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #FFFDF7;
+        z-index: 9999;
+        animation: fadeOut 0.3s ease-out 0.5s forwards;
+      }
+      
+      .app-loading::after {
+        content: '';
+        width: 40px;
+        height: 40px;
+        border: 3px solid #E2E8E4;
+        border-top-color: #16A34A;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      @keyframes fadeOut {
+        to { 
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+      
+      /* Prevent layout shift during font load */
+      .font-loading * {
+        transition: none !important;
+      }
+    </style>
+    
+    <title>Dan Schmitz | AI Product Design & Strategy</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- Loading indicator -->
+    <div class="app-loading" id="app-loading"></div>
+    
     <div id="root"></div>
+    
+    <!-- Font loading optimization script -->
+    <script>
+      // Add font-loading class
+      document.documentElement.classList.add('font-loading');
+      
+      // Wait for fonts to load
+      if (document.fonts) {
+        Promise.all([
+          document.fonts.load('400 1em Geist'),
+          document.fonts.load('600 1em Geist'),
+          document.fonts.load('700 1em Geist')
+        ]).then(() => {
+          document.documentElement.classList.remove('font-loading');
+          // Remove loading screen
+          setTimeout(() => {
+            const loader = document.getElementById('app-loading');
+            if (loader) loader.style.display = 'none';
+          }, 600);
+        });
+      }
+    </script>
   </body>
 </html>
