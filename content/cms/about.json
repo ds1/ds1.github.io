@@ -1,0 +1,51 @@
+{
+  "headline": "Hi, I'm Dan Schmitz",
+  "introduction": "I'm an AI product designer and strategist with 12 years of professional experience in UX/UI design and technology commercialization",
+  "profileImage": "/images/dan-eldorado.jpg",
+  "facts": [
+    "\"I created this portfolio site with AI\"",
+    "\"12 years of professional product design experience\"",
+    "\"Master's in Technology Commercialization from McCombs (Valedictorian)\"",
+    "\"AI-Neurotechnology startup founder\"",
+    "\"Amateur paleontologist\"",
+    "\"Grandmaster of RISK: Global Domination\""
+  ],
+  "content_sections": [
+    {
+      "type": "body",
+      "content": "Hi, I'm Dan Schmitz"
+    },
+    {
+      "type": "body",
+      "content": "I'm an AI product designer and strategist with 12 years of professional experience in UX/UI design and technology commercialization"
+    },
+    {
+      "type": "body",
+      "content": "* I created this portfolio site with AI\n* 12 years of professional product design experience\n* Master's in Technology Commercialization from McCombs (Valedictorian)\n* AI-Neurotechnology startup founder\n* Amateur paleontologist\n* Grandmaster of RISK: Global Domination"
+    },
+    {
+      "type": "h1",
+      "content": "About Me"
+    },
+    {
+      "type": "body",
+      "content": "I'm an AI product design and strategist with 12 years of professional experience in UX/UI design and technology commercialization."
+    },
+    {
+      "type": "h2",
+      "content": "Professional Journey"
+    },
+    {
+      "type": "body",
+      "content": "Aiming to drive organizational innovation with a blend of strategic thinking and technical skills, backed by a Master's in Technology Commercialization (valedictorian) and a proven track record of transforming concepts into successful, market-validated products."
+    },
+    {
+      "type": "h2",
+      "content": "Current Focus"
+    },
+    {
+      "type": "body",
+      "content": "Committed to applying academic excellence and professional experience to create easy-to-use applications that integrate artificial intelligence."
+    }
+  ]
+}
