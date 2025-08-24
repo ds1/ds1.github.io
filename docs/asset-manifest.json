@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.c07120de.js",
+    "main.js": "/static/js/main.921c95ad.js",
     "static/js/453.d5c4626d.chunk.js": "/static/js/453.d5c4626d.chunk.js",
     "static/media/magic-leap-thumbnail.gif": "/static/media/magic-leap-thumbnail.95ef1520708235a8cee5.gif",
     "static/media/petal-metrics-thumbnail.gif": "/static/media/petal-metrics-thumbnail.1c2737daef8c52a18e08.gif",
     "static/media/dan-eldorado.jpg": "/static/media/dan-eldorado.f8c402fa3e4c7948aeb4.jpg",
-    "static/media/apple-thumbnail.jpg": "/static/media/apple-thumbnail.bd3ca23da417abe2a296.jpg",
+    "static/media/security-dashboard-thumbnail.jpg": "/static/media/security-dashboard-thumbnail.fec8a791424370c29dd2.jpg",
+    "static/media/thubble-thumbnail.jpg": "/static/media/thubble-thumbnail.d1888b06609550e0fb93.jpg",
+    "static/media/apple-thumbnail.jpg": "/static/media/apple-thumbnail.784ccc95f04f17f81615.jpg",
+    "static/media/thubble-dashboard.jpg": "/static/media/thubble-dashboard.136f6bf7b25fdcdcc114.jpg",
     "static/media/ai-collab-thumbnail.jpg": "/static/media/ai-collab-thumbnail.e648a515598d1a96888e.jpg",
-    "static/media/security-dashboard-thumbnail.jpg": "/static/media/security-dashboard-thumbnail.274efa5a33eca7326d42.jpg",
     "static/media/dsdev-preview-thumbnail.jpg": "/static/media/dsdev-preview-thumbnail.a3a3f05da89a9bd9e4a2.jpg",
     "static/media/agt-registry-thumbnail.jpg": "/static/media/agt-registry-thumbnail.f9f3b569928f175779aa.jpg",
-    "static/media/thubble-thumbnail.jpg": "/static/media/thubble-thumbnail.025063eef64c01438427.jpg",
     "static/media/agt-ecosystem.jpg": "/static/media/agt-ecosystem.ece1ae12655e74e070fb.jpg",
     "static/media/agt-financial-model.jpg": "/static/media/agt-financial-model.ece1ae12655e74e070fb.jpg",
     "static/media/agt-registry-architecture.jpg": "/static/media/agt-registry-architecture.ece1ae12655e74e070fb.jpg",
@@ -23,7 +24,6 @@
     "static/media/security-dashboard-process.jpg": "/static/media/security-dashboard-process.ece1ae12655e74e070fb.jpg",
     "static/media/siteplan-architecture.jpg": "/static/media/siteplan-architecture.ece1ae12655e74e070fb.jpg",
     "static/media/siteplan-workflow.jpg": "/static/media/siteplan-workflow.ece1ae12655e74e070fb.jpg",
-    "static/media/thubble-dashboard.jpg": "/static/media/thubble-dashboard.ece1ae12655e74e070fb.jpg",
     "static/media/youtube-tts-interface.jpg": "/static/media/youtube-tts-interface.ece1ae12655e74e070fb.jpg",
     "static/media/youtube-tts-workflow.jpg": "/static/media/youtube-tts-workflow.ece1ae12655e74e070fb.jpg",
     "static/media/agt-domains-thumbnail.jpg": "/static/media/agt-domains-thumbnail.6550c4e58f4322fd8b2b.jpg",
@@ -35,11 +35,11 @@
     "static/media/ptz-legacy-vs-modern.gif": "/static/media/ptz-legacy-vs-modern.7799c2a21668370e0fd2.gif",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.c07120de.js.map": "/static/js/main.c07120de.js.map",
+    "main.921c95ad.js.map": "/static/js/main.921c95ad.js.map",
     "453.d5c4626d.chunk.js.map": "/static/js/453.d5c4626d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.c07120de.js"
+    "static/js/main.921c95ad.js"
   ]
 }
