@@ -1,5 +1,5 @@
 // This file is auto-generated. Do not edit manually.
-// Generated 2025-08-16T20:47:32.521Z
+// Generated 2025-08-24T19:50:10.937Z
 
 import aicollabthumbnail from '../images/ai-collab-thumbnail.jpg';
 import applethumbnail from '../images/apple-thumbnail.jpg';
@@ -13,8 +13,6 @@ import ptzcontrollerthumbnail from '../images/ptz-controller-thumbnail.jpg';
 import siteplanthumbnail from '../images/siteplan-thumbnail.jpg';
 import securitydashboardthumbnail from '../images/security-dashboard-thumbnail.jpg';
 import picksithumbnail from '../images/picksi-thumbnail.jpg';
-import collaborationflow from '../images/collaboration-flow.jpg';
-import systemarchitecture from '../images/system-architecture.jpg';
 import agtregistryarchitecture from '../images/agt-registry-architecture.jpg';
 import agtregistrydiscovery from '../images/agt-registry-discovery.jpg';
 import thubbledashboard from '../images/thubble-dashboard.jpg';
@@ -47,8 +45,6 @@ export const imageMap = {
   '/images/siteplan-thumbnail.jpg': siteplanthumbnail,
   '/images/security-dashboard-thumbnail.jpg': securitydashboardthumbnail,
   '/images/picksi-thumbnail.jpg': picksithumbnail,
-  '/images/collaboration-flow.jpg': collaborationflow,
-  '/images/system-architecture.jpg': systemarchitecture,
   '/images/agt-registry-architecture.jpg': agtregistryarchitecture,
   '/images/agt-registry-discovery.jpg': agtregistrydiscovery,
   '/images/thubble-dashboard.jpg': thubbledashboard,
