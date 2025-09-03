@@ -1,27 +1,29 @@
 {
-  "id": 7,
-  "title": "YouTube Voice Studio",
-  "description": "Professional text-to-speech converter with Google Cloud integration and custom voice presets",
-  "subtitle": "Building a Professional TTS Platform for Content Creators",
-  "thumbnail": "/images/youtube-tts-thumbnail.jpg",
-  "thumbnail_type": "image",
-  "duration": "July 2024",
-  "role": "Full-Stack Developer & Cloud Architect",
   "project_type": "Developer Tool",
-  "business_model_h2": "",
-  "business_model_body": "",
-  "challenges_h2": "",
-  "challenges_body": "",
-  "design_tools": "",
-  "ai_tools": "",
-  "dev_tools": "",
-  "skills": "",
-  "roles": "",
-  "artifact_types": "",
-  "fidelity": "",
   "ai_models": "",
-  "design_principles": "",
-  "usability_heuristics": "",
+  "skills": "Cloud Services Integration;Adaptive Problem-Solving;Human-AI Collaboration;Solution Design;Full-Stack Development;Quality Engineering;Vibe Coding;Interaction Design",
+  "ai_tools": "Claude Opus 4.1;Google Vertex API;",
+  "media": [
+    {
+      "type": "image",
+      "url": "/images/youtube-tts-interface.jpg",
+      "alt": "GUI interface showing voice selection and parameter controls",
+      "caption": "Intuitive interface with custom voice presets and real-time testing"
+    },
+    {
+      "type": "image",
+      "url": "/images/youtube-tts-workflow.jpg",
+      "alt": "Complete workflow from script to professional narration",
+      "caption": "End-to-end process transforming markdown scripts into broadcast-quality audio"
+    }
+  ],
+  "fidelity": "",
+  "thumbnail": "/images/text-to-speech-converter-gui.png",
+  "artifact_types": "",
+  "thumbnail_type": "image",
+  "challenges_body": "",
+  "dev_tools": "Python;Google Cloud Platform;Text-to-Speech API;FFmpeg;PowerShell;CLI;Git",
+  "duration": "July 2025",
   "content_sections": [
     {
       "type": "h1",
@@ -73,21 +75,19 @@
     },
     {
       "type": "list",
-      "content": "Reduced narration time from hours to minutes for YouTube creators;Achieved $0.18 cost for 11,000 character script (vs. $200+ for voice actor);Created one-click setup eliminating 30+ minutes of configuration;Processed scripts up to 50,000 characters without quality loss;Built comprehensive documentation enabling self-service adoption;Established diagnostic suite reducing support time by 80%;Open-sourced solution benefiting creator community"
+      "content": "Reduced narration time from hours to minutes;Achieved $0.18 cost for 11,000 character script (vs. $200+ for voice actor);Created one-click setup eliminating 30+ minutes of configuration;Processed scripts up to 50,000 characters without quality loss;Built comprehensive documentation enabling self-service adoption;"
     }
   ],
-  "media": [
-    {
-      "type": "image",
-      "url": "/images/youtube-tts-interface.jpg",
-      "alt": "GUI interface showing voice selection and parameter controls",
-      "caption": "Intuitive interface with custom voice presets and real-time testing"
-    },
-    {
-      "type": "image",
-      "url": "/images/youtube-tts-workflow.jpg",
-      "alt": "Complete workflow from script to professional narration",
-      "caption": "End-to-end process transforming markdown scripts into broadcast-quality audio"
-    }
-  ]
+  "role": "Full-Stack Developer & Cloud Architect",
+  "business_model_body": "",
+  "subtitle": "App for narrating longform text with custom voices and settings",
+  "title": "Text-To-Speech Converter",
+  "design_principles": "",
+  "challenges_h2": "",
+  "design_tools": "",
+  "id": 7,
+  "description": "Production-ready text-to-speech pipeline with cost-effective cloud integration",
+  "usability_heuristics": "",
+  "roles": "",
+  "business_model_h2": ""
 }
