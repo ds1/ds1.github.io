@@ -1,8 +1,22 @@
 {
   "project_type": "Web3 Venture",
   "ai_models": "",
-  "skills": "",
-  "ai_tools": "",
+  "skills": "Blockchain;Vibe Coding;Autonomous System Design;Financial Analysis;Strategic Thinking;Web3;Community Management;Agentic Workflow;Protocol Development",
+  "ai_tools": "Claude Opus 4.1;LLM;Reasoning Model",
+  "media": [
+    {
+      "type": "image",
+      "url": "/images/agt-ecosystem.jpg",
+      "alt": "The .agt ecosystem showing agent discovery and communication",
+      "caption": "Visualization of how .agt domains enable the agentic web"
+    },
+    {
+      "type": "image",
+      "url": "/images/agt-financial-model.jpg",
+      "alt": "Financial model showing ROI projections and decision gates",
+      "caption": "Strategic financial planning with multiple growth scenarios"
+    }
+  ],
   "fidelity": "",
   "thumbnail": "/images/agt-domains-thumbnail.jpg",
   "artifact_types": "",
@@ -10,18 +24,6 @@
   "challenges_body": "",
   "dev_tools": "",
   "duration": "June 2025",
-  "role": "Founder & Strategic Architect",
-  "business_model_body": "",
-  "subtitle": "Launching the First TLD for the Agentic Web Revolution",
-  "title": ".agt: AI Agent Domains",
-  "design_principles": "",
-  "challenges_h2": "",
-  "design_tools": "",
-  "id": 8,
-  "description": "Web3 TLD registry for AI agents - pioneering the agentic web namespace",
-  "usability_heuristics": "",
-  "roles": "",
-  "business_model_h2": "",
   "content_sections": [
     {
       "type": "h1",
@@ -76,18 +78,16 @@
       "content": "Established .agt as the recognized namespace for AI agents;Created comprehensive documentation and implementation guides;Built educational platform at agtdomains.com;Developed naming conventions adopted by early agent builders;Achieved visibility in AI and Web3 communities;Demonstrated entrepreneurial execution with minimal capital;Positioned for explosive growth as agent economy emerges"
     }
   ],
-  "media": [
-    {
-      "type": "image",
-      "url": "/images/agt-ecosystem.jpg",
-      "alt": "The .agt ecosystem showing agent discovery and communication",
-      "caption": "Visualization of how .agt domains enable the agentic web"
-    },
-    {
-      "type": "image",
-      "url": "/images/agt-financial-model.jpg",
-      "alt": "Financial model showing ROI projections and decision gates",
-      "caption": "Strategic financial planning with multiple growth scenarios"
-    }
-  ]
+  "role": "Founder & Strategic Architect",
+  "business_model_body": "",
+  "subtitle": "Launching the First TLD for the Agentic Web Revolution",
+  "title": ".agt: AI Agent Domains",
+  "design_principles": "",
+  "challenges_h2": "",
+  "design_tools": "Figma;Canva",
+  "id": 8,
+  "description": "Web3 TLD registry for AI agents - pioneering the agentic web namespace",
+  "usability_heuristics": "",
+  "roles": "Agent Orchestration;Service Design;Marketing;UX Design;Business Development;Architect",
+  "business_model_h2": ""
 }
