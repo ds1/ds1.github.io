@@ -1,27 +1,29 @@
 {
-  "id": 13,
-  "title": "Pick.si Domain Directory",
-  "description": "Full-stack marketplace with custom WHOIS integration",
-  "subtitle": "AI-Era Domain Marketplace for Superintelligence",
-  "thumbnail": "/images/picksi-thumbnail.jpg",
-  "thumbnail_type": "image",
-  "duration": "November 2024 - Present",
-  "role": "Full-Stack Developer & Product Designer",
   "project_type": "Personal Venture",
-  "business_model_h2": "",
-  "business_model_body": "",
-  "challenges_h2": "",
-  "challenges_body": "",
-  "design_tools": "",
-  "ai_tools": "",
-  "dev_tools": "",
-  "skills": "",
-  "roles": "",
-  "artifact_types": "",
-  "fidelity": "",
   "ai_models": "",
-  "design_principles": "",
-  "usability_heuristics": "",
+  "skills": "Full-Stack Development;Distributed Systems;API Integration;Enterprise Production;Human-AI Collaboration;Business Development;",
+  "ai_tools": "Claude Sonnet 3",
+  "media": [
+    {
+      "type": "image",
+      "url": "/images/picksi-architecture.jpg",
+      "alt": "Pick.si system architecture",
+      "caption": "Full-stack architecture showing Django backend, React frontend, and Celery automation"
+    },
+    {
+      "type": "image",
+      "url": "/images/picksi-interface.jpg",
+      "alt": "Domain marketplace interface",
+      "caption": "Homepage showing domain search, filtering, and premium listings"
+    }
+  ],
+  "fidelity": "",
+  "thumbnail": "/images/pick-si-thumbnail.jpg",
+  "artifact_types": "",
+  "thumbnail_type": "image",
+  "challenges_body": "",
+  "dev_tools": "Django;React;Python;Stripe API;Webhooks;Celery;WHOIS API,Git;PowerShell;CLI;REST;Redis;PostgreSQL",
+  "duration": "September 2024 - November 2024",
   "content_sections": [
     {
       "type": "h1",
@@ -76,18 +78,16 @@
       "content": "Built complete marketplace handling 500+ .si domains;Achieved 95% WHOIS data accuracy through custom parsing;Implemented $50 showcase upgrades with Stripe ($2,500 MRR potential);Created dual-view system supporting 1000+ domains efficiently;Reduced domain update time from manual hours to automated minutes;Established SEO foundation for 'superintelligence domains' keyword;Developed reusable Django/React/Celery template for future marketplaces;Zero security incidents with token-based authentication system"
     }
   ],
-  "media": [
-    {
-      "type": "image",
-      "url": "/images/picksi-architecture.jpg",
-      "alt": "Pick.si system architecture",
-      "caption": "Full-stack architecture showing Django backend, React frontend, and Celery automation"
-    },
-    {
-      "type": "image",
-      "url": "/images/picksi-interface.jpg",
-      "alt": "Domain marketplace interface",
-      "caption": "Homepage showing domain search, filtering, and premium listings"
-    }
-  ]
+  "role": "Full-Stack Developer & Business Development",
+  "business_model_body": "",
+  "subtitle": "Development of Domain Name Marketplace SaaS",
+  "title": "Domain Name Marketplace",
+  "design_principles": "",
+  "challenges_h2": "",
+  "design_tools": "Material-UI;React",
+  "id": 13,
+  "description": "Full-stack SaaS marketplace",
+  "usability_heuristics": "",
+  "roles": "Developer;Cloud Architect",
+  "business_model_h2": ""
 }
