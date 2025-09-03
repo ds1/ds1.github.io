@@ -791,11 +791,35 @@
         }
       ],
       "tags": {
-        "designTools": [],
-        "aiTools": [],
+        "designTools": [
+          "Figma",
+          "Canva"
+        ],
+        "aiTools": [
+          "Claude Opus 4.1",
+          "LLM",
+          "Reasoning Model"
+        ],
         "devTools": [],
-        "skills": [],
-        "roles": [],
+        "skills": [
+          "Blockchain",
+          "Vibe Coding",
+          "Autonomous System Design",
+          "Financial Analysis",
+          "Strategic Thinking",
+          "Web3",
+          "Community Management",
+          "Agentic Workflow",
+          "Protocol Development"
+        ],
+        "roles": [
+          "Agent Orchestration",
+          "Service Design",
+          "Marketing",
+          "UX Design",
+          "Business Development",
+          "Architect"
+        ],
         "artifactTypes": [],
         "fidelity": [],
         "aiModels": [],

@@ -1,14 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.5403e68b.js",
+    "main.js": "/static/js/main.64fbbda7.js",
     "static/js/453.d5c4626d.chunk.js": "/static/js/453.d5c4626d.chunk.js",
     "static/media/magic-leap-thumbnail.gif": "/static/media/magic-leap-thumbnail.95ef1520708235a8cee5.gif",
     "static/media/petal-metrics-thumbnail.gif": "/static/media/petal-metrics-thumbnail.1c2737daef8c52a18e08.gif",
     "static/media/dan-eldorado.jpg": "/static/media/dan-eldorado.f8c402fa3e4c7948aeb4.jpg",
+    "static/media/agt-domains-thumbnail.jpg": "/static/media/agt-domains-thumbnail.6cff35be590726a30a1c.jpg",
     "static/media/security-dashboard-thumbnail.jpg": "/static/media/security-dashboard-thumbnail.fec8a791424370c29dd2.jpg",
+    "static/media/apple-thumbnail.jpg": "/static/media/apple-thumbnail.26bda3ba3e6f58933625.jpg",
     "static/media/thubble-thumbnail.jpg": "/static/media/thubble-thumbnail.d1888b06609550e0fb93.jpg",
-    "static/media/apple-thumbnail.jpg": "/static/media/apple-thumbnail.784ccc95f04f17f81615.jpg",
     "static/media/thubble-dashboard.jpg": "/static/media/thubble-dashboard.136f6bf7b25fdcdcc114.jpg",
     "static/media/ai-collab-thumbnail.jpg": "/static/media/ai-collab-thumbnail.e648a515598d1a96888e.jpg",
     "static/media/dsdev-preview-thumbnail.jpg": "/static/media/dsdev-preview-thumbnail.a3a3f05da89a9bd9e4a2.jpg",
@@ -29,16 +30,15 @@
     "static/media/picksi-thumbnail.jpg": "/static/media/picksi-thumbnail.6550c4e58f4322fd8b2b.jpg",
     "static/media/ptz-controller-thumbnail.jpg": "/static/media/ptz-controller-thumbnail.6550c4e58f4322fd8b2b.jpg",
     "static/media/ptz-security-workflow.jpg": "/static/media/ptz-security-workflow.6550c4e58f4322fd8b2b.jpg",
-    "static/media/siteplan-thumbnail.jpg": "/static/media/siteplan-thumbnail.6550c4e58f4322fd8b2b.jpg",
     "static/media/youtube-tts-thumbnail.jpg": "/static/media/youtube-tts-thumbnail.6550c4e58f4322fd8b2b.jpg",
     "static/media/ptz-legacy-vs-modern.gif": "/static/media/ptz-legacy-vs-modern.7799c2a21668370e0fd2.gif",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.5403e68b.js.map": "/static/js/main.5403e68b.js.map",
+    "main.64fbbda7.js.map": "/static/js/main.64fbbda7.js.map",
     "453.d5c4626d.chunk.js.map": "/static/js/453.d5c4626d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.5403e68b.js"
+    "static/js/main.64fbbda7.js"
   ]
 }
