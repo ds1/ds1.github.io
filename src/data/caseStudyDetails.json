@@ -59,8 +59,8 @@
     },
     {
       "id": 2,
-      "title": "Apple: Product Design Lead",
-      "subtitle": "Global Admin Application Redesign",
+      "title": "Apple Events Cloud Platform Redesign",
+      "subtitle": "Global Cloud Admin Application Redesign",
       "thumbnail": "/images/apple-thumbnail.jpg",
       "duration": "06/2022 - 08/2024",
       "role": "Product Design Lead",
@@ -115,19 +115,28 @@
       "media": [],
       "tags": {
         "designTools": [
-          "Principal / Lead Contributor"
+          "Sketch",
+          "Axure RP",
+          "Miro"
         ],
-        "aiTools": [
-          "Mockup",
-          "Design System",
-          "Interactive Prototype"
-        ],
+        "aiTools": [],
         "devTools": [
-          "Medium",
-          "High"
+          "Storybook"
         ],
-        "skills": [],
-        "roles": [],
+        "skills": [
+          "Information Architecture",
+          "User Research",
+          "Interaction Design",
+          "Visual Design",
+          "Service Design",
+          "Product Design",
+          "Design Management",
+          "Project Management"
+        ],
+        "roles": [
+          "Principal Product Designer",
+          "User Experience Researcher"
+        ],
         "artifactTypes": [],
         "fidelity": [],
         "aiModels": [],
