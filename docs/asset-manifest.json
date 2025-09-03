@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.921c95ad.js",
+    "main.js": "/static/js/main.5403e68b.js",
     "static/js/453.d5c4626d.chunk.js": "/static/js/453.d5c4626d.chunk.js",
     "static/media/magic-leap-thumbnail.gif": "/static/media/magic-leap-thumbnail.95ef1520708235a8cee5.gif",
     "static/media/petal-metrics-thumbnail.gif": "/static/media/petal-metrics-thumbnail.1c2737daef8c52a18e08.gif",
@@ -26,7 +26,6 @@
     "static/media/siteplan-workflow.jpg": "/static/media/siteplan-workflow.ece1ae12655e74e070fb.jpg",
     "static/media/youtube-tts-interface.jpg": "/static/media/youtube-tts-interface.ece1ae12655e74e070fb.jpg",
     "static/media/youtube-tts-workflow.jpg": "/static/media/youtube-tts-workflow.ece1ae12655e74e070fb.jpg",
-    "static/media/agt-domains-thumbnail.jpg": "/static/media/agt-domains-thumbnail.6550c4e58f4322fd8b2b.jpg",
     "static/media/picksi-thumbnail.jpg": "/static/media/picksi-thumbnail.6550c4e58f4322fd8b2b.jpg",
     "static/media/ptz-controller-thumbnail.jpg": "/static/media/ptz-controller-thumbnail.6550c4e58f4322fd8b2b.jpg",
     "static/media/ptz-security-workflow.jpg": "/static/media/ptz-security-workflow.6550c4e58f4322fd8b2b.jpg",
@@ -35,11 +34,11 @@
     "static/media/ptz-legacy-vs-modern.gif": "/static/media/ptz-legacy-vs-modern.7799c2a21668370e0fd2.gif",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.921c95ad.js.map": "/static/js/main.921c95ad.js.map",
+    "main.5403e68b.js.map": "/static/js/main.5403e68b.js.map",
     "453.d5c4626d.chunk.js.map": "/static/js/453.d5c4626d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.921c95ad.js"
+    "static/js/main.5403e68b.js"
   ]
 }
