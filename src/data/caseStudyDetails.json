@@ -1175,6 +1175,74 @@
     },
     {
       "id": 11,
+      "title": "Exelon: Nuclear Power Plant Digital Twin",
+      "subtitle": "",
+      "thumbnail": "/images/exelon-thumbnail.jpg",
+      "duration": "",
+      "role": "",
+      "content": [
+        {
+          "type": "p",
+          "content": "Enterprise Pilot Project",
+          "key": "project_type"
+        },
+        {
+          "type": "h1",
+          "content": "Overview",
+          "key": "section_0"
+        },
+        {
+          "type": "h2",
+          "content": "Connecting IoT sensors, machine learning, and augmented reality to make better decisions",
+          "key": "section_1"
+        },
+        {
+          "type": "body",
+          "content": "Nuclear engineers and managers are under pressure to make critical decisions when their power plant is operating with suboptimal conditions. Delays in this decision-making process have damaging effects. Because the data that inform these pressured decisions are often buried in reports, spreadsheets or isolated dashboards, it is time-consuming to digest and difficult to comprehend.\n\nTo solve this, I designed a digital replica of the plant that workers can monitor from anywhere. The solution exposes the plant’s hidden data and displays them in a way that alleviates stress and enables predictive maintenance. It was described as a 3D command center for these managers.\n\nWe moved from inception to functional prototype in 4 weeks with a team of four. My work included the storyboard, layout, Unity prototype, and visual design.",
+          "key": "section_2"
+        },
+        {
+          "type": "h2",
+          "content": "Objective",
+          "key": "section_3"
+        },
+        {
+          "type": "body",
+          "content": "Improve visibility into real-time status of plant and system health and asset utilization",
+          "key": "section_4"
+        },
+        {
+          "type": "h2",
+          "content": "Key Personas",
+          "key": "section_5"
+        },
+        {
+          "type": "body",
+          "content": "Nuclear power plant operations managers",
+          "key": "section_6"
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "/images/ekf5una5i2trablu.png"
+        }
+      ],
+      "tags": {
+        "designTools": [],
+        "aiTools": [],
+        "devTools": [],
+        "skills": [],
+        "roles": [],
+        "artifactTypes": [],
+        "fidelity": [],
+        "aiModels": [],
+        "designPrinciples": [],
+        "usabilityHeuristics": []
+      }
+    },
+    {
+      "id": 11,
       "title": "Security Dashboard",
       "subtitle": "Multi-site Construction Monitoring System",
       "thumbnail": "/images/security-dashboard-thumbnail.jpg",
