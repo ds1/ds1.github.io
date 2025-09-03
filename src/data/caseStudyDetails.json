@@ -980,7 +980,7 @@
       "title": "Site Plan Maker",
       "subtitle": "Professional Surveillance Planning Platform",
       "thumbnail": "/images/siteplan-thumbnail.jpg",
-      "duration": "November 2024 - Present",
+      "duration": "December 2024",
       "role": "Lead Product Designer & Developer",
       "content": [
         {
@@ -1082,9 +1082,27 @@
         }
       ],
       "tags": {
-        "designTools": [],
-        "aiTools": [],
-        "devTools": [],
+        "designTools": [
+          "Figma",
+          "CSS",
+          "HTML",
+          "JS"
+        ],
+        "aiTools": [
+          "Claude Sonnet 3.7",
+          "Google Cloud",
+          "Gemini"
+        ],
+        "devTools": [
+          "Firebase",
+          "Git",
+          "Node",
+          "Tailwind",
+          "Vite",
+          "PDF.js",
+          "Leaflet",
+          "GitHub"
+        ],
         "skills": [],
         "roles": [],
         "artifactTypes": [],

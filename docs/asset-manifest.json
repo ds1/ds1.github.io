@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.64fbbda7.js",
+    "main.js": "/static/js/main.5674da72.js",
     "static/js/453.d5c4626d.chunk.js": "/static/js/453.d5c4626d.chunk.js",
+    "static/media/siteplan-thumbnail.jpg": "/static/media/siteplan-thumbnail.64604d82841898f6ad7e.jpg",
     "static/media/magic-leap-thumbnail.gif": "/static/media/magic-leap-thumbnail.95ef1520708235a8cee5.gif",
     "static/media/petal-metrics-thumbnail.gif": "/static/media/petal-metrics-thumbnail.1c2737daef8c52a18e08.gif",
     "static/media/dan-eldorado.jpg": "/static/media/dan-eldorado.f8c402fa3e4c7948aeb4.jpg",
@@ -34,11 +35,11 @@
     "static/media/ptz-legacy-vs-modern.gif": "/static/media/ptz-legacy-vs-modern.7799c2a21668370e0fd2.gif",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.64fbbda7.js.map": "/static/js/main.64fbbda7.js.map",
+    "main.5674da72.js.map": "/static/js/main.5674da72.js.map",
     "453.d5c4626d.chunk.js.map": "/static/js/453.d5c4626d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.64fbbda7.js"
+    "static/js/main.5674da72.js"
   ]
 }
