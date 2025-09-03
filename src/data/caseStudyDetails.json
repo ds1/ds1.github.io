@@ -1427,11 +1427,11 @@
     },
     {
       "id": 13,
-      "title": "Pick.si Domain Directory",
-      "subtitle": "AI-Era Domain Marketplace for Superintelligence",
-      "thumbnail": "/images/picksi-thumbnail.jpg",
-      "duration": "November 2024 - Present",
-      "role": "Full-Stack Developer & Product Designer",
+      "title": "Domain Name Marketplace",
+      "subtitle": "Development of Domain Name Marketplace SaaS",
+      "thumbnail": "/images/pick-si-thumbnail.jpg",
+      "duration": "September 2024 - November 2024",
+      "role": "Full-Stack Developer & Business Development",
       "content": [
         {
           "type": "p",
@@ -1536,11 +1536,39 @@
         }
       ],
       "tags": {
-        "designTools": [],
-        "aiTools": [],
-        "devTools": [],
-        "skills": [],
-        "roles": [],
+        "designTools": [
+          "Material-UI",
+          "React"
+        ],
+        "aiTools": [
+          "Claude Sonnet 3"
+        ],
+        "devTools": [
+          "Django",
+          "React",
+          "Python",
+          "Stripe API",
+          "Webhooks",
+          "Celery",
+          "WHOIS API,Git",
+          "PowerShell",
+          "CLI",
+          "REST",
+          "Redis",
+          "PostgreSQL"
+        ],
+        "skills": [
+          "Full-Stack Development",
+          "Distributed Systems",
+          "API Integration",
+          "Enterprise Production",
+          "Human-AI Collaboration",
+          "Business Development"
+        ],
+        "roles": [
+          "Developer",
+          "Cloud Architect"
+        ],
         "artifactTypes": [],
         "fidelity": [],
         "aiModels": [],

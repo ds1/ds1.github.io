@@ -79,9 +79,9 @@
     },
     {
       "id": 13,
-      "title": "Pick.si Domain Directory",
-      "description": "Full-stack marketplace with custom WHOIS integration",
-      "thumbnail": "/images/picksi-thumbnail.jpg",
+      "title": "Domain Name Marketplace",
+      "description": "Full-stack SaaS marketplace",
+      "thumbnail": "/images/pick-si-thumbnail.jpg",
       "thumbnail_type": "image"
     }
   ]
