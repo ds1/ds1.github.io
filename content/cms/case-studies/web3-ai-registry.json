@@ -1,27 +1,29 @@
 {
-  "id": 5,
-  "title": "Web3 AI Registry",
-  "description": "Decentralized discovery platform for AI agents using custom MCP servers and .agt domains on Polygon blockchain",
-  "subtitle": "Building a Decentralized MCP Server Discovery Platform",
-  "thumbnail": "/images/agt-registry-thumbnail.jpg",
-  "thumbnail_type": "image",
-  "duration": "July 2025",
-  "role": "Full-Stack Developer & Web3 Architect",
   "project_type": "Personal Project",
-  "business_model_h2": "",
-  "business_model_body": "",
-  "challenges_h2": "",
-  "challenges_body": "",
-  "design_tools": "",
-  "ai_tools": "",
-  "dev_tools": "",
-  "skills": "",
-  "roles": "",
-  "artifact_types": "",
-  "fidelity": "",
   "ai_models": "",
-  "design_principles": "",
-  "usability_heuristics": "",
+  "skills": "MCP Server Development;WebSockets;Blockchain;Smart Contracts;Frontend Development;Agent Development;Blockchain;Agentic Workflows;DevOps;Vibe Coding",
+  "ai_tools": "Claude Opus 4.1;Gemini",
+  "media": [
+    {
+      "type": "image",
+      "url": "/images/agt-registry-architecture.jpg",
+      "alt": "System architecture showing smart contract, frontend, and MCP layers",
+      "caption": "Three-tier architecture of the decentralized registry system"
+    },
+    {
+      "type": "image",
+      "url": "/images/agt-registry-discovery.jpg",
+      "alt": "Discovery page showing registered agents with capabilities",
+      "caption": "Live discovery interface with search and filter functionality"
+    }
+  ],
+  "fidelity": "",
+  "thumbnail": "/images/agt-registry-discovery.jpg",
+  "artifact_types": "",
+  "thumbnail_type": "image",
+  "challenges_body": "",
+  "dev_tools": "MCP (Model Context Protocol);Git;Node;Vercel;TypeScript;Polygon Amoy testnet;Replit;Next.js;Tailwind CSS;Solidity;Hardhat;OpenZeppelin;RainbowKit;WebSocket;JSON-RPC 2.0;Node",
+  "duration": "August 2025",
   "content_sections": [
     {
       "type": "h1",
@@ -73,21 +75,19 @@
     },
     {
       "type": "list",
-      "content": "Successfully deployed on Polygon Amoy testnet with verified contracts;Registered multiple live AI agents including Keyword Scout and Test Agent;Created reusable MCP server templates for rapid agent development;Established capability taxonomy for AI service discovery;Built working proof-of-concept for decentralized AI marketplace;Open-sourced entire codebase for community development"
+      "content": "Successfully deployed on Polygon Amoy testnet with verified contracts;Registered multiple, custom AI agents;Created reusable MCP server templates for rapid agent development;Established capability taxonomy for AI service discovery;Built working proof-of-concept for decentralized AI marketplace;"
     }
   ],
-  "media": [
-    {
-      "type": "image",
-      "url": "/images/agt-registry-architecture.jpg",
-      "alt": "System architecture showing smart contract, frontend, and MCP layers",
-      "caption": "Three-tier architecture of the decentralized registry system"
-    },
-    {
-      "type": "image",
-      "url": "/images/agt-registry-discovery.jpg",
-      "alt": "Discovery page showing registered agents with capabilities",
-      "caption": "Live discovery interface with search and filter functionality"
-    }
-  ]
+  "role": "Full-Stack Developer & Web3 Architect",
+  "business_model_body": "",
+  "subtitle": "Building a Decentralized MCP Server Discovery Platform",
+  "title": "Web3 MCP Server Registry",
+  "design_principles": "",
+  "challenges_h2": "",
+  "design_tools": "",
+  "id": 5,
+  "description": "Decentralized discovery platform for AI agents using custom MCP servers and .agt domains on Polygon blockchain",
+  "usability_heuristics": "",
+  "roles": "AI System Architect;Full-Stack Developer;Web3 Architect;Blockchain Developer;Frontend Developer;Orchestrator;Business Development;Designer;",
+  "business_model_h2": ""
 }
