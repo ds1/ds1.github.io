@@ -1103,8 +1103,23 @@
           "Leaflet",
           "GitHub"
         ],
-        "skills": [],
-        "roles": [],
+        "skills": [
+          "Interaction Design",
+          "User Research",
+          "Prototyping",
+          "Frontend Development",
+          "Architecture",
+          "Visual Design",
+          "Enterprise Tools",
+          "Vibe Coding"
+        ],
+        "roles": [
+          "Prototyper",
+          "Developer",
+          "Visual Designer",
+          "User Experience Researcher",
+          "Project Manager"
+        ],
         "artifactTypes": [],
         "fidelity": [],
         "aiModels": [],
