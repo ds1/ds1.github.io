@@ -290,10 +290,10 @@
     },
     {
       "id": 5,
-      "title": "Web3 AI Registry",
+      "title": "Web3 MCP Server Registry",
       "subtitle": "Building a Decentralized MCP Server Discovery Platform",
-      "thumbnail": "/images/agt-registry-thumbnail.jpg",
-      "duration": "July 2025",
+      "thumbnail": "/images/agt-registry-discovery.jpg",
+      "duration": "August 2025",
       "role": "Full-Stack Developer & Web3 Architect",
       "content": [
         {
@@ -372,11 +372,10 @@
           "type": "list",
           "content": [
             "Successfully deployed on Polygon Amoy testnet with verified contracts",
-            "Registered multiple live AI agents including Keyword Scout and Test Agent",
+            "Registered multiple, custom AI agents",
             "Created reusable MCP server templates for rapid agent development",
             "Established capability taxonomy for AI service discovery",
-            "Built working proof-of-concept for decentralized AI marketplace",
-            "Open-sourced entire codebase for community development"
+            "Built working proof-of-concept for decentralized AI marketplace"
           ],
           "key": "section_12"
         }
@@ -397,10 +396,50 @@
       ],
       "tags": {
         "designTools": [],
-        "aiTools": [],
-        "devTools": [],
-        "skills": [],
-        "roles": [],
+        "aiTools": [
+          "Claude Opus 4.1",
+          "Gemini"
+        ],
+        "devTools": [
+          "MCP (Model Context Protocol)",
+          "Git",
+          "Node",
+          "Vercel",
+          "TypeScript",
+          "Polygon Amoy testnet",
+          "Replit",
+          "Next.js",
+          "Tailwind CSS",
+          "Solidity",
+          "Hardhat",
+          "OpenZeppelin",
+          "RainbowKit",
+          "WebSocket",
+          "JSON-RPC 2.0",
+          "Node"
+        ],
+        "skills": [
+          "MCP Server Development",
+          "WebSockets",
+          "Blockchain",
+          "Smart Contracts",
+          "Frontend Development",
+          "Agent Development",
+          "Blockchain",
+          "Agentic Workflows",
+          "DevOps",
+          "Vibe Coding"
+        ],
+        "roles": [
+          "AI System Architect",
+          "Full-Stack Developer",
+          "Web3 Architect",
+          "Blockchain Developer",
+          "Frontend Developer",
+          "Orchestrator",
+          "Business Development",
+          "Designer"
+        ],
         "artifactTypes": [],
         "fidelity": [],
         "aiModels": [],
