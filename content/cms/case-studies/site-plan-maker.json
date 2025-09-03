@@ -1,27 +1,29 @@
 {
-  "id": 10,
-  "title": "Site Plan Maker",
-  "description": "Professional surveillance planning platform with interactive mapping and PDF overlays",
-  "subtitle": "Professional Surveillance Planning Platform",
-  "thumbnail": "/images/siteplan-thumbnail.jpg",
-  "thumbnail_type": "image",
-  "duration": "November 2024 - Present",
-  "role": "Lead Product Designer & Developer",
   "project_type": "Enterprise Tool",
-  "business_model_h2": "",
-  "business_model_body": "",
-  "challenges_h2": "",
-  "challenges_body": "",
-  "design_tools": "",
-  "ai_tools": "",
-  "dev_tools": "",
-  "skills": "",
-  "roles": "",
-  "artifact_types": "",
-  "fidelity": "",
   "ai_models": "",
-  "design_principles": "",
-  "usability_heuristics": "",
+  "skills": "",
+  "ai_tools": "Claude Sonnet 3.7;Google Cloud;Gemini",
+  "media": [
+    {
+      "type": "image",
+      "url": "/images/siteplan-workflow.jpg",
+      "alt": "Site planning workflow diagram",
+      "caption": "Step-by-step process from PDF upload to final export"
+    },
+    {
+      "type": "image",
+      "url": "/images/siteplan-architecture.jpg",
+      "alt": "System architecture diagram",
+      "caption": "Three-tier architecture showing data flow and integrations"
+    }
+  ],
+  "fidelity": "",
+  "thumbnail": "/images/siteplan-thumbnail.jpg",
+  "artifact_types": "",
+  "thumbnail_type": "image",
+  "challenges_body": "",
+  "dev_tools": "Firebase;Git;Node;Tailwind;Vite;PDF.js;Leaflet;GitHub",
+  "duration": "December 2024",
   "content_sections": [
     {
       "type": "h1",
@@ -76,18 +78,16 @@
       "content": "Reduced surveillance planning time by 75% through automation;Eliminated coverage blind spots with precise FOV calculations;Enabled remote collaboration between distributed teams;Generated 200+ professional site plans in first month;Achieved 95% user satisfaction score from field technicians;Established new industry standard for surveillance planning tools"
     }
   ],
-  "media": [
-    {
-      "type": "image",
-      "url": "/images/siteplan-workflow.jpg",
-      "alt": "Site planning workflow diagram",
-      "caption": "Step-by-step process from PDF upload to final export"
-    },
-    {
-      "type": "image",
-      "url": "/images/siteplan-architecture.jpg",
-      "alt": "System architecture diagram",
-      "caption": "Three-tier architecture showing data flow and integrations"
-    }
-  ]
+  "role": "Lead Product Designer & Developer",
+  "business_model_body": "",
+  "subtitle": "Professional Surveillance Planning Platform",
+  "title": "Site Plan Maker",
+  "design_principles": "",
+  "challenges_h2": "",
+  "design_tools": "Figma;CSS;HTML;JS",
+  "id": 10,
+  "description": "Professional surveillance planning platform with interactive mapping and PDF overlays",
+  "usability_heuristics": "",
+  "roles": "",
+  "business_model_h2": ""
 }
