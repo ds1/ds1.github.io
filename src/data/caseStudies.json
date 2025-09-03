@@ -30,7 +30,7 @@
     },
     {
       "id": 5,
-      "title": "Web3 MCP Server Registry",
+      "title": "Web3 AI Agent MCP Server Registry",
       "description": "Decentralized discovery platform for AI agents using custom MCP servers and .agt domains on Polygon blockchain",
       "thumbnail": "/images/agt-registry-discovery.jpg",
       "thumbnail_type": "image"
