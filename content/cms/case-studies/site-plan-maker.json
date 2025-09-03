@@ -1,7 +1,7 @@
 {
   "project_type": "Enterprise Tool",
   "ai_models": "",
-  "skills": "",
+  "skills": "Interaction Design;User Research;Prototyping;Frontend Development;Architecture;Visual Design;Enterprise Tools;Vibe Coding",
   "ai_tools": "Claude Sonnet 3.7;Google Cloud;Gemini",
   "media": [
     {
@@ -88,6 +88,6 @@
   "id": 10,
   "description": "Professional surveillance planning platform with interactive mapping and PDF overlays",
   "usability_heuristics": "",
-  "roles": "",
+  "roles": "Prototyper;Developer;Visual Designer;User Experience Researcher;Project Manager",
   "business_model_h2": ""
 }
