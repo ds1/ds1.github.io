@@ -1,35 +1,8 @@
 {
   "title": "Get in Touch",
-  "introduction": "Let's connect about future opportunities",
+  "introduction": "Let's connect and see what we can build together",
   "email": "dan@schmitz.ai",
-  "linkedin": "https://www.linkedin.com/in/schmitzdan",
+  "linkedin": "https://linkedin.com/in/schmitzdan",
   "github": "https://github.com/ds1",
-  "message": "#p#I'm open to discussing new projects or the futures of any topic. Feel free to reach out through any of the channels above and I'll get back to you as soon as possible.\\n#p#Currently based in Boulder, Colorado.",
-  "content": [
-    {
-      "type": "p",
-      "content": "Let's connect about future opportunities",
-      "key": "introduction"
-    },
-    {
-      "type": "p",
-      "content": "dan@schmitz.ai",
-      "key": "email"
-    },
-    {
-      "type": "p",
-      "content": "https://www.linkedin.com/in/schmitzdan",
-      "key": "linkedin"
-    },
-    {
-      "type": "p",
-      "content": "https://github.com/ds1",
-      "key": "github"
-    },
-    {
-      "type": "p",
-      "content": "#p#I'm open to discussing new projects or the futures of any topic. Feel free to reach out through any of the channels above and I'll get back to you as soon as possible.\\n#p#Currently based in Boulder, Colorado.",
-      "key": "message"
-    }
-  ]
+  "message": "I'm open to career opportunities in Boulder, Colorado and the surrounding area as well as remote roles. Open to those with light travel.\\\n\\\nMy project portfolio is always evolving as I discover new problems to solve or new technologies to experiment with and map them to innovative business opportunities."
 }
