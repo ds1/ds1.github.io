@@ -44,9 +44,9 @@
     },
     {
       "id": 7,
-      "title": "YouTube Voice Studio",
-      "description": "Professional text-to-speech converter with Google Cloud integration and custom voice presets",
-      "thumbnail": "/images/youtube-tts-thumbnail.jpg",
+      "title": "Text-To-Speech Converter",
+      "description": "Production-ready text-to-speech pipeline with cost-effective cloud integration",
+      "thumbnail": "/images/text-to-speech-converter-gui.png",
       "thumbnail_type": "image"
     },
     {

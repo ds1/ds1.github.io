@@ -600,10 +600,10 @@
     },
     {
       "id": 7,
-      "title": "YouTube Voice Studio",
-      "subtitle": "Building a Professional TTS Platform for Content Creators",
-      "thumbnail": "/images/youtube-tts-thumbnail.jpg",
-      "duration": "July 2024",
+      "title": "Text-To-Speech Converter",
+      "subtitle": "App for narrating longform text with custom voices and settings",
+      "thumbnail": "/images/text-to-speech-converter-gui.png",
+      "duration": "July 2025",
       "role": "Full-Stack Developer & Cloud Architect",
       "content": [
         {
@@ -682,13 +682,11 @@
         {
           "type": "list",
           "content": [
-            "Reduced narration time from hours to minutes for YouTube creators",
+            "Reduced narration time from hours to minutes",
             "Achieved $0.18 cost for 11,000 character script (vs. $200+ for voice actor)",
             "Created one-click setup eliminating 30+ minutes of configuration",
             "Processed scripts up to 50,000 characters without quality loss",
-            "Built comprehensive documentation enabling self-service adoption",
-            "Established diagnostic suite reducing support time by 80%",
-            "Open-sourced solution benefiting creator community"
+            "Built comprehensive documentation enabling self-service adoption"
           ],
           "key": "section_12"
         }
@@ -709,9 +707,29 @@
       ],
       "tags": {
         "designTools": [],
-        "aiTools": [],
-        "devTools": [],
-        "skills": [],
+        "aiTools": [
+          "Claude Opus 4.1",
+          "Google Vertex API"
+        ],
+        "devTools": [
+          "Python",
+          "Google Cloud Platform",
+          "Text-to-Speech API",
+          "FFmpeg",
+          "PowerShell",
+          "CLI",
+          "Git"
+        ],
+        "skills": [
+          "Cloud Services Integration",
+          "Adaptive Problem-Solving",
+          "Human-AI Collaboration",
+          "Solution Design",
+          "Full-Stack Development",
+          "Quality Engineering",
+          "Vibe Coding",
+          "Interaction Design"
+        ],
         "roles": [],
         "artifactTypes": [],
         "fidelity": [],

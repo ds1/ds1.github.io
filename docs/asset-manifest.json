@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.b31ee398.js",
+    "main.js": "/static/js/main.724dc53a.js",
     "static/js/453.d5c4626d.chunk.js": "/static/js/453.d5c4626d.chunk.js",
     "static/media/siteplan-thumbnail.jpg": "/static/media/siteplan-thumbnail.64604d82841898f6ad7e.jpg",
     "static/media/magic-leap-thumbnail.gif": "/static/media/magic-leap-thumbnail.95ef1520708235a8cee5.gif",
@@ -14,6 +14,7 @@
     "static/media/thubble-thumbnail.jpg": "/static/media/thubble-thumbnail.d1888b06609550e0fb93.jpg",
     "static/media/thubble-dashboard.jpg": "/static/media/thubble-dashboard.136f6bf7b25fdcdcc114.jpg",
     "static/media/ai-collab-thumbnail.jpg": "/static/media/ai-collab-thumbnail.e648a515598d1a96888e.jpg",
+    "static/media/text-to-speech-converter-gui.png": "/static/media/text-to-speech-converter-gui.22163268d1f76612bf09.png",
     "static/media/dsdev-preview-thumbnail.jpg": "/static/media/dsdev-preview-thumbnail.a3a3f05da89a9bd9e4a2.jpg",
     "static/media/agt-ecosystem.jpg": "/static/media/agt-ecosystem.ece1ae12655e74e070fb.jpg",
     "static/media/agt-financial-model.jpg": "/static/media/agt-financial-model.ece1ae12655e74e070fb.jpg",
@@ -30,15 +31,14 @@
     "static/media/picksi-thumbnail.jpg": "/static/media/picksi-thumbnail.6550c4e58f4322fd8b2b.jpg",
     "static/media/ptz-controller-thumbnail.jpg": "/static/media/ptz-controller-thumbnail.6550c4e58f4322fd8b2b.jpg",
     "static/media/ptz-security-workflow.jpg": "/static/media/ptz-security-workflow.6550c4e58f4322fd8b2b.jpg",
-    "static/media/youtube-tts-thumbnail.jpg": "/static/media/youtube-tts-thumbnail.6550c4e58f4322fd8b2b.jpg",
     "static/media/ptz-legacy-vs-modern.gif": "/static/media/ptz-legacy-vs-modern.7799c2a21668370e0fd2.gif",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.b31ee398.js.map": "/static/js/main.b31ee398.js.map",
+    "main.724dc53a.js.map": "/static/js/main.724dc53a.js.map",
     "453.d5c4626d.chunk.js.map": "/static/js/453.d5c4626d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.b31ee398.js"
+    "static/js/main.724dc53a.js"
   ]
 }
